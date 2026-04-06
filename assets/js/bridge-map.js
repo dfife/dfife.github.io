@@ -32,11 +32,30 @@ const state = {
 };
 
 function normalizeStatus(status) {
-  const upper = status.toUpperCase();
-  if (upper.includes("NO-GO")) return "no-go";
-  if (upper.includes("CONDITIONAL")) return "conditional";
-  if (upper.includes("DERIVED") || upper.includes("THEOREM")) return "derived";
+  const key = statusMeta(status).key;
+  if (key === "no-go") return "no-go";
+  if (key === "conditional") return "conditional";
   return "derived";
+}
+
+function statusMeta(status) {
+  const upper = status.toUpperCase();
+  if (upper.includes("NO-GO")) {
+    return { key: "no-go", label: "NO-GO" };
+  }
+  if (upper.includes("THEOREM")) {
+    return { key: "theorem", label: "THEOREM" };
+  }
+  if (upper.includes("DERIVED") && upper.includes("SCOPED")) {
+    return { key: "derived-scoped", label: "DERIVED/SCOPED" };
+  }
+  if (upper.includes("CONDITIONAL")) {
+    return { key: "conditional", label: "CONDITIONAL" };
+  }
+  if (upper.includes("DERIVED")) {
+    return { key: "derived", label: "DERIVED" };
+  }
+  return { key: "derived", label: upper };
 }
 
 function matchesFilters(item) {
@@ -101,6 +120,10 @@ function renderDetail(item) {
 
   const badgeClass = CHANNEL_META[item.channel]?.className || "outside";
   const badgeLabel = CHANNEL_META[item.channel]?.label || "Outside Domain";
+  const status = statusMeta(item.status);
+  const statusDetail = status.label === item.status.toUpperCase()
+    ? ""
+    : `<div class="detail-note">${item.status}</div>`;
   const papers = item.papers.map((paper) => `Paper ${paper}`).join(", ");
   const constants = item.constants.length ? item.constants.join(", ") : "none";
   const zenodoAction = item.zenodo
@@ -139,7 +162,10 @@ function renderDetail(item) {
     </div>
     <div class="detail-block">
       <div class="detail-label">Status</div>
-      <div class="detail-value">${item.status}</div>
+      <div class="detail-value">
+        <span class="badge status-badge status-${status.key}">${status.label}</span>
+        ${statusDetail}
+      </div>
     </div>
     <div class="detail-block">
       <div class="detail-label">Source papers</div>
@@ -206,6 +232,7 @@ function renderBoard() {
       .slice()
       .sort((a, b) => a.papers[0] - b.papers[0])
       .forEach((item) => {
+        const status = statusMeta(item.status);
         const button = document.createElement("button");
         button.type = "button";
         button.className = `node ${meta.className}${item.name === state.selected ? " active" : ""}`;
@@ -213,7 +240,7 @@ function renderBoard() {
         button.innerHTML = `
           <div class="node-top">
             <h3 class="node-name">${item.name}</h3>
-            <span class="badge ${meta.className}">${normalizeStatus(item.status)}</span>
+            <span class="badge status-badge status-${status.key}">${status.label}</span>
           </div>
           <div class="node-meta">
             <span class="meta-chip">Paper ${item.papers.join(", ")}</span>
