@@ -594,6 +594,14 @@ input {
   text-transform: uppercase;
 }
 
+.lifecycle-paper:hover,
+.lifecycle-paper:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .lifecycle-claim {
   margin: 26px auto 0;
   max-width: 980px;
@@ -1034,6 +1042,16 @@ input {
   font-weight: 800;
   letter-spacing: -0.03em;
   flex: 0 0 auto;
+}
+
+.paper-number-link:hover,
+.paper-number-link:focus-visible {
+  filter: brightness(1.08);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  box-shadow:
+    0 10px 22px rgba(12, 23, 38, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .paper-header {

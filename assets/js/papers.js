@@ -32,13 +32,17 @@ function renderPaperCard(paper) {
     .map((name) => `<a class="bridge-chip" href="${crossingHref(name)}">${name}</a>`)
     .join("");
 
+  const numberBadge = paper.coming_soon
+    ? `<span class="paper-number">${paper.paper}</span>`
+    : `<a class="paper-number paper-number-link" href="${paper.zenodo}" target="_blank" rel="noreferrer" aria-label="Open Paper ${paper.paper} on Zenodo">${paper.paper}</a>`;
+
   const action = paper.coming_soon
     ? `<span class="button button-small button-disabled">Coming Soon</span>`
     : `<a class="button button-small button-outline" href="${paper.zenodo}" target="_blank" rel="noreferrer">Zenodo Record</a>`;
 
   wrapper.innerHTML = `
     <div class="paper-top">
-      <div class="paper-number">${paper.paper}</div>
+      ${numberBadge}
       <div class="paper-header">
         <div class="paper-meta">${paper.era}</div>
         <h3 class="paper-title">${paper.short_title}</h3>
