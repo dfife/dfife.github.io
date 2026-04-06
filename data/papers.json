@@ -258,10 +258,9 @@
   {
     "paper": 33,
     "era": "The Bridge",
-    "short_title": "The Bridge",
-    "summary": "Paper 33 maps the full boundary-to-bulk landscape, separates the static geometric baseline from the dynamic thermal channel, and turns the bridge map into the framework's public front end. The formal paper is still in preparation.",
-    "zenodo": "",
-    "bridges": ["Muon g−2 No-Go"],
-    "coming_soon": true
+    "short_title": "The Quantum Gravity Bridge: Conditional Holographic Unification of General Relativity and Quantum Mechanics with 32 Zero-Parameter Derivations from Inside a Schwarzschild Horizon",
+    "summary": "Presents the systematic atlas of the 32-paper IO framework as a boundary-to-bulk projection map. Establishes the dual-channel bridge architecture (static geometric baseline plus dynamic thermal channel), derives the Holographic Selection Rule from KMS modular structure, identifies the physical carrier mechanism as bridge statistical covariance, and places the framework in the quantum gravity landscape as Channel-Gated Unification. Includes a geometric alternative interpretation of dark matter, a conditional no-go for the muon g−2, and a three-paradigm comparison.",
+    "zenodo": "https://zenodo.org/records/19440227/latest",
+    "bridges": ["Dual-Channel Architecture", "Holographic Selection Rule", "Bridge Carrier Mechanism", "Dark Matter Geometric Alternative", "Muon g−2 No-Go"]
   }
 ]
