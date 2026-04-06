@@ -33,13 +33,13 @@
     "quantum_input": "SU(2) topological vacuum scalarization",
     "classical_output": "f_b = 2γ/x = 0.3127",
     "constants": ["γ", "x"],
-    "prediction": "f_b = 0.3127",
-    "observation": "f_b = 0.157 ± 0.001 (ω_b/ω_m, Planck)",
-    "residual": "See Paper 19 for observable-class distinction",
+    "prediction": "f_b = 0.3127 (gauge-coupling inventory)",
+    "observation": "Not directly comparable to CMB ω_b/ω_m. The raw inventory fraction projects to different values by observable class: ω_b = 0.02108 (α=1, BBN), ω_b = 0.01705 (α=3/2, clustering). See Paper 19.",
+    "residual": "See Paper 19 for observable-class Jacobian",
     "status": "DERIVED",
     "papers": [12, 19],
     "zenodo": "https://zenodo.org/records/18936508/latest",
-    "summary": "Baryons are the gauge-coupled subset of OS dust. The fraction is set by the SU(2) gauge topology of the horizon."
+    "summary": "Baryons are the gauge-coupled subset of OS dust. The fraction is set by the SU(2) gauge topology of the horizon. Different observable classes probe different projected values."
   },
   {
     "name": "Rosetta Identity",
