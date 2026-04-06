@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ihikTXBZEMflSxSz3z3o8zG1uNf-3ClCW-JLcyYna04">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Quantum Gravity Bridge Map</title>
+  <meta name="description" content="Interactive map of every boundary-to-bulk crossing in the Interior Observer Framework. Filter by channel, status, and source paper.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand-block" href="index.html" aria-label="The Interior Observer Framework home">
+          <span class="brand-kicker">IO Framework</span>
+          <span class="brand-title">The Interior Observer Framework</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" href="bridge-map.html">Bridge Map</a>
+          <a class="nav-link" href="papers.html">Papers</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-top">
+        <div class="section-inner">
+          <div class="section-head">
+            <p class="section-kicker">Interactive companion to Paper 33</p>
+            <h1 class="page-title">The Quantum Gravity Bridge Map</h1>
+            <p class="page-intro">
+              Every derivation in the IO Framework follows the same pattern: quantum data on the boundary produces a classical observable in the bulk. This interactive map
+              catalogs every boundary-to-bulk crossing across the 32-paper stack. Click any crossing to see its quantum input, classical output, IO constants, status, and
+              source paper.
+            </p>
+          </div>
+
+          <div class="filters-bar" aria-label="Bridge map filters">
+            <div class="filter-group" id="channel-filters">
+              <span class="filter-label">Channel</span>
+              <button class="filter-button active" type="button" data-channel="all">All</button>
+              <button class="filter-button" type="button" data-channel="static">Static Geometric</button>
+              <button class="filter-button" type="button" data-channel="dynamic">Dynamic Thermal</button>
+              <button class="filter-button" type="button" data-channel="mixed">Mixed/Source</button>
+            </div>
+            <div class="filter-group" id="status-filters">
+              <span class="filter-label">Status</span>
+              <button class="filter-button active" type="button" data-status="all">All</button>
+              <button class="filter-button" type="button" data-status="derived">Derived</button>
+              <button class="filter-button" type="button" data-status="conditional">Conditional</button>
+              <button class="filter-button" type="button" data-status="no-go">No-Go</button>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label" for="bridge-search">Search</label>
+              <input class="filter-search" id="bridge-search" type="search" placeholder="Search crossings, constants, papers, or summaries">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section compact">
+        <div class="section-inner bridge-layout">
+          <div class="bridge-board" id="bridge-board" aria-live="polite">
+            <div class="lane-card">
+              <div class="lane-title-wrap">
+                <p class="lane-kicker">Loading</p>
+                <h2 class="lane-title">Building the bridge map...</h2>
+              </div>
+              <p class="lane-summary">The crossing data are loaded from <span class="code">data/crossings.json</span>.</p>
+            </div>
+          </div>
+          <aside class="detail-column">
+            <article class="detail-card" id="detail-panel">
+              <div class="detail-header">
+                <span class="badge mixed">Select a crossing</span>
+                <h2 class="detail-title">Choose a node from the map</h2>
+                <p class="detail-summary">The detail panel shows the boundary object, bulk observable, constants, prediction, observation, and source papers for the selected crossing.</p>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-title">David Fife | Independent Researcher | david@fife.cc</div>
+        <div>Multi-AI Collaboration: Claude (Anthropic), Codex/ChatGPT (OpenAI), Gemini (Google DeepMind)</div>
+        <div class="footer-small">All papers open-access on Zenodo.</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/bridge-map.js" defer></script>
+</body>
+</html>

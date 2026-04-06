@@ -2,69 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-site-verification" content="ihikTXBZEMflSxSz3z3o8zG1uNf-3ClCW-JLcyYna04">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IO Framework Public Resources</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
-      background: #ffffff;
-    }
-    h1, h2 {
-      color: #111;
-    }
-    a {
-      color: #0b57d0;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    code {
-      background: #f4f4f4;
-      padding: 2px 4px;
-    }
-  </style>
+  <meta name="description" content="Public resources and reproducibility portal for the Interior Observer Framework.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <h1>IO Framework Public Resources</h1>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand-block" href="index.html" aria-label="The Interior Observer Framework home">
+          <span class="brand-kicker">IO Framework</span>
+          <span class="brand-title">The Interior Observer Framework</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="bridge-map.html">Bridge Map</a>
+          <a class="nav-link" href="papers.html">Papers</a>
+        </nav>
+      </div>
+    </header>
 
-  <p>
-    This page is the public entry point for scripts, reports, data products,
-    and figures created by, for, or from the Interior Observer framework.
-  </p>
+    <main>
+      <section class="page-top">
+        <div class="section-inner">
+          <div class="section-head">
+            <p class="section-kicker">Public artifacts</p>
+            <h1 class="page-title">IO Framework Public Resources</h1>
+            <p class="page-intro">
+              The website explains the framework and links outward. The public artifact repository carries scripts, reports, figures, data products, manifests, and other
+              reproducibility metadata used for public release.
+            </p>
+          </div>
+        </div>
+      </section>
 
-  <h2>Repository Structure</h2>
-  <p>
-    The public release surface is kept separate from the website itself.
-    The website explains and links. The public repository carries the
-    reproducible artifacts.
-  </p>
+      <section class="content-section compact">
+        <div class="section-inner resources-grid">
+          <article class="resource-card">
+            <h2 class="resource-title">Public IO Artifacts Repository</h2>
+            <p class="card-note">This is the canonical public release surface for reproducibility materials.</p>
+            <a class="resource-link" href="https://github.com/dfife/io-framework-public" target="_blank" rel="noreferrer">github.com/dfife/io-framework-public →</a>
+          </article>
+          <article class="resource-card">
+            <h2 class="resource-title">Website Role</h2>
+            <p class="card-note">The Pages site is the information portal: framing, navigation, the bridge map, and links into the papers and release bundles.</p>
+            <a class="resource-link" href="index.html">Return to the main portal →</a>
+          </article>
+          <article class="resource-card">
+            <h2 class="resource-title">Initial Public Bundle</h2>
+            <p class="card-note">The first curated public package centered on the Paper 31 practical calculator and confrontation layer.</p>
+            <ul class="resource-list">
+              <li>practical fixed-IO <span class="code">C_l</span> confrontation</li>
+              <li>practical baryon-slot audit</li>
+              <li>reports, data products, and residual figures</li>
+            </ul>
+          </article>
+          <article class="resource-card">
+            <h2 class="resource-title">Research Identity</h2>
+            <p class="card-note">Author and archive links for the public-facing research program.</p>
+            <a class="resource-link" href="https://orcid.org/0009-0001-0090-5825" target="_blank" rel="noreferrer">ORCID profile →</a>
+            <a class="resource-link" href="https://zenodo.org/communities/interior-observer" target="_blank" rel="noreferrer">Zenodo community →</a>
+          </article>
+        </div>
+      </section>
+    </main>
 
-  <h2>Planned Public Repository</h2>
-  <p>
-    <a href="https://github.com/dfife/io-framework-public"><code>dfife/io-framework-public</code></a>
-  </p>
-  <p>
-    This repository holds the public artifacts and reproducibility layer for
-    the IO framework.
-  </p>
-
-  <h2>Initial Public Bundle</h2>
-  <p>
-    The first planned release bundle is the Paper 31 practical calculator
-    package, including:
-  </p>
-  <ul>
-    <li>practical fixed-IO <code>C_l</code> confrontation</li>
-    <li>practical baryon-slot audit</li>
-    <li>reports, data products, and residual figures</li>
-  </ul>
-
-  <p><a href="./">Back to main site</a></p>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-title">David Fife | Independent Researcher | david@fife.cc</div>
+        <div>Multi-AI Collaboration: Claude (Anthropic), Codex/ChatGPT (OpenAI), Gemini (Google DeepMind)</div>
+        <div class="footer-small">All papers open-access on Zenodo.</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
