@@ -287,6 +287,20 @@ input {
   color: rgba(245, 248, 252, 0.84);
 }
 
+.hero-column-link {
+  display: inline-flex;
+  margin-top: 18px;
+  font-weight: 700;
+  color: #d7f2ff;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-column-link:hover,
+.hero-column-link:focus-visible {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .button {
   display: inline-flex;
   align-items: center;
