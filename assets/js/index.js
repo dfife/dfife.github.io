@@ -1,14 +1,14 @@
 const HIGHLIGHT_ORDER = [
   "CMB Temperature",
+  "Cosmic Chronometers",
+  "Galaxy BAO Closure",
   "Deuterium Abundance (D/H)",
   "Helium-4 Abundance (Y_p)",
   "Lithium-7 Abundance",
   "Spectral Index (n_s)",
   "Scalar Amplitude (A_s)",
   "Gravitational Slip (Σ_IO)",
-  "Hubble Constant (H₀)",
-  "Baryon Fraction",
-  "Acoustic Scale (θ_s)"
+  "Hubble Constant (H₀)"
 ];
 
 const channelClass = (channel) => {

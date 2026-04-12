@@ -227,31 +227,31 @@
     "paper": 29,
     "era": "Observational Validation",
     "short_title": "Branch Consistency Audit",
-    "summary": "Resolves the long-standing assembly gap through a branch self-consistency audit and identifies the Schur definitive branch as the unique surviving observational package. Against cosmic chronometer and DESI DR2 BAO data, the Schur branch gives χ² = 42.48 versus 44.80 for the fixed-parameter Planck ΛCDM reference, with zero continuously fitted framework parameters.",
+    "summary": "Rebuilds the confrontation layer on the Paper 10 legacy / i.i.d. branch, retires the Schur branch, and closes the branch self-consistency audit. On the active i.i.d. package, cosmic chronometers give χ² = 14.70 and the derived/scoped DESI DR2 GCcomb galaxy/quasar BAO route gives χ² = 27.74, for combined χ² = 42.44 versus 46.40 for the fixed-parameter Planck ΛCDM reference.",
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "bridges": ["Hubble Constant (H₀)"]
+    "bridges": ["Hubble Constant (H₀)", "Cosmic Chronometers", "Galaxy BAO Closure"]
   },
   {
     "paper": 30,
     "era": "Observational Validation",
     "short_title": "One Mass, Zero Fits",
-    "summary": "Confronts the Schur definitive branch with twenty independent observational tests spanning z = 0 to z = 1100 using one measured mass and one external constant, with zero continuously fitted parameters. The paper reports five direct wins over the fixed-parameter Planck ΛCDM reference, eight non-comparator confirmations, three ties, two indistinguishable cases, one mild loss, and one pre-registered future prediction.",
+    "summary": "Recomputes the twenty-test confrontation on the active Paper 10 legacy / i.i.d. branch. Pantheon+ and TDCOSMO still favor IO over the fixed-parameter Planck reference, the Alcock-Paczyński test still favors Planck, and several Schur-era headline numbers change materially on the rebuilt branch, especially in the late-structure sector.",
     "zenodo": "https://zenodo.org/records/19376058/latest",
-    "bridges": ["Baryon Fraction", "Hubble Constant (H₀)", "Acoustic Scale (θ_s)"]
+    "bridges": ["Baryon Fraction", "Hubble Constant (H₀)", "Cosmic Chronometers"]
   },
   {
     "paper": 31,
     "era": "Framework Closure",
     "short_title": "Gravitational Slip",
-    "summary": "Derives the zero-parameter gravitational-slip prediction η_IO = 0.623 and lensing response Σ_IO = 0.811 from the observable-class Jacobian distinction between Weyl curvature and density contrast. The paper uses this to ease the S₈ weak-lensing tension, retires the long-running N_eff = Δ identification, conditionally closes the galaxy BAO ruler, and maps the remaining Boltzmann-solver architecture through systematic elimination of candidate routes.",
+    "summary": "Recomputes the Weyl-response and late-time observable map on the active i.i.d. branch. The current branch gives Σ_IO = 0.8114, S₈,weyl = 0.8339, α_Φ ≈ 2.005 in the E_G pipeline, and a derived/scoped galaxy/quasar BAO closure on the current DESI DR2 GCcomb definition.",
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "bridges": ["Gravitational Slip (Σ_IO)", "Optical Depth (τ_eff)"]
+    "bridges": ["Gravitational Slip (Σ_IO)", "Optical Depth (τ_eff)", "Galaxy BAO Closure"]
   },
   {
     "paper": 32,
     "era": "Framework Closure",
     "short_title": "Framework Closure",
-    "summary": "Closes the six remaining open problems on their active scoped sectors, retires all four semiclassical principles on those scopes, and derives the fixed-point normalization P4 via the DtN Open-Transport Placement Theorem. The paper also derives the late-time observer-domain boundary at x_crit, the scalar optical-channel termination, the local hidden-support recollapse branch, conditional bounce attachment to the Paper 1 torsion mechanism, and a preferred hard observer restart with zero additional stated premises and zero fitted parameters on the active source block.",
+    "summary": "Published closure and lifecycle paper on a later branch. The site preserves it as an archive-side record, but branch-sensitive numerical claims from Paper 32 are not treated as the current active i.i.d. scorecard until their rebuild is complete.",
     "zenodo": "https://zenodo.org/records/19433686/latest",
     "bridges": ["Observer Boundary (x_crit)", "Scalar Amplitude (A_s)", "Recollapse Timeline"]
   },
@@ -259,7 +259,7 @@
     "paper": 33,
     "era": "The Bridge",
     "short_title": "The Quantum Gravity Bridge: Conditional Holographic Unification of General Relativity and Quantum Mechanics with 32 Zero-Parameter Derivations from Inside a Schwarzschild Horizon",
-    "summary": "Presents the systematic atlas of the 32-paper IO framework as a boundary-to-bulk projection map. Establishes the dual-channel bridge architecture (static geometric baseline plus dynamic thermal channel), derives the Holographic Selection Rule from KMS modular structure, identifies the physical carrier mechanism as bridge statistical covariance, and places the framework in the quantum gravity landscape as Channel-Gated Unification. Includes a geometric alternative interpretation of dark matter, a conditional no-go for the muon g−2, and a three-paradigm comparison.",
+    "summary": "Presents the public bridge atlas for the archive stack and organizes the published program as a boundary-to-bulk projection map. It establishes the dual-channel bridge language and the bridge-carrier picture, while branch-sensitive numerical scorecards on this website currently follow the rebuilt i.i.d. results through Paper 31.",
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "bridges": ["Dual-Channel Architecture", "Holographic Selection Rule", "Bridge Carrier Mechanism", "Dark Matter Geometric Alternative", "Muon g−2 No-Go"]
   }
