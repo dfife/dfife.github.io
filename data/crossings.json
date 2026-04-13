@@ -538,7 +538,7 @@
   {
     "name": "Three-Language Architecture",
     "channel": "mixed",
-    "quantum_input": "Full boundary-to-bulk atlas across the 33-paper archive",
+    "quantum_input": "Full boundary-to-bulk atlas across the 34-paper archive",
     "classical_output": "The bridge now reads as three languages: static geometric, dynamic thermal, and fermionic density-gated",
     "constants": [
       "γ",
@@ -549,14 +549,14 @@
       "Δ"
     ],
     "prediction": "Three-language bridge architecture",
-    "observation": "Archive-side organizing result from Papers 1-33",
+    "observation": "Archive-side organizing result from Papers 1-34",
     "residual": "N/A",
     "status": "THEOREM",
     "papers": [
       33
     ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "Paper 33 reframes the archive stack as three bridge languages: a static geometric language, a dynamic thermal language, and a fermionic density-gated language for the deep-bulk bounce sector."
+    "summary": "Paper 33 reframes the archive stack as three bridge languages, and Paper 34 applies that architecture to the late-time H₀ method ladder: a static geometric language, a dynamic thermal language, and a fermionic density-gated language for the deep-bulk bounce sector."
   },
   {
     "name": "Holographic Selection Rule",

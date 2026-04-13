@@ -17,7 +17,7 @@ const ERA_LABELS = {
   "CMB Confrontation": "Papers 26-28",
   "Observational Validation": "Papers 29-30",
   "Framework Closure": "Papers 31-32",
-  "The Bridge": "The Bridge (Paper 33)"
+  "The Bridge": "The Bridge (Papers 33-34)"
 };
 
 function crossingHref(name) {
