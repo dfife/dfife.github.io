@@ -2,12 +2,13 @@ const HIGHLIGHT_ORDER = [
   "CMB Temperature",
   "Cosmic Chronometers",
   "Galaxy BAO Closure",
+  "S₈ f_Γ Readout",
   "Deuterium Abundance (D/H)",
   "Helium-4 Abundance (Y_p)",
   "Lithium-7 Abundance",
   "Spectral Index (n_s)",
   "Scalar Amplitude (A_s)",
-  "Gravitational Slip (Σ_IO)",
+  "Bounce Normalization",
   "Hubble Constant (H₀)"
 ];
 
@@ -15,6 +16,7 @@ const channelClass = (channel) => {
   if (channel === "static") return "static";
   if (channel === "dynamic") return "dynamic";
   if (channel === "mixed") return "mixed";
+  if (channel === "fermionic") return "fermionic";
   return "outside";
 };
 

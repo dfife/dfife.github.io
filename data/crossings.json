@@ -4,26 +4,40 @@
     "channel": "dynamic",
     "quantum_input": "Hawking temperature on S² horizon",
     "classical_output": "Observer CMB temperature T_obs = 2.7253 K",
-    "constants": ["γ", "x", "K_gauge"],
+    "constants": [
+      "γ",
+      "x",
+      "K_gauge"
+    ],
     "prediction": "2.7253 K",
     "observation": "2.7255 ± 0.0006 K",
     "residual": "−0.33σ",
     "status": "DERIVED/SCOPED",
-    "papers": [1, 13, 17],
+    "papers": [
+      1,
+      13,
+      17
+    ],
     "zenodo": "https://zenodo.org/records/19045892/latest",
-    "summary": "The observer-side CMB temperature is Hawking radiation projected through the gauge thermal transfer channel on the active i.i.d. branch."
+    "summary": "The observer-side CMB temperature is Hawking radiation projected through the gauge thermal transfer channel on the active Paper 10 legacy branch."
   },
   {
     "name": "Dark Energy Density",
     "channel": "static",
     "quantum_input": "Spectral norm ||A||/||Γ|| = √(1+γ²) on S² horizon",
     "classical_output": "ρ_Λ, Ω_Λ = 0.6970",
-    "constants": ["γ²", "1+γ²"],
+    "constants": [
+      "γ²",
+      "1+γ²"
+    ],
     "prediction": "Ω_Λ = 0.6970",
     "observation": "Ω_Λ = 0.685 ± 0.013 (Planck 2018)",
     "residual": "+0.92σ",
     "status": "DERIVED",
-    "papers": [8, 9],
+    "papers": [
+      8,
+      9
+    ],
     "zenodo": "https://zenodo.org/records/18895980/latest",
     "summary": "Dark energy is the spectral weight of the Ashtekar-Barbero connection projected into the bulk through the Holst action."
   },
@@ -32,12 +46,18 @@
     "channel": "static",
     "quantum_input": "SU(2) topological vacuum scalarization",
     "classical_output": "f_b = 2γ/x = 0.3127",
-    "constants": ["γ", "x"],
+    "constants": [
+      "γ",
+      "x"
+    ],
     "prediction": "f_b = 0.3127 (gauge-coupling inventory)",
-    "observation": "Not directly comparable to a single CMB ω_b/ω_m. Active i.i.d. slots are ω_b,geom = 0.020996 (α=1, sound speed/BBN), ω_b,eff = 0.028989 (acoustic effective slot), and ω_b,clustering = 0.017035 (α=3/2, clustering).",
+    "observation": "Not directly comparable to a single CMB ω_b/ω_m. Active Paper 10 legacy slots are ω_b,geom = 0.020996 (α=1, sound speed/BBN), ω_b,eff = 0.028989 (acoustic effective slot), and ω_b,clustering = 0.017035 (α=3/2, clustering).",
     "residual": "Observable-class dependent; see the active Paper 19/29 slot map",
     "status": "DERIVED",
-    "papers": [12, 19],
+    "papers": [
+      12,
+      19
+    ],
     "zenodo": "https://zenodo.org/records/18936508/latest",
     "summary": "Baryons are the gauge-coupled subset of OS dust. The fraction is set by the SU(2) gauge topology of the horizon. Different observable classes probe different projected values."
   },
@@ -46,12 +66,18 @@
     "channel": "static",
     "quantum_input": "Quaternionic SU(2) Casimir norm Q(q_γ) = 1+γ²",
     "classical_output": "O(η) = x^(2α)(1+γ²)^(α/2)",
-    "constants": ["γ²", "x", "α"],
+    "constants": [
+      "γ²",
+      "x",
+      "α"
+    ],
     "prediction": "Exact algebraic identity",
     "observation": "N/A (structural theorem)",
     "residual": "N/A",
     "status": "THEOREM",
-    "papers": [15],
+    "papers": [
+      15
+    ],
     "zenodo": "https://zenodo.org/records/19026431/latest",
     "summary": "The master identity organizing all observable classes by their form degree on the α-ladder."
   },
@@ -60,12 +86,19 @@
     "channel": "static",
     "quantum_input": "Ashtekar-Barbero connection projection",
     "classical_output": "Δ = x⁴(1+γ²) = 5.624",
-    "constants": ["γ²", "x"],
+    "constants": [
+      "γ²",
+      "x"
+    ],
     "prediction": "5.624",
     "observation": "N/A (framework constant)",
     "residual": "N/A",
     "status": "DERIVED",
-    "papers": [2, 8, 9],
+    "papers": [
+      2,
+      8,
+      9
+    ],
     "zenodo": "https://zenodo.org/records/18868612/latest",
     "summary": "The master geometric scale combining compactness and gauge weight."
   },
@@ -74,12 +107,17 @@
     "channel": "dynamic",
     "quantum_input": "Modular projection via fiberwise KMS inheritance",
     "classical_output": "d(ln ω)/dλ = K_gauge = 0.05488",
-    "constants": ["K_gauge"],
+    "constants": [
+      "K_gauge"
+    ],
     "prediction": "K_gauge = 0.05488",
     "observation": "Closes T_CMB gap (Paper 13)",
     "residual": "N/A",
     "status": "THEOREM",
-    "papers": [13, 17],
+    "papers": [
+      13,
+      17
+    ],
     "zenodo": "https://zenodo.org/records/18945480/latest",
     "summary": "The gauge thermal transfer law: how boundary temperature projects into the bulk through conformal coordinates."
   },
@@ -88,12 +126,16 @@
     "channel": "static",
     "quantum_input": "Fubini-Study Kähler potential on reduced gauge center",
     "classical_output": "V(α) = −2 ln(cos α)",
-    "constants": ["γ"],
+    "constants": [
+      "γ"
+    ],
     "prediction": "Exact functional form",
     "observation": "N/A (structural theorem)",
     "residual": "N/A",
     "status": "THEOREM",
-    "papers": [18],
+    "papers": [
+      18
+    ],
     "zenodo": "https://zenodo.org/records/19054258/latest",
     "summary": "The unique generating potential on the reduced gauge center organizing all observable classes."
   },
@@ -102,12 +144,16 @@
     "channel": "dynamic",
     "quantum_input": "Rate-dressing via (1+γ²) at α=1 rung of V(α)",
     "classical_output": "D/H = 2.509 × 10⁻⁵",
-    "constants": ["1+γ²"],
+    "constants": [
+      "1+γ²"
+    ],
     "prediction": "2.509 × 10⁻⁵",
     "observation": "2.547 ± 0.025 × 10⁻⁵ (Cooke 2018)",
     "residual": "−0.61σ",
     "status": "DERIVED",
-    "papers": [24],
+    "papers": [
+      24
+    ],
     "zenodo": "https://zenodo.org/records/19219282/latest",
     "summary": "Deuterium abundance from geometric dressing of BBN rates. This is the quantum gravity fingerprint at the nuclear scale."
   },
@@ -116,12 +162,16 @@
     "channel": "dynamic",
     "quantum_input": "Weak freeze-out thermal covariance, (1+γ²) dressing",
     "classical_output": "Y_p = 0.2477",
-    "constants": ["1+γ²"],
+    "constants": [
+      "1+γ²"
+    ],
     "prediction": "0.2477",
     "observation": "0.2449 ± 0.0040 (Aver 2021)",
     "residual": "+0.68σ",
     "status": "DERIVED",
-    "papers": [25],
+    "papers": [
+      25
+    ],
     "zenodo": "https://zenodo.org/records/19242682/latest",
     "summary": "Primordial helium from geometric dressing of the weak freeze-out rate."
   },
@@ -130,12 +180,16 @@
     "channel": "dynamic",
     "quantum_input": "Isovector transport J_(I=1)/J_(I=0) = 1+γ²",
     "classical_output": "Li-7/H = 1.75 × 10⁻¹⁰",
-    "constants": ["1+γ²"],
+    "constants": [
+      "1+γ²"
+    ],
     "prediction": "1.75 × 10⁻¹⁰",
     "observation": "1.6 ± 0.3 × 10⁻¹⁰ (Sbordone 2010)",
     "residual": "+0.55σ",
     "status": "DERIVED",
-    "papers": [24],
+    "papers": [
+      24
+    ],
     "zenodo": "https://zenodo.org/records/19219282/latest",
     "summary": "The cosmological lithium problem resolved. The same (1+γ²) dressing is channel-resolved on the I=1 adjoint branch."
   },
@@ -144,12 +198,19 @@
     "channel": "mixed",
     "quantum_input": "DtN boundary fixed-point on coexact source block",
     "classical_output": "n_s = 1 − K_gauge/x = 0.9639",
-    "constants": ["K_gauge", "x"],
+    "constants": [
+      "K_gauge",
+      "x"
+    ],
     "prediction": "0.9639",
     "observation": "0.9649 ± 0.0042 (Planck 2018)",
     "residual": "−0.24σ",
     "status": "DERIVED/SCOPED",
-    "papers": [23, 28, 32],
+    "papers": [
+      23,
+      28,
+      32
+    ],
     "zenodo": "https://zenodo.org/records/19359276/latest",
     "summary": "The spectral tilt from the boundary fixed-point principle. Primordial scale dependence emerges from horizon geometry."
   },
@@ -158,12 +219,18 @@
     "channel": "mixed",
     "quantum_input": "Hawking boundary state on lowest-shell bridge quotient",
     "classical_output": "A_s = 2.007 × 10⁻⁹",
-    "constants": ["γ", "K_gauge"],
+    "constants": [
+      "γ",
+      "K_gauge"
+    ],
     "prediction": "2.007 × 10⁻⁹",
     "observation": "2.101 ± 0.030 × 10⁻⁹ (Planck 2018)",
     "residual": "−3.1σ (raw) or 0.8% with optical damping",
     "status": "DERIVED/SCOPED",
-    "papers": [26, 32],
+    "papers": [
+      26,
+      32
+    ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
     "summary": "The primordial power spectrum amplitude from the Hawking state. No inflationary potential is required."
   },
@@ -171,139 +238,342 @@
     "name": "Gravitational Slip (Σ_IO)",
     "channel": "dynamic",
     "quantum_input": "Boundary Weyl response, j=2 data on S² horizon",
-    "classical_output": "Σ_IO = x^(−1/2) = 0.8114, η_IO = 0.623",
-    "constants": ["x"],
-    "prediction": "Σ = 0.8114, S₈,weyl = 0.8339",
-    "observation": "Weak-lensing S₈ ≈ 0.79 ± 0.02",
-    "residual": "+2.19σ on the active i.i.d. branch",
+    "classical_output": "Σ_IO = x^(−1/2) = 0.8114",
+    "constants": [
+      "x"
+    ],
+    "prediction": "Σ_IO = 0.8114",
+    "observation": "Structural Weyl-response bridge result. The active weak-lensing amplitude comparison is tracked separately in S₈ f_Γ Readout.",
+    "residual": "See S₈ f_Γ Readout for the growth-side weak-lensing comparison",
     "status": "DERIVED/SCOPED",
-    "papers": [31],
+    "papers": [
+      31
+    ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "Gravitational lensing sees a different projection than density contrast. On the active i.i.d. branch this eases, but does not eliminate, the weak-lensing S₈ tension."
+    "summary": "The Weyl-response bridge fixes Σ_IO = x^(−1/2) on the Paper 10 legacy branch. The active S₈ comparison is carried by the theorem-supported f_Γ growth-amplitude readout, not by a second Weyl rescaling."
+  },
+  {
+    "name": "σ₈ Growth Readout",
+    "channel": "mixed",
+    "quantum_input": "Late-time linear clustering inheritance of the one-slot field law on the active growth sector",
+    "classical_output": "σ₈ = 0.9275 after theorem-supported f_Γ amplitude suppression",
+    "constants": [
+      "A_s",
+      "f_Γ"
+    ],
+    "prediction": "σ₈ = 0.9275 from native 0.9533 × √f_Γ",
+    "observation": "Native unclothed growth amplitude on the same branch would be σ₈ = 0.9533",
+    "residual": "−2.71% from the native clustering amplitude",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "Paper 32 closes the late-time linear clustering inheritance theorem on the active Paper 10 legacy solver tuple. The theorem-supported growth-side readout is σ₈ = 0.9275 with exactly one f_Γ amplitude factor."
+  },
+  {
+    "name": "S₈ f_Γ Readout",
+    "channel": "mixed",
+    "quantum_input": "Late-time linear clustering inheritance with A_s → A_s f_Γ on the active growth sector",
+    "classical_output": "S₈ = 0.8113",
+    "constants": [
+      "A_s",
+      "f_Γ",
+      "Ω_m"
+    ],
+    "prediction": "S₈ = 0.8113",
+    "observation": "Weak-lensing S₈ ≈ 0.79 ± 0.02",
+    "residual": "+1.1σ",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "The theorem-supported internal weak-lensing comparison on the active Paper 10 legacy branch uses the growth-side amplitude readout A_s → A_s f_Γ. This shifts the active S₈ point to 0.811 with a +1.1σ pull against the current weak-lensing target."
   },
   {
     "name": "Observer Boundary (x_crit)",
     "channel": "static",
     "quantum_input": "Projection map finite domain, Q = 1+γ²",
     "classical_output": "x_crit = Q^(−1/4) = 0.9864",
-    "constants": ["1+γ²", "Q"],
+    "constants": [
+      "1+γ²",
+      "Q"
+    ],
     "prediction": "x_crit = 0.9864 (~6.6 Gyr from now)",
     "observation": "N/A (future prediction)",
     "residual": "N/A",
     "status": "DERIVED/SCOPED",
-    "papers": [32],
+    "papers": [
+      32
+    ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Published Paper 32 source-block result preserved as an archive-side prediction. It is not used as the current active i.i.d. homepage scorecard pending rebuild."
+    "summary": "Paper 32 source-block boundary result on the active Paper 10 legacy branch. It fixes where the active scalar optical observer channel terminates."
   },
   {
     "name": "Hubble Constant (H₀)",
     "channel": "static",
     "quantum_input": "Projected Hamiltonian constraint readout",
     "classical_output": "H₀ = 67.58 km/s/Mpc",
-    "constants": ["x", "Δ"],
+    "constants": [
+      "x",
+      "Δ"
+    ],
     "prediction": "67.58 km/s/Mpc",
     "observation": "67.4 ± 0.5 (Planck) / 68.3 ± 1.0 (ACT) / 73.04 ± 1.04 (SH0ES)",
     "residual": "+0.35σ vs Planck / −0.72σ vs ACT / −5.25σ vs SH0ES",
     "status": "DERIVED",
-    "papers": [10, 18, 19, 29],
+    "papers": [
+      10,
+      18,
+      19,
+      29
+    ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "The projected Hubble rate on the active i.i.d. branch sits close to early-universe inferences and below SH0ES."
+    "summary": "The projected Hubble rate on the active Paper 10 legacy branch sits close to early-universe inferences and below SH0ES."
   },
   {
     "name": "Cosmic Chronometers",
     "channel": "static",
-    "quantum_input": "Projected Hamiltonian constraint on the closed i.i.d. observer background",
+    "quantum_input": "Projected Hamiltonian constraint on the closed Paper 10 legacy observer background",
     "classical_output": "CC χ² = 14.70 on 35 H(z) points",
-    "constants": ["H₀", "Ω_m", "Ω_k", "Ω_Λ", "Ω_r"],
+    "constants": [
+      "H₀",
+      "Ω_m",
+      "Ω_k",
+      "Ω_Λ",
+      "Ω_r"
+    ],
     "prediction": "χ² = 14.70 (35 pts)",
     "observation": "Planck fixed reference χ² = 15.15 on the same compilation",
     "residual": "Δχ² = −0.45 (IO better)",
     "status": "DERIVED",
-    "papers": [29],
+    "papers": [
+      29
+    ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "On the active i.i.d. branch, the closed K=+1 observer background gives a lower cosmic-chronometer χ² than the fixed-parameter Planck ΛCDM reference."
+    "summary": "On the active Paper 10 legacy branch, the closed K=+1 observer background gives a lower cosmic-chronometer χ² than the fixed-parameter Planck ΛCDM reference."
   },
   {
     "name": "Galaxy BAO Closure",
     "channel": "mixed",
     "quantum_input": "Hybrid drag ruler plus derived/scoped DESI DR2 GCcomb galaxy/quasar readout kernel",
     "classical_output": "BAO χ² = 27.74 on 13 galaxy/quasar points",
-    "constants": ["r_d", "ω_b,geom", "η"],
+    "constants": [
+      "r_d",
+      "ω_b,geom",
+      "η"
+    ],
     "prediction": "χ² = 27.74 (13 pts), f_⊥ = exp(η), f_∥ = exp(η/2)",
     "observation": "Planck fixed reference χ² = 31.25 on the same block",
     "residual": "Δχ² = −3.52 (derived/scoped on the DESI DR2 GCcomb galaxy/quasar block)",
     "status": "DERIVED/SCOPED",
-    "papers": [29, 31],
+    "papers": [
+      29,
+      31
+    ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The active i.i.d. branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the derived/scoped readout kernel."
+    "summary": "The active Paper 10 legacy branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the derived/scoped readout kernel."
   },
   {
     "name": "Acoustic Scale (θ_s)",
     "channel": "mixed",
     "quantum_input": "Boundary acoustic rank to CMB geometry, J_θ = x^(−1/2)√(1+γ²)",
     "classical_output": "θ* = 0.599°",
-    "constants": ["x", "γ²", "1+γ²"],
+    "constants": [
+      "x",
+      "γ²",
+      "1+γ²"
+    ],
     "prediction": "θ* = 0.599°",
     "observation": "0.59652° ± 0.00018° (Planck 2018)",
     "residual": "+0.42% on the active acoustic channel",
     "status": "DERIVED",
-    "papers": [20, 21],
+    "papers": [
+      20,
+      21
+    ],
     "zenodo": "https://zenodo.org/records/19145122/latest",
-    "summary": "The CMB acoustic angle from boundary geometry. The active site tracks the derived IO angle rather than the retired Schur-era 100θ_s value."
+    "summary": "The CMB acoustic angle from boundary geometry. The active site tracks the derived IO angle rather than the retired mixed-branch 100θ_s value."
   },
   {
     "name": "Optical Depth (τ_eff)",
     "channel": "dynamic",
     "quantum_input": "Reduced centered Gaussian source-covariance class",
     "classical_output": "τ_eff = K_gauge/2 = 0.02744",
-    "constants": ["K_gauge"],
+    "constants": [
+      "K_gauge"
+    ],
     "prediction": "0.02744",
     "observation": "0.054 ± 0.007 (Planck 2018)",
     "residual": "Scoped to source-covariance class",
     "status": "DERIVED/SCOPED",
-    "papers": [27, 31],
+    "papers": [
+      27,
+      31
+    ],
     "zenodo": "https://zenodo.org/records/19333220/latest",
     "summary": "The effective optical depth from boundary gauge weight, scoped to the reduced source class."
   },
   {
-    "name": "Recollapse Timeline",
-    "channel": "static",
-    "quantum_input": "OS cycloid with Λ dropping out of acceleration equation",
-    "classical_output": "R̈ = −c²/(2r_s), recollapse in 111 Gyr, cycle = 222 Gyr",
-    "constants": ["r_s"],
-    "prediction": "111 Gyr to recollapse",
-    "observation": "N/A (future prediction)",
+    "name": "Bounce / Recollapse",
+    "channel": "mixed",
+    "quantum_input": "Support-branch recollapse plus extended fermionic/chiral IO-EC bounce attachment",
+    "classical_output": "Recollapse in 111 Gyr on the active branch; bounce attachment closes at R_eq/R_bounce = 1.00016 within the extension",
+    "constants": [
+      "r_s",
+      "Q",
+      "C_src"
+    ],
+    "prediction": "111 Gyr to recollapse; R_eq/R_bounce = 1.00016 (extended)",
+    "observation": "N/A (future / structural lifecycle prediction)",
     "residual": "N/A",
-    "status": "CONDITIONAL",
-    "papers": [32],
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Published Paper 32 lifecycle claim preserved as archive-side content. It is not treated as the current active i.i.d. numerical scorecard pending rebuild."
+    "summary": "Recollapse is derived on the active Paper 10 legacy branch. The bounce attachment is derived/scoped within the extended fermionic/chiral IO-EC theory."
   },
   {
-    "name": "Dual-Channel Architecture",
+    "name": "Growth Background Consistency",
+    "channel": "mixed",
+    "quantum_input": "Typed solver-tuple consistency across source, thermodynamics, perturbations, and transfer",
+    "classical_output": "The projected Paper 10 legacy background is the unique admissible growth background inside one active solver instantiation",
+    "constants": [
+      "H₀",
+      "Ω_m",
+      "Ω_k"
+    ],
+    "prediction": "Growth/background assignment closes on the projected Paper 10 legacy solver tuple",
+    "observation": "N/A (structural theorem)",
+    "residual": "N/A",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "Paper 32 closes the old growth-background ambiguity at scoped theorem grade: source, thermodynamics, perturbations, and transfer share one projected Paper 10 legacy solver tuple."
+  },
+  {
+    "name": "Baryon Loading No-Single-Slot",
+    "channel": "mixed",
+    "quantum_input": "Typed source/history coupling of κ′ and R in the acoustic hierarchy",
+    "classical_output": "No single theorem-grade baryon slot closes the full acoustic hierarchy",
+    "constants": [
+      "ω_b,geom",
+      "ω_b,eff",
+      "ω_b,clustering"
+    ],
+    "prediction": "(κ′, R) is irreducibly mixed; isolated local R uses ω_b,geom only in the reduced drag/inertia slot",
+    "observation": "N/A (structural theorem)",
+    "residual": "N/A",
+    "status": "DERIVED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "Paper 32 closes the baryon-loading question negatively: the full acoustic hierarchy does not admit a single carried α-rung for R, because κ′ and R form an irreducibly typed pair."
+  },
+  {
+    "name": "Bounce Normalization",
+    "channel": "fermionic",
+    "quantum_input": "Chiral lowest-shell Hawking/KMS seed plus support-conformal descent on the fermionic bridge carrier",
+    "classical_output": "C_src = (3/8)Q^(1/8) = 0.37758, with R_eq/R_bounce = 1.00016",
+    "constants": [
+      "Q",
+      "p_H",
+      "C_src"
+    ],
+    "prediction": "C_src = 0.37758, R_eq/R_bounce = 1.00016",
+    "observation": "N/A (extended-theory closure)",
+    "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "Inside the extended fermionic/chiral IO-EC theory, the bounce normalization coefficient is fixed to C_src = (3/8)Q^(1/8), closing the attachment ratio at R_eq/R_bounce = 1.00016."
+  },
+  {
+    "name": "Torsion Onset Profile",
+    "channel": "fermionic",
+    "quantum_input": "Extended fermionic/chiral bridge source on the deep-bulk support branch",
+    "classical_output": "Ξ_EC(R) = (R_eq/R)^3",
+    "constants": [
+      "R_eq",
+      "R_bounce",
+      "Q"
+    ],
+    "prediction": "1% onset at R ≈ 5.18 × 10⁻¹⁵ m; 0.1% onset at R ≈ 1.12 × 10⁻¹⁴ m",
+    "observation": "N/A (extended-theory prediction)",
+    "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "The extended fermionic/chiral IO-EC theory predicts the full deep-bulk torsion turn-on law Ξ_EC(R) = (R_eq/R)^3, giving a second quantitative payoff beyond the single bounce attachment radius."
+  },
+  {
+    "name": "Spin-Source Lift",
+    "channel": "fermionic",
+    "quantum_input": "Boundary puncture/chirality/lowest-shell quotient",
+    "classical_output": "P_spin(R) = C_R ∘ U_rad(R) ∘ Π_low ∘ Π_χ ∘ Π_{1/2}",
+    "constants": [
+      "N_1/2",
+      "p_H",
+      "Q"
+    ],
+    "prediction": "Boundary spinor data coarse-grain to a Weyssenhoff-type bulk source with R^(−6) spin-density scaling",
+    "observation": "N/A (construction theorem)",
+    "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      32
+    ],
+    "zenodo": "https://zenodo.org/records/19433686/latest",
+    "summary": "The new fermionic bridge sector constructs the spin-source lift P_spin(R), carrying lowest-shell chiral boundary data into the deep-bulk support branch and producing the EC-compatible R^(−6) spin-density scaling."
+  },
+  {
+    "name": "Three-Language Architecture",
     "channel": "mixed",
     "quantum_input": "Full boundary-to-bulk atlas across the 33-paper archive",
-    "classical_output": "The bridge separates into a static geometric baseline and a dynamic thermal channel",
-    "constants": ["γ", "γ²", "1+γ²", "K_gauge", "x", "Δ"],
-    "prediction": "Two-channel bridge architecture",
+    "classical_output": "The bridge now reads as three languages: static geometric, dynamic thermal, and fermionic density-gated",
+    "constants": [
+      "γ",
+      "γ²",
+      "1+γ²",
+      "K_gauge",
+      "x",
+      "Δ"
+    ],
+    "prediction": "Three-language bridge architecture",
     "observation": "Archive-side organizing result from Papers 1-33",
     "residual": "N/A",
     "status": "THEOREM",
-    "papers": [33],
+    "papers": [
+      33
+    ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "Paper 33 recasts the archive stack as a boundary-to-bulk atlas with two live export channels rather than a single universal bridge."
+    "summary": "Paper 33 reframes the archive stack as three bridge languages: a static geometric language, a dynamic thermal language, and a fermionic density-gated language for the deep-bulk bounce sector."
   },
   {
     "name": "Holographic Selection Rule",
     "channel": "dynamic",
     "quantum_input": "KMS modular structure and typed boundary synchronization",
     "classical_output": "Dynamic bridge exports open only on the boundary-synchronized non-vacuum typed domain",
-    "constants": ["1+γ²", "K_gauge"],
+    "constants": [
+      "1+γ²",
+      "K_gauge"
+    ],
     "prediction": "State-gated dynamic-channel rule",
     "observation": "Explains why BBN is positive while zero-temperature g−2 is outside the live domain",
     "residual": "N/A",
     "status": "DERIVED/SCOPED",
-    "papers": [33],
+    "papers": [
+      33
+    ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "summary": "The IO bridge is not universally on. Dynamic exports require typed, boundary-synchronized, non-vacuum contact."
   },
@@ -312,12 +582,17 @@
     "channel": "dynamic",
     "quantum_input": "Bridge statistical covariance in the centered thermal weak correlator",
     "classical_output": "Thermal rates can shift without modifying the local zero-temperature QFT vertex",
-    "constants": ["1+γ²", "K_gauge"],
+    "constants": [
+      "1+γ²",
+      "K_gauge"
+    ],
     "prediction": "Same local vertex, different state/covariance carrier",
     "observation": "Carrier identified for the weak BBN channel; ambient-extension independence remains scoped",
     "residual": "N/A",
     "status": "DERIVED/SCOPED",
-    "papers": [33],
+    "papers": [
+      33
+    ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "summary": "Paper 33 locates the dressing mechanism in bridge statistical covariance rather than in UV counterterms or a modified local interaction vertex."
   },
@@ -326,12 +601,17 @@
     "channel": "static",
     "quantum_input": "Static geometric complement of the baryon gauge-coupled inventory",
     "classical_output": "Dark matter can be interpreted as the non-gauge-coupled geometric remainder of OS dust",
-    "constants": ["γ", "x"],
+    "constants": [
+      "γ",
+      "x"
+    ],
     "prediction": "Geometric reinterpretation of the dark sector complement",
     "observation": "Alternative IO reading of the baryon/dust split",
     "residual": "N/A",
     "status": "CONDITIONAL",
-    "papers": [33],
+    "papers": [
+      33
+    ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "summary": "Paper 33 proposes a geometric dark-matter reading as the complement to the SU(2)-selected baryon inventory rather than a new particle sector."
   },
@@ -345,7 +625,9 @@
     "observation": "a_μ(exp) = 0.00116592071 (Fermilab 2025)",
     "residual": "Consistent if WP25 confirms no anomaly",
     "status": "NO-GO / CONDITIONAL EXPECTATION",
-    "papers": [33],
+    "papers": [
+      33
+    ],
     "zenodo": "",
     "summary": "The bridge is closed for zero-temperature collider measurements. Five mechanisms were tried and all five failed."
   }

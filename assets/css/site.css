@@ -13,6 +13,7 @@
   --static: #4caf50;
   --dynamic: #ff9800;
   --mixed: #9c27b0;
+  --fermionic: #b23a48;
   --outside: #607d8b;
   --status-derived: #1e88e5;
   --status-theorem: #00897b;
@@ -476,6 +477,10 @@ input {
   --channel: var(--mixed);
 }
 
+.channel-card.fermionic {
+  --channel: var(--fermionic);
+}
+
 .channel-title,
 .lane-title,
 .paper-title,
@@ -713,6 +718,10 @@ input {
 
 .highlight-card.mixed {
   --channel: var(--mixed);
+}
+
+.highlight-card.fermionic {
+  --channel: var(--fermionic);
 }
 
 .highlight-card.outside {
@@ -979,6 +988,10 @@ input {
   --channel: var(--mixed);
 }
 
+.node.fermionic {
+  --channel: var(--fermionic);
+}
+
 .node.outside {
   --channel: var(--outside);
 }
@@ -1017,6 +1030,10 @@ input {
 
 .badge.mixed {
   --channel: var(--mixed);
+}
+
+.badge.fermionic {
+  --channel: var(--fermionic);
 }
 
 .badge.outside {

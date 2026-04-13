@@ -14,6 +14,11 @@ const CHANNEL_META = {
     className: "mixed",
     summary: "Source, transport, and history layers that do not reduce to a single static or thermal rule."
   },
+  fermionic: {
+    label: "Fermionic (density-gated)",
+    className: "fermionic",
+    summary: "Deep-bulk spinor and torsion bridge sectors that open only near the Planck-density seam."
+  },
   outside: {
     label: "Outside Domain",
     className: "outside",
@@ -21,7 +26,7 @@ const CHANNEL_META = {
   }
 };
 
-const CHANNEL_ORDER = ["static", "dynamic", "mixed", "outside"];
+const CHANNEL_ORDER = ["static", "dynamic", "mixed", "fermionic", "outside"];
 
 const state = {
   crossings: [],
