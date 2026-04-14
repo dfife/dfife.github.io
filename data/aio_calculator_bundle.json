@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-14T21:57:07.514491+00:00",
+    "generated_at_utc": "2026-04-14T22:13:54.884904+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
@@ -605,7 +605,17 @@
         "/opt/cosmology-lab/AGENTS.md"
       ],
       "depends_on": [],
-      "notes": []
+      "premises": [],
+      "proof_outline": [
+        "This node is declared as a working premise of the calculator rather than proved internally.",
+        "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+      ],
+      "scope_boundary": [
+        "Applies only as a lab working assumption for IO model-building.",
+        "Not presented here as an empirically established theorem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "premise.2": {
       "node_id": "premise.2",
@@ -618,7 +628,17 @@
         "/opt/cosmology-lab/AGENTS.md"
       ],
       "depends_on": [],
-      "notes": []
+      "premises": [],
+      "proof_outline": [
+        "This node is declared as a working premise of the calculator rather than proved internally.",
+        "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+      ],
+      "scope_boundary": [
+        "Applies only as a lab working assumption for IO model-building.",
+        "Not presented here as an empirically established theorem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper21.branch_assignment": {
       "node_id": "paper21.branch_assignment",
@@ -634,7 +654,21 @@
         "premise.1",
         "premise.2"
       ],
-      "notes": []
+      "premises": [
+        "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+        "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+      ],
+      "proof_outline": [
+        "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+        "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+        "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+      ],
+      "scope_boundary": [
+        "Applies only to the calculator's carried active package.",
+        "Does not assert uniqueness of the branch outside the published runtime surface."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper30.background_surface": {
       "node_id": "paper30.background_surface",
@@ -649,7 +683,21 @@
       "depends_on": [
         "paper21.branch_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`paper21.branch_assignment` fixes the active branch package.",
+        "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+      ],
+      "proof_outline": [
+        "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+        "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+        "Use the carried branch value consistently across the public background and BAO surfaces."
+      ],
+      "scope_boundary": [
+        "Observer-side closed-FRW background geometry on the fixed active branch only.",
+        "Does not by itself determine a full perturbation transfer solver."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper31.geometric_pre_drag_ruler": {
       "node_id": "paper31.geometric_pre_drag_ruler",
@@ -664,7 +712,21 @@
       "depends_on": [
         "paper21.branch_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+        "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+      ],
+      "proof_outline": [
+        "Take the geometric pre-drag ruler computed on the active branch package.",
+        "Expose that carried value as the calculator's published `r_d` slot.",
+        "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+      ],
+      "scope_boundary": [
+        "Active-branch ruler slot only.",
+        "Does not claim a universal branch-independent drag-ruler theorem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper31.baryon_assignment": {
       "node_id": "paper31.baryon_assignment",
@@ -679,7 +741,21 @@
       "depends_on": [
         "paper21.branch_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`paper21.branch_assignment` fixes the active branch package.",
+        "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+      ],
+      "proof_outline": [
+        "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+        "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+        "Propagate that slot choice into the local background-state and opacity chains."
+      ],
+      "scope_boundary": [
+        "Typed baryon assignment on the fixed active branch only.",
+        "Does not assert a theorem-grade completion of every possible chemistry closure."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper31.local_background_state_map": {
       "node_id": "paper31.local_background_state_map",
@@ -695,7 +771,21 @@
         "paper21.branch_assignment",
         "paper31.baryon_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`paper21.branch_assignment` fixes the active branch package.",
+        "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+      ],
+      "proof_outline": [
+        "Start from the active-branch closed background and the typed chemistry slot.",
+        "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+        "Export those primitives as calculator-visible local-state quantities."
+      ],
+      "scope_boundary": [
+        "Local recombination background-state primitives on the fixed active branch.",
+        "Does not by itself close the exact dynamic-network recombination problem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper31.recombination_clock_transport": {
       "node_id": "paper31.recombination_clock_transport",
@@ -710,7 +800,21 @@
       "depends_on": [
         "paper31.local_background_state_map"
       ],
-      "notes": []
+      "premises": [
+        "`paper31.local_background_state_map` provides the local branch background state.",
+        "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+      ],
+      "proof_outline": [
+        "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+        "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+        "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+      ],
+      "scope_boundary": [
+        "Primitive local opacity and LOS clock transport on the active branch.",
+        "Not a theorem-grade exact dynamic-network recombination closure."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper32.closed_s3_solver_spec": {
       "node_id": "paper32.closed_s3_solver_spec",
@@ -726,7 +830,21 @@
         "premise.1",
         "premise.2"
       ],
-      "notes": []
+      "premises": [
+        "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+        "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+      ],
+      "proof_outline": [
+        "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+        "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+        "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+      ],
+      "scope_boundary": [
+        "Geometry specification for the IO transfer stack.",
+        "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper35.eta_io_late_closure": {
       "node_id": "paper35.eta_io_late_closure",
@@ -741,7 +859,21 @@
       "depends_on": [
         "paper21.branch_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`paper21.branch_assignment` fixes the active branch package.",
+        "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+      ],
+      "proof_outline": [
+        "Take the Paper 35 late-time closure result on the active branch.",
+        "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+        "Expose the convention directly through the calculator and bundle."
+      ],
+      "scope_boundary": [
+        "Preferred late-time `eta_IO` convention on the active branch.",
+        "Does not claim that every alternative mass convention is closed to theorem grade."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper36.phase_equivalent_selector": {
       "node_id": "paper36.phase_equivalent_selector",
@@ -758,7 +890,22 @@
         "premise.2",
         "paper21.branch_assignment"
       ],
-      "notes": []
+      "premises": [
+        "`premise.1` and `premise.2` fix the IO setting.",
+        "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+        "The strict-bare selector interval is certified monotone on its published domain."
+      ],
+      "proof_outline": [
+        "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+        "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+        "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+      ],
+      "scope_boundary": [
+        "Strict-bare selector backbone on the certified interval.",
+        "Does not by itself identify which leaf is physical on the active branch."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.packet_coefficient_fixing": {
       "node_id": "paper37.packet_coefficient_fixing",
@@ -774,7 +921,21 @@
       "depends_on": [
         "paper36.phase_equivalent_selector"
       ],
-      "notes": []
+      "premises": [
+        "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+        "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+      ],
+      "proof_outline": [
+        "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+        "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+        "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+      ],
+      "scope_boundary": [
+        "Packet-law closure on the surviving active endpoint family.",
+        "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.highz_tail_slaving": {
       "node_id": "paper37.highz_tail_slaving",
@@ -789,7 +950,21 @@
       "depends_on": [
         "paper37.packet_coefficient_fixing"
       ],
-      "notes": []
+      "premises": [
+        "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+        "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+      ],
+      "proof_outline": [
+        "Audit the continuation of the active endpoint family above the reduced packet support.",
+        "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+        "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+      ],
+      "scope_boundary": [
+        "Support decomposition on the active endpoint family.",
+        "Does not by itself identify the physical selector leaf."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.peak_window_tail_profile_audit": {
       "node_id": "paper37.peak_window_tail_profile_audit",
@@ -804,7 +979,21 @@
       "depends_on": [
         "paper37.highz_tail_slaving"
       ],
-      "notes": []
+      "premises": [
+        "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+        "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+      ],
+      "proof_outline": [
+        "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+        "Measure the remaining mismatch on the peak window and show that it is tiny.",
+        "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+      ],
+      "scope_boundary": [
+        "First-peak TT parent-profile audit on the active endpoint family.",
+        "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.selector_support_promotion": {
       "node_id": "paper37.selector_support_promotion",
@@ -821,7 +1010,21 @@
         "paper37.highz_tail_slaving",
         "paper37.peak_window_tail_profile_audit"
       ],
-      "notes": []
+      "premises": [
+        "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+        "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+      ],
+      "proof_outline": [
+        "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+        "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+        "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+      ],
+      "scope_boundary": [
+        "Carried active-branch physical selector leaf only.",
+        "Does not establish a universal selector-promotion theorem off branch."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.active_branch_theta_star": {
       "node_id": "paper37.active_branch_theta_star",
@@ -837,7 +1040,22 @@
         "paper37.selector_support_promotion",
         "paper36.phase_equivalent_selector"
       ],
-      "notes": []
+      "premises": [
+        "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+        "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+      ],
+      "proof_outline": [
+        "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+        "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+        "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+      ],
+      "scope_boundary": [
+        "Fixed active Paper 10 legacy projected branch only.",
+        "Theorem-grade numeric closure on the carried selector leaf only.",
+        "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     }
   },
   "explained_output_specs": {
@@ -1018,7 +1236,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "premise.2": {
             "node_id": "premise.2",
@@ -1031,7 +1259,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper21.branch_assignment": {
             "node_id": "paper21.branch_assignment",
@@ -1047,7 +1285,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+              "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+            ],
+            "proof_outline": [
+              "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+            ],
+            "scope_boundary": [
+              "Applies only to the calculator's carried active package.",
+              "Does not assert uniqueness of the branch outside the published runtime surface."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
@@ -1062,7 +1314,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+            ],
+            "proof_outline": [
+              "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+              "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+              "Use the carried branch value consistently across the public background and BAO surfaces."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-FRW background geometry on the fixed active branch only.",
+              "Does not by itself determine a full perturbation transfer solver."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.geometric_pre_drag_ruler": {
             "node_id": "paper31.geometric_pre_drag_ruler",
@@ -1077,7 +1343,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+              "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+            ],
+            "proof_outline": [
+              "Take the geometric pre-drag ruler computed on the active branch package.",
+              "Expose that carried value as the calculator's published `r_d` slot.",
+              "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+            ],
+            "scope_boundary": [
+              "Active-branch ruler slot only.",
+              "Does not claim a universal branch-independent drag-ruler theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.baryon_assignment": {
             "node_id": "paper31.baryon_assignment",
@@ -1092,7 +1372,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+            ],
+            "proof_outline": [
+              "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+              "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+              "Propagate that slot choice into the local background-state and opacity chains."
+            ],
+            "scope_boundary": [
+              "Typed baryon assignment on the fixed active branch only.",
+              "Does not assert a theorem-grade completion of every possible chemistry closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.local_background_state_map": {
             "node_id": "paper31.local_background_state_map",
@@ -1108,7 +1402,21 @@
               "paper21.branch_assignment",
               "paper31.baryon_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+            ],
+            "proof_outline": [
+              "Start from the active-branch closed background and the typed chemistry slot.",
+              "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+              "Export those primitives as calculator-visible local-state quantities."
+            ],
+            "scope_boundary": [
+              "Local recombination background-state primitives on the fixed active branch.",
+              "Does not by itself close the exact dynamic-network recombination problem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.recombination_clock_transport": {
             "node_id": "paper31.recombination_clock_transport",
@@ -1123,7 +1431,21 @@
             "depends_on": [
               "paper31.local_background_state_map"
             ],
-            "notes": []
+            "premises": [
+              "`paper31.local_background_state_map` provides the local branch background state.",
+              "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+            ],
+            "proof_outline": [
+              "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+              "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+              "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+            ],
+            "scope_boundary": [
+              "Primitive local opacity and LOS clock transport on the active branch.",
+              "Not a theorem-grade exact dynamic-network recombination closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper32.closed_s3_solver_spec": {
             "node_id": "paper32.closed_s3_solver_spec",
@@ -1139,7 +1461,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+              "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+            ],
+            "proof_outline": [
+              "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+              "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+              "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+            ],
+            "scope_boundary": [
+              "Geometry specification for the IO transfer stack.",
+              "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper35.eta_io_late_closure": {
             "node_id": "paper35.eta_io_late_closure",
@@ -1154,7 +1490,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+            ],
+            "proof_outline": [
+              "Take the Paper 35 late-time closure result on the active branch.",
+              "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+              "Expose the convention directly through the calculator and bundle."
+            ],
+            "scope_boundary": [
+              "Preferred late-time `eta_IO` convention on the active branch.",
+              "Does not claim that every alternative mass convention is closed to theorem grade."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
@@ -1171,7 +1521,22 @@
               "premise.2",
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting.",
+              "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+              "The strict-bare selector interval is certified monotone on its published domain."
+            ],
+            "proof_outline": [
+              "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+              "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+              "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+            ],
+            "scope_boundary": [
+              "Strict-bare selector backbone on the certified interval.",
+              "Does not by itself identify which leaf is physical on the active branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
@@ -1187,7 +1552,21 @@
             "depends_on": [
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+              "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+            ],
+            "proof_outline": [
+              "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+              "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+              "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+            ],
+            "scope_boundary": [
+              "Packet-law closure on the surviving active endpoint family.",
+              "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
@@ -1202,7 +1581,21 @@
             "depends_on": [
               "paper37.packet_coefficient_fixing"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+              "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+            ],
+            "proof_outline": [
+              "Audit the continuation of the active endpoint family above the reduced packet support.",
+              "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+              "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+            ],
+            "scope_boundary": [
+              "Support decomposition on the active endpoint family.",
+              "Does not by itself identify the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
@@ -1217,7 +1610,21 @@
             "depends_on": [
               "paper37.highz_tail_slaving"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+              "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+            ],
+            "proof_outline": [
+              "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+              "Measure the remaining mismatch on the peak window and show that it is tiny.",
+              "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+            ],
+            "scope_boundary": [
+              "First-peak TT parent-profile audit on the active endpoint family.",
+              "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
@@ -1234,7 +1641,21 @@
               "paper37.highz_tail_slaving",
               "paper37.peak_window_tail_profile_audit"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+              "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+            ],
+            "proof_outline": [
+              "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+              "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+              "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+            ],
+            "scope_boundary": [
+              "Carried active-branch physical selector leaf only.",
+              "Does not establish a universal selector-promotion theorem off branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
@@ -1250,7 +1671,22 @@
               "paper37.selector_support_promotion",
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+              "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+            ],
+            "proof_outline": [
+              "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+              "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+              "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+            ],
+            "scope_boundary": [
+              "Fixed active Paper 10 legacy projected branch only.",
+              "Theorem-grade numeric closure on the carried selector leaf only.",
+              "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           }
         }
       }
@@ -1302,7 +1738,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "premise.2": {
             "node_id": "premise.2",
@@ -1315,7 +1761,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper21.branch_assignment": {
             "node_id": "paper21.branch_assignment",
@@ -1331,7 +1787,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+              "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+            ],
+            "proof_outline": [
+              "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+            ],
+            "scope_boundary": [
+              "Applies only to the calculator's carried active package.",
+              "Does not assert uniqueness of the branch outside the published runtime surface."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
@@ -1346,7 +1816,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+            ],
+            "proof_outline": [
+              "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+              "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+              "Use the carried branch value consistently across the public background and BAO surfaces."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-FRW background geometry on the fixed active branch only.",
+              "Does not by itself determine a full perturbation transfer solver."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.geometric_pre_drag_ruler": {
             "node_id": "paper31.geometric_pre_drag_ruler",
@@ -1361,7 +1845,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+              "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+            ],
+            "proof_outline": [
+              "Take the geometric pre-drag ruler computed on the active branch package.",
+              "Expose that carried value as the calculator's published `r_d` slot.",
+              "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+            ],
+            "scope_boundary": [
+              "Active-branch ruler slot only.",
+              "Does not claim a universal branch-independent drag-ruler theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.baryon_assignment": {
             "node_id": "paper31.baryon_assignment",
@@ -1376,7 +1874,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+            ],
+            "proof_outline": [
+              "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+              "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+              "Propagate that slot choice into the local background-state and opacity chains."
+            ],
+            "scope_boundary": [
+              "Typed baryon assignment on the fixed active branch only.",
+              "Does not assert a theorem-grade completion of every possible chemistry closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.local_background_state_map": {
             "node_id": "paper31.local_background_state_map",
@@ -1392,7 +1904,21 @@
               "paper21.branch_assignment",
               "paper31.baryon_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+            ],
+            "proof_outline": [
+              "Start from the active-branch closed background and the typed chemistry slot.",
+              "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+              "Export those primitives as calculator-visible local-state quantities."
+            ],
+            "scope_boundary": [
+              "Local recombination background-state primitives on the fixed active branch.",
+              "Does not by itself close the exact dynamic-network recombination problem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.recombination_clock_transport": {
             "node_id": "paper31.recombination_clock_transport",
@@ -1407,7 +1933,21 @@
             "depends_on": [
               "paper31.local_background_state_map"
             ],
-            "notes": []
+            "premises": [
+              "`paper31.local_background_state_map` provides the local branch background state.",
+              "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+            ],
+            "proof_outline": [
+              "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+              "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+              "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+            ],
+            "scope_boundary": [
+              "Primitive local opacity and LOS clock transport on the active branch.",
+              "Not a theorem-grade exact dynamic-network recombination closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper32.closed_s3_solver_spec": {
             "node_id": "paper32.closed_s3_solver_spec",
@@ -1423,7 +1963,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+              "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+            ],
+            "proof_outline": [
+              "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+              "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+              "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+            ],
+            "scope_boundary": [
+              "Geometry specification for the IO transfer stack.",
+              "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper35.eta_io_late_closure": {
             "node_id": "paper35.eta_io_late_closure",
@@ -1438,7 +1992,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+            ],
+            "proof_outline": [
+              "Take the Paper 35 late-time closure result on the active branch.",
+              "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+              "Expose the convention directly through the calculator and bundle."
+            ],
+            "scope_boundary": [
+              "Preferred late-time `eta_IO` convention on the active branch.",
+              "Does not claim that every alternative mass convention is closed to theorem grade."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
@@ -1455,7 +2023,22 @@
               "premise.2",
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting.",
+              "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+              "The strict-bare selector interval is certified monotone on its published domain."
+            ],
+            "proof_outline": [
+              "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+              "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+              "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+            ],
+            "scope_boundary": [
+              "Strict-bare selector backbone on the certified interval.",
+              "Does not by itself identify which leaf is physical on the active branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
@@ -1471,7 +2054,21 @@
             "depends_on": [
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+              "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+            ],
+            "proof_outline": [
+              "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+              "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+              "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+            ],
+            "scope_boundary": [
+              "Packet-law closure on the surviving active endpoint family.",
+              "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
@@ -1486,7 +2083,21 @@
             "depends_on": [
               "paper37.packet_coefficient_fixing"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+              "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+            ],
+            "proof_outline": [
+              "Audit the continuation of the active endpoint family above the reduced packet support.",
+              "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+              "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+            ],
+            "scope_boundary": [
+              "Support decomposition on the active endpoint family.",
+              "Does not by itself identify the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
@@ -1501,7 +2112,21 @@
             "depends_on": [
               "paper37.highz_tail_slaving"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+              "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+            ],
+            "proof_outline": [
+              "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+              "Measure the remaining mismatch on the peak window and show that it is tiny.",
+              "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+            ],
+            "scope_boundary": [
+              "First-peak TT parent-profile audit on the active endpoint family.",
+              "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
@@ -1518,7 +2143,21 @@
               "paper37.highz_tail_slaving",
               "paper37.peak_window_tail_profile_audit"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+              "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+            ],
+            "proof_outline": [
+              "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+              "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+              "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+            ],
+            "scope_boundary": [
+              "Carried active-branch physical selector leaf only.",
+              "Does not establish a universal selector-promotion theorem off branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
@@ -1534,7 +2173,22 @@
               "paper37.selector_support_promotion",
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+              "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+            ],
+            "proof_outline": [
+              "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+              "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+              "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+            ],
+            "scope_boundary": [
+              "Fixed active Paper 10 legacy projected branch only.",
+              "Theorem-grade numeric closure on the carried selector leaf only.",
+              "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           }
         }
       }
@@ -1586,7 +2240,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "premise.2": {
             "node_id": "premise.2",
@@ -1599,7 +2263,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper21.branch_assignment": {
             "node_id": "paper21.branch_assignment",
@@ -1615,7 +2289,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+              "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+            ],
+            "proof_outline": [
+              "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+            ],
+            "scope_boundary": [
+              "Applies only to the calculator's carried active package.",
+              "Does not assert uniqueness of the branch outside the published runtime surface."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
@@ -1630,7 +2318,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+            ],
+            "proof_outline": [
+              "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+              "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+              "Use the carried branch value consistently across the public background and BAO surfaces."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-FRW background geometry on the fixed active branch only.",
+              "Does not by itself determine a full perturbation transfer solver."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.geometric_pre_drag_ruler": {
             "node_id": "paper31.geometric_pre_drag_ruler",
@@ -1645,7 +2347,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+              "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+            ],
+            "proof_outline": [
+              "Take the geometric pre-drag ruler computed on the active branch package.",
+              "Expose that carried value as the calculator's published `r_d` slot.",
+              "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+            ],
+            "scope_boundary": [
+              "Active-branch ruler slot only.",
+              "Does not claim a universal branch-independent drag-ruler theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.baryon_assignment": {
             "node_id": "paper31.baryon_assignment",
@@ -1660,7 +2376,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+            ],
+            "proof_outline": [
+              "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+              "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+              "Propagate that slot choice into the local background-state and opacity chains."
+            ],
+            "scope_boundary": [
+              "Typed baryon assignment on the fixed active branch only.",
+              "Does not assert a theorem-grade completion of every possible chemistry closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.local_background_state_map": {
             "node_id": "paper31.local_background_state_map",
@@ -1676,7 +2406,21 @@
               "paper21.branch_assignment",
               "paper31.baryon_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+            ],
+            "proof_outline": [
+              "Start from the active-branch closed background and the typed chemistry slot.",
+              "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+              "Export those primitives as calculator-visible local-state quantities."
+            ],
+            "scope_boundary": [
+              "Local recombination background-state primitives on the fixed active branch.",
+              "Does not by itself close the exact dynamic-network recombination problem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.recombination_clock_transport": {
             "node_id": "paper31.recombination_clock_transport",
@@ -1691,7 +2435,21 @@
             "depends_on": [
               "paper31.local_background_state_map"
             ],
-            "notes": []
+            "premises": [
+              "`paper31.local_background_state_map` provides the local branch background state.",
+              "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+            ],
+            "proof_outline": [
+              "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+              "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+              "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+            ],
+            "scope_boundary": [
+              "Primitive local opacity and LOS clock transport on the active branch.",
+              "Not a theorem-grade exact dynamic-network recombination closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper32.closed_s3_solver_spec": {
             "node_id": "paper32.closed_s3_solver_spec",
@@ -1707,7 +2465,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+              "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+            ],
+            "proof_outline": [
+              "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+              "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+              "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+            ],
+            "scope_boundary": [
+              "Geometry specification for the IO transfer stack.",
+              "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper35.eta_io_late_closure": {
             "node_id": "paper35.eta_io_late_closure",
@@ -1722,7 +2494,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+            ],
+            "proof_outline": [
+              "Take the Paper 35 late-time closure result on the active branch.",
+              "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+              "Expose the convention directly through the calculator and bundle."
+            ],
+            "scope_boundary": [
+              "Preferred late-time `eta_IO` convention on the active branch.",
+              "Does not claim that every alternative mass convention is closed to theorem grade."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
@@ -1739,7 +2525,22 @@
               "premise.2",
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting.",
+              "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+              "The strict-bare selector interval is certified monotone on its published domain."
+            ],
+            "proof_outline": [
+              "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+              "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+              "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+            ],
+            "scope_boundary": [
+              "Strict-bare selector backbone on the certified interval.",
+              "Does not by itself identify which leaf is physical on the active branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
@@ -1755,7 +2556,21 @@
             "depends_on": [
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+              "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+            ],
+            "proof_outline": [
+              "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+              "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+              "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+            ],
+            "scope_boundary": [
+              "Packet-law closure on the surviving active endpoint family.",
+              "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
@@ -1770,7 +2585,21 @@
             "depends_on": [
               "paper37.packet_coefficient_fixing"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+              "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+            ],
+            "proof_outline": [
+              "Audit the continuation of the active endpoint family above the reduced packet support.",
+              "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+              "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+            ],
+            "scope_boundary": [
+              "Support decomposition on the active endpoint family.",
+              "Does not by itself identify the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
@@ -1785,7 +2614,21 @@
             "depends_on": [
               "paper37.highz_tail_slaving"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+              "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+            ],
+            "proof_outline": [
+              "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+              "Measure the remaining mismatch on the peak window and show that it is tiny.",
+              "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+            ],
+            "scope_boundary": [
+              "First-peak TT parent-profile audit on the active endpoint family.",
+              "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
@@ -1802,7 +2645,21 @@
               "paper37.highz_tail_slaving",
               "paper37.peak_window_tail_profile_audit"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+              "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+            ],
+            "proof_outline": [
+              "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+              "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+              "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+            ],
+            "scope_boundary": [
+              "Carried active-branch physical selector leaf only.",
+              "Does not establish a universal selector-promotion theorem off branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
@@ -1818,7 +2675,22 @@
               "paper37.selector_support_promotion",
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+              "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+            ],
+            "proof_outline": [
+              "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+              "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+              "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+            ],
+            "scope_boundary": [
+              "Fixed active Paper 10 legacy projected branch only.",
+              "Theorem-grade numeric closure on the carried selector leaf only.",
+              "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           }
         }
       }
@@ -1885,7 +2757,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "premise.2": {
             "node_id": "premise.2",
@@ -1898,7 +2780,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper21.branch_assignment": {
             "node_id": "paper21.branch_assignment",
@@ -1914,7 +2806,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+              "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+            ],
+            "proof_outline": [
+              "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+            ],
+            "scope_boundary": [
+              "Applies only to the calculator's carried active package.",
+              "Does not assert uniqueness of the branch outside the published runtime surface."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
@@ -1929,7 +2835,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+            ],
+            "proof_outline": [
+              "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+              "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+              "Use the carried branch value consistently across the public background and BAO surfaces."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-FRW background geometry on the fixed active branch only.",
+              "Does not by itself determine a full perturbation transfer solver."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.geometric_pre_drag_ruler": {
             "node_id": "paper31.geometric_pre_drag_ruler",
@@ -1944,7 +2864,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+              "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+            ],
+            "proof_outline": [
+              "Take the geometric pre-drag ruler computed on the active branch package.",
+              "Expose that carried value as the calculator's published `r_d` slot.",
+              "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+            ],
+            "scope_boundary": [
+              "Active-branch ruler slot only.",
+              "Does not claim a universal branch-independent drag-ruler theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.baryon_assignment": {
             "node_id": "paper31.baryon_assignment",
@@ -1959,7 +2893,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+            ],
+            "proof_outline": [
+              "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+              "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+              "Propagate that slot choice into the local background-state and opacity chains."
+            ],
+            "scope_boundary": [
+              "Typed baryon assignment on the fixed active branch only.",
+              "Does not assert a theorem-grade completion of every possible chemistry closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.local_background_state_map": {
             "node_id": "paper31.local_background_state_map",
@@ -1975,7 +2923,21 @@
               "paper21.branch_assignment",
               "paper31.baryon_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+            ],
+            "proof_outline": [
+              "Start from the active-branch closed background and the typed chemistry slot.",
+              "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+              "Export those primitives as calculator-visible local-state quantities."
+            ],
+            "scope_boundary": [
+              "Local recombination background-state primitives on the fixed active branch.",
+              "Does not by itself close the exact dynamic-network recombination problem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.recombination_clock_transport": {
             "node_id": "paper31.recombination_clock_transport",
@@ -1990,7 +2952,21 @@
             "depends_on": [
               "paper31.local_background_state_map"
             ],
-            "notes": []
+            "premises": [
+              "`paper31.local_background_state_map` provides the local branch background state.",
+              "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+            ],
+            "proof_outline": [
+              "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+              "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+              "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+            ],
+            "scope_boundary": [
+              "Primitive local opacity and LOS clock transport on the active branch.",
+              "Not a theorem-grade exact dynamic-network recombination closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper32.closed_s3_solver_spec": {
             "node_id": "paper32.closed_s3_solver_spec",
@@ -2006,7 +2982,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+              "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+            ],
+            "proof_outline": [
+              "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+              "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+              "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+            ],
+            "scope_boundary": [
+              "Geometry specification for the IO transfer stack.",
+              "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper35.eta_io_late_closure": {
             "node_id": "paper35.eta_io_late_closure",
@@ -2021,7 +3011,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+            ],
+            "proof_outline": [
+              "Take the Paper 35 late-time closure result on the active branch.",
+              "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+              "Expose the convention directly through the calculator and bundle."
+            ],
+            "scope_boundary": [
+              "Preferred late-time `eta_IO` convention on the active branch.",
+              "Does not claim that every alternative mass convention is closed to theorem grade."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
@@ -2038,7 +3042,22 @@
               "premise.2",
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting.",
+              "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+              "The strict-bare selector interval is certified monotone on its published domain."
+            ],
+            "proof_outline": [
+              "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+              "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+              "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+            ],
+            "scope_boundary": [
+              "Strict-bare selector backbone on the certified interval.",
+              "Does not by itself identify which leaf is physical on the active branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
@@ -2054,7 +3073,21 @@
             "depends_on": [
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+              "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+            ],
+            "proof_outline": [
+              "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+              "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+              "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+            ],
+            "scope_boundary": [
+              "Packet-law closure on the surviving active endpoint family.",
+              "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
@@ -2069,7 +3102,21 @@
             "depends_on": [
               "paper37.packet_coefficient_fixing"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+              "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+            ],
+            "proof_outline": [
+              "Audit the continuation of the active endpoint family above the reduced packet support.",
+              "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+              "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+            ],
+            "scope_boundary": [
+              "Support decomposition on the active endpoint family.",
+              "Does not by itself identify the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
@@ -2084,7 +3131,21 @@
             "depends_on": [
               "paper37.highz_tail_slaving"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+              "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+            ],
+            "proof_outline": [
+              "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+              "Measure the remaining mismatch on the peak window and show that it is tiny.",
+              "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+            ],
+            "scope_boundary": [
+              "First-peak TT parent-profile audit on the active endpoint family.",
+              "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
@@ -2101,7 +3162,21 @@
               "paper37.highz_tail_slaving",
               "paper37.peak_window_tail_profile_audit"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+              "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+            ],
+            "proof_outline": [
+              "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+              "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+              "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+            ],
+            "scope_boundary": [
+              "Carried active-branch physical selector leaf only.",
+              "Does not establish a universal selector-promotion theorem off branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
@@ -2117,7 +3192,22 @@
               "paper37.selector_support_promotion",
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+              "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+            ],
+            "proof_outline": [
+              "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+              "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+              "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+            ],
+            "scope_boundary": [
+              "Fixed active Paper 10 legacy projected branch only.",
+              "Theorem-grade numeric closure on the carried selector leaf only.",
+              "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           }
         }
       }
@@ -2184,7 +3274,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.1` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "premise.2": {
             "node_id": "premise.2",
@@ -2197,7 +3297,17 @@
               "/opt/cosmology-lab/AGENTS.md"
             ],
             "depends_on": [],
-            "notes": []
+            "premises": [],
+            "proof_outline": [
+              "This node is declared as a working premise of the calculator rather than proved internally.",
+              "Any downstream node that lists `premise.2` is explicitly conditional on this premise."
+            ],
+            "scope_boundary": [
+              "Applies only as a lab working assumption for IO model-building.",
+              "Not presented here as an empirically established theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper21.branch_assignment": {
             "node_id": "paper21.branch_assignment",
@@ -2213,7 +3323,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting in which a carried active branch is meaningful.",
+              "The calculator publishes one carried active package rather than dynamically averaging over multiple branch candidates."
+            ],
+            "proof_outline": [
+              "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
+              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
+            ],
+            "scope_boundary": [
+              "Applies only to the calculator's carried active package.",
+              "Does not assert uniqueness of the branch outside the published runtime surface."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
@@ -2228,7 +3352,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "Closed-FRW background evolution on that branch is already part of the accepted runtime surface."
+            ],
+            "proof_outline": [
+              "Evaluate the active-branch closed-FRW integrals for expansion, transverse distance, radial distance, volume distance, lookback time, and age.",
+              "Export those quantities directly in the calculator without delegating geometry to a flat-space backend.",
+              "Use the carried branch value consistently across the public background and BAO surfaces."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-FRW background geometry on the fixed active branch only.",
+              "Does not by itself determine a full perturbation transfer solver."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.geometric_pre_drag_ruler": {
             "node_id": "paper31.geometric_pre_drag_ruler",
@@ -2243,7 +3381,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch on which the ruler is read.",
+              "The published BAO surface uses one carried ruler slot rather than a per-query fit parameter."
+            ],
+            "proof_outline": [
+              "Take the geometric pre-drag ruler computed on the active branch package.",
+              "Expose that carried value as the calculator's published `r_d` slot.",
+              "Use the same carried slot in `D_M/r_d`, `D_H/r_d`, and `D_V/r_d` outputs."
+            ],
+            "scope_boundary": [
+              "Active-branch ruler slot only.",
+              "Does not claim a universal branch-independent drag-ruler theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.baryon_assignment": {
             "node_id": "paper31.baryon_assignment",
@@ -2258,7 +3410,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator distinguishes typed baryon slots for geometry, chemistry, and downstream operator use."
+            ],
+            "proof_outline": [
+              "Separate the baryon inventory into typed calculator slots rather than one undifferentiated parameter.",
+              "Assign `omega_b,geom` as the chemistry density used by the live recombination primitives on the active branch.",
+              "Propagate that slot choice into the local background-state and opacity chains."
+            ],
+            "scope_boundary": [
+              "Typed baryon assignment on the fixed active branch only.",
+              "Does not assert a theorem-grade completion of every possible chemistry closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.local_background_state_map": {
             "node_id": "paper31.local_background_state_map",
@@ -2274,7 +3440,21 @@
               "paper21.branch_assignment",
               "paper31.baryon_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "`paper31.baryon_assignment` fixes the local chemistry slot as `omega_b,geom`."
+            ],
+            "proof_outline": [
+              "Start from the active-branch closed background and the typed chemistry slot.",
+              "Construct the local recombination state map `H_loc`, `T_R,loc`, `n_H,geom`, `u`, and `a_loc` at a supplied redshift.",
+              "Export those primitives as calculator-visible local-state quantities."
+            ],
+            "scope_boundary": [
+              "Local recombination background-state primitives on the fixed active branch.",
+              "Does not by itself close the exact dynamic-network recombination problem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper31.recombination_clock_transport": {
             "node_id": "paper31.recombination_clock_transport",
@@ -2289,7 +3469,21 @@
             "depends_on": [
               "paper31.local_background_state_map"
             ],
-            "notes": []
+            "premises": [
+              "`paper31.local_background_state_map` provides the local branch background state.",
+              "Chemistry-dependent outputs are derived only when `x_e` is supplied by the local Saha seed or another separately justified source."
+            ],
+            "proof_outline": [
+              "Use the local background state and chemistry slot to build `kappa'_loc`, `d tau_obs / dz`, `Gamma_T/H_loc`, `R_local,geom`, and `c_s,local`.",
+              "Treat the local Saha seed as the default derived ionization input in the published calculator.",
+              "When a user overrides `x_e`, keep the local background state derived but mark chemistry-dependent rows as conditional."
+            ],
+            "scope_boundary": [
+              "Primitive local opacity and LOS clock transport on the active branch.",
+              "Not a theorem-grade exact dynamic-network recombination closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper32.closed_s3_solver_spec": {
             "node_id": "paper32.closed_s3_solver_spec",
@@ -2305,7 +3499,21 @@
               "premise.1",
               "premise.2"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` place the IO transfer problem on the interior black-hole branch with outside-equivalent microphysics.",
+              "Spatial sections in the accepted IO perturbation stack are closed rather than flat."
+            ],
+            "proof_outline": [
+              "Specify the perturbation and transfer geometry on closed `S^3` sections rather than a flat `K=0` basis.",
+              "Use that specification to interpret acoustic and peak-location quantities in a closed-geometry transfer setting.",
+              "Treat flat-space extractions as comparison conventions rather than native calculator geometry."
+            ],
+            "scope_boundary": [
+              "Geometry specification for the IO transfer stack.",
+              "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper35.eta_io_late_closure": {
             "node_id": "paper35.eta_io_late_closure",
@@ -2320,7 +3528,21 @@
             "depends_on": [
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`paper21.branch_assignment` fixes the active branch package.",
+              "The calculator needs one carried late-time `eta_IO` convention rather than multiple unresolved conventions."
+            ],
+            "proof_outline": [
+              "Take the Paper 35 late-time closure result on the active branch.",
+              "Fix the preferred exported `eta_IO,late` convention to that closed branch value.",
+              "Expose the convention directly through the calculator and bundle."
+            ],
+            "scope_boundary": [
+              "Preferred late-time `eta_IO` convention on the active branch.",
+              "Does not claim that every alternative mass convention is closed to theorem grade."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
@@ -2337,7 +3559,22 @@
               "premise.2",
               "paper21.branch_assignment"
             ],
-            "notes": []
+            "premises": [
+              "`premise.1` and `premise.2` fix the IO setting.",
+              "`paper21.branch_assignment` fixes the active branch package on which the selector is evaluated.",
+              "The strict-bare selector interval is certified monotone on its published domain."
+            ],
+            "proof_outline": [
+              "Use the certified monotone interval to make the strict-bare selector exactly invertible on the published branch domain.",
+              "Map the selected bare phase-ruler leaf to observer-side `theta` with the fixed Jacobian `J_theta`.",
+              "Reduce theorem-grade numeric `theta_*` to identifying the physical selector leaf carried by the active branch."
+            ],
+            "scope_boundary": [
+              "Strict-bare selector backbone on the certified interval.",
+              "Does not by itself identify which leaf is physical on the active branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
@@ -2353,7 +3590,21 @@
             "depends_on": [
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper36.phase_equivalent_selector` reduces `theta_*` closure to fixing the active packet and leaf carrier.",
+              "The surviving outgoing-update packet law is constrained by the accepted Paper 37 boundary transport identities."
+            ],
+            "proof_outline": [
+              "Use the outgoing-update and Ly-line boundary transport identities to fix the live packet-law coefficients rather than fitting them.",
+              "Construct the support-reduced packet carrier on the surviving active endpoint family with those fixed coefficients.",
+              "Show that the reduced carrier lands very close to the final active endpoint while keeping the coefficients theorem-governed."
+            ],
+            "scope_boundary": [
+              "Packet-law closure on the surviving active endpoint family.",
+              "Does not yet prove that the surviving packet alone carries the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
@@ -2368,7 +3619,21 @@
             "depends_on": [
               "paper37.packet_coefficient_fixing"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` isolates the live packet carrier near the active endpoint.",
+              "Any support above `z ~ 1500` still has to be checked for an independent selector-bearing branch."
+            ],
+            "proof_outline": [
+              "Audit the continuation of the active endpoint family above the reduced packet support.",
+              "Show that the remaining high-`z` contribution is slaved to the packet carrier rather than introducing a second independent selector sector.",
+              "Demote the high-`z` continuation to a residual tail in the active-branch support decomposition."
+            ],
+            "scope_boundary": [
+              "Support decomposition on the active endpoint family.",
+              "Does not by itself identify the physical selector leaf."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
@@ -2383,7 +3648,21 @@
             "depends_on": [
               "paper37.highz_tail_slaving"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.highz_tail_slaving` demotes the high-`z` continuation to a residual tail candidate.",
+              "The physical relevance of that tail still has to be checked against the first-peak parent profile."
+            ],
+            "proof_outline": [
+              "Compare the first-peak parent profile with and without the residual tail after removing the best pure-amplitude rescale.",
+              "Measure the remaining mismatch on the peak window and show that it is tiny.",
+              "Use that audit to rule out the residual tail as a second active selector-bearing branch."
+            ],
+            "scope_boundary": [
+              "First-peak TT parent-profile audit on the active endpoint family.",
+              "Verified only on the relevant first-peak window, not as a full-spectrum theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
@@ -2400,7 +3679,21 @@
               "paper37.highz_tail_slaving",
               "paper37.peak_window_tail_profile_audit"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.packet_coefficient_fixing` provides the support-reduced active carrier.",
+              "`paper37.highz_tail_slaving` and `paper37.peak_window_tail_profile_audit` remove the residual tail as an independent selector branch."
+            ],
+            "proof_outline": [
+              "Promote the cumulative packet `z_cross < 1500` from a reduced support object to the carried physical selector carrier on the active branch.",
+              "Collapse the old endpoint-family selector interval to the leaf transported by that certified support packet.",
+              "Feed the carried leaf back into the Paper 36 selector backbone as the physical active-branch leaf."
+            ],
+            "scope_boundary": [
+              "Carried active-branch physical selector leaf only.",
+              "Does not establish a universal selector-promotion theorem off branch."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
@@ -2416,7 +3709,22 @@
               "paper37.selector_support_promotion",
               "paper36.phase_equivalent_selector"
             ],
-            "notes": []
+            "premises": [
+              "`paper37.selector_support_promotion` fixes the carried physical selector leaf on the active branch.",
+              "`paper36.phase_equivalent_selector` gives the exact observer-side map from that leaf to `theta_*`."
+            ],
+            "proof_outline": [
+              "Evaluate the exact strict-bare selector backbone at the carried active selector leaf.",
+              "Obtain `theta_bare`, transport to `theta_obs` with the fixed Jacobian `J_theta`, and report `100theta_*` for the active branch.",
+              "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
+            ],
+            "scope_boundary": [
+              "Fixed active Paper 10 legacy projected branch only.",
+              "Theorem-grade numeric closure on the carried selector leaf only.",
+              "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           }
         }
       }

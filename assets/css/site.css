@@ -1650,6 +1650,10 @@ code {
   margin-bottom: 0;
 }
 
+.calc-node-caption {
+  color: #8e8c94;
+}
+
 .calc-metrics .calc-row + .calc-row {
   border-top: 1px solid #1e1e24;
 }

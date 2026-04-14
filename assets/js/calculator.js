@@ -71,6 +71,16 @@ function authorityChips(authorityPaths) {
   return `<div class="calc-chip-row">${chips}</div>`;
 }
 
+function sectionList(label, items) {
+  if (!items || !items.length) return "";
+  return `
+    <div class="calc-subsection">
+      <p class="calc-section-label">${escapeHtml(label)}</p>
+      ${listMarkup(items)}
+    </div>
+  `;
+}
+
 function theoremNodeDetail(node, options = {}) {
   const index = options.index;
   const showIndex = Number.isInteger(index);
@@ -80,6 +90,18 @@ function theoremNodeDetail(node, options = {}) {
     : "";
   const notes = node.notes && node.notes.length
     ? node.notes.map((note) => `<p>${renderInline(note)}</p>`).join("")
+    : "";
+  const premises = sectionList("Premises", node.premises || []);
+  const proofOutline = sectionList("Proof outline", node.proof_outline || []);
+  const scopeBoundary = sectionList("Scope boundary", node.scope_boundary || []);
+  const references = node.authority_paths && node.authority_paths.length
+    ? `
+      <div class="calc-subsection">
+        <p class="calc-section-label">Supporting references</p>
+        <p class="calc-node-caption">${renderInline(node.reference_note || "")}</p>
+        ${authorityChips(node.authority_paths || [])}
+      </div>
+    `
     : "";
   return `
     <details class="calc-node"${options.open ? " open" : ""}>
@@ -94,12 +116,16 @@ function theoremNodeDetail(node, options = {}) {
         </div>
       </summary>
       <div class="calc-node-body">
+        <p class="calc-section-label">Statement</p>
         <p>${renderInline(node.statement)}</p>
         <p><strong>Node id.</strong> <code>${escapeHtml(node.node_id)}</code></p>
-        <p><strong>Scope.</strong> ${renderInline(node.scope)}</p>
+        <p><strong>Scope summary.</strong> ${renderInline(node.scope)}</p>
         ${dependsOn}
+        ${premises}
+        ${proofOutline}
+        ${scopeBoundary}
         ${notes}
-        ${authorityChips(node.authority_paths || [])}
+        ${references}
       </div>
     </details>
   `;
