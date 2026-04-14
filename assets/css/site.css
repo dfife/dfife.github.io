@@ -89,6 +89,10 @@ input {
   margin: 0 auto;
 }
 
+.page-hero .section-inner {
+  width: min(calc(100% - 32px), 1440px);
+}
+
 .nav-wrap {
   display: flex;
   align-items: center;
@@ -195,7 +199,7 @@ input {
 }
 
 .page-hero .hero-copy {
-  max-width: 1120px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
@@ -257,15 +261,15 @@ input {
 
 .hero-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  width: min(100%, 1200px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
   margin: 32px auto 0;
 }
 
 .hero-column {
   min-height: 100%;
-  padding: 28px 26px;
+  padding: 24px 20px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
@@ -275,7 +279,7 @@ input {
 
 .hero-column-title {
   margin: 0;
-  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.15rem, 1.45vw, 1.45rem);
   line-height: 1.18;
   letter-spacing: -0.03em;
   color: var(--text-invert);
@@ -283,8 +287,8 @@ input {
 
 .hero-column-copy {
   margin: 16px 0 0;
-  font-size: 1rem;
-  line-height: 1.76;
+  font-size: 0.95rem;
+  line-height: 1.68;
   color: rgba(245, 248, 252, 0.84);
 }
 
