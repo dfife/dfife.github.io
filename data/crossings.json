@@ -538,7 +538,7 @@
   {
     "name": "Three-Language Architecture",
     "channel": "mixed",
-    "quantum_input": "Full boundary-to-bulk atlas across the 34-paper archive",
+    "quantum_input": "Full boundary-to-bulk atlas across the 35-paper archive",
     "classical_output": "The bridge now reads as three languages: static geometric, dynamic thermal, and fermionic density-gated",
     "constants": [
       "γ",
@@ -549,14 +549,14 @@
       "Δ"
     ],
     "prediction": "Three-language bridge architecture",
-    "observation": "Archive-side organizing result from Papers 1-34",
+    "observation": "Archive-side organizing result from Papers 1-35",
     "residual": "N/A",
     "status": "THEOREM",
     "papers": [
       33
     ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "Paper 33 reframes the archive stack as three bridge languages, and Paper 34 applies that architecture to the late-time H₀ method ladder: a static geometric language, a dynamic thermal language, and a fermionic density-gated language for the deep-bulk bounce sector."
+    "summary": "Paper 33 reframes the archive stack as three bridge languages, Paper 34 applies that architecture to the late-time H₀ method ladder, and Paper 35 extends the confrontation surface across baryon counting, high-redshift formation time, dark energy, and direct-detection nulls."
   },
   {
     "name": "Holographic Selection Rule",
@@ -630,5 +630,107 @@
     ],
     "zenodo": "",
     "summary": "The bridge is closed for zero-temperature collider measurements. Five mechanisms were tried and all five failed."
+  },
+  {
+    "name": "Baryon-to-Photon Ratio (late-time)",
+    "channel": "dynamic",
+    "quantum_input": "Geometric baryon inventory ω_b,geom together with the observer CMB photon bath T_obs",
+    "classical_output": "η = n_b/n_γ = 5.749 × 10⁻¹⁰",
+    "constants": [
+      "ω_b,geom",
+      "T_obs"
+    ],
+    "prediction": "η = 5.749 × 10⁻¹⁰",
+    "observation": "Observer-side CMB baryon loading is usually quoted as η₁₀ ≈ 6.10 in the standard single-temperature map",
+    "residual": "Different typed observable; late-time IO value is the observer-side inventory theorem on the active branch",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Paper 35 closes the late-time observer-side baryon-to-photon ratio on the surviving inventory route η = C_η(T_obs, m̄) × ω_b,geom, giving 5.749 × 10⁻¹⁰ with zero fitted parameters."
+  },
+  {
+    "name": "Baryon-to-Photon Ratio (BBN bulk-frame)",
+    "channel": "dynamic",
+    "quantum_input": "Geometric baryon inventory ω_b,geom together with the local bulk BBN temperature T_IO",
+    "classical_output": "η_BBN = 6.151 × 10⁻¹⁰",
+    "constants": [
+      "ω_b,geom",
+      "T_IO",
+      "K_gauge"
+    ],
+    "prediction": "η_BBN = 6.151 × 10⁻¹⁰",
+    "observation": "Standard BBN/CMB concordance η₁₀ ≈ 6.10 assumes one shared observer-side temperature map",
+    "residual": "Temperature-architecture dependent; BBN sees T_IO, not T_obs",
+    "status": "DERIVED/SCOPED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Paper 35 closes the BBN temperature assignment gate: local nuclear reaction observables are bulk thermodynamic processes on the T_IO branch, so the microphysical BBN η route gives 6.151 × 10⁻¹⁰."
+  },
+  {
+    "name": "Baryogenesis Topological Obstruction",
+    "channel": "fermionic",
+    "quantum_input": "Spin^c residual class and chiral boundary datum Q₅ on the admitted horizon carrier",
+    "classical_output": "Q₅ = 0 on the current stack",
+    "constants": [
+      "Q₅",
+      "spin^c"
+    ],
+    "prediction": "Topological obstruction: no nonzero chiral source survives on the current stack",
+    "observation": "N/A (structural baryogenesis boundary)",
+    "residual": "Baryogenesis impossible on the current stack without a new charged or CP-odd extension datum",
+    "status": "DERIVED / NO-GO",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Paper 35 reduces the source-side baryogenesis problem to one exact topological obstruction: the admitted current horizon carrier gives Q₅ = 0, so no nonzero baryon source survives without a new charged or CP-odd sector."
+  },
+  {
+    "name": "JWST Formation Clock",
+    "channel": "static",
+    "quantum_input": "Homogeneous OS master clock on the active bare/support branch",
+    "classical_output": "+46-48% more formation time than Planck ΛCDM at z > 10",
+    "constants": [
+      "t_bare(z)",
+      "H₀",
+      "Ω_m",
+      "Ω_k",
+      "Ω_Λ"
+    ],
+    "prediction": "At z = 10, 12, 14, 16 the active IO master clock gives about +136 to +207 Myr relative to Planck ΛCDM",
+    "observation": "JADES-GS-z14-0, JADES-GS-z13-0, GN-z11, and Maisie’s Galaxy all sit in the high-z formation-time pressure regime",
+    "residual": "IO materially eases timing pressure; the current clock result is not by itself a theorem-grade ΛCDM knockout",
+    "status": "DERIVED",
+    "papers": [
+      28,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Paper 28’s homogeneous OS formation-clock theorem survives on the active branch, and Paper 35 shows it yields 46-48% more formation time than Planck ΛCDM at z > 10, making the JWST high-z population structurally easier to accommodate."
+  },
+  {
+    "name": "Dark Matter Null Prediction",
+    "channel": "static",
+    "quantum_input": "Geometric dark-sector complement of the gauge-coupled baryon inventory",
+    "classical_output": "Continued direct-detection null results are expected",
+    "constants": [
+      "γ",
+      "x",
+      "f_b"
+    ],
+    "prediction": "LZ, XENONnT, PandaX-4T, DARWIN, and XLZD should continue moving toward the neutrino floor without a canonical xenon-WIMP detection",
+    "observation": "Current xenon direct-detection programs remain null",
+    "residual": "Consistent with the geometric dark-sector reading",
+    "status": "DERIVED prediction",
+    "papers": [
+      33,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Paper 35 promotes the dark-matter confrontation into an explicit prediction: if the dark-sector complement is boundary geometry rather than a xenon-coupled particle, direct-detection null results should continue."
   }
 ]
