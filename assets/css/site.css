@@ -1477,6 +1477,34 @@ code {
   color: #9b99a1;
 }
 
+.calc-link-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.calc-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #2a2a34;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9c7c3;
+  background: rgba(17, 17, 20, 0.96);
+}
+
+.calc-link:hover,
+.calc-link:focus-visible {
+  border-color: #5f4733;
+  color: #f0eeea;
+  background: rgba(22, 22, 26, 0.98);
+}
+
 .calc-card-stack,
 .calc-nested-stack {
   display: grid;

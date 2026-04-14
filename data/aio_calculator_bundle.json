@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-14T22:13:54.884904+00:00",
+    "generated_at_utc": "2026-04-14T23:01:02.177581+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
@@ -675,7 +675,7 @@
       "kind": "theorem",
       "label": "Paper 30 Legacy Recompute Surface",
       "claim_status": "derived / scoped",
-      "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+      "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
       "scope": "Observer-side background geometry and BAO-side runtime surface.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -704,7 +704,7 @@
       "kind": "theorem",
       "label": "Paper 31 Geometric Pre-drag Ruler",
       "claim_status": "derived / scoped",
-      "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+      "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
       "scope": "Active-branch BAO ruler slot.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -762,7 +762,7 @@
       "kind": "theorem",
       "label": "Paper 31 Local Background State Map",
       "claim_status": "derived / scoped",
-      "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+      "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
       "scope": "Local recombination background-state primitives.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -792,7 +792,7 @@
       "kind": "theorem",
       "label": "Paper 31 Recombination Clock Transport",
       "claim_status": "derived / scoped",
-      "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+      "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
       "scope": "Primitive local opacity and LOS clock transport.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -851,7 +851,7 @@
       "kind": "theorem",
       "label": "Paper 35 eta_IO Late-time Closure",
       "claim_status": "derived / scoped",
-      "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+      "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
       "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -878,9 +878,9 @@
     "paper36.phase_equivalent_selector": {
       "node_id": "paper36.phase_equivalent_selector",
       "kind": "theorem",
-      "label": "Paper 36 Phase-equivalent Selector",
+      "label": "Phase-equivalent Selector Theorem",
       "claim_status": "derived / scoped",
-      "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+      "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
       "scope": "Strict-bare phase-ruler selector backbone.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -910,9 +910,9 @@
     "paper37.packet_coefficient_fixing": {
       "node_id": "paper37.packet_coefficient_fixing",
       "kind": "theorem",
-      "label": "Paper 37 Packet Coefficient Fixing",
+      "label": "Packet Coefficient Fixing Theorem",
       "claim_status": "derived / scoped plus verified / support-promoted",
-      "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+      "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
       "scope": "Packet-law closure on the surviving active endpoint family.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -940,9 +940,9 @@
     "paper37.highz_tail_slaving": {
       "node_id": "paper37.highz_tail_slaving",
       "kind": "theorem",
-      "label": "Paper 37 High-z Tail Slaving",
+      "label": "High-z Tail Slaving Theorem",
       "claim_status": "derived / scoped plus verified / support sharpening",
-      "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+      "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
       "scope": "Endpoint-family support decomposition.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -969,9 +969,9 @@
     "paper37.peak_window_tail_profile_audit": {
       "node_id": "paper37.peak_window_tail_profile_audit",
       "kind": "audit",
-      "label": "Paper 37 Peak-window Tail Profile Audit",
+      "label": "Peak-window Tail Profile Audit",
       "claim_status": "verified / scoped",
-      "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+      "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
       "scope": "First-peak TT parent-profile audit on the active endpoint family.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -998,9 +998,9 @@
     "paper37.selector_support_promotion": {
       "node_id": "paper37.selector_support_promotion",
       "kind": "theorem",
-      "label": "Paper 37 Selector-support Promotion",
+      "label": "Selector-support Promotion Theorem",
       "claim_status": "derived / scoped plus verified / carried selector closure",
-      "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+      "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
       "scope": "Carried active-branch physical selector leaf.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -1029,9 +1029,9 @@
     "paper37.active_branch_theta_star": {
       "node_id": "paper37.active_branch_theta_star",
       "kind": "theorem",
-      "label": "Paper 37 Active-branch Theta-star Theorem",
+      "label": "Active-branch Theta-star Theorem",
       "claim_status": "derived / scoped",
-      "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+      "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
       "scope": "Fixed active Paper 10 legacy projected branch only.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
@@ -1306,7 +1306,7 @@
             "kind": "theorem",
             "label": "Paper 30 Legacy Recompute Surface",
             "claim_status": "derived / scoped",
-            "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+            "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -1335,7 +1335,7 @@
             "kind": "theorem",
             "label": "Paper 31 Geometric Pre-drag Ruler",
             "claim_status": "derived / scoped",
-            "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+            "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
             "scope": "Active-branch BAO ruler slot.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -1393,7 +1393,7 @@
             "kind": "theorem",
             "label": "Paper 31 Local Background State Map",
             "claim_status": "derived / scoped",
-            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
             "scope": "Local recombination background-state primitives.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -1423,7 +1423,7 @@
             "kind": "theorem",
             "label": "Paper 31 Recombination Clock Transport",
             "claim_status": "derived / scoped",
-            "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+            "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
             "scope": "Primitive local opacity and LOS clock transport.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -1482,7 +1482,7 @@
             "kind": "theorem",
             "label": "Paper 35 eta_IO Late-time Closure",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -1509,9 +1509,9 @@
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
             "kind": "theorem",
-            "label": "Paper 36 Phase-equivalent Selector",
+            "label": "Phase-equivalent Selector Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+            "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
             "scope": "Strict-bare phase-ruler selector backbone.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -1541,9 +1541,9 @@
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
             "kind": "theorem",
-            "label": "Paper 37 Packet Coefficient Fixing",
+            "label": "Packet Coefficient Fixing Theorem",
             "claim_status": "derived / scoped plus verified / support-promoted",
-            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
             "scope": "Packet-law closure on the surviving active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -1571,9 +1571,9 @@
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
             "kind": "theorem",
-            "label": "Paper 37 High-z Tail Slaving",
+            "label": "High-z Tail Slaving Theorem",
             "claim_status": "derived / scoped plus verified / support sharpening",
-            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
             "scope": "Endpoint-family support decomposition.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -1600,9 +1600,9 @@
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
             "kind": "audit",
-            "label": "Paper 37 Peak-window Tail Profile Audit",
+            "label": "Peak-window Tail Profile Audit",
             "claim_status": "verified / scoped",
-            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
             "scope": "First-peak TT parent-profile audit on the active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -1629,9 +1629,9 @@
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
             "kind": "theorem",
-            "label": "Paper 37 Selector-support Promotion",
+            "label": "Selector-support Promotion Theorem",
             "claim_status": "derived / scoped plus verified / carried selector closure",
-            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
             "scope": "Carried active-branch physical selector leaf.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -1660,9 +1660,9 @@
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
             "kind": "theorem",
-            "label": "Paper 37 Active-branch Theta-star Theorem",
+            "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
@@ -1808,7 +1808,7 @@
             "kind": "theorem",
             "label": "Paper 30 Legacy Recompute Surface",
             "claim_status": "derived / scoped",
-            "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+            "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -1837,7 +1837,7 @@
             "kind": "theorem",
             "label": "Paper 31 Geometric Pre-drag Ruler",
             "claim_status": "derived / scoped",
-            "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+            "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
             "scope": "Active-branch BAO ruler slot.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -1895,7 +1895,7 @@
             "kind": "theorem",
             "label": "Paper 31 Local Background State Map",
             "claim_status": "derived / scoped",
-            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
             "scope": "Local recombination background-state primitives.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -1925,7 +1925,7 @@
             "kind": "theorem",
             "label": "Paper 31 Recombination Clock Transport",
             "claim_status": "derived / scoped",
-            "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+            "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
             "scope": "Primitive local opacity and LOS clock transport.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -1984,7 +1984,7 @@
             "kind": "theorem",
             "label": "Paper 35 eta_IO Late-time Closure",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -2011,9 +2011,9 @@
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
             "kind": "theorem",
-            "label": "Paper 36 Phase-equivalent Selector",
+            "label": "Phase-equivalent Selector Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+            "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
             "scope": "Strict-bare phase-ruler selector backbone.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -2043,9 +2043,9 @@
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
             "kind": "theorem",
-            "label": "Paper 37 Packet Coefficient Fixing",
+            "label": "Packet Coefficient Fixing Theorem",
             "claim_status": "derived / scoped plus verified / support-promoted",
-            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
             "scope": "Packet-law closure on the surviving active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -2073,9 +2073,9 @@
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
             "kind": "theorem",
-            "label": "Paper 37 High-z Tail Slaving",
+            "label": "High-z Tail Slaving Theorem",
             "claim_status": "derived / scoped plus verified / support sharpening",
-            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
             "scope": "Endpoint-family support decomposition.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -2102,9 +2102,9 @@
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
             "kind": "audit",
-            "label": "Paper 37 Peak-window Tail Profile Audit",
+            "label": "Peak-window Tail Profile Audit",
             "claim_status": "verified / scoped",
-            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
             "scope": "First-peak TT parent-profile audit on the active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -2131,9 +2131,9 @@
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
             "kind": "theorem",
-            "label": "Paper 37 Selector-support Promotion",
+            "label": "Selector-support Promotion Theorem",
             "claim_status": "derived / scoped plus verified / carried selector closure",
-            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
             "scope": "Carried active-branch physical selector leaf.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -2162,9 +2162,9 @@
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
             "kind": "theorem",
-            "label": "Paper 37 Active-branch Theta-star Theorem",
+            "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
@@ -2310,7 +2310,7 @@
             "kind": "theorem",
             "label": "Paper 30 Legacy Recompute Surface",
             "claim_status": "derived / scoped",
-            "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+            "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -2339,7 +2339,7 @@
             "kind": "theorem",
             "label": "Paper 31 Geometric Pre-drag Ruler",
             "claim_status": "derived / scoped",
-            "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+            "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
             "scope": "Active-branch BAO ruler slot.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -2397,7 +2397,7 @@
             "kind": "theorem",
             "label": "Paper 31 Local Background State Map",
             "claim_status": "derived / scoped",
-            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
             "scope": "Local recombination background-state primitives.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -2427,7 +2427,7 @@
             "kind": "theorem",
             "label": "Paper 31 Recombination Clock Transport",
             "claim_status": "derived / scoped",
-            "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+            "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
             "scope": "Primitive local opacity and LOS clock transport.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -2486,7 +2486,7 @@
             "kind": "theorem",
             "label": "Paper 35 eta_IO Late-time Closure",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -2513,9 +2513,9 @@
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
             "kind": "theorem",
-            "label": "Paper 36 Phase-equivalent Selector",
+            "label": "Phase-equivalent Selector Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+            "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
             "scope": "Strict-bare phase-ruler selector backbone.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -2545,9 +2545,9 @@
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
             "kind": "theorem",
-            "label": "Paper 37 Packet Coefficient Fixing",
+            "label": "Packet Coefficient Fixing Theorem",
             "claim_status": "derived / scoped plus verified / support-promoted",
-            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
             "scope": "Packet-law closure on the surviving active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -2575,9 +2575,9 @@
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
             "kind": "theorem",
-            "label": "Paper 37 High-z Tail Slaving",
+            "label": "High-z Tail Slaving Theorem",
             "claim_status": "derived / scoped plus verified / support sharpening",
-            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
             "scope": "Endpoint-family support decomposition.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -2604,9 +2604,9 @@
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
             "kind": "audit",
-            "label": "Paper 37 Peak-window Tail Profile Audit",
+            "label": "Peak-window Tail Profile Audit",
             "claim_status": "verified / scoped",
-            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
             "scope": "First-peak TT parent-profile audit on the active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -2633,9 +2633,9 @@
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
             "kind": "theorem",
-            "label": "Paper 37 Selector-support Promotion",
+            "label": "Selector-support Promotion Theorem",
             "claim_status": "derived / scoped plus verified / carried selector closure",
-            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
             "scope": "Carried active-branch physical selector leaf.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -2664,9 +2664,9 @@
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
             "kind": "theorem",
-            "label": "Paper 37 Active-branch Theta-star Theorem",
+            "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
@@ -2827,7 +2827,7 @@
             "kind": "theorem",
             "label": "Paper 30 Legacy Recompute Surface",
             "claim_status": "derived / scoped",
-            "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+            "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -2856,7 +2856,7 @@
             "kind": "theorem",
             "label": "Paper 31 Geometric Pre-drag Ruler",
             "claim_status": "derived / scoped",
-            "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+            "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
             "scope": "Active-branch BAO ruler slot.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -2914,7 +2914,7 @@
             "kind": "theorem",
             "label": "Paper 31 Local Background State Map",
             "claim_status": "derived / scoped",
-            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
             "scope": "Local recombination background-state primitives.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -2944,7 +2944,7 @@
             "kind": "theorem",
             "label": "Paper 31 Recombination Clock Transport",
             "claim_status": "derived / scoped",
-            "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+            "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
             "scope": "Primitive local opacity and LOS clock transport.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -3003,7 +3003,7 @@
             "kind": "theorem",
             "label": "Paper 35 eta_IO Late-time Closure",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -3030,9 +3030,9 @@
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
             "kind": "theorem",
-            "label": "Paper 36 Phase-equivalent Selector",
+            "label": "Phase-equivalent Selector Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+            "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
             "scope": "Strict-bare phase-ruler selector backbone.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -3062,9 +3062,9 @@
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
             "kind": "theorem",
-            "label": "Paper 37 Packet Coefficient Fixing",
+            "label": "Packet Coefficient Fixing Theorem",
             "claim_status": "derived / scoped plus verified / support-promoted",
-            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
             "scope": "Packet-law closure on the surviving active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -3092,9 +3092,9 @@
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
             "kind": "theorem",
-            "label": "Paper 37 High-z Tail Slaving",
+            "label": "High-z Tail Slaving Theorem",
             "claim_status": "derived / scoped plus verified / support sharpening",
-            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
             "scope": "Endpoint-family support decomposition.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -3121,9 +3121,9 @@
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
             "kind": "audit",
-            "label": "Paper 37 Peak-window Tail Profile Audit",
+            "label": "Peak-window Tail Profile Audit",
             "claim_status": "verified / scoped",
-            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
             "scope": "First-peak TT parent-profile audit on the active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -3150,9 +3150,9 @@
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
             "kind": "theorem",
-            "label": "Paper 37 Selector-support Promotion",
+            "label": "Selector-support Promotion Theorem",
             "claim_status": "derived / scoped plus verified / carried selector closure",
-            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
             "scope": "Carried active-branch physical selector leaf.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -3181,9 +3181,9 @@
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
             "kind": "theorem",
-            "label": "Paper 37 Active-branch Theta-star Theorem",
+            "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
@@ -3344,7 +3344,7 @@
             "kind": "theorem",
             "label": "Paper 30 Legacy Recompute Surface",
             "claim_status": "derived / scoped",
-            "statement": "The active branch supports the late-time closed-FRW background distance and age surface used by the calculator.",
+            "statement": "The active branch supports the late-time closed-FRW background surface with `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json"
@@ -3373,7 +3373,7 @@
             "kind": "theorem",
             "label": "Paper 31 Geometric Pre-drag Ruler",
             "claim_status": "derived / scoped",
-            "statement": "The active branch carries a geometric pre-drag ruler used as the published `r_d` on the calculator surface.",
+            "statement": "The active branch carries the published pre-drag ruler `r_d = 144.013514253929 Mpc` on the calculator surface.",
             "scope": "Active-branch BAO ruler slot.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json"
@@ -3431,7 +3431,7 @@
             "kind": "theorem",
             "label": "Paper 31 Local Background State Map",
             "claim_status": "derived / scoped",
-            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch.",
+            "statement": "The calculator's local recombination state map (`H_loc`, `T_R,loc`, `n_H,geom`, `u`, `a_loc`) is a theorem-grade map on the active branch, with `a_loc = u R_U` and `n_H,geom = rho_b,geom / m_H`.",
             "scope": "Local recombination background-state primitives.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md"
@@ -3461,7 +3461,7 @@
             "kind": "theorem",
             "label": "Paper 31 Recombination Clock Transport",
             "claim_status": "derived / scoped",
-            "statement": "The live primitive opacity and `d tau_obs / dz` transport chain is derived on the active branch once the local background state and `omega_b,geom` chemistry slot are fixed.",
+            "statement": "The live primitive opacity chain derives `kappa'_loc = a_loc n_e sigma_T`, `d tau_obs / dz = kappa'_loc c / ((1+z) H_loc)`, and `Gamma_T / H_loc = n_e sigma_T c / H_loc` once the local background state and `omega_b,geom` chemistry slot are fixed.",
             "scope": "Primitive local opacity and LOS clock transport.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md"
@@ -3520,7 +3520,7 @@
             "kind": "theorem",
             "label": "Paper 35 eta_IO Late-time Closure",
             "claim_status": "derived / scoped",
-            "statement": "The preferred late-time `eta_IO` convention is closed on the active branch and exported by the calculator.",
+            "statement": "The preferred late-time baryon-to-photon ratio `eta_IO = n_b / n_gamma = 5.748778515174e-10` is closed on the active branch and exported by the calculator.",
             "scope": "Late-time baryon-to-photon ratio convention used by the calculator.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json"
@@ -3547,9 +3547,9 @@
           "paper36.phase_equivalent_selector": {
             "node_id": "paper36.phase_equivalent_selector",
             "kind": "theorem",
-            "label": "Paper 36 Phase-equivalent Selector",
+            "label": "Phase-equivalent Selector Theorem",
             "claim_status": "derived / scoped",
-            "statement": "The strict-bare selector backbone is exactly invertible on the certified interval and carries observer-side `theta_*` through the fixed Jacobian `J_theta`.",
+            "statement": "The strict-bare selector backbone solves `theta_bare(z_sel) = r_s(z_sel) / D_M(z_sel)` on the certified monotone interval and carries observer-side angle by `theta_obs = J_theta theta_bare` with fixed `J_theta`.",
             "scope": "Strict-bare phase-ruler selector backbone.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md"
@@ -3579,9 +3579,9 @@
           "paper37.packet_coefficient_fixing": {
             "node_id": "paper37.packet_coefficient_fixing",
             "kind": "theorem",
-            "label": "Paper 37 Packet Coefficient Fixing",
+            "label": "Packet Coefficient Fixing Theorem",
             "claim_status": "derived / scoped plus verified / support-promoted",
-            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law; this yields the support-reduced packet carrier close to the final active endpoint.",
+            "statement": "The outgoing-update and Ly-line coefficients are fixed on the surviving packet law by `xr[1] = 3 x1s Dfplus_Ly[0]` and `xr[0] = x1s exp(E32 / TR) Dfplus_Ly[1]`, yielding the support-reduced packet carrier close to the final active endpoint.",
             "scope": "Packet-law closure on the surviving active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
@@ -3609,9 +3609,9 @@
           "paper37.highz_tail_slaving": {
             "node_id": "paper37.highz_tail_slaving",
             "kind": "theorem",
-            "label": "Paper 37 High-z Tail Slaving",
+            "label": "High-z Tail Slaving Theorem",
             "claim_status": "derived / scoped plus verified / support sharpening",
-            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector.",
+            "statement": "Support above `z ~ 1500` is demoted to a slaved residual tail rather than an independent selector-bearing sector, with the reduced packet differing from the full endpoint family only by `Delta_theta = +5.386582264233e-06` and `Delta_ell = -4.390006880612e-04`.",
             "scope": "Endpoint-family support decomposition.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md"
@@ -3638,9 +3638,9 @@
           "paper37.peak_window_tail_profile_audit": {
             "node_id": "paper37.peak_window_tail_profile_audit",
             "kind": "audit",
-            "label": "Paper 37 Peak-window Tail Profile Audit",
+            "label": "Peak-window Tail Profile Audit",
             "claim_status": "verified / scoped",
-            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch is tiny, so the remaining tail is not a second active selector-bearing branch.",
+            "statement": "After the best pure-amplitude rescale is removed, the residual first-peak parent-profile mismatch obeys `RMS_rel[ell in [190,250]] = 2.950052007950388e-06`, so the remaining tail is not a second active selector-bearing branch.",
             "scope": "First-peak TT parent-profile audit on the active endpoint family.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md"
@@ -3667,9 +3667,9 @@
           "paper37.selector_support_promotion": {
             "node_id": "paper37.selector_support_promotion",
             "kind": "theorem",
-            "label": "Paper 37 Selector-support Promotion",
+            "label": "Selector-support Promotion Theorem",
             "claim_status": "derived / scoped plus verified / carried selector closure",
-            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch.",
+            "statement": "The support-certified cumulative packet `z_cross < 1500` carries the physical selector leaf on the active branch, fixing `z_sel = 1092.267038673162`.",
             "scope": "Carried active-branch physical selector leaf.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md"
@@ -3698,9 +3698,9 @@
           "paper37.active_branch_theta_star": {
             "node_id": "paper37.active_branch_theta_star",
             "kind": "theorem",
-            "label": "Paper 37 Active-branch Theta-star Theorem",
+            "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
-            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf closes theorem-grade numeric `theta_*` on the fixed active branch package.",
+            "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
             "scope": "Fixed active Paper 10 legacy projected branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md"
