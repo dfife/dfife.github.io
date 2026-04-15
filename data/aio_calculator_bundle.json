@@ -1,19 +1,20 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-15T00:51:37.786168+00:00",
+    "generated_at_utc": "2026-04-15T06:34:59.954071+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
       "active-branch BAO distance observables",
       "late-time eta_IO closure",
       "theorem-grade local recombination primitives on omega_b,geom",
+      "conditional exact inherited-FULL Stage-2 dynamic-network history builder",
       "typed visibility-packet operators on supplied exact Stage-2 histories",
       "active-branch vacuum mapping summary",
       "theorem-grade active-branch theta_* with full provenance"
     ],
     "calculator_boundaries": [
-      "no exact Stage-2 recombination dynamic-network completion in the live package",
+      "no universal IO-native Stage-2 renormalization theorem in the live package beyond the conditional inherited-FULL builder",
       "no theorem-grade full TT/TE/EE spectrum solver in the live package",
       "no theorem-grade Planck acoustic extractor in the live package",
       "no theorem-grade universal off-branch theta_* transfer theorem",
@@ -1035,7 +1036,7 @@
       "kind": "theorem",
       "label": "Typed Baryon-slot Specification",
       "claim_status": "derived / scoped",
-      "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+      "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
       "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -1050,11 +1051,13 @@
       "proof_outline": [
         "Read the active typed baryon placements from Corollary 32.S3.1.",
         "Assign theorem-grade slots only where the stack actually closes them.",
-        "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+        "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+        "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
       ],
       "scope_boundary": [
         "Typed solver grammar only.",
-        "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+        "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+        "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
       ],
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -1088,6 +1091,39 @@
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
+    "local.inherited_full_stage2_dynamic_history_builder": {
+      "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+      "kind": "theorem",
+      "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+      "claim_status": "conditional / scoped",
+      "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+      "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+      "authority_paths": [],
+      "depends_on": [
+        "premise.2",
+        "paper31.local_background_state_map",
+        "paper31.stage2_markov_state"
+      ],
+      "premises": [
+        "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+        "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+        "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+      ],
+      "proof_outline": [
+        "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+        "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+        "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+      ],
+      "scope_boundary": [
+        "Conditional exact inherited-FULL history builder only.",
+        "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+        "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+      ],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
     "paper37.thomson_history_realization": {
       "node_id": "paper37.thomson_history_realization",
       "kind": "theorem",
@@ -1117,6 +1153,180 @@
         "Does not yet derive the exact IO-native operator acting on that tuple."
       ],
       "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "local.closed_scalar_metric_state_builder": {
+      "node_id": "local.closed_scalar_metric_state_builder",
+      "kind": "theorem",
+      "label": "Closed Scalar Metric-state Builder Theorem",
+      "claim_status": "derived / scoped as maps",
+      "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+      "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+      "authority_paths": [],
+      "depends_on": [
+        "paper23.closed_scalar_operator"
+      ],
+      "premises": [
+        "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+        "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+      ],
+      "proof_outline": [
+        "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+        "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+        "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+      ],
+      "scope_boundary": [
+        "Metric-state builder from an explicit total scalar stress summary only.",
+        "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+      ],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "local.closed_scalar_adiabatic_seed_bridge": {
+      "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+      "kind": "theorem",
+      "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+      "claim_status": "derived / scoped",
+      "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+      "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+      "authority_paths": [],
+      "depends_on": [
+        "paper32.modular_dtn_field_transfer",
+        "paper23.closed_scalar_operator"
+      ],
+      "premises": [
+        "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+        "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+      ],
+      "proof_outline": [
+        "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+        "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+        "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+      ],
+      "scope_boundary": [
+        "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+        "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+      ],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "local.closed_scalar_transfer_projector": {
+      "node_id": "local.closed_scalar_transfer_projector",
+      "kind": "theorem",
+      "label": "Closed Scalar Transfer Projector Theorem",
+      "claim_status": "derived / scoped as maps",
+      "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+      "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+      "authority_paths": [],
+      "depends_on": [
+        "paper22.spatial_mode_ladder",
+        "paper23.closed_scalar_operator",
+        "local.closed_scalar_metric_state_builder"
+      ],
+      "premises": [
+        "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+        "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+        "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+      ],
+      "proof_outline": [
+        "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+        "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+        "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+      ],
+      "scope_boundary": [
+        "Exact source law and exact closed radial chain on one explicit scalar history.",
+        "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+        "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+      ],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "local.closed_scalar_acoustic_generator": {
+      "node_id": "local.closed_scalar_acoustic_generator",
+      "kind": "theorem",
+      "label": "Closed Scalar Acoustic Generator Theorem",
+      "claim_status": "derived / scoped as maps",
+      "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+      "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+      ],
+      "depends_on": [
+        "paper23.closed_scalar_operator",
+        "paper29.sound_speed_selector",
+        "paper32.typed_baryon_slot_spec",
+        "paper37.thomson_history_realization"
+      ],
+      "premises": [
+        "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+        "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+        "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+        "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+      ],
+      "proof_outline": [
+        "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+        "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+        "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+        "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+      ],
+      "scope_boundary": [
+        "Local explicit-sample scalar generator only.",
+        "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+        "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+        "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+      ],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "local.scoped_closed_scalar_pipeline": {
+      "node_id": "local.scoped_closed_scalar_pipeline",
+      "kind": "theorem",
+      "label": "Scoped Closed-scalar Pipeline Theorem",
+      "claim_status": "conditional / scoped",
+      "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+      "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+      "authority_paths": [],
+      "depends_on": [
+        "paper32.modular_dtn_field_transfer",
+        "local.closed_scalar_adiabatic_seed_bridge",
+        "local.inherited_full_stage2_dynamic_history_builder",
+        "paper37.thomson_history_realization",
+        "local.closed_scalar_metric_state_builder",
+        "local.closed_scalar_acoustic_generator",
+        "local.closed_scalar_transfer_projector",
+        "paper28.closed_s3_shell_power",
+        "paper32.closed_s3_solver_spec"
+      ],
+      "premises": [
+        "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+        "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+        "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+        "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+        "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+        "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+      ],
+      "proof_outline": [
+        "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+        "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+        "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+      ],
+      "scope_boundary": [
+        "Full composed active-branch scalar pipeline only.",
+        "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+        "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+        "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+      ],
+      "notes": [
+        "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+      ],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
     "paper37.null_family_acoustic_readout": {
@@ -2032,7 +2242,7 @@
             "kind": "theorem",
             "label": "Typed Baryon-slot Specification",
             "claim_status": "derived / scoped",
-            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
             "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -2047,11 +2257,13 @@
             "proof_outline": [
               "Read the active typed baryon placements from Corollary 32.S3.1.",
               "Assign theorem-grade slots only where the stack actually closes them.",
-              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+              "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
             ],
             "scope_boundary": [
               "Typed solver grammar only.",
-              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+              "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2085,6 +2297,39 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "local.inherited_full_stage2_dynamic_history_builder": {
+            "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+            "kind": "theorem",
+            "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+            "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+            "authority_paths": [],
+            "depends_on": [
+              "premise.2",
+              "paper31.local_background_state_map",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+              "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+              "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+            ],
+            "proof_outline": [
+              "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+              "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+              "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+            ],
+            "scope_boundary": [
+              "Conditional exact inherited-FULL history builder only.",
+              "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+              "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper37.thomson_history_realization": {
             "node_id": "paper37.thomson_history_realization",
             "kind": "theorem",
@@ -2114,6 +2359,180 @@
               "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_metric_state_builder": {
+            "node_id": "local.closed_scalar_metric_state_builder",
+            "kind": "theorem",
+            "label": "Closed Scalar Metric-state Builder Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+            "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+              "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+            ],
+            "proof_outline": [
+              "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+              "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+              "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+            ],
+            "scope_boundary": [
+              "Metric-state builder from an explicit total scalar stress summary only.",
+              "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_adiabatic_seed_bridge": {
+            "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+            "kind": "theorem",
+            "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+            "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+            ],
+            "proof_outline": [
+              "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+              "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+              "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+            ],
+            "scope_boundary": [
+              "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+              "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_transfer_projector": {
+            "node_id": "local.closed_scalar_transfer_projector",
+            "kind": "theorem",
+            "label": "Closed Scalar Transfer Projector Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+            "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator",
+              "local.closed_scalar_metric_state_builder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+              "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+            ],
+            "proof_outline": [
+              "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+              "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+              "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+            ],
+            "scope_boundary": [
+              "Exact source law and exact closed radial chain on one explicit scalar history.",
+              "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+              "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_acoustic_generator": {
+            "node_id": "local.closed_scalar_acoustic_generator",
+            "kind": "theorem",
+            "label": "Closed Scalar Acoustic Generator Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+            "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper23.closed_scalar_operator",
+              "paper29.sound_speed_selector",
+              "paper32.typed_baryon_slot_spec",
+              "paper37.thomson_history_realization"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+              "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+            ],
+            "proof_outline": [
+              "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+              "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+              "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+              "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+            ],
+            "scope_boundary": [
+              "Local explicit-sample scalar generator only.",
+              "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+              "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.scoped_closed_scalar_pipeline": {
+            "node_id": "local.scoped_closed_scalar_pipeline",
+            "kind": "theorem",
+            "label": "Scoped Closed-scalar Pipeline Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+            "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "local.closed_scalar_adiabatic_seed_bridge",
+              "local.inherited_full_stage2_dynamic_history_builder",
+              "paper37.thomson_history_realization",
+              "local.closed_scalar_metric_state_builder",
+              "local.closed_scalar_acoustic_generator",
+              "local.closed_scalar_transfer_projector",
+              "paper28.closed_s3_shell_power",
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+              "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+              "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+              "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+              "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+            ],
+            "proof_outline": [
+              "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+              "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+              "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+            ],
+            "scope_boundary": [
+              "Full composed active-branch scalar pipeline only.",
+              "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+              "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+            ],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.null_family_acoustic_readout": {
@@ -2903,7 +3322,7 @@
             "kind": "theorem",
             "label": "Typed Baryon-slot Specification",
             "claim_status": "derived / scoped",
-            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
             "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -2918,11 +3337,13 @@
             "proof_outline": [
               "Read the active typed baryon placements from Corollary 32.S3.1.",
               "Assign theorem-grade slots only where the stack actually closes them.",
-              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+              "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
             ],
             "scope_boundary": [
               "Typed solver grammar only.",
-              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+              "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2956,6 +3377,39 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "local.inherited_full_stage2_dynamic_history_builder": {
+            "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+            "kind": "theorem",
+            "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+            "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+            "authority_paths": [],
+            "depends_on": [
+              "premise.2",
+              "paper31.local_background_state_map",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+              "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+              "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+            ],
+            "proof_outline": [
+              "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+              "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+              "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+            ],
+            "scope_boundary": [
+              "Conditional exact inherited-FULL history builder only.",
+              "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+              "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper37.thomson_history_realization": {
             "node_id": "paper37.thomson_history_realization",
             "kind": "theorem",
@@ -2985,6 +3439,180 @@
               "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_metric_state_builder": {
+            "node_id": "local.closed_scalar_metric_state_builder",
+            "kind": "theorem",
+            "label": "Closed Scalar Metric-state Builder Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+            "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+              "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+            ],
+            "proof_outline": [
+              "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+              "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+              "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+            ],
+            "scope_boundary": [
+              "Metric-state builder from an explicit total scalar stress summary only.",
+              "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_adiabatic_seed_bridge": {
+            "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+            "kind": "theorem",
+            "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+            "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+            ],
+            "proof_outline": [
+              "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+              "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+              "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+            ],
+            "scope_boundary": [
+              "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+              "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_transfer_projector": {
+            "node_id": "local.closed_scalar_transfer_projector",
+            "kind": "theorem",
+            "label": "Closed Scalar Transfer Projector Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+            "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator",
+              "local.closed_scalar_metric_state_builder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+              "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+            ],
+            "proof_outline": [
+              "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+              "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+              "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+            ],
+            "scope_boundary": [
+              "Exact source law and exact closed radial chain on one explicit scalar history.",
+              "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+              "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_acoustic_generator": {
+            "node_id": "local.closed_scalar_acoustic_generator",
+            "kind": "theorem",
+            "label": "Closed Scalar Acoustic Generator Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+            "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper23.closed_scalar_operator",
+              "paper29.sound_speed_selector",
+              "paper32.typed_baryon_slot_spec",
+              "paper37.thomson_history_realization"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+              "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+            ],
+            "proof_outline": [
+              "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+              "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+              "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+              "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+            ],
+            "scope_boundary": [
+              "Local explicit-sample scalar generator only.",
+              "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+              "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.scoped_closed_scalar_pipeline": {
+            "node_id": "local.scoped_closed_scalar_pipeline",
+            "kind": "theorem",
+            "label": "Scoped Closed-scalar Pipeline Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+            "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "local.closed_scalar_adiabatic_seed_bridge",
+              "local.inherited_full_stage2_dynamic_history_builder",
+              "paper37.thomson_history_realization",
+              "local.closed_scalar_metric_state_builder",
+              "local.closed_scalar_acoustic_generator",
+              "local.closed_scalar_transfer_projector",
+              "paper28.closed_s3_shell_power",
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+              "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+              "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+              "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+              "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+            ],
+            "proof_outline": [
+              "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+              "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+              "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+            ],
+            "scope_boundary": [
+              "Full composed active-branch scalar pipeline only.",
+              "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+              "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+            ],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.null_family_acoustic_readout": {
@@ -3774,7 +4402,7 @@
             "kind": "theorem",
             "label": "Typed Baryon-slot Specification",
             "claim_status": "derived / scoped",
-            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
             "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -3789,11 +4417,13 @@
             "proof_outline": [
               "Read the active typed baryon placements from Corollary 32.S3.1.",
               "Assign theorem-grade slots only where the stack actually closes them.",
-              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+              "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
             ],
             "scope_boundary": [
               "Typed solver grammar only.",
-              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+              "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3827,6 +4457,39 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "local.inherited_full_stage2_dynamic_history_builder": {
+            "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+            "kind": "theorem",
+            "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+            "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+            "authority_paths": [],
+            "depends_on": [
+              "premise.2",
+              "paper31.local_background_state_map",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+              "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+              "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+            ],
+            "proof_outline": [
+              "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+              "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+              "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+            ],
+            "scope_boundary": [
+              "Conditional exact inherited-FULL history builder only.",
+              "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+              "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper37.thomson_history_realization": {
             "node_id": "paper37.thomson_history_realization",
             "kind": "theorem",
@@ -3856,6 +4519,180 @@
               "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_metric_state_builder": {
+            "node_id": "local.closed_scalar_metric_state_builder",
+            "kind": "theorem",
+            "label": "Closed Scalar Metric-state Builder Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+            "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+              "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+            ],
+            "proof_outline": [
+              "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+              "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+              "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+            ],
+            "scope_boundary": [
+              "Metric-state builder from an explicit total scalar stress summary only.",
+              "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_adiabatic_seed_bridge": {
+            "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+            "kind": "theorem",
+            "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+            "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+            ],
+            "proof_outline": [
+              "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+              "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+              "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+            ],
+            "scope_boundary": [
+              "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+              "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_transfer_projector": {
+            "node_id": "local.closed_scalar_transfer_projector",
+            "kind": "theorem",
+            "label": "Closed Scalar Transfer Projector Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+            "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator",
+              "local.closed_scalar_metric_state_builder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+              "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+            ],
+            "proof_outline": [
+              "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+              "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+              "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+            ],
+            "scope_boundary": [
+              "Exact source law and exact closed radial chain on one explicit scalar history.",
+              "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+              "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_acoustic_generator": {
+            "node_id": "local.closed_scalar_acoustic_generator",
+            "kind": "theorem",
+            "label": "Closed Scalar Acoustic Generator Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+            "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper23.closed_scalar_operator",
+              "paper29.sound_speed_selector",
+              "paper32.typed_baryon_slot_spec",
+              "paper37.thomson_history_realization"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+              "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+            ],
+            "proof_outline": [
+              "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+              "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+              "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+              "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+            ],
+            "scope_boundary": [
+              "Local explicit-sample scalar generator only.",
+              "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+              "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.scoped_closed_scalar_pipeline": {
+            "node_id": "local.scoped_closed_scalar_pipeline",
+            "kind": "theorem",
+            "label": "Scoped Closed-scalar Pipeline Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+            "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "local.closed_scalar_adiabatic_seed_bridge",
+              "local.inherited_full_stage2_dynamic_history_builder",
+              "paper37.thomson_history_realization",
+              "local.closed_scalar_metric_state_builder",
+              "local.closed_scalar_acoustic_generator",
+              "local.closed_scalar_transfer_projector",
+              "paper28.closed_s3_shell_power",
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+              "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+              "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+              "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+              "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+            ],
+            "proof_outline": [
+              "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+              "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+              "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+            ],
+            "scope_boundary": [
+              "Full composed active-branch scalar pipeline only.",
+              "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+              "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+            ],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.null_family_acoustic_readout": {
@@ -4657,7 +5494,7 @@
             "kind": "theorem",
             "label": "Typed Baryon-slot Specification",
             "claim_status": "derived / scoped",
-            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
             "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -4672,11 +5509,13 @@
             "proof_outline": [
               "Read the active typed baryon placements from Corollary 32.S3.1.",
               "Assign theorem-grade slots only where the stack actually closes them.",
-              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+              "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
             ],
             "scope_boundary": [
               "Typed solver grammar only.",
-              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+              "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -4710,6 +5549,39 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "local.inherited_full_stage2_dynamic_history_builder": {
+            "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+            "kind": "theorem",
+            "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+            "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+            "authority_paths": [],
+            "depends_on": [
+              "premise.2",
+              "paper31.local_background_state_map",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+              "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+              "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+            ],
+            "proof_outline": [
+              "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+              "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+              "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+            ],
+            "scope_boundary": [
+              "Conditional exact inherited-FULL history builder only.",
+              "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+              "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper37.thomson_history_realization": {
             "node_id": "paper37.thomson_history_realization",
             "kind": "theorem",
@@ -4739,6 +5611,180 @@
               "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_metric_state_builder": {
+            "node_id": "local.closed_scalar_metric_state_builder",
+            "kind": "theorem",
+            "label": "Closed Scalar Metric-state Builder Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+            "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+              "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+            ],
+            "proof_outline": [
+              "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+              "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+              "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+            ],
+            "scope_boundary": [
+              "Metric-state builder from an explicit total scalar stress summary only.",
+              "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_adiabatic_seed_bridge": {
+            "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+            "kind": "theorem",
+            "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+            "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+            ],
+            "proof_outline": [
+              "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+              "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+              "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+            ],
+            "scope_boundary": [
+              "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+              "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_transfer_projector": {
+            "node_id": "local.closed_scalar_transfer_projector",
+            "kind": "theorem",
+            "label": "Closed Scalar Transfer Projector Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+            "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator",
+              "local.closed_scalar_metric_state_builder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+              "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+            ],
+            "proof_outline": [
+              "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+              "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+              "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+            ],
+            "scope_boundary": [
+              "Exact source law and exact closed radial chain on one explicit scalar history.",
+              "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+              "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_acoustic_generator": {
+            "node_id": "local.closed_scalar_acoustic_generator",
+            "kind": "theorem",
+            "label": "Closed Scalar Acoustic Generator Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+            "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper23.closed_scalar_operator",
+              "paper29.sound_speed_selector",
+              "paper32.typed_baryon_slot_spec",
+              "paper37.thomson_history_realization"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+              "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+            ],
+            "proof_outline": [
+              "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+              "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+              "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+              "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+            ],
+            "scope_boundary": [
+              "Local explicit-sample scalar generator only.",
+              "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+              "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.scoped_closed_scalar_pipeline": {
+            "node_id": "local.scoped_closed_scalar_pipeline",
+            "kind": "theorem",
+            "label": "Scoped Closed-scalar Pipeline Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+            "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "local.closed_scalar_adiabatic_seed_bridge",
+              "local.inherited_full_stage2_dynamic_history_builder",
+              "paper37.thomson_history_realization",
+              "local.closed_scalar_metric_state_builder",
+              "local.closed_scalar_acoustic_generator",
+              "local.closed_scalar_transfer_projector",
+              "paper28.closed_s3_shell_power",
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+              "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+              "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+              "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+              "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+            ],
+            "proof_outline": [
+              "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+              "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+              "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+            ],
+            "scope_boundary": [
+              "Full composed active-branch scalar pipeline only.",
+              "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+              "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+            ],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.null_family_acoustic_readout": {
@@ -5543,7 +6589,7 @@
             "kind": "theorem",
             "label": "Typed Baryon-slot Specification",
             "claim_status": "derived / scoped",
-            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open. No silent one-slot collapse on `R` is licensed anywhere in the perturbation pipeline.",
             "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
@@ -5558,11 +6604,13 @@
             "proof_outline": [
               "Read the active typed baryon placements from Corollary 32.S3.1.",
               "Assign theorem-grade slots only where the stack actually closes them.",
-              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers.",
+              "Reject any silent one-slot reassignment of the full perturbation `R` slot to a local helper quantity."
             ],
             "scope_boundary": [
               "Typed solver grammar only.",
-              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy.",
+              "In particular, the full-hierarchy `R` slot is not licensed to collapse silently to one local scalar anywhere in the composed pipeline."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -5596,6 +6644,39 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "local.inherited_full_stage2_dynamic_history_builder": {
+            "node_id": "local.inherited_full_stage2_dynamic_history_builder",
+            "kind": "theorem",
+            "label": "Inherited FULL Stage-2 Dynamic-history Builder Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active IO local background with `T_R,loc(z) = T_IO,0 (1+z)` and `H_loc(z) = (c / R_S) sqrt((1-u)/u^3)` for `u = 1 / [x (1+z)]`, the standalone inherited-FULL builder runs exact FULL HyRec history outside the forbidden pointwise wrapper and exports `Y_rec(z) = (x_e(z), T_m(z), D_-(q;z), L_-(z))` with `D_-(q;z) = interp_Dfnu(lna_0, dlna, Dfminus_hist(q;.), N_z, -ln(1+z))` and `L_-(z) = interp_Dfnu(lna_0, dlna, Dfminus_Ly_hist(.), N_z, -ln(1+z))`.",
+            "scope": "Conditional exact inherited-FULL Stage-2 history builder on the active IO local background.",
+            "authority_paths": [],
+            "depends_on": [
+              "premise.2",
+              "paper31.local_background_state_map",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`premise.2` licenses the inherited FULL atomic and radiative-transfer physics class on the local bulk branch.",
+              "`paper31.local_background_state_map` fixes the active local thermal and Hubble histories entering the standalone driver.",
+              "`paper31.stage2_markov_state` fixes the exact exported state grammar `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`."
+            ],
+            "proof_outline": [
+              "Promote the existing standalone FULL-history route from the Paper 31 benchmark layer into the calculator instead of calling FULL HyRec through a pointwise `(z, x_e, T_m)` wrapper.",
+              "Run FULL HyRec on the active IO local background arrays with the explicit history-grid fix used by the benchmark route.",
+              "Export `x_e`, `T_m`, `Dfminus_hist`, and `Dfminus_Ly_hist` on the requested observer-redshift grid without silently collapsing the characteristic field to one preferred scalar."
+            ],
+            "scope_boundary": [
+              "Conditional exact inherited-FULL history builder only.",
+              "Uses inherited FULL atomic and radiative-transfer physics under Premise 2 rather than a new universal IO-native renormalization theorem.",
+              "Does not pick a preferred one-dimensional compression of `D_-(q;z)` unless the caller chooses one explicitly."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper37.thomson_history_realization": {
             "node_id": "paper37.thomson_history_realization",
             "kind": "theorem",
@@ -5625,6 +6706,180 @@
               "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_metric_state_builder": {
+            "node_id": "local.closed_scalar_metric_state_builder",
+            "kind": "theorem",
+            "label": "Closed Scalar Metric-state Builder Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Once the Einstein-normalized scalar stress summary `(delta_rho, delta_p, rho_plus_p_theta, rho_plus_p_shear)` is supplied on one closed scalar shell, the Newtonian metric state is fixed by `psi = phi - 4.5 (a^2 / k_n^2) rho_plus_p_shear` and `phi' = -(a'/a) psi + 1.5 (a^2 / k_n^2) rho_plus_p_theta`, while the synchronous metric state is fixed by `h' = [k_n^2 s_2^2 eta + 1.5 a^2 delta_rho] / (0.5 a'/a)`, `eta' = [1.5 a^2 rho_plus_p_theta + 0.5 K h'] / (k_n^2 s_2^2)`, `alpha = (h' + 6 eta') / (2 k_n^2)`, and `alpha' = -2 (a'/a) alpha + eta - 4.5 (a^2 / k_n^2) rho_plus_p_shear`.",
+            "scope": "Einstein-side scalar metric-state reconstruction on one explicit closed shell.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the closed scalar shell geometry and the `s_2^2 = 1 - 3K/k_n^2` factor.",
+              "The total scalar stress summary is supplied explicitly rather than guessed from a hidden matter model."
+            ],
+            "proof_outline": [
+              "Write the scalar Einstein equations on one physical closed shell in Newtonian and synchronous gauge.",
+              "Solve algebraically for the metric variables and their first derivatives from the explicit stress summary.",
+              "Feed those metric variables into the acoustic quartet without introducing any extra closure factor."
+            ],
+            "scope_boundary": [
+              "Metric-state builder from an explicit total scalar stress summary only.",
+              "Does not derive the stress summary from a full multi-species perturbation hierarchy by itself."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_adiabatic_seed_bridge": {
+            "node_id": "local.closed_scalar_adiabatic_seed_bridge",
+            "kind": "theorem",
+            "label": "Closed Scalar Adiabatic-seed Bridge Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source branch, the source shell weight is `C_N^src = A_s W_N = A_s (N / N_p)^(-K_gauge / x)`, and the leading radiation-era closed-`S^3` adiabatic seed obeys `delta_gamma^(S) = -(k_n tau)^2 s_2^2 R_n / 3`, `theta_gamma^(S) = -k_n (k_n tau)^3 s_2^2 R_n / 36`, `delta_b^(S) = 3 delta_gamma^(S) / 4`, `theta_b^(S) = theta_gamma^(S)`, `eta^(S) = R_n [1 - (k_n tau)^2 / 36]`, followed by the explicit synchronous-to-Newtonian shift `delta_gamma^(N) = delta_gamma^(S) - 4 (a'/a) alpha`, `theta_gamma^(N) = theta_gamma^(S) + k_n^2 alpha`, `delta_b^(N) = delta_b^(S) - 3 (a'/a) alpha`, and `theta_b^(N) = theta_b^(S) + k_n^2 alpha`.",
+            "scope": "Active scalar-source shell weight plus leading closed-shell photon-baryon adiabatic seed.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar-source shell weight `A_s W_N` on the plus branch.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar-shell support and the closed-shell geometric factor `s_2^2`."
+            ],
+            "proof_outline": [
+              "Take the active scalar-source shell covariance `A_s W_N` from the source block without adding a new primordial fit.",
+              "Write the leading radiation-era closed-shell photon-baryon adiabatic seed in synchronous gauge.",
+              "Transform that seed explicitly to Newtonian gauge on the same shell and package the resulting hierarchy state."
+            ],
+            "scope_boundary": [
+              "Leading photon-baryon adiabatic seed on the active scalar-source branch only.",
+              "Does not derive low-shell puncture occupations, anomalous phase correlations, or full multi-species isocurvature families."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_transfer_projector": {
+            "node_id": "local.closed_scalar_transfer_projector",
+            "kind": "theorem",
+            "label": "Closed Scalar Transfer Projector Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "Given an explicit closed-shell scalar source history, the transparent LOS source law is `S_T^(0) = exp(-kappa) phi' + g delta_gamma / 4`, `S_T^(1) = exp(-kappa) k_n psi + g theta_b / k_n` in Newtonian gauge, `S_T^(0) = -exp(-kappa) h' / 6 + g delta_gamma / 4`, `S_T^(1) = g theta_b / k_n`, `S_T^(2) = exp(-kappa) k_n^2 (2/3) s_2 alpha + g P` in synchronous gauge, with `S_T^(2) = g P` and `S_E = g P` on the scalar polarization source, and the exact closed radial chain is `Phi_0 = sin(beta chi) / [beta sin chi]`, `Phi_l = [(2l-1) cot chi Phi_{l-1} - sqrt(beta^2-(l-1)^2) Phi_{l-2}] / sqrt(beta^2-l^2)`, `dPhi_l/dchi = l cot chi Phi_l - sqrt(beta^2-(l+1)^2) Phi_{l+1}`, `d2Phi_l/dchi^2 = -2 cot chi dPhi_l/dchi + [l(l+1) csc^2 chi - beta^2 + 1] Phi_l`, so that `Delta_l^T(q)` and `Delta_l^E(q)` are fixed by explicit LOS integration on `chi = sqrt(K) (tau_0 - tau)`.",
+            "scope": "Closed scalar hierarchy-to-transfer projector on one explicit source history and one observer conformal time.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator",
+              "local.closed_scalar_metric_state_builder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the closed spatial carrier and the scalar radial support on `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell parameter `beta = n+1` and the physical shell support `n >= 2`.",
+              "`local.closed_scalar_metric_state_builder` supplies the explicit scalar metric histories entering the transparent LOS source law."
+            ],
+            "proof_outline": [
+              "Build the transparent scalar LOS sources directly from the hierarchy state, metric state, and observer-absolute visibility packet without rewriting them as hidden CLASS source patches.",
+              "Evaluate the exact closed scalar radial chain from the stable recurrence on `beta = n+1` and the radial derivative identities.",
+              "Integrate the explicit source and radial kernels on the supplied conformal-time grid to obtain `Delta_l^T(q)` and `Delta_l^E(q)` on the closed support."
+            ],
+            "scope_boundary": [
+              "Exact source law and exact closed radial chain on one explicit scalar history.",
+              "Numeric packet values still depend on explicit quadrature on the supplied conformal-time grid.",
+              "Does not derive the hierarchy history automatically from the full perturbation evolution problem."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 local completion step."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.closed_scalar_acoustic_generator": {
+            "node_id": "local.closed_scalar_acoustic_generator",
+            "kind": "theorem",
+            "label": "Closed Scalar Acoustic Generator Theorem",
+            "claim_status": "derived / scoped as maps",
+            "statement": "On one explicit physical closed-`S^3` scalar shell `n >= 2`, the local photon-baryon acoustic generator is fixed by `k_n^2 = n(n+2) / R_curv^2`, `q_n^2 = k_n^2 + K = (n+1)^2 / R_curv^2`, `s_l = sqrt(1 - K (l^2-1) / k_n^2)`, `cot_K^gen(tau) = sqrt(K) / [k_n tan(sqrt(K) tau)]`, local baryon loading `R = 3 rho_b / (4 rho_gamma)` on `omega_b,geom`, and the explicit scalar RHS `delta_gamma' = -(4/3)(theta_gamma + metric_continuity)`, `delta_b' = -(theta_b + metric_continuity)`, `theta_b' = -a'/a theta_b + metric_euler + k_n^2 c_b^2 delta_b + R * drag_rate * (theta_gamma-theta_b)`, `theta_gamma' = k_n^2 (delta_gamma/4 - s_2^2 F_2) + metric_euler + drag_rate * (theta_b-theta_gamma)`, with gauge-to-quartet maps `(metric_continuity, metric_euler, metric_shear, metric_shear_prime) = (-3 phi', k_n^2 psi, 0, 0)` in Newtonian gauge and `(h'/2, 0, k_n^2 alpha, k_n^2 alpha')` in synchronous gauge, with higher multipoles and the reduced TCA contract driven by the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)`. The local primitive loading `R(z)` used here is not a silent one-slot collapse of the full hierarchy-wide perturbation `R` slot.",
+            "scope": "Local affine scalar acoustic generator on an explicit sampled closed-`S^3` shell.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper23.closed_scalar_operator",
+              "paper29.sound_speed_selector",
+              "paper32.typed_baryon_slot_spec",
+              "paper37.thomson_history_realization"
+            ],
+            "premises": [
+              "`paper23.closed_scalar_operator` fixes the discrete scalar shell support and the shifted scalar operator on `S^3`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local inertia loading `R(z)` on `omega_b,geom` for the primitive acoustic leg.",
+              "`paper32.typed_baryon_slot_spec` forbids collapsing the hierarchy to one baryon slot and keeps the metric-source leg explicit.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that an admissible local closure must consume."
+            ],
+            "proof_outline": [
+              "Insert the closed-`S^3` scalar shell identities into the non-flat scalar hierarchy so the geometric recurrence factors are explicit on each discrete `n` shell.",
+              "Use the theorem-grade local history sample `(x_e, T_m)` to recover `c_b^2` and its derivative, and use the theorem-grade primitive loading `R(z)` for the local momentum-loading leg.",
+              "Feed the coupled Thomson tuple into the baryon drag, photon hierarchy damping, and tight-coupling contract equations to obtain the full local scalar photon-baryon RHS at explicit sample level.",
+              "Conclude that the local generator itself is fixed once the external metric-drive and Stage-2/Thomson sample builders are supplied explicitly."
+            ],
+            "scope_boundary": [
+              "Local explicit-sample scalar generator only.",
+              "Does not derive the exact Stage-2 dynamic-network history builder or the total multi-species stress summary by itself.",
+              "Does not by itself integrate the full scalar history from initial conditions to transfer packets without those explicit upstream builders.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is claimed anywhere in this map."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; the linked report is supplementary supporting material only."
+            ],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "local.scoped_closed_scalar_pipeline": {
+            "node_id": "local.scoped_closed_scalar_pipeline",
+            "kind": "theorem",
+            "label": "Scoped Closed-scalar Pipeline Theorem",
+            "claim_status": "conditional / scoped",
+            "statement": "On the active scalar-source branch, the composed closed-`S^3` scalar map from `(P_src, C_N^src, ic_n, Y_rec, Thomson tuple, stress summary)` to `y^(n)(tau)`, then to `Delta_l^X(q)`, and then to shell-summed `C_l`, is carried end-to-end once the exact Stage-2 history enters through the conditional inherited-FULL builder. The carrier laws, metric formulas, projector formulas, and LOS formulas remain `derived / scoped as maps`, while the full composition is only `conditional / scoped` because it inherits the Stage-2 builder status. No silent one-slot collapse on the hierarchy-wide perturbation `R` slot appears anywhere in this composition.",
+            "scope": "Composed active-branch closed-scalar pipeline from source shell to transfer packets and shell-summed spectra.",
+            "authority_paths": [],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "local.closed_scalar_adiabatic_seed_bridge",
+              "local.inherited_full_stage2_dynamic_history_builder",
+              "paper37.thomson_history_realization",
+              "local.closed_scalar_metric_state_builder",
+              "local.closed_scalar_acoustic_generator",
+              "local.closed_scalar_transfer_projector",
+              "paper28.closed_s3_shell_power",
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` fixes the active scalar source block.",
+              "`local.closed_scalar_adiabatic_seed_bridge` fixes the active closed-shell source-to-initial-condition bridge.",
+              "`local.inherited_full_stage2_dynamic_history_builder` supplies the exact sampled Stage-2 history carrier at conditional inherited-FULL scope.",
+              "`paper37.thomson_history_realization` fixes the exact coupled Thomson tuple that the local hierarchy map must consume.",
+              "`local.closed_scalar_metric_state_builder`, `local.closed_scalar_acoustic_generator`, and `local.closed_scalar_transfer_projector` provide the explicit map-level formulas from shell data to transfer packets.",
+              "`paper28.closed_s3_shell_power` and `paper32.closed_s3_solver_spec` supply the shell weighting and closed-space LOS assembly grammar."
+            ],
+            "proof_outline": [
+              "Compose the active scalar source block, closed-shell seed bridge, sampled Stage-2 history, Thomson tuple, metric-state builder, local acoustic generator, and scalar transfer projector without inserting any hidden flat-space or CLASS default.",
+              "Carry the resulting transfer packets into the explicit shell-weighted `C_l` assembly on the closed support.",
+              "Track the claim status through the composition: map-level formulas remain `derived / scoped as maps`, while the full end-to-end pipeline inherits `conditional / scoped` status from the Stage-2 history builder."
+            ],
+            "scope_boundary": [
+              "Full composed active-branch scalar pipeline only.",
+              "Conditional on the inherited-FULL Stage-2 history builder rather than a universal IO-native Stage-2 renormalization theorem.",
+              "No theorem-grade hierarchy-wide one-slot collapse on `R` is licensed anywhere in this composition.",
+              "Not a universal automatic TT/TE/EE solver closure for arbitrary branches or sectors."
+            ],
+            "notes": [
+              "The theorem text is self-contained here; there is no published paper reference for this post-Paper-32 composed-pipeline step."
+            ],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
           "paper37.null_family_acoustic_readout": {
@@ -6113,6 +7368,7 @@
     "paper37_thomson_history_realization": "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md",
     "paper37_peak_functional_separation": "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md",
     "paper37_null_family_readout": "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md",
+    "paper37_closed_scalar_acoustic_generator": "/opt/cosmology-lab/results/paper37/paper37_closed_scalar_acoustic_generator_theorem_report.md",
     "paper35_dark_energy": "/opt/cosmology-lab/results/paper35/paper35_desi_dark_energy_investigation_results.json",
     "paper35_eta_closure": "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json",
     "public_paper_index": "/opt/cosmology-lab/tmp/dfife.github.io/data/papers.json"
