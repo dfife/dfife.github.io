@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-15T00:08:03.198543+00:00",
+    "generated_at_utc": "2026-04-15T00:51:37.786168+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
@@ -729,6 +729,36 @@
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
+    "paper28.closed_s3_shell_power": {
+      "node_id": "paper28.closed_s3_shell_power",
+      "kind": "theorem",
+      "label": "Paper 28 Closed S^3 Shell-power Definition",
+      "claim_status": "derived / scoped",
+      "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+      "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+      ],
+      "depends_on": [
+        "paper22.spatial_mode_ladder",
+        "paper23.closed_scalar_operator"
+      ],
+      "premises": [
+        "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+        "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+      ],
+      "proof_outline": [
+        "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+        "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+        "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+      ],
+      "scope_boundary": [
+        "Observer-side closed-shell power definitions only.",
+        "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
     "paper30.background_surface": {
       "node_id": "paper30.background_surface",
       "kind": "theorem",
@@ -970,6 +1000,36 @@
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
+    "paper32.modular_dtn_field_transfer": {
+      "node_id": "paper32.modular_dtn_field_transfer",
+      "kind": "theorem",
+      "label": "Paper 32 Modular-DtN Field Transfer",
+      "claim_status": "derived / scoped",
+      "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+      "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+      ],
+      "depends_on": [
+        "premise.1",
+        "premise.2"
+      ],
+      "premises": [
+        "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+        "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+      ],
+      "proof_outline": [
+        "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+        "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+        "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+      ],
+      "scope_boundary": [
+        "Active scalar-source block only.",
+        "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
     "paper32.typed_baryon_slot_spec": {
       "node_id": "paper32.typed_baryon_slot_spec",
       "kind": "theorem",
@@ -1055,6 +1115,66 @@
       "scope_boundary": [
         "Tuple carrier only.",
         "Does not yet derive the exact IO-native operator acting on that tuple."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper37.null_family_acoustic_readout": {
+      "node_id": "paper37.null_family_acoustic_readout",
+      "kind": "theorem",
+      "label": "Null-family Acoustic Readout Theorem",
+      "claim_status": "derived / scoped",
+      "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+      "scope": "Explicit null-family acoustic readout field and estimator class.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+      ],
+      "depends_on": [
+        "paper32.modular_dtn_field_transfer",
+        "paper29.sound_speed_selector"
+      ],
+      "premises": [
+        "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+        "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+        "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+      ],
+      "proof_outline": [
+        "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+        "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+        "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+      ],
+      "scope_boundary": [
+        "Explicit readout field and estimator class only.",
+        "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper37.peak_functional_separation": {
+      "node_id": "paper37.peak_functional_separation",
+      "kind": "theorem",
+      "label": "Peak-functional Separation Theorem",
+      "claim_status": "derived / scoped",
+      "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+      "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+      ],
+      "depends_on": [
+        "paper32.closed_s3_solver_spec"
+      ],
+      "premises": [
+        "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+        "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+      ],
+      "proof_outline": [
+        "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+        "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+        "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+      ],
+      "scope_boundary": [
+        "Boundary theorem only.",
+        "Does not itself derive the final `A_peak -> theta_peak` identification law."
       ],
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -1606,6 +1726,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper28.closed_s3_shell_power": {
+            "node_id": "paper28.closed_s3_shell_power",
+            "kind": "theorem",
+            "label": "Paper 28 Closed S^3 Shell-power Definition",
+            "claim_status": "derived / scoped",
+            "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+            "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+            ],
+            "proof_outline": [
+              "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+              "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+              "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-shell power definitions only.",
+              "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -1847,6 +1997,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper32.modular_dtn_field_transfer": {
+            "node_id": "paper32.modular_dtn_field_transfer",
+            "kind": "theorem",
+            "label": "Paper 32 Modular-DtN Field Transfer",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+            "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+              "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+            ],
+            "proof_outline": [
+              "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+              "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+              "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+            ],
+            "scope_boundary": [
+              "Active scalar-source block only.",
+              "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper32.typed_baryon_slot_spec": {
             "node_id": "paper32.typed_baryon_slot_spec",
             "kind": "theorem",
@@ -1932,6 +2112,66 @@
             "scope_boundary": [
               "Tuple carrier only.",
               "Does not yet derive the exact IO-native operator acting on that tuple."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.null_family_acoustic_readout": {
+            "node_id": "paper37.null_family_acoustic_readout",
+            "kind": "theorem",
+            "label": "Null-family Acoustic Readout Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+            "scope": "Explicit null-family acoustic readout field and estimator class.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper29.sound_speed_selector"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+              "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+            ],
+            "proof_outline": [
+              "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+              "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+              "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+            ],
+            "scope_boundary": [
+              "Explicit readout field and estimator class only.",
+              "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.peak_functional_separation": {
+            "node_id": "paper37.peak_functional_separation",
+            "kind": "theorem",
+            "label": "Peak-functional Separation Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+            "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+              "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+            ],
+            "proof_outline": [
+              "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+              "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+              "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+            ],
+            "scope_boundary": [
+              "Boundary theorem only.",
+              "Does not itself derive the final `A_peak -> theta_peak` identification law."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2357,6 +2597,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper28.closed_s3_shell_power": {
+            "node_id": "paper28.closed_s3_shell_power",
+            "kind": "theorem",
+            "label": "Paper 28 Closed S^3 Shell-power Definition",
+            "claim_status": "derived / scoped",
+            "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+            "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+            ],
+            "proof_outline": [
+              "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+              "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+              "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-shell power definitions only.",
+              "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -2598,6 +2868,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper32.modular_dtn_field_transfer": {
+            "node_id": "paper32.modular_dtn_field_transfer",
+            "kind": "theorem",
+            "label": "Paper 32 Modular-DtN Field Transfer",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+            "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+              "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+            ],
+            "proof_outline": [
+              "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+              "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+              "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+            ],
+            "scope_boundary": [
+              "Active scalar-source block only.",
+              "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper32.typed_baryon_slot_spec": {
             "node_id": "paper32.typed_baryon_slot_spec",
             "kind": "theorem",
@@ -2683,6 +2983,66 @@
             "scope_boundary": [
               "Tuple carrier only.",
               "Does not yet derive the exact IO-native operator acting on that tuple."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.null_family_acoustic_readout": {
+            "node_id": "paper37.null_family_acoustic_readout",
+            "kind": "theorem",
+            "label": "Null-family Acoustic Readout Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+            "scope": "Explicit null-family acoustic readout field and estimator class.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper29.sound_speed_selector"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+              "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+            ],
+            "proof_outline": [
+              "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+              "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+              "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+            ],
+            "scope_boundary": [
+              "Explicit readout field and estimator class only.",
+              "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.peak_functional_separation": {
+            "node_id": "paper37.peak_functional_separation",
+            "kind": "theorem",
+            "label": "Peak-functional Separation Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+            "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+              "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+            ],
+            "proof_outline": [
+              "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+              "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+              "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+            ],
+            "scope_boundary": [
+              "Boundary theorem only.",
+              "Does not itself derive the final `A_peak -> theta_peak` identification law."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3108,6 +3468,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper28.closed_s3_shell_power": {
+            "node_id": "paper28.closed_s3_shell_power",
+            "kind": "theorem",
+            "label": "Paper 28 Closed S^3 Shell-power Definition",
+            "claim_status": "derived / scoped",
+            "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+            "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+            ],
+            "proof_outline": [
+              "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+              "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+              "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-shell power definitions only.",
+              "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -3349,6 +3739,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper32.modular_dtn_field_transfer": {
+            "node_id": "paper32.modular_dtn_field_transfer",
+            "kind": "theorem",
+            "label": "Paper 32 Modular-DtN Field Transfer",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+            "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+              "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+            ],
+            "proof_outline": [
+              "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+              "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+              "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+            ],
+            "scope_boundary": [
+              "Active scalar-source block only.",
+              "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper32.typed_baryon_slot_spec": {
             "node_id": "paper32.typed_baryon_slot_spec",
             "kind": "theorem",
@@ -3434,6 +3854,66 @@
             "scope_boundary": [
               "Tuple carrier only.",
               "Does not yet derive the exact IO-native operator acting on that tuple."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.null_family_acoustic_readout": {
+            "node_id": "paper37.null_family_acoustic_readout",
+            "kind": "theorem",
+            "label": "Null-family Acoustic Readout Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+            "scope": "Explicit null-family acoustic readout field and estimator class.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper29.sound_speed_selector"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+              "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+            ],
+            "proof_outline": [
+              "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+              "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+              "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+            ],
+            "scope_boundary": [
+              "Explicit readout field and estimator class only.",
+              "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.peak_functional_separation": {
+            "node_id": "paper37.peak_functional_separation",
+            "kind": "theorem",
+            "label": "Peak-functional Separation Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+            "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+              "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+            ],
+            "proof_outline": [
+              "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+              "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+              "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+            ],
+            "scope_boundary": [
+              "Boundary theorem only.",
+              "Does not itself derive the final `A_peak -> theta_peak` identification law."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3871,6 +4351,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper28.closed_s3_shell_power": {
+            "node_id": "paper28.closed_s3_shell_power",
+            "kind": "theorem",
+            "label": "Paper 28 Closed S^3 Shell-power Definition",
+            "claim_status": "derived / scoped",
+            "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+            "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+            ],
+            "proof_outline": [
+              "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+              "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+              "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-shell power definitions only.",
+              "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -4112,6 +4622,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper32.modular_dtn_field_transfer": {
+            "node_id": "paper32.modular_dtn_field_transfer",
+            "kind": "theorem",
+            "label": "Paper 32 Modular-DtN Field Transfer",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+            "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+              "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+            ],
+            "proof_outline": [
+              "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+              "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+              "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+            ],
+            "scope_boundary": [
+              "Active scalar-source block only.",
+              "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper32.typed_baryon_slot_spec": {
             "node_id": "paper32.typed_baryon_slot_spec",
             "kind": "theorem",
@@ -4197,6 +4737,66 @@
             "scope_boundary": [
               "Tuple carrier only.",
               "Does not yet derive the exact IO-native operator acting on that tuple."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.null_family_acoustic_readout": {
+            "node_id": "paper37.null_family_acoustic_readout",
+            "kind": "theorem",
+            "label": "Null-family Acoustic Readout Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+            "scope": "Explicit null-family acoustic readout field and estimator class.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper29.sound_speed_selector"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+              "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+            ],
+            "proof_outline": [
+              "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+              "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+              "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+            ],
+            "scope_boundary": [
+              "Explicit readout field and estimator class only.",
+              "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.peak_functional_separation": {
+            "node_id": "paper37.peak_functional_separation",
+            "kind": "theorem",
+            "label": "Peak-functional Separation Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+            "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+              "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+            ],
+            "proof_outline": [
+              "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+              "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+              "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+            ],
+            "scope_boundary": [
+              "Boundary theorem only.",
+              "Does not itself derive the final `A_peak -> theta_peak` identification law."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -4637,6 +5237,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper28.closed_s3_shell_power": {
+            "node_id": "paper28.closed_s3_shell_power",
+            "kind": "theorem",
+            "label": "Paper 28 Closed S^3 Shell-power Definition",
+            "claim_status": "derived / scoped",
+            "statement": "The exact observer-side closed-`S^3` shell covariance obeys `Var_n(X) = ((n+1)^2 / (2 pi^2 R^3)) P_X(n)`, with dimensionless shell conventions `Delta_q^2(n) = ((n+1)^3 / (2 pi^2 R^3)) P_X(n)`, `Delta_scalar^2(n) = (n(n+1)(n+2) / (2 pi^2 R^3)) P_X(n)`, and `Delta_MS^2(n) = (((n-1)(n+1)(n+3)) / (2 pi^2 R^3)) P_X(n)`.",
+            "scope": "Observer-side shell covariance and power-spectrum conventions on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder",
+              "paper23.closed_scalar_operator"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the exact scalar-shell degeneracy `(n+1)^2` on closed `S^3`.",
+              "`paper23.closed_scalar_operator` fixes the physical scalar shell variable `k_MS(n) = sqrt((n-1)(n+3)) / R`."
+            ],
+            "proof_outline": [
+              "Expand the observer-side scalar field in orthonormal closed-`S^3` hyperspherical harmonics.",
+              "Write the equal-point variance shell by shell using the scalar degeneracy `(n+1)^2` and the volume `2 pi^2 R^3`.",
+              "From that invariant shell variance, read off the exact `q`, scalar-Laplacian, and Mukhanov-Sasaki `Delta^2` conventions without importing the flat `k^3` law as primitive."
+            ],
+            "scope_boundary": [
+              "Observer-side closed-shell power definitions only.",
+              "Does not by itself derive the physical IO source-side shell covariance law or the missing bridge typing."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -4878,6 +5508,36 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper32.modular_dtn_field_transfer": {
+            "node_id": "paper32.modular_dtn_field_transfer",
+            "kind": "theorem",
+            "label": "Paper 32 Modular-DtN Field Transfer",
+            "claim_status": "derived / scoped",
+            "statement": "On the active scalar-source sector, the unique positive one-slot field transfer is `T_field = exp[-(K_g tensor log(r_s Lambda_DtN^coex)) / (2x)]`, with quadratic descendant `R_cov = T_field^* T_field`, full source block `P_src = B_+ o U_coex o T_field`, plus-branch shell window `W_N = (N / N_p)^(-K_gauge / x)`, and native amplitude `A_s = (25/9) [gamma^2 / (1 + gamma^2)] [1 / sqrt(2)] [exp(4 pi sqrt(2)) - 1]^-1`.",
+            "scope": "Active scalar-source block and one-slot post-bridge field sector.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the source/readout problem on the accepted IO interior-horizon branch.",
+              "The active source block is the one-slot modular-DtN field sector rather than the full perturbation hierarchy."
+            ],
+            "proof_outline": [
+              "Use the coexact DtN spectrum to define the shell generator `Y = log(r_s Lambda_DtN^coex)`.",
+              "Combine the reduced gauge modular weight with the accessible-line divisor `1/x` to obtain the unique positive source transfer `T_field`.",
+              "Apply the plus bridge and pivot normalization to recover the source window and the native scalar amplitude on the active sector."
+            ],
+            "scope_boundary": [
+              "Active scalar-source block only.",
+              "Does not by itself close the exact Stage-2 history operator, the closed-S^3 perturbation hierarchy, or the peak/readout identification theorem."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper32.typed_baryon_slot_spec": {
             "node_id": "paper32.typed_baryon_slot_spec",
             "kind": "theorem",
@@ -4963,6 +5623,66 @@
             "scope_boundary": [
               "Tuple carrier only.",
               "Does not yet derive the exact IO-native operator acting on that tuple."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.null_family_acoustic_readout": {
+            "node_id": "paper37.null_family_acoustic_readout",
+            "kind": "theorem",
+            "label": "Null-family Acoustic Readout Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The explicit null-family readout field `omega_hat(eta) = (ev_eta tensor C_n) P_src(Phi)` can be built from the theorem-grade source block, and the resulting background acoustic estimator class `E_rs = integral_0^{eta_rec} c_s(eta) R_hist^ac(omega_hat(eta)) d eta` is itself one-slot on the current scoped sector.",
+            "scope": "Explicit null-family acoustic readout field and estimator class.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.modular_dtn_field_transfer",
+              "paper29.sound_speed_selector"
+            ],
+            "premises": [
+              "`paper32.modular_dtn_field_transfer` closes the one-slot source/readout block `P_src`.",
+              "`paper29.sound_speed_selector` fixes the theorem-grade local sound-speed slot entering the acoustic estimator kernel.",
+              "Gauge-neutral direction collection and history evaluation preserve one-slot degree on the current scoped sector."
+            ],
+            "proof_outline": [
+              "Evaluate the one-slot source block at fixed history label and readout direction to obtain `omega_hat(eta)`.",
+              "Apply the already-closed homogeneous acoustic history-reduction operator to that explicit field.",
+              "Integrate against the theorem-grade sound-speed kernel to obtain the background acoustic estimator class without creating a second gauge slot."
+            ],
+            "scope_boundary": [
+              "Explicit readout field and estimator class only.",
+              "Does not yet derive the exact acoustic endpoint/phase scalar or the final peak-position angle."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.peak_functional_separation": {
+            "node_id": "paper37.peak_functional_separation",
+            "kind": "theorem",
+            "label": "Peak-functional Separation Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "The background ratio `100theta_s = 100 r_s(z_rec) / D_M(z_rec)` is not, by itself, the exact physical peak-position readout `theta_peak`; theorem-grade numeric closure requires either the exact `A_peak` / closed-`S^3` perturbation readout or a separate theorem identifying that peak functional with the background ratio on the relevant scope.",
+            "scope": "Boundary between background acoustic ratios and physical peak-position readout.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the full linear IO transfer as a typed map with a perturbation/readout side beyond the source block.",
+              "Peak-position observables live downstream of the primitive sky field and the quadratic power spectrum rather than at the raw background ratio alone."
+            ],
+            "proof_outline": [
+              "Place `theta_peak` on the measurement chain `primitive field -> harmonic coefficients -> C_l -> A_peak`.",
+              "Use the typed-transfer theorem to separate the background ratio from the unresolved perturbation/readout block.",
+              "Conclude that no theorem may identify the numeric peak-position angle with `100theta_s` alone without an additional peak/readout identification theorem."
+            ],
+            "scope_boundary": [
+              "Boundary theorem only.",
+              "Does not itself derive the final `A_peak -> theta_peak` identification law."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -5372,6 +6092,7 @@
     "paper29_sound_speed_selector": "/opt/cosmology-lab/results/paper29/paper29_sound_speed_baryon_selector_audit_report.md",
     "paper22_spatial_hodge_complex": "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt",
     "paper23_scalar_perturbations": "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt",
+    "paper28_closed_s3_power_definition": "/opt/cosmology-lab/results/paper28/paper28_closed_s3_power_definition_report.md",
     "paper30_legacy_recompute": "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json",
     "paper31_baryon_assignment": "/opt/cosmology-lab/results/paper31/paper31_baryon_assignment_theorems.md",
     "paper31_clock_transport": "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md",
@@ -5379,6 +6100,7 @@
     "paper31_stage2_markov_state": "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md",
     "paper31_legacy_recompute": "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json",
     "paper32_s3_solver_spec": "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md",
+    "paper32_modular_dtn_field_transfer": "/opt/cosmology-lab/results/paper32/paper32_modular_dtn_field_transfer_theorem.md",
     "paper36_photosphere_theta_star": "/opt/cosmology-lab/results/paper36/paper36_premise2_photosphere_theta_star_theorem_report.md",
     "paper36_phase_selector": "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md",
     "paper32_typed_projection": "/opt/cosmology-lab/results/paper32/paper32_typed_boundary_to_bulk_projection_theorem.md",
@@ -5389,6 +6111,8 @@
     "paper37_selector_support_promotion": "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md",
     "paper37_active_theta_star": "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md",
     "paper37_thomson_history_realization": "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md",
+    "paper37_peak_functional_separation": "/opt/cosmology-lab/results/paper37/paper37_peak_functional_separation_theorem_report.md",
+    "paper37_null_family_readout": "/opt/cosmology-lab/results/paper37/paper37_null_family_readout_theorem_report.md",
     "paper35_dark_energy": "/opt/cosmology-lab/results/paper35/paper35_desi_dark_energy_investigation_results.json",
     "paper35_eta_closure": "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json",
     "public_paper_index": "/opt/cosmology-lab/tmp/dfife.github.io/data/papers.json"
