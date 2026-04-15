@@ -1517,13 +1517,54 @@ code {
   gap: 10px;
 }
 
+.calc-output-group {
+  margin-top: 18px;
+}
+
+.calc-output-group:first-child {
+  margin-top: 0;
+}
+
+.calc-group-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 4px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.calc-group-summary::-webkit-details-marker {
+  display: none;
+}
+
 .calc-group-label {
-  margin: 4px 2px 0;
+  margin: 0;
   font-family: "JetBrains Mono", var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.28em;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #4a4850;
+  color: #8d8a92;
+}
+
+.calc-output-group > .calc-group-summary .calc-chevron {
+  color: #6a6770;
+  font-size: 1.05rem;
+}
+
+.calc-output-group[open] > .calc-group-summary .calc-chevron {
+  transform: rotate(90deg);
+}
+
+.calc-output-group[open] > .calc-group-summary {
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+.calc-output-group > .calc-group-stack {
+  padding-top: 14px;
 }
 
 .calc-card,
