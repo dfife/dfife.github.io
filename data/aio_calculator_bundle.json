@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AIO Calculator",
-    "generated_at_utc": "2026-04-14T23:48:45.421084+00:00",
+    "generated_at_utc": "2026-04-15T00:08:03.198543+00:00",
     "branch_status": "active_paper10_legacy_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
@@ -670,6 +670,65 @@
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
     },
+    "paper22.spatial_mode_ladder": {
+      "node_id": "paper22.spatial_mode_ladder",
+      "kind": "theorem",
+      "label": "Paper 22 Spatial Mode Ladder",
+      "claim_status": "derived / scoped",
+      "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+      "scope": "Spatial harmonic carrier on closed `S^3`.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+      ],
+      "depends_on": [
+        "premise.1",
+        "premise.2"
+      ],
+      "premises": [
+        "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+        "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+      ],
+      "proof_outline": [
+        "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+        "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+        "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+      ],
+      "scope_boundary": [
+        "Spatial carrier only.",
+        "Does not by itself determine the dynamical perturbation/source equations."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper23.closed_scalar_operator": {
+      "node_id": "paper23.closed_scalar_operator",
+      "kind": "theorem",
+      "label": "Paper 23 Closed Scalar Operator Theorem",
+      "claim_status": "derived / scoped",
+      "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+      "scope": "Closed scalar shell operator and physical mode support.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+      ],
+      "depends_on": [
+        "paper22.spatial_mode_ladder"
+      ],
+      "premises": [
+        "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+        "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+      ],
+      "proof_outline": [
+        "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+        "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+        "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+      ],
+      "scope_boundary": [
+        "Closed scalar shell operator and support only.",
+        "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
     "paper30.background_surface": {
       "node_id": "paper30.background_surface",
       "kind": "theorem",
@@ -907,6 +966,95 @@
       "scope_boundary": [
         "Geometry specification for the IO transfer stack.",
         "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper32.typed_baryon_slot_spec": {
+      "node_id": "paper32.typed_baryon_slot_spec",
+      "kind": "theorem",
+      "label": "Typed Baryon-slot Specification",
+      "claim_status": "derived / scoped",
+      "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+      "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+      ],
+      "depends_on": [
+        "paper32.closed_s3_solver_spec"
+      ],
+      "premises": [
+        "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+        "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+      ],
+      "proof_outline": [
+        "Read the active typed baryon placements from Corollary 32.S3.1.",
+        "Assign theorem-grade slots only where the stack actually closes them.",
+        "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+      ],
+      "scope_boundary": [
+        "Typed solver grammar only.",
+        "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper31.stage2_markov_state": {
+      "node_id": "paper31.stage2_markov_state",
+      "kind": "theorem",
+      "label": "Paper 31 Stage-2 Markov State",
+      "claim_status": "derived / scoped",
+      "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+      "scope": "Exact Stage-2 history-state carrier.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+      ],
+      "depends_on": [
+        "premise.2"
+      ],
+      "premises": [
+        "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+        "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+      ],
+      "proof_outline": [
+        "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+        "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+        "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+      ],
+      "scope_boundary": [
+        "Exact Stage-2 state carrier only.",
+        "Does not by itself supply the final explicit dynamic-network renormalization operator."
+      ],
+      "notes": [],
+      "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+    },
+    "paper37.thomson_history_realization": {
+      "node_id": "paper37.thomson_history_realization",
+      "kind": "theorem",
+      "label": "Thomson-history Realization Theorem",
+      "claim_status": "derived / scoped",
+      "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+      "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+      "authority_paths": [
+        "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+      ],
+      "depends_on": [
+        "paper32.closed_s3_solver_spec",
+        "paper31.stage2_markov_state"
+      ],
+      "premises": [
+        "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+        "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+        "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+      ],
+      "proof_outline": [
+        "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+        "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+        "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+      ],
+      "scope_boundary": [
+        "Tuple carrier only.",
+        "Does not yet derive the exact IO-native operator acting on that tuple."
       ],
       "notes": [],
       "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -1399,6 +1547,65 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper22.spatial_mode_ladder": {
+            "node_id": "paper22.spatial_mode_ladder",
+            "kind": "theorem",
+            "label": "Paper 22 Spatial Mode Ladder",
+            "claim_status": "derived / scoped",
+            "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+            "scope": "Spatial harmonic carrier on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+              "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+            ],
+            "proof_outline": [
+              "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+              "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+              "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+            ],
+            "scope_boundary": [
+              "Spatial carrier only.",
+              "Does not by itself determine the dynamical perturbation/source equations."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper23.closed_scalar_operator": {
+            "node_id": "paper23.closed_scalar_operator",
+            "kind": "theorem",
+            "label": "Paper 23 Closed Scalar Operator Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+            "scope": "Closed scalar shell operator and physical mode support.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+              "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+            ],
+            "proof_outline": [
+              "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+              "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+              "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+            ],
+            "scope_boundary": [
+              "Closed scalar shell operator and support only.",
+              "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -1636,6 +1843,95 @@
             "scope_boundary": [
               "Geometry specification for the IO transfer stack.",
               "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper32.typed_baryon_slot_spec": {
+            "node_id": "paper32.typed_baryon_slot_spec",
+            "kind": "theorem",
+            "label": "Typed Baryon-slot Specification",
+            "claim_status": "derived / scoped",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+              "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+            ],
+            "proof_outline": [
+              "Read the active typed baryon placements from Corollary 32.S3.1.",
+              "Assign theorem-grade slots only where the stack actually closes them.",
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+            ],
+            "scope_boundary": [
+              "Typed solver grammar only.",
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper31.stage2_markov_state": {
+            "node_id": "paper31.stage2_markov_state",
+            "kind": "theorem",
+            "label": "Paper 31 Stage-2 Markov State",
+            "claim_status": "derived / scoped",
+            "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+            "scope": "Exact Stage-2 history-state carrier.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+            ],
+            "depends_on": [
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+              "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+            ],
+            "proof_outline": [
+              "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+              "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+              "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+            ],
+            "scope_boundary": [
+              "Exact Stage-2 state carrier only.",
+              "Does not by itself supply the final explicit dynamic-network renormalization operator."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.thomson_history_realization": {
+            "node_id": "paper37.thomson_history_realization",
+            "kind": "theorem",
+            "label": "Thomson-history Realization Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+            "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+              "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+              "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+            ],
+            "proof_outline": [
+              "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+              "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+              "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+            ],
+            "scope_boundary": [
+              "Tuple carrier only.",
+              "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2002,6 +2298,65 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper22.spatial_mode_ladder": {
+            "node_id": "paper22.spatial_mode_ladder",
+            "kind": "theorem",
+            "label": "Paper 22 Spatial Mode Ladder",
+            "claim_status": "derived / scoped",
+            "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+            "scope": "Spatial harmonic carrier on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+              "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+            ],
+            "proof_outline": [
+              "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+              "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+              "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+            ],
+            "scope_boundary": [
+              "Spatial carrier only.",
+              "Does not by itself determine the dynamical perturbation/source equations."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper23.closed_scalar_operator": {
+            "node_id": "paper23.closed_scalar_operator",
+            "kind": "theorem",
+            "label": "Paper 23 Closed Scalar Operator Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+            "scope": "Closed scalar shell operator and physical mode support.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+              "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+            ],
+            "proof_outline": [
+              "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+              "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+              "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+            ],
+            "scope_boundary": [
+              "Closed scalar shell operator and support only.",
+              "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -2239,6 +2594,95 @@
             "scope_boundary": [
               "Geometry specification for the IO transfer stack.",
               "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper32.typed_baryon_slot_spec": {
+            "node_id": "paper32.typed_baryon_slot_spec",
+            "kind": "theorem",
+            "label": "Typed Baryon-slot Specification",
+            "claim_status": "derived / scoped",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+              "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+            ],
+            "proof_outline": [
+              "Read the active typed baryon placements from Corollary 32.S3.1.",
+              "Assign theorem-grade slots only where the stack actually closes them.",
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+            ],
+            "scope_boundary": [
+              "Typed solver grammar only.",
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper31.stage2_markov_state": {
+            "node_id": "paper31.stage2_markov_state",
+            "kind": "theorem",
+            "label": "Paper 31 Stage-2 Markov State",
+            "claim_status": "derived / scoped",
+            "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+            "scope": "Exact Stage-2 history-state carrier.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+            ],
+            "depends_on": [
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+              "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+            ],
+            "proof_outline": [
+              "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+              "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+              "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+            ],
+            "scope_boundary": [
+              "Exact Stage-2 state carrier only.",
+              "Does not by itself supply the final explicit dynamic-network renormalization operator."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.thomson_history_realization": {
+            "node_id": "paper37.thomson_history_realization",
+            "kind": "theorem",
+            "label": "Thomson-history Realization Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+            "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+              "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+              "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+            ],
+            "proof_outline": [
+              "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+              "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+              "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+            ],
+            "scope_boundary": [
+              "Tuple carrier only.",
+              "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -2605,6 +3049,65 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper22.spatial_mode_ladder": {
+            "node_id": "paper22.spatial_mode_ladder",
+            "kind": "theorem",
+            "label": "Paper 22 Spatial Mode Ladder",
+            "claim_status": "derived / scoped",
+            "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+            "scope": "Spatial harmonic carrier on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+              "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+            ],
+            "proof_outline": [
+              "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+              "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+              "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+            ],
+            "scope_boundary": [
+              "Spatial carrier only.",
+              "Does not by itself determine the dynamical perturbation/source equations."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper23.closed_scalar_operator": {
+            "node_id": "paper23.closed_scalar_operator",
+            "kind": "theorem",
+            "label": "Paper 23 Closed Scalar Operator Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+            "scope": "Closed scalar shell operator and physical mode support.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+              "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+            ],
+            "proof_outline": [
+              "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+              "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+              "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+            ],
+            "scope_boundary": [
+              "Closed scalar shell operator and support only.",
+              "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -2842,6 +3345,95 @@
             "scope_boundary": [
               "Geometry specification for the IO transfer stack.",
               "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper32.typed_baryon_slot_spec": {
+            "node_id": "paper32.typed_baryon_slot_spec",
+            "kind": "theorem",
+            "label": "Typed Baryon-slot Specification",
+            "claim_status": "derived / scoped",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+              "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+            ],
+            "proof_outline": [
+              "Read the active typed baryon placements from Corollary 32.S3.1.",
+              "Assign theorem-grade slots only where the stack actually closes them.",
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+            ],
+            "scope_boundary": [
+              "Typed solver grammar only.",
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper31.stage2_markov_state": {
+            "node_id": "paper31.stage2_markov_state",
+            "kind": "theorem",
+            "label": "Paper 31 Stage-2 Markov State",
+            "claim_status": "derived / scoped",
+            "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+            "scope": "Exact Stage-2 history-state carrier.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+            ],
+            "depends_on": [
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+              "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+            ],
+            "proof_outline": [
+              "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+              "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+              "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+            ],
+            "scope_boundary": [
+              "Exact Stage-2 state carrier only.",
+              "Does not by itself supply the final explicit dynamic-network renormalization operator."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.thomson_history_realization": {
+            "node_id": "paper37.thomson_history_realization",
+            "kind": "theorem",
+            "label": "Thomson-history Realization Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+            "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+              "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+              "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+            ],
+            "proof_outline": [
+              "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+              "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+              "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+            ],
+            "scope_boundary": [
+              "Tuple carrier only.",
+              "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3220,6 +3812,65 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper22.spatial_mode_ladder": {
+            "node_id": "paper22.spatial_mode_ladder",
+            "kind": "theorem",
+            "label": "Paper 22 Spatial Mode Ladder",
+            "claim_status": "derived / scoped",
+            "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+            "scope": "Spatial harmonic carrier on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+              "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+            ],
+            "proof_outline": [
+              "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+              "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+              "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+            ],
+            "scope_boundary": [
+              "Spatial carrier only.",
+              "Does not by itself determine the dynamical perturbation/source equations."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper23.closed_scalar_operator": {
+            "node_id": "paper23.closed_scalar_operator",
+            "kind": "theorem",
+            "label": "Paper 23 Closed Scalar Operator Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+            "scope": "Closed scalar shell operator and physical mode support.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+              "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+            ],
+            "proof_outline": [
+              "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+              "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+              "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+            ],
+            "scope_boundary": [
+              "Closed scalar shell operator and support only.",
+              "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -3457,6 +4108,95 @@
             "scope_boundary": [
               "Geometry specification for the IO transfer stack.",
               "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper32.typed_baryon_slot_spec": {
+            "node_id": "paper32.typed_baryon_slot_spec",
+            "kind": "theorem",
+            "label": "Typed Baryon-slot Specification",
+            "claim_status": "derived / scoped",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+              "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+            ],
+            "proof_outline": [
+              "Read the active typed baryon placements from Corollary 32.S3.1.",
+              "Assign theorem-grade slots only where the stack actually closes them.",
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+            ],
+            "scope_boundary": [
+              "Typed solver grammar only.",
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper31.stage2_markov_state": {
+            "node_id": "paper31.stage2_markov_state",
+            "kind": "theorem",
+            "label": "Paper 31 Stage-2 Markov State",
+            "claim_status": "derived / scoped",
+            "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+            "scope": "Exact Stage-2 history-state carrier.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+            ],
+            "depends_on": [
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+              "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+            ],
+            "proof_outline": [
+              "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+              "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+              "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+            ],
+            "scope_boundary": [
+              "Exact Stage-2 state carrier only.",
+              "Does not by itself supply the final explicit dynamic-network renormalization operator."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.thomson_history_realization": {
+            "node_id": "paper37.thomson_history_realization",
+            "kind": "theorem",
+            "label": "Thomson-history Realization Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+            "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+              "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+              "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+            ],
+            "proof_outline": [
+              "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+              "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+              "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+            ],
+            "scope_boundary": [
+              "Tuple carrier only.",
+              "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -3838,6 +4578,65 @@
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
           },
+          "paper22.spatial_mode_ladder": {
+            "node_id": "paper22.spatial_mode_ladder",
+            "kind": "theorem",
+            "label": "Paper 22 Spatial Mode Ladder",
+            "claim_status": "derived / scoped",
+            "statement": "The closed `S^3` spatial carrier decomposes into scalar, vector, and TT tensor ladders with `lambda_n^(S) = n(n+2) / a^2`, `lambda_n^(V) = (n+1)^2 / a^2`, `lambda_n^(TT,rough) = (n(n+2)-2) / a^2`, multiplicities `(n+1)^2`, `2n(n+2)`, `2(n-1)(n+3)`, and diagonal-spin floors `J_min = 0,1,2` respectively.",
+            "scope": "Spatial harmonic carrier on closed `S^3`.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt"
+            ],
+            "depends_on": [
+              "premise.1",
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.1` and `premise.2` place the perturbation problem on the accepted IO closed-space setting.",
+              "Paper 22 constructs the scalar/vector Hodge carriers and the TT extension on round `S^3`."
+            ],
+            "proof_outline": [
+              "Decompose the round-`S^3` spatial Hilbert space into scalar, coexact-vector, and TT tensor branches.",
+              "Read off the exact eigenvalues, multiplicities, and diagonal-spin supports for each branch.",
+              "Use those branch laws as the theorem-grade spatial carrier for later perturbation work."
+            ],
+            "scope_boundary": [
+              "Spatial carrier only.",
+              "Does not by itself determine the dynamical perturbation/source equations."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper23.closed_scalar_operator": {
+            "node_id": "paper23.closed_scalar_operator",
+            "kind": "theorem",
+            "label": "Paper 23 Closed Scalar Operator Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "On the closed scalar hierarchy, the first curvature correction is `lambda_n - 3 = (n-1)(n+3)`, scalar hyperspherical support obeys `ell = 0,1,...,n`, and the physical inhomogeneous scalar spectrum begins at `n >= 2` with `n = 1` pure gauge.",
+            "scope": "Closed scalar shell operator and physical mode support.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt"
+            ],
+            "depends_on": [
+              "paper22.spatial_mode_ladder"
+            ],
+            "premises": [
+              "`paper22.spatial_mode_ladder` fixes the scalar harmonic carrier on `S^3`.",
+              "The closed scalar perturbation problem lives on that discrete shell basis rather than a flat continuous `k` basis."
+            ],
+            "proof_outline": [
+              "Start from the scalar `S^3` harmonic ladder with `lambda_n = n(n+2)`.",
+              "Insert the closed-space scalar curvature correction to obtain `lambda_n - 3 = (n-1)(n+3)`.",
+              "Classify `n = 0` as background, `n = 1` as gauge, and `n >= 2` as physical scalar support."
+            ],
+            "scope_boundary": [
+              "Closed scalar shell operator and support only.",
+              "Does not by itself close the full metric-plus-fluid source/acoustic hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
@@ -4075,6 +4874,95 @@
             "scope_boundary": [
               "Geometry specification for the IO transfer stack.",
               "Not a theorem-grade completion of the full TT/TE/EE solver by itself."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper32.typed_baryon_slot_spec": {
+            "node_id": "paper32.typed_baryon_slot_spec",
+            "kind": "theorem",
+            "label": "Typed Baryon-slot Specification",
+            "claim_status": "derived / scoped",
+            "statement": "The native solver preserves the typed baryon split: recombination chemistry `omega_b,geom`, primitive local opacity `omega_b,geom`, reduced visibility/readout `omega_b,eff`, while the full-hierarchy baryon-loading `R` slot and scalar metric-source slot remain open.",
+            "scope": "Perturbation-era baryon typing on the closed `S^3` solver grammar.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the typed closed-`S^3` solver grammar.",
+              "The perturbation block is not licensed to collapse to a one-slot baryon assignment."
+            ],
+            "proof_outline": [
+              "Read the active typed baryon placements from Corollary 32.S3.1.",
+              "Assign theorem-grade slots only where the stack actually closes them.",
+              "Leave the hierarchy-wide `R` slot and scalar metric-source slot explicitly open instead of backfilling them from local helpers."
+            ],
+            "scope_boundary": [
+              "Typed solver grammar only.",
+              "Does not derive a single theorem-grade baryon slot for the full hierarchy."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper31.stage2_markov_state": {
+            "node_id": "paper31.stage2_markov_state",
+            "kind": "theorem",
+            "label": "Paper 31 Stage-2 Markov State",
+            "claim_status": "derived / scoped",
+            "statement": "The exact Stage-2 hydrogen radiative-transfer branch admits a lossless Markov closure on `Y_rec = (x_e, T_m, D_-(q;z), L_-(z))`, and no fixed finite-dimensional scalar moment vector replaces that field exactly.",
+            "scope": "Exact Stage-2 history-state carrier.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md"
+            ],
+            "depends_on": [
+              "premise.2"
+            ],
+            "premises": [
+              "`premise.2` licenses the accepted exterior local atomic/radiative-transfer class inside the horizon.",
+              "Stage 2 belongs to the local bulk radiative-transfer sector rather than an observer-side readout patch."
+            ],
+            "proof_outline": [
+              "Audit the exact FULL Stage-2 update chain and identify the outgoing characteristic distortion field plus line-handoff sector.",
+              "Show that the extended state `(x_e, T_m, D_-(q;z), L_-(z))` is a lossless Markov closure of the exact branch.",
+              "Kill any fixed finite-dimensional scalar compression as an exact replacement."
+            ],
+            "scope_boundary": [
+              "Exact Stage-2 state carrier only.",
+              "Does not by itself supply the final explicit dynamic-network renormalization operator."
+            ],
+            "notes": [],
+            "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
+          },
+          "paper37.thomson_history_realization": {
+            "node_id": "paper37.thomson_history_realization",
+            "kind": "theorem",
+            "label": "Thomson-history Realization Theorem",
+            "claim_status": "derived / scoped",
+            "statement": "Any exact IO-native closure on the surviving acoustic branch must be realized on the coupled tuple `(thomson_drag_rate, thomson_hierarchy_rate, tau_c, dtau_c, slip, shear)` with `tau_c = 1 / thomson_drag_rate` and `dtau_c = - d(thomson_drag_rate) * tau_c^2`.",
+            "scope": "Coupled Thomson-history carrier for the perturbation hierarchy.",
+            "authority_paths": [
+              "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md"
+            ],
+            "depends_on": [
+              "paper32.closed_s3_solver_spec",
+              "paper31.stage2_markov_state"
+            ],
+            "premises": [
+              "`paper32.closed_s3_solver_spec` fixes the perturbation block as part of the typed closed-`S^3` solver grammar.",
+              "`paper31.stage2_markov_state` fixes the exact history-state carrier feeding the perturbation seam.",
+              "The tight-coupling system depends on distinct drag and hierarchy rates together with `tau_c`, `dtau_c`, slip, and shear."
+            ],
+            "proof_outline": [
+              "Localize the surviving acoustic perturbation seam to the broad Thomson-history leg rather than a narrow visibility patch.",
+              "Read the carrier formulas for `thomson_drag_rate`, `thomson_hierarchy_rate`, `tau_c`, and `dtau_c` from the accepted local hierarchy code path.",
+              "Promote the coupled tuple to the exact admissible carrier and kill one-site downstream rescalings as fake closures."
+            ],
+            "scope_boundary": [
+              "Tuple carrier only.",
+              "Does not yet derive the exact IO-native operator acting on that tuple."
             ],
             "notes": [],
             "reference_note": "Supporting references only. The theorem text carried on this node is the calculator's self-contained public dictionary entry."
@@ -4482,20 +5370,25 @@
     "paper21_tio_branch_assignment": "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt",
     "paper27_visibility_slot": "/opt/cosmology-lab/results/paper27/paper27_av1_c1b_round2_memo.md",
     "paper29_sound_speed_selector": "/opt/cosmology-lab/results/paper29/paper29_sound_speed_baryon_selector_audit_report.md",
+    "paper22_spatial_hodge_complex": "/opt/cosmology-lab/results/paper22/paper22_spatial_hodge_complex_report.txt",
+    "paper23_scalar_perturbations": "/opt/cosmology-lab/results/paper23/paper23_scalar_perturbations_report.txt",
     "paper30_legacy_recompute": "/opt/cosmology-lab/results/paper30/paper30_full_recompute_legacy_branch_results.json",
     "paper31_baryon_assignment": "/opt/cosmology-lab/results/paper31/paper31_baryon_assignment_theorems.md",
     "paper31_clock_transport": "/opt/cosmology-lab/results/paper31/paper31_recombination_clock_transport_theorem.md",
     "paper31_local_background_state_map": "/opt/cosmology-lab/results/paper31/paper31_stage2_local_background_state_map_theorem.md",
+    "paper31_stage2_markov_state": "/opt/cosmology-lab/results/paper31/paper31_stage2_lossless_characteristic_markov_theorem.md",
     "paper31_legacy_recompute": "/opt/cosmology-lab/results/paper31/paper31_full_recompute_legacy_branch_results.json",
     "paper32_s3_solver_spec": "/opt/cosmology-lab/results/paper32/paper32_s3_native_solver_specification_theorem.md",
     "paper36_photosphere_theta_star": "/opt/cosmology-lab/results/paper36/paper36_premise2_photosphere_theta_star_theorem_report.md",
     "paper36_phase_selector": "/opt/cosmology-lab/results/paper36/paper36_phase_equivalent_selector_theorem_report.md",
+    "paper32_typed_projection": "/opt/cosmology-lab/results/paper32/paper32_typed_boundary_to_bulk_projection_theorem.md",
     "paper37_packet_coefficient_fixing": "/opt/cosmology-lab/results/paper37/paper37_effectc_packet_coefficient_fixing_theorem_report.md",
     "paper37_packet1500_support_promotion": "/opt/cosmology-lab/results/paper37/paper37_effectc_packet1500_support_promotion_theorem_report.md",
     "paper37_highz_tail_slaving": "/opt/cosmology-lab/results/paper37/paper37_effectc_highz_tail_slaving_theorem_report.md",
     "paper37_peak_window_tail_profile_audit": "/opt/cosmology-lab/results/paper37/paper37_effectc_peak_window_tail_profile_audit_report.md",
     "paper37_selector_support_promotion": "/opt/cosmology-lab/results/paper37/paper37_effectc_selector_support_promotion_theorem_report.md",
     "paper37_active_theta_star": "/opt/cosmology-lab/results/paper37/paper37_active_branch_theta_star_theorem_report.md",
+    "paper37_thomson_history_realization": "/opt/cosmology-lab/results/paper37/paper37_thomson_history_realization_theorem_report.md",
     "paper35_dark_energy": "/opt/cosmology-lab/results/paper35/paper35_desi_dark_energy_investigation_results.json",
     "paper35_eta_closure": "/opt/cosmology-lab/results/paper35/paper35_eta_io_gap_closure_results.json",
     "public_paper_index": "/opt/cosmology-lab/tmp/dfife.github.io/data/papers.json"
