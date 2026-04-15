@@ -1511,6 +1511,21 @@ code {
   gap: 10px;
 }
 
+.calc-output-group,
+.calc-group-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.calc-group-label {
+  margin: 4px 2px 0;
+  font-family: "JetBrains Mono", var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #4a4850;
+}
+
 .calc-card,
 .calc-node {
   border: 1px solid #1e1e24;
