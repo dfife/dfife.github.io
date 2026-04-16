@@ -2018,6 +2018,17 @@ body.site-dark .empty-state {
   border-color: #2a2a34;
 }
 
+.calc-badge.is-verbatim-status {
+  min-height: 0;
+  max-width: min(28rem, 100%);
+  padding: 6px 10px;
+  white-space: normal;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-align: left;
+}
+
 .calc-step {
   font-family: "JetBrains Mono", var(--mono);
   color: #5a585f;
