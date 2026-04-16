@@ -2,18 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dfife.github.io/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://dfife.github.io/bridge-map.html</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://dfife.github.io/papers.html</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-16</lastmod>
   </url>
   <url>
     <loc>https://dfife.github.io/io-framework.html</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://dfife.github.io/calculator.html</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://dfife.github.io/calculator-theorems.html</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://dfife.github.io/lithium.html</loc>
+    <lastmod>2026-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://dfife.github.io/scorecard.html</loc>
+    <lastmod>2026-04-16</lastmod>
   </url>
 </urlset>
