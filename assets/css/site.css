@@ -256,6 +256,27 @@ input {
   color: rgba(232, 230, 227, 0.82);
 }
 
+.quiet-motto {
+  margin: 18px 0 0;
+  max-width: 52rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  color: rgba(16, 32, 51, 0.68);
+}
+
+.quiet-motto.is-centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.page-hero .quiet-motto {
+  max-width: 780px;
+  color: rgba(245, 248, 252, 0.74);
+}
+
 .hero-summary-panel {
   width: min(100%, 880px);
   margin: 24px auto 0;
@@ -1374,6 +1395,10 @@ body.site-dark .content-section {
   color: #e8e6e3;
 }
 
+body.site-dark .quiet-motto {
+  color: rgba(245, 248, 252, 0.68);
+}
+
 body.site-dark .page-title,
 body.site-dark .section-title,
 body.site-dark .channel-title,
@@ -2070,6 +2095,13 @@ body.site-dark .empty-state {
 .calc-note p:last-child,
 .calc-node-body p:last-child {
   margin-bottom: 0;
+}
+
+.calc-note .quiet-motto,
+.calc-intro .quiet-motto {
+  margin-top: 12px;
+  max-width: none;
+  color: #a8a4ac;
 }
 
 .calc-node-caption {
