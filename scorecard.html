@@ -24,6 +24,17 @@
           "url": "https://dfife.github.io/"
         },
         {
+          "@type": "DataCatalog",
+          "@id": "https://dfife.github.io/scorecard.html#catalog",
+          "name": "Interior Observer Framework scorecard datasets",
+          "url": "https://dfife.github.io/scorecard.html",
+          "creator": {
+            "@id": "https://dfife.github.io/#organization"
+          },
+          "description": "Machine-readable scorecard data products published on the Interior Observer Framework proof surface.",
+          "license": "https://dfife.github.io/data-license.html"
+        },
+        {
           "@type": "Dataset",
           "@id": "https://dfife.github.io/scorecard.html#dataset",
           "name": "Interior Observer Framework prediction scorecard",
@@ -31,6 +42,10 @@
           "creator": {
             "@id": "https://dfife.github.io/#organization"
           },
+          "includedInDataCatalog": {
+            "@id": "https://dfife.github.io/scorecard.html#catalog"
+          },
+          "license": "https://dfife.github.io/data-license.html",
           "description": "Zero fitted cosmological parameters. One measured mass. 20+ predictions within 1σ of direct measurement. χ² = 2.42 across 8 independent observables excluding model-extracted values.",
           "keywords": [
             "Interior Observer Framework",
