@@ -141,6 +141,7 @@ input {
   border-radius: 999px;
   color: var(--text-soft);
   font-weight: 600;
+  white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
@@ -1607,9 +1608,14 @@ body.site-dark .empty-state {
 
   .nav-links {
     width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
   .nav-link {
+    flex: 0 0 auto;
     padding-left: 0;
     padding-right: 0;
   }

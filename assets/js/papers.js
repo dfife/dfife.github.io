@@ -36,6 +36,8 @@ function renderPaperCard(paper) {
     ? `<span class="paper-number">${paper.paper}</span>`
     : `<a class="paper-number paper-number-link" href="${paper.zenodo}" target="_blank" rel="noreferrer" aria-label="Open Paper ${paper.paper} on Zenodo">${paper.paper}</a>`;
 
+  const detailAction = `<a class="button button-small button-primary" href="${paper.paper_url}" aria-label="Open ${paper.short_form} detail page">Paper Page</a>`;
+
   const action = paper.coming_soon
     ? `<span class="button button-small button-disabled">Coming Soon</span>`
     : `<a class="button button-small button-outline" href="${paper.zenodo}" target="_blank" rel="noreferrer">Zenodo Record</a>`;
@@ -45,12 +47,13 @@ function renderPaperCard(paper) {
       ${numberBadge}
       <div class="paper-header">
         <div class="paper-meta">${paper.era}</div>
-        <h3 class="paper-title">${paper.short_title}</h3>
+        <h3 class="paper-title"><a class="section-link" href="${paper.paper_url}" title="${paper.full_title}">${paper.short_form}</a></h3>
       </div>
     </div>
     <p class="paper-summary">${paper.summary}</p>
     <div class="paper-bridges">${bridgeLinks}</div>
     <div class="paper-actions">
+      ${detailAction}
       ${action}
     </div>
   `;

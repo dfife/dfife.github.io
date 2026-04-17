@@ -169,10 +169,39 @@ function initRedshiftWidget() {
   update();
 }
 
+async function decoratePaperCitations() {
+  const paperLinks = Array.from(
+    document.querySelectorAll("a[href*='zenodo.org/records/']")
+  );
+  if (!paperLinks.some((link) => /^Paper \d+$/u.test(link.textContent.trim()))) {
+    return;
+  }
+
+  try {
+    const response = await fetch("data/papers.json");
+    const papers = await response.json();
+    const byNumber = new Map(
+      papers.map((paper) => [String(Number(paper.paper)), paper])
+    );
+
+    for (const link of paperLinks) {
+      const match = link.textContent.trim().match(/^Paper (\d+)$/u);
+      if (!match) continue;
+      const paper = byNumber.get(String(Number(match[1])));
+      if (!paper) continue;
+      link.title = paper.full_title;
+      link.setAttribute("aria-label", paper.short_form);
+    }
+  } catch (error) {
+    console.error("Could not decorate paper citations.", error);
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   markPrerenderedSurfaces();
   revealHashTarget();
   initRedshiftWidget();
+  decoratePaperCitations();
 });
 
 window.addEventListener("hashchange", revealHashTarget);

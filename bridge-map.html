@@ -1,139 +1,134 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="google-site-verification" content="ihikTXBZEMflSxSz3z3o8zG1uNf-3ClCW-JLcyYna04">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <title>The Quantum Gravity Bridge Map</title>
-  <meta name="description" content="Interactive map of every boundary-to-bulk crossing in the Interior Observer Framework. Aligned to the Paper 10 legacy branch through Paper 35, with static, dynamic, mixed, and fermionic channels.">
-  <link rel="canonical" href="https://dfife.github.io/bridge-map.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css">
+<meta charset="utf-8"/>
+<meta content="ihikTXBZEMflSxSz3z3o8zG1uNf-3ClCW-JLcyYna04" name="google-site-verification"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="googlebot"/>
+<title>The Quantum Gravity Bridge Map</title>
+<meta content="Interactive map of every boundary-to-bulk crossing in the Interior Observer Framework. Aligned to the Paper 10 legacy branch through Paper 35, with static, dynamic, mixed, and fermionic channels." name="description"/>
+<link href="https://dfife.github.io/bridge-map.html" rel="canonical"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
 </head>
 <body class="site-dark">
-  <div class="site-shell">
-    <header class="site-header dark">
-      <div class="nav-wrap">
-        <a class="brand-block" href="index.html" aria-label="The Interior Observer Framework home">
-          <span class="brand-kicker">IO Framework</span>
-          <span class="brand-title">The Interior Observer Framework</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link active" href="bridge-map.html">Bridge Map</a>
-          <a class="nav-link" href="papers.html">Papers</a>
-          <a class="nav-link" href="calculator.html">Calculator</a>
-          <a class="nav-link" href="lithium.html">Lithium</a>
-          <a class="nav-link" href="scorecard.html">Scorecard</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="page-top">
-        <div class="section-inner">
-          <div class="section-head">
-            <p class="section-kicker">Interactive companion to <a class="calc-inline-link" href="https://zenodo.org/records/19440227/latest" target="_blank" rel="noreferrer">Paper 33</a>, <a class="calc-inline-link" href="https://zenodo.org/records/19558163/latest" target="_blank" rel="noreferrer">Paper 34</a>, <a class="calc-inline-link" href="https://zenodo.org/records/19561708/latest" target="_blank" rel="noreferrer">Paper 35</a>, and the archive stack</p>
-            <h1 class="page-title">The Quantum Gravity Bridge Map</h1>
-            <p class="page-intro">
+<div class="site-shell">
+<header class="site-header dark">
+<div class="nav-wrap">
+<a aria-label="The Interior Observer Framework home" class="brand-block" href="index.html">
+<span class="brand-kicker">IO Framework</span>
+<span class="brand-title">The Interior Observer Framework</span>
+</a>
+<nav aria-label="Primary" class="nav-links">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link active" href="bridge-map.html">Bridge Map</a>
+<a class="nav-link" href="papers.html">Papers</a>
+<a class="nav-link" href="calculator.html">Calculator</a>
+<a class="nav-link" href="lithium.html">Lithium</a>
+<a class="nav-link" href="scorecard.html">Scorecard</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="page-top">
+<div class="section-inner">
+<div class="section-head">
+<p class="section-kicker">Interactive companion to <a class="calc-inline-link" href="https://zenodo.org/records/19440227/latest" rel="noreferrer" target="_blank">Paper 33 — Three Languages of the Horizon</a>, <a class="calc-inline-link" href="https://zenodo.org/records/19558163/latest" rel="noreferrer" target="_blank">Paper 34 — The Hubble Tension Resolved</a>, <a class="calc-inline-link" href="https://zenodo.org/records/19561708/latest" rel="noreferrer" target="_blank">Paper 35 — Four Problems, One Horizon</a>, and the archive stack</p>
+<h1 class="page-title">The Quantum Gravity Bridge Map</h1>
+<p class="page-intro">
               Every derivation in the IO Framework follows the same pattern: quantum data on the boundary produces a classical observable in the bulk. This interactive map
               catalogs boundary-to-bulk crossings across the public 35-paper archive. Branch-sensitive numerics on this site are aligned to the
-              <a class="section-link" href="https://zenodo.org/records/18905811/latest" target="_blank" rel="noreferrer">Paper 10</a> legacy branch through
-              <a class="section-link" href="https://zenodo.org/records/19561708/latest" target="_blank" rel="noreferrer">Paper 35</a>, while later archive-side claims remain labeled at their published scope.
+              <a class="section-link" href="https://zenodo.org/records/18905811/latest" rel="noreferrer" target="_blank">Paper 10 — Complete Holographic Friedmann Equation</a> legacy branch through
+              <a class="section-link" href="https://zenodo.org/records/19561708/latest" rel="noreferrer" target="_blank">Paper 35 — Four Problems, One Horizon</a>, while later archive-side claims remain labeled at their published scope.
             </p>
-            <p class="quiet-motto">If the theory is correct, the math will just work.</p>
-          </div>
-
-          <div class="filters-bar" aria-label="Bridge map filters">
-            <div class="filter-group" id="channel-filters">
-              <span class="filter-label">Channel</span>
-              <button class="filter-button active" type="button" data-channel="all">All</button>
-              <button class="filter-button" type="button" data-channel="static">Static Geometric</button>
-              <button class="filter-button" type="button" data-channel="dynamic">Dynamic Thermal</button>
-              <button class="filter-button" type="button" data-channel="mixed">Mixed/Source</button>
-              <button class="filter-button" type="button" data-channel="fermionic">Fermionic (density-gated)</button>
-            </div>
-            <div class="filter-group" id="status-filters">
-              <span class="filter-label">Status</span>
-              <button class="filter-button active" type="button" data-status="all">All</button>
-              <button class="filter-button" type="button" data-status="derived">Derived</button>
-              <button class="filter-button" type="button" data-status="conditional">Conditional</button>
-              <button class="filter-button" type="button" data-status="no-go">No-Go</button>
-            </div>
-            <div class="filter-group">
-              <label class="filter-label" for="bridge-search">Search</label>
-              <input class="filter-search" id="bridge-search" type="search" placeholder="Search crossings, constants, papers, or summaries">
-            </div>
-          </div>
-
-          <section class="status-guide" aria-labelledby="status-guide-title">
-            <div class="status-guide-head">
-              <h2 class="status-guide-title" id="status-guide-title">Status Guide</h2>
-              <p class="status-guide-summary">How to read the claim labels used across the bridge map.</p>
-            </div>
-            <div class="status-guide-grid">
-              <div class="status-guide-row">
-                <span class="badge status-badge status-derived">DERIVED</span>
-                <span class="status-guide-text">Numerically computed from the IO geometric stack with zero fitted parameters and directly comparable to observation.</span>
-              </div>
-              <div class="status-guide-row">
-                <span class="badge status-badge status-theorem">THEOREM</span>
-                <span class="status-guide-text">Formally proved algebraic or structural closure inside the framework rather than a numerical prediction.</span>
-              </div>
-              <div class="status-guide-row">
-                <span class="badge status-badge status-derived-scoped">DERIVED/SCOPED</span>
-                <span class="status-guide-text">Derived inside a stated observable class, sector, or quotient; extension beyond that domain is still open.</span>
-              </div>
-              <div class="status-guide-row">
-                <span class="badge status-badge status-conditional">CONDITIONAL</span>
-                <span class="status-guide-text">Depends on explicitly stated premises or identifications that are not yet theorem-grade.</span>
-              </div>
-              <div class="status-guide-row">
-                <span class="badge status-badge status-no-go">NO-GO</span>
-                <span class="status-guide-text">A proposed mechanism or extension was formally shown to fail and is recorded with the same rigor as positive results.</span>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="content-section compact">
-        <div class="section-inner bridge-layout">
-          <div class="bridge-board" id="bridge-board" aria-live="polite">
-            <div class="lane-card">
-              <div class="lane-title-wrap">
-                <p class="lane-kicker">Loading</p>
-                <h2 class="lane-title">Building the bridge map...</h2>
-              </div>
-              <p class="lane-summary">The crossing data are loaded from <span class="code">data/crossings.json</span>.</p>
-            </div>
-          </div>
-          <aside class="detail-column">
-            <article class="detail-card" id="detail-panel">
-              <div class="detail-header">
-                <span class="badge mixed">Select a crossing</span>
-                <h2 class="detail-title">Choose a node from the map</h2>
-                <p class="detail-summary">The detail panel shows the boundary object, bulk observable, constants, prediction, observation, and source papers for the selected crossing.</p>
-              </div>
-            </article>
-          </aside>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-title">David Fife | Independent Researcher | david@fife.cc</div>
-        <div class="footer-small">All papers open-access on Zenodo.</div>
-        <div class="footer-small">Copyright © 2026 David Fife. All rights reserved.</div>
-      </div>
-    </footer>
-  </div>
-
-  <script src="assets/js/bridge-map.js" defer></script>
+<p class="quiet-motto">If the theory is correct, the math will just work.</p>
+</div>
+<div aria-label="Bridge map filters" class="filters-bar">
+<div class="filter-group" id="channel-filters">
+<span class="filter-label">Channel</span>
+<button class="filter-button active" data-channel="all" type="button">All</button>
+<button class="filter-button" data-channel="static" type="button">Static Geometric</button>
+<button class="filter-button" data-channel="dynamic" type="button">Dynamic Thermal</button>
+<button class="filter-button" data-channel="mixed" type="button">Mixed/Source</button>
+<button class="filter-button" data-channel="fermionic" type="button">Fermionic (density-gated)</button>
+</div>
+<div class="filter-group" id="status-filters">
+<span class="filter-label">Status</span>
+<button class="filter-button active" data-status="all" type="button">All</button>
+<button class="filter-button" data-status="derived" type="button">Derived</button>
+<button class="filter-button" data-status="conditional" type="button">Conditional</button>
+<button class="filter-button" data-status="no-go" type="button">No-Go</button>
+</div>
+<div class="filter-group">
+<label class="filter-label" for="bridge-search">Search</label>
+<input class="filter-search" id="bridge-search" placeholder="Search crossings, constants, papers, or summaries" type="search"/>
+</div>
+</div>
+<section aria-labelledby="status-guide-title" class="status-guide">
+<div class="status-guide-head">
+<h2 class="status-guide-title" id="status-guide-title">Status Guide</h2>
+<p class="status-guide-summary">How to read the claim labels used across the bridge map.</p>
+</div>
+<div class="status-guide-grid">
+<div class="status-guide-row">
+<span class="badge status-badge status-derived">DERIVED</span>
+<span class="status-guide-text">Numerically computed from the IO geometric stack with zero fitted parameters and directly comparable to observation.</span>
+</div>
+<div class="status-guide-row">
+<span class="badge status-badge status-theorem">THEOREM</span>
+<span class="status-guide-text">Formally proved algebraic or structural closure inside the framework rather than a numerical prediction.</span>
+</div>
+<div class="status-guide-row">
+<span class="badge status-badge status-derived-scoped">DERIVED/SCOPED</span>
+<span class="status-guide-text">Derived inside a stated observable class, sector, or quotient; extension beyond that domain is still open.</span>
+</div>
+<div class="status-guide-row">
+<span class="badge status-badge status-conditional">CONDITIONAL</span>
+<span class="status-guide-text">Depends on explicitly stated premises or identifications that are not yet theorem-grade.</span>
+</div>
+<div class="status-guide-row">
+<span class="badge status-badge status-no-go">NO-GO</span>
+<span class="status-guide-text">A proposed mechanism or extension was formally shown to fail and is recorded with the same rigor as positive results.</span>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section class="content-section compact">
+<div class="section-inner bridge-layout">
+<div aria-live="polite" class="bridge-board" id="bridge-board">
+<div class="lane-card">
+<div class="lane-title-wrap">
+<p class="lane-kicker">Loading</p>
+<h2 class="lane-title">Building the bridge map...</h2>
+</div>
+<p class="lane-summary">The crossing data are loaded from <span class="code">data/crossings.json</span>.</p>
+</div>
+</div>
+<aside class="detail-column">
+<article class="detail-card" id="detail-panel">
+<div class="detail-header">
+<span class="badge mixed">Select a crossing</span>
+<h2 class="detail-title">Choose a node from the map</h2>
+<p class="detail-summary">The detail panel shows the boundary object, bulk observable, constants, prediction, observation, and source papers for the selected crossing.</p>
+</div>
+</article>
+</aside>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-title">David Fife | Independent Researcher | david@fife.cc</div>
+<div class="footer-small">All papers open-access on Zenodo.</div>
+<div class="footer-small">Copyright © 2026 David Fife. All rights reserved.</div>
+</div>
+</footer>
+</div>
+<script defer="" src="assets/js/bridge-map.js"></script>
 </body>
 </html>
