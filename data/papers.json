@@ -740,7 +740,7 @@
   {
     "paper": 33,
     "era": "The Bridge",
-    "short_title": "Three Languages of the Horizon",
+    "short_title": "General Relativity and Quantum Mechanics Unified",
     "summary": "An event horizon speaks three quantum languages to the classical interior it contains — and those three languages are sufficient to derive every major cosmological observable with zero fitted parameters. The Interior Observer (IO) framework models the observable universe as the interior of a Schwarzschild black hole. Across 32 papers, it derives the CMB temperature, dark energy density, baryon fraction, three BBN abundances (χ² = 1.13), the spectral index, the scalar amplitude, and the gravitational slip — all from one mass and one external constant. This paper reveals the organizing principle: the boundary-to-bulk crossings fall into three channels. Channel 1 (Geometric) is always on — the boundary's gauge algebra permanently imprints on bulk geometry. Channel 2 (Thermal) is state-gated — processes in thermal equilibrium with the Hawking/KMS boundary state receive geometric dressing. Channel 3 (Fermionic) is density-gated — at Planck density, boundary spinor data sources the bulk spin fluid that drives the torsion bounce, with R_eq/R_bounce = 1.00016 from representation theory alone. The framework closes a logical loop: Paper 1 assumed the bounce; Paper 32 derives it from the boundary's own quantum data. The premises generate the mathematics that validates the premises. No other cosmological framework derives its complete lifecycle — birth, expansion, recollapse, and rebirth — with zero continuously fitted parameters. Includes: a geometric dark-matter alternative (predicting continued null results from direct detection), a conditional no-go for quantum gravity signatures in the muon g−2, and the Holographic Selection Rule governing which observables see the boundary and which do not. Interactive bridge map: https://dfife.github.io/bridge-map.html",
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "bridges": [
@@ -750,13 +750,13 @@
       "Dark Matter Geometric Alternative",
       "Muon g−2 No-Go"
     ],
-    "short_form": "Paper 33 — Three Languages of the Horizon",
+    "short_form": "Paper 33 — General Relativity and Quantum Mechanics Unified",
     "full_title": "Paper 33 — The Quantum Gravity Bridge: Conditional Holographic Unification of General Relativity and Quantum Mechanics with 32 Zero-Parameter Derivations from Inside a Schwarzschild Horizon",
-    "title_tag": "Paper 33 — Three Languages of the Horizon | Interior Observer Framework",
+    "title_tag": "Paper 33 — General Relativity and Quantum Mechanics Unified | Interior Observer Framework",
     "paper_url": "papers/paper-33.html",
     "meta_description": "Paper 33 reframes the archive as three horizon languages and packages 32 zero-parameter derivations linking general relativity, quantum mechanics, and cosmology.",
     "schema_keywords": [
-      "Three Languages of the Horizon",
+      "General Relativity and Quantum Mechanics Unified",
       "Interior Observer Framework",
       "black hole cosmology",
       "Three-Language Architecture",
