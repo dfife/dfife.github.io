@@ -2414,8 +2414,27 @@ body.site-dark .empty-state {
     align-items: start;
   }
 
-  .calc-table,
-  .scorecard-table {
-    min-width: 0;
-  }
+.calc-table,
+.scorecard-table {
+  min-width: 0;
+}
+}
+
+.paper-static-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.paper-static-list {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.paper-static-list li + li {
+  margin-top: 8px;
+}
+
+.paper-link-meta {
+  color: var(--muted);
 }
