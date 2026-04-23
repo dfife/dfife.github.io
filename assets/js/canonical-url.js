@@ -6,6 +6,8 @@
     targetPath = '/';
   } else if (path.endsWith('/index.html')) {
     targetPath = path.slice(0, -'index.html'.length);
+  } else if (path !== '/' && !path.endsWith('/') && !path.split('/').pop().includes('.')) {
+    targetPath = path + '.html';
   }
 
   if (!targetPath) {
