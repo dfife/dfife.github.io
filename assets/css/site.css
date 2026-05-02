@@ -401,6 +401,13 @@ input {
   box-shadow: inset 0 0 0 1px rgba(16, 32, 51, 0.12);
 }
 
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .content-section {
   padding: 72px 0;
 }
@@ -2264,6 +2271,25 @@ body.site-dark .empty-state {
 .scorecard-panel ul {
   margin: 0;
   padding-left: 20px;
+}
+
+.document-panel {
+  overflow: hidden;
+}
+
+.document-source {
+  overflow-x: auto;
+  margin: 18px 0 0;
+  padding: 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  background: rgba(3, 8, 15, 0.86);
+  color: #e7f7ff;
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .story-actions {
