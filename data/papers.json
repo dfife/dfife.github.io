@@ -773,6 +773,7 @@
     "short_title": "The Hubble Tension Resolved",
     "summary": "The Hubble tension — the 5σ discrepancy between the Planck CMB measurement (67.4 ± 0.5 km/s/Mpc) and the SH0ES Cepheid distance ladder (73.0 ± 1.0 km/s/Mpc) — is resolved with zero fitted parameters. The resolution follows from one recognition: different H₀ measurement methods belong to different observable classes on the IO α-ladder, and each class sees a different effective expansion rate dressed by the boundary transit factor f_Γ = 1/(1+γ²). The inverse-projector law H_eff(α) = H₀ × f_Γ^(1−α) is derived for the late-time homogeneous estimator family, and two new bridge extensions complete the classification for SH0ES, TRGB, and TDCOSMO. Six methods fall within 0.57σ of prediction, with SH0ES at +0.04σ.",
     "zenodo": "https://zenodo.org/records/19558163/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper34/v1.1",
     "bridges": [
       "Hubble Constant (H₀)",
       "Three-Language Architecture",

@@ -42,6 +42,10 @@ function renderPaperCard(paper) {
     ? `<span class="button button-small button-disabled">Coming Soon</span>`
     : `<a class="button button-small button-outline" href="${paper.zenodo}" target="_blank" rel="noreferrer">Zenodo Record</a>`;
 
+  const supportAction = !paper.coming_soon && paper.support_bundle
+    ? `<a class="button button-small button-secondary" href="${paper.support_bundle}" target="_blank" rel="noreferrer">Repro Bundle</a>`
+    : "";
+
   wrapper.innerHTML = `
     <div class="paper-top">
       ${numberBadge}
@@ -55,6 +59,7 @@ function renderPaperCard(paper) {
     <div class="paper-actions">
       ${detailAction}
       ${action}
+      ${supportAction}
     </div>
   `;
 
