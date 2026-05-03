@@ -530,6 +530,7 @@
     "short_title": "The Lithium Problem Solved",
     "summary": "Conditionally resolves the cosmological lithium problem through channel-resolved BBN rate dressing. The paper shows that the spin-2 TT metric perturbation couples only to nuclear quadrupole moments, shielding spherical nuclei while selectively suppressing beryllium-7 production through a quadrupole-sensitive mass-7 dressing channel.",
     "zenodo": "https://zenodo.org/records/19219282/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper24/v2.2",
     "bridges": [
       "Deuterium Abundance (D/H)",
       "Lithium-7 Abundance"
