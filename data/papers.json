@@ -719,6 +719,7 @@
     "short_title": "Closure: The Complete IO Framework",
     "summary": "Paper 32 closes the six remaining open problems on their active scoped sectors, retires all four semiclassical principles on their stated scopes, and carries the late-time chain through x_crit, hidden-support recollapse, and the Paper 32 closure/lifecycle program. This card reflects the current Zenodo title/description while the site’s branch-sensitive numerics follow the active Paper 10 legacy reconstruction.",
     "zenodo": "https://zenodo.org/records/19433686/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper32/v1.5",
     "bridges": [
       "Observer Boundary (x_crit)",
       "Scalar Amplitude (A_s)",
