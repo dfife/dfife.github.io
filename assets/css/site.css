@@ -426,6 +426,7 @@ input {
 .repro-meta dt {
   font-family: var(--mono);
   color: var(--text-soft);
+  opacity: 0.55;
 }
 
 .repro-meta dd {
