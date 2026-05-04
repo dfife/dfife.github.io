@@ -323,6 +323,10 @@ input {
   justify-content: center;
 }
 
+.front-hero .hero-actions .button {
+  width: min(100%, 460px);
+}
+
 .hero-columns {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
