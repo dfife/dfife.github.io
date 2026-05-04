@@ -902,16 +902,6 @@ input {
   text-underline-offset: 3px;
 }
 
-.lifecycle-claim {
-  margin: 26px auto 0;
-  max-width: 980px;
-  text-align: center;
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--text-invert);
-}
-
 .result-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
