@@ -367,6 +367,7 @@
     "short_title": "The Modular Projection Theorem",
     "summary": "Upgrades the Gauge Thermal Transfer Principle to theorem status inside a shared thermal-plus-gauge Hilbert space. The paper constructs the A-vacuum GNS state, proves its modular properties, and derives the Modular Projection Theorem as an operator-level closure of the earlier transfer principle.",
     "zenodo": "https://zenodo.org/records/19045892/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper17/v1.5",
     "bridges": [
       "GTTP Optical Transfer",
       "FIRAS-fixed Thermal Readout"
