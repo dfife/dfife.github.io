@@ -3,10 +3,10 @@
     "paper": 1,
     "era": "Foundation",
     "short_title": "A Black Hole Cosmology",
-    "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. The paper derives zero-free-parameter predictions for the CMB temperature, dark-energy density, MOND acceleration scale, and Hubble rate, and compares the resulting expansion history with DESI DR1 BAO data.",
+    "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. The paper derives the base interior Hawking thermal scale, dark-energy density, MOND acceleration scale, and Hubble-rate branch, and compares the resulting expansion history with DESI DR1 BAO data.",
     "zenodo": "https://zenodo.org/records/18854813/latest",
     "bridges": [
-      "CMB Temperature"
+      "FIRAS-fixed Thermal Readout"
     ],
     "short_form": "Paper 1 — A Black Hole Cosmology",
     "full_title": "Paper 1 — A Black Hole Cosmology with the CMB as Event Horizon Radiation",
@@ -17,7 +17,7 @@
       "A Black Hole Cosmology",
       "Interior Observer Framework",
       "black hole cosmology",
-      "CMB Temperature"
+      "FIRAS-fixed Thermal Readout"
     ]
   },
   {
@@ -27,7 +27,7 @@
     "summary": "Shows that semiclassical QFT on stationary Schwarzschild spacetime cannot generate the boost factor γ, then derives γ from the Carlip-Virasoro horizon algebra in the dimensionally reduced interior-observer setting. It also builds a holographic thermalization bridge from 1+1D horizon states to the observed 3+1D photon bath and characterizes the framework's space-time decoupling hierarchy.",
     "zenodo": "https://zenodo.org/records/18868612/latest",
     "bridges": [
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "Spatial Decoupling Δ"
     ],
     "short_form": "Paper 2 — Deriving γ from Horizon Algebra",
@@ -39,7 +39,7 @@
       "Deriving γ from Horizon Algebra",
       "Interior Observer Framework",
       "black hole cosmology",
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "Spatial Decoupling Δ"
     ]
   },
@@ -47,7 +47,7 @@
     "paper": 3,
     "era": "Foundation",
     "short_title": "The Two-Phase Interior Model",
-    "summary": "Derives the two-phase Vaidya-to-Oppenheimer-Snyder interior structure from Israel junction conditions with zero free parameters, including the observer coordinate and the total interior lifecycle. The paper also identifies the cosmological invariant T_CMB × R_U and proves the IO transfer function is analytic across the interior history.",
+    "summary": "Derives the two-phase Vaidya-to-Oppenheimer-Snyder interior structure from Israel junction conditions with zero free parameters, including the observer coordinate and the total interior lifecycle. The paper also identifies the base thermal-scale invariant and proves the IO transfer function is analytic across the interior history.",
     "zenodo": "https://zenodo.org/records/18876346/latest",
     "bridges": [
       "Spatial Decoupling Δ"
@@ -68,22 +68,22 @@
     "paper": 4,
     "era": "Foundation",
     "short_title": "Four Horizon Connections Tested",
-    "summary": "Collects the framework's first broad evidence packet by tying four horizon-interior observables to zero-fit predictions: the CMB temperature, dark-energy density, MOND acceleration scale, and boost factor γ. It also confronts the model with galaxy-formation timing and early JWST tensions, emphasizing the extra formation time available on the IO expansion history.",
+    "summary": "Collects the framework's first broad evidence packet by tying horizon-interior observables to zero-fit calculations: the base interior thermal scale, dark-energy density, MOND acceleration scale, and boost factor γ. It also confronts the model with galaxy-formation timing and early JWST tensions, emphasizing the extra formation time available on the IO expansion history.",
     "zenodo": "https://zenodo.org/records/18883069/latest",
     "bridges": [
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "Dark Energy Density"
     ],
     "short_form": "Paper 4 — Four Horizon Connections Tested",
     "full_title": "Paper 4 — Evidence for a Black Hole Interior: Four Horizon Connections, JWST Predictions, and Quantitative Tensions",
     "title_tag": "Paper 4 — Four Horizon Connections Tested | Interior Observer Framework",
     "paper_url": "papers/paper-04.html",
-    "meta_description": "Four horizon-interior observables — CMB temperature, dark energy, age, and angular scale — are tied to zero-parameter IO predictions in the first evidence packet.",
+    "meta_description": "Early horizon-interior observables — base thermal scale, dark energy, age, and angular scale — are tested in the first IO evidence packet.",
     "schema_keywords": [
       "Four Horizon Connections Tested",
       "Interior Observer Framework",
       "black hole cosmology",
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "Dark Energy Density"
     ]
   },
@@ -91,7 +91,7 @@
     "paper": 5,
     "era": "Foundation",
     "short_title": "Kerr Limit and Radiation Phase",
-    "summary": "Explores three early structural questions: how black-hole spin affects the temperature prediction, whether the Vaidya radiation phase is compatible with an isotropic CMB bath, and what early-time interior physics is required. The analysis favors the Schwarzschild limit, rules out the naive Vaidya null-dust phase for CMB acoustics, and sharpens the framework's early-radiation picture.",
+    "summary": "Explores three early structural questions: how black-hole spin affects the interior thermal scale, whether the Vaidya radiation phase is compatible with an isotropic CMB bath, and what early-time interior physics is required. The analysis favors the Schwarzschild limit, rules out the naive Vaidya null-dust phase for CMB acoustics, and sharpens the framework's early-radiation picture.",
     "zenodo": "https://zenodo.org/records/18889865/latest",
     "bridges": [
       "Acoustic Scale (θ_s)"
@@ -273,22 +273,22 @@
     "paper": 13,
     "era": "The Rosetta Stone",
     "short_title": "Gauge Thermal Transfer Principle",
-    "summary": "Resolves the framework's large CMB temperature discrepancy by introducing the Gauge Thermal Transfer Principle. This principle assigns a boundary-to-bulk transfer law to conformal thermal observables in radial logarithmic coordinate and is used to lift the IO temperature prediction into agreement with the observed CMB without adding new fit parameters.",
+    "summary": "Introduces the Gauge Thermal Transfer Principle as the historical route to observer-side thermal readout. Current framework wording treats the observed CMB temperature as the FIRAS empirical datum that fixes the unique readout normalization, not as an independent IO prediction.",
     "zenodo": "https://zenodo.org/records/18945480/latest",
     "bridges": [
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "GTTP Optical Transfer"
     ],
     "short_form": "Paper 13 — Gauge Thermal Transfer Principle",
-    "full_title": "Paper 13 — The Gauge Thermal Transfer Principle — Closing the 230σ T_CMB Gap with Zero New Parameters",
+    "full_title": "Paper 13 — The Gauge Thermal Transfer Principle (historical thermal-readout formulation)",
     "title_tag": "Paper 13 — Gauge Thermal Transfer Principle | Interior Observer Framework",
     "paper_url": "papers/paper-13.html",
-    "meta_description": "The Gauge Thermal Transfer Principle derives the CMB temperature as 2.7253 K, just 0.33σ from FIRAS, closing the framework's 230σ raw temperature gap.",
+    "meta_description": "Historical GTTP paper. Current framework wording treats FIRAS as fixing the unique observer-side thermal readout normalization.",
     "schema_keywords": [
       "Gauge Thermal Transfer Principle",
       "Interior Observer Framework",
       "black hole cosmology",
-      "CMB Temperature",
+      "FIRAS-fixed Thermal Readout",
       "GTTP Optical Transfer"
     ]
   },
@@ -369,19 +369,19 @@
     "zenodo": "https://zenodo.org/records/19045892/latest",
     "bridges": [
       "GTTP Optical Transfer",
-      "CMB Temperature"
+      "FIRAS-fixed Thermal Readout"
     ],
     "short_form": "Paper 17 — The Modular Projection Theorem",
     "full_title": "Paper 17 — The Modular Projection Theorem: Operator-Level Closure of the Gauge Thermal Transfer Principle via Shared Hilbert Space Construction and Fiberwise KMS Rigidity",
     "title_tag": "Paper 17 — The Modular Projection Theorem | Interior Observer Framework",
     "paper_url": "papers/paper-17.html",
-    "meta_description": "A shared thermal-plus-gauge Hilbert space upgrades the Gauge Thermal Transfer Principle to theorem status and supports the 2.7253 K CMB readout.",
+    "meta_description": "A shared thermal-plus-gauge Hilbert space supports the thermal readout family; FIRAS fixes the unique observer-side normalization in current wording.",
     "schema_keywords": [
       "The Modular Projection Theorem",
       "Interior Observer Framework",
       "black hole cosmology",
       "GTTP Optical Transfer",
-      "CMB Temperature"
+      "FIRAS-fixed Thermal Readout"
     ]
   },
   {
@@ -743,7 +743,7 @@
     "paper": 33,
     "era": "The Bridge",
     "short_title": "General Relativity and Quantum Mechanics Unified",
-    "summary": "An event horizon speaks three quantum languages to the classical interior it contains — and those three languages are sufficient to derive every major cosmological observable with zero fitted parameters. The Interior Observer (IO) framework models the observable universe as the interior of a Schwarzschild black hole. Across 32 papers, it derives the CMB temperature, dark energy density, baryon fraction, three BBN abundances (χ² = 1.13), the spectral index, the scalar amplitude, and the gravitational slip — all from one mass and one external constant. This paper reveals the organizing principle: the boundary-to-bulk crossings fall into three channels. Channel 1 (Geometric) is always on — the boundary's gauge algebra permanently imprints on bulk geometry. Channel 2 (Thermal) is state-gated — processes in thermal equilibrium with the Hawking/KMS boundary state receive geometric dressing. Channel 3 (Fermionic) is density-gated — at Planck density, boundary spinor data sources the bulk spin fluid that drives the torsion bounce, with R_eq/R_bounce = 1.00016 from representation theory alone. The framework closes a logical loop: Paper 1 assumed the bounce; Paper 32 derives it from the boundary's own quantum data. The premises generate the mathematics that validates the premises. No other cosmological framework derives its complete lifecycle — birth, expansion, recollapse, and rebirth — with zero continuously fitted parameters. Includes: a geometric dark-matter alternative (predicting continued null results from direct detection), a conditional no-go for quantum gravity signatures in the muon g−2, and the Holographic Selection Rule governing which observables see the boundary and which do not. Interactive bridge map: https://dfife.github.io/bridge-map.html",
+    "summary": "An event horizon speaks three quantum languages to the classical interior it contains. The Interior Observer (IO) framework models the observable universe as the interior of a Schwarzschild black hole. Across 32 papers, it derives or scopes the base thermal scale, dark energy density, baryon fraction, three BBN abundances (χ² = 1.13), the spectral index, the scalar amplitude, and the gravitational slip — all with explicit claim labels and no downstream retuning. This paper reveals the organizing principle: the boundary-to-bulk crossings fall into three channels. Channel 1 (Geometric) is always on — the boundary's gauge algebra permanently imprints on bulk geometry. Channel 2 (Thermal) is state-gated — processes in thermal equilibrium with the Hawking/KMS boundary state receive geometric dressing. Channel 3 (Fermionic) is density-gated — at Planck density, boundary spinor data sources the bulk spin fluid that drives the torsion bounce, with R_eq/R_bounce = 1.00016 from representation theory alone. Includes: a geometric dark-matter alternative (predicting continued null results from direct detection), a conditional no-go for quantum gravity signatures in the muon g−2, and the Holographic Selection Rule governing which observables see the boundary and which do not. Interactive bridge map: https://dfife.github.io/bridge-map.html",
     "zenodo": "https://zenodo.org/records/19440227/latest",
     "bridges": [
       "Three-Language Architecture",

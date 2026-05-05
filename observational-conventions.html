@@ -211,13 +211,13 @@ This document establishes the standard going forward. Affected papers have been 
 
 **N_eff used as PRyMordial input:** 3.044 (standard SM value; PRyMordial-default).
 
-### CMB temperature today
+### CMB temperature / thermal input convention
 
-**T_0,CMB used as PRyMordial input:** 2.6635 K (IO framework derivation; not the FIRAS observed value because the framework has its own derivation).
+**Local thermal scale used as PRyMordial input:** 2.6635 K (IO local `T_IO` branch convention). The observed CMB temperature is no longer counted as an independent IO prediction; FIRAS supplies the empirical observer-side thermal datum used to fix the readout normalization in the Paper 17 vNext convention.
 
 ### η₁₀ (baryon-to-photon ratio)
 
-**η₁₀ derived from ω_b h² and T_0,CMB above:** 6.183 × 10⁻¹⁰ (computed by PRyMordial from inputs).
+**η₁₀ derived from ω_b h² and the local thermal input above:** 6.183 × 10⁻¹⁰ (computed by PRyMordial from inputs).
 
 ---
 

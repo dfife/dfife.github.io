@@ -1,25 +1,25 @@
 [
   {
-    "name": "CMB Temperature",
+    "name": "FIRAS-fixed Thermal Readout",
     "channel": "dynamic",
     "quantum_input": "Hawking temperature on S² horizon",
-    "classical_output": "Observer CMB temperature T_obs = 2.7253 K",
+    "classical_output": "Unique observer-side readout normalization R4_FIRAS = 1.0031",
     "constants": [
       "γ",
       "x",
       "K_gauge"
     ],
-    "prediction": "2.7253 K",
-    "observation": "2.7255 ± 0.0006 K",
-    "residual": "−0.33σ",
-    "status": "DERIVED/SCOPED",
+    "prediction": "R4_FIRAS = 1.0031",
+    "observation": "FIRAS empirical thermal datum 2.7255 ± 0.0006 K",
+    "residual": "N/A: normalization datum, not prediction residual",
+    "status": "FIRAS-FIXED / UNIQUE",
     "papers": [
       1,
       13,
       17
     ],
     "zenodo": "https://zenodo.org/records/19045892/latest",
-    "summary": "The observer-side CMB temperature is Hawking radiation projected through the gauge thermal transfer channel on the active Paper 10 legacy branch."
+    "summary": "The observed CMB temperature is not counted as an independent IO prediction. FIRAS fixes the unique observer-side thermal readout normalization inside the IO readout family."
   },
   {
     "name": "Dark Energy Density",
@@ -111,15 +111,15 @@
       "K_gauge"
     ],
     "prediction": "K_gauge = 0.05488",
-    "observation": "Closes T_CMB gap (Paper 13)",
+    "observation": "FIRAS fixes the readout normalization; not an independent temperature prediction",
     "residual": "N/A",
-    "status": "THEOREM",
+    "status": "FIRAS-FIXED / UNIQUE",
     "papers": [
       13,
       17
     ],
     "zenodo": "https://zenodo.org/records/18945480/latest",
-    "summary": "The gauge thermal transfer law: how boundary temperature projects into the bulk through conformal coordinates."
+    "summary": "The gauge thermal transfer law supplies the readout family; the observed temperature datum fixes the normalization rather than being independently predicted."
   },
   {
     "name": "Generating Potential V(α)",

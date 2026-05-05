@@ -1,5 +1,5 @@
 const HIGHLIGHT_ORDER = [
-  "CMB Temperature",
+  "FIRAS-fixed Thermal Readout",
   "Cosmic Chronometers",
   "Galaxy BAO Closure",
   "S₈ f_Γ Readout",
