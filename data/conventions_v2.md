@@ -245,6 +245,14 @@ no-go theorem unless the numerical search space has also been proved complete.
 specified premise package or class-membership assumption. The theorem is valid
 inside that condition.
 
+**CONDITIONAL_VERIFIED:** A conditional theorem, theorem surface, or theorem
+chain whose admitted conditions are explicit and whose dependency path has been
+verified back to Premise 1 and/or Premise 2. This is the minimum load-bearing
+label for a conditional result that is intended to remain inside the
+zero-fitted-parameters discipline. It is not an unconditional theorem. It may
+not hide an adjustable normalization, unlisted premise, or observational
+retuning.
+
 **CONSTRUCTED/VERIFIED:** An object has been explicitly constructed and checked
 by reproducible computation or direct verification. This label does not by
 itself mean the object is uniquely forced.
@@ -329,6 +337,17 @@ use:
 STATUS: DERIVED/CONDITIONAL on [premise]; numerical evaluation DERIVED
 computationally within that premise package.
 ```
+
+If the full conditional dependency chain has been explicitly audited and traced
+back to Premise 1 and/or Premise 2, the stronger public ledger label may be:
+
+```text
+STATUS: CONDITIONAL_VERIFIED on [premise package]
+```
+
+This means the conditional chain is visible and verified. It does not mean the
+condition has disappeared, and it must not be rewritten as unconditional
+`DERIVED/THEOREM`.
 
 ### 2.5 Historical and Superseded Labeling Rules
 
