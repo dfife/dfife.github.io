@@ -392,8 +392,12 @@
     "paper": 18,
     "era": "Operator Closure",
     "short_title": "Modular Completion and Baryons",
-    "summary": "Completes the operator-level closure program by upgrading both the Conformal Modular Principle and the Baryon Dictionary Principle to theorem-level status within the reduced observer algebra. It realizes the geometric modular term as a relative modular operator and derives the baryon fraction and associated projection structure on the same operator-theoretic footing.",
+    "summary": "Completes the operator-level closure program by upgrading both the Conformal Modular Principle and the Baryon Dictionary Principle to theorem-level status within the reduced observer algebra. Current v1.6 support adds the R4/FIRAS repair audit: CMB-temperature prediction wording is retired, while CMP, BDP, and V(alpha) remain R4-independent theorem claims.",
     "zenodo": "https://zenodo.org/records/19054258/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper18/v1.6",
+    "current_version": "v1.6",
+    "support_bundle_tag": "paper18-v1.6",
+    "support_bundle_sha256": "35ff7f8a18a32ac1b086ed4b1e5b5fa59f66e4cab5e9579381c5b0be43c86cb0",
     "bridges": [
       "Generating Potential V(α)",
       "Baryon Fraction",
@@ -403,7 +407,7 @@
     "full_title": "Paper 18 — Modular Completion: Operator-Level Closure of the Conformal Modular Principle and the Baryon Dictionary Principle via Relative Modular Operators and Gauge-Sector Projection",
     "title_tag": "Paper 18 — Modular Completion and Baryons | Interior Observer Framework",
     "paper_url": "papers/paper-18.html",
-    "meta_description": "Operator closure upgrades both the Conformal Modular Principle and the Baryon Dictionary Principle to theorem-grade results inside one shared stack.",
+    "meta_description": "Operator closure upgrades CMP and BDP to theorem-grade results; v1.6 adds the R4/FIRAS repair audit and public reproducibility bundle.",
     "schema_keywords": [
       "Modular Completion and Baryons",
       "Interior Observer Framework",
