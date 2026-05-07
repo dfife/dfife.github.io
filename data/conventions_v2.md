@@ -1,4 +1,4 @@
-# IO Framework Conventions, v2.0
+# IO Framework Conventions, v2.1
 
 **Unified Conventions for the Interior Observer Cosmological Framework**
 
@@ -13,7 +13,7 @@
 IO Framework Observational Conventions v1.0 covered observational denominators
 and external-code output conventions only.
 
-This v2.0 document expands the convention scope to a unified framework
+This v2 document expands the convention scope to a unified framework
 reference covering:
 
 - observational conventions,
@@ -26,7 +26,7 @@ Section 1 supersedes and reproduces IO Framework Observational Conventions v1.0
 identical; this section exists for unified citation.
 
 The v1.0 file remains in place at its original URL for papers already citing
-it. Future papers should cite this v2.0 document unless a paper deliberately
+it. Future papers should cite this v2 document unless a paper deliberately
 needs to cite the historical v1.0 convention.
 
 ---
@@ -232,7 +232,25 @@ theorems, but it is not itself a theorem unless a proof is given.
 **DISCUSSION:** Explanatory, interpretive, motivational, or contextual
 material. Discussion may be useful, but it is not load-bearing.
 
-### 2.2 Operational Labels (Papers 15-21 Extensions)
+### 2.2 Active Public Claim Labels
+
+The active public taxonomy is intentionally narrow. Active claims should use
+one of the labels below. Older scoped or conditional labels may remain in
+historical artifacts, but new or revised public theorem claims must be
+translated into this taxonomy.
+
+**DERIVED/THEOREM:** A result proved mathematically from explicitly stated
+framework assumptions, accepted definitions, and previously banked derived
+results. Numerical agreement is not sufficient for this label.
+
+**DERIVED/CONDITIONAL_VERIFIED:** A result derived inside a declared condition
+package whose dependency path has been explicitly verified back to Premise 1,
+Premise 2, or an openly imported and frozen empirical/physics input. This is
+the required public label for load-bearing results that were previously called
+`DERIVED/SCOPED`, `DERIVED/CONDITIONAL`, `CONDITIONAL/THEOREM`, or
+`CONDITIONAL/SCOPED`. The condition does not disappear; it is made visible and
+audited. This label cannot hide an adjustable normalization, unlisted premise,
+or observational retuning.
 
 **DERIVED/NO-GO:** A theorem-grade exclusion result showing that a specified
 route or class cannot deliver the target under stated assumptions.
@@ -241,76 +259,82 @@ route or class cannot deliver the target under stated assumptions.
 verified within its numerical setup, but it is not automatically a mathematical
 no-go theorem unless the numerical search space has also been proved complete.
 
-**CONDITIONAL/THEOREM:** A theorem whose entire structure is conditional on a
-specified premise package or class-membership assumption. The theorem is valid
-inside that condition.
+**VERIFIED:** A computational, documentary, or arithmetic result has passed the
+relevant verification checks for its declared scope. Verification is not
+derivation.
 
-**CONDITIONAL_VERIFIED:** A conditional theorem, theorem surface, or theorem
-chain whose admitted conditions are explicit and whose dependency path has been
-verified back to Premise 1 and/or Premise 2. This is the minimum load-bearing
-label for a conditional result that is intended to remain inside the
-zero-fitted-parameters discipline. It is not an unconditional theorem. It may
-not hide an adjustable normalization, unlisted premise, or observational
-retuning.
-
-**CONSTRUCTED/VERIFIED:** An object has been explicitly constructed and checked
-by reproducible computation or direct verification. This label does not by
-itself mean the object is uniquely forced.
+**IMPORTED/EMPIRICAL:** An accepted external measurement, literature value, or
+standard-physics input is used openly and frozen. It is not counted as an IO
+prediction. Examples include FIRAS as the empirical observer-side thermal datum
+for the Paper 17 readout normalization and published nuclear inputs imported
+under Premise 2.
 
 **SCOPE-BOUNDARY:** A result that clarifies where an identification, theorem,
-or construction applies and where it does not. This label is used to prevent
-overextension.
+or construction applies and where it does not. This is a boundary marker, not a
+load-bearing theorem label.
 
-**STRUCTURALLY SUPPORTED CONSTRUCTION:** A construction strongly supported by
-framework structure, prior routes, or compatible imports, but not yet promoted
-to theorem-grade derivation.
+**RECONSTRUCTION:** A coherent explanatory model or zero-parameter construction
+not yet forced by theorem.
 
-**FRONTIER/SPECIFICATION:** A precise statement of the current open frontier,
-including the object, missing bridge, or proof obligation that must be solved
-next.
+**RECONSTRUCTION/RESEARCH_ONLY:** A non-authoritative discovery scaffold or
+research aid. It may guide class discovery, but it is not evidence and not
+load-bearing.
+
+**OPEN/PREMISE_GAP:** A missing bridge, class-membership proof, normalization,
+or premise chain prevents promotion to a public active theorem.
 
 **DEFINITION:** A declared convention or formal definition. A definition is
 allowed, but definitions do not prove physical truth or uniqueness.
 
-**VALIDATED:** A computational or documentary result has passed the relevant
-verification checks for its declared scope.
-
 **RECALIBRATED:** A previous numerical or interpretive statement has been
 updated after a convention, wrapper, denominator, or reference correction.
 
-**CONDITIONAL/COMPUTATIONAL SCORECARD:** A numerical scorecard computed within
-a stated conditional premise package. The computation may be verified while the
-premise package remains conditional.
+**SUPERSEDED** or **Historical/SUPERSEDED:** Inherited material whose framing,
+label, or active status has been retired by a later correction.
 
-### 2.3 Compound Conditional Labels
+### 2.3 Retired Scoped and Conditional Labels
 
-Use the pattern:
+The following labels are retired as final public labels for active
+load-bearing theorem claims:
 
 ```text
+CONDITIONAL
+CONDITIONAL/THEOREM
 DERIVED/CONDITIONAL on [premise]
+DERIVED/SCOPED
+CONDITIONAL/SCOPED
+CONDITIONAL/COMPUTATIONAL SCORECARD
+VERIFIED/SCOPED
 ```
 
-This form is required when a local derivation is mathematically valid but rests
-on a premise, bridge, or prior theorem whose own status is conditional.
+Reason: a scope or condition can hide a class-selection, bridge-selection, or
+normalization choice. If that choice does not eventually trace back to Premise
+1, Premise 2, or an openly imported frozen empirical/physics input, then using
+it as a load-bearing zero-fitted-parameters theorem is not honest.
 
-It is optional only when the dependency is already unambiguously stated in the
-same theorem title, theorem statement, and surrounding paragraph. In revision
-work, prefer the explicit compound label.
+Replacement rule:
+
+- If the dependency chain has been audited and traces back to Premise 1,
+  Premise 2, or an openly imported frozen empirical/physics input, use
+  `DERIVED/CONDITIONAL_VERIFIED`.
+- If the dependency chain is visible but not yet verified, use
+  `OPEN/PREMISE_GAP`.
+- If the object is coherent but not theorem-supporting, use
+  `RECONSTRUCTION` or `RECONSTRUCTION/RESEARCH_ONLY`.
+- If the old claim has been replaced by a later correction, use
+  `SUPERSEDED` or `Historical/SUPERSEDED`.
 
 Examples:
 
-- `DERIVED/CONDITIONAL on GMP + TBS`
-- `DERIVED/CONDITIONAL on H1-H3`
+- Old: `DERIVED/SCOPED within stellar-photometric extension`.
+  New: `DERIVED/CONDITIONAL_VERIFIED on stellar-photometric extension` if the
+  extension premises have been audited back to the accepted premise/input
+  package; otherwise `OPEN/PREMISE_GAP`.
+- Old: `DERIVED/CONDITIONAL on GMP + TBS`.
+  New: `DERIVED/CONDITIONAL_VERIFIED on GMP + TBS` if GMP and TBS have a
+  verified dependency path; otherwise `OPEN/PREMISE_GAP`.
 
-Distinction from `CONDITIONAL/THEOREM`:
-
-- `CONDITIONAL/THEOREM` is used for a theorem whose whole object is conditional
-  on an assumed class or premise package.
-- `DERIVED/CONDITIONAL on [premise]` is used for a derived result whose local
-  reasoning is complete, but whose validity inherits a stated conditional
-  premise.
-
-### 2.4 Conditional Dependency Inheritance Rule
+### 2.4 Dependency Inheritance and Label-Conformance Rule
 
 If theorem `T_2` depends on theorem `T_1`, and `T_1` is conditional on premise
 `P`, then `T_2` inherits the conditionality.
@@ -318,36 +342,44 @@ If theorem `T_2` depends on theorem `T_1`, and `T_1` is conditional on premise
 Therefore `T_2` must be labeled:
 
 ```text
-DERIVED/CONDITIONAL on P
+DERIVED/CONDITIONAL_VERIFIED on P
 ```
 
-even if `T_2`'s local statement does not mention `P`.
+only if the `P` dependency path has been explicitly audited back to Premise 1,
+Premise 2, or an openly imported frozen empirical/physics input. If that audit
+has not been completed, `T_2` must be labeled `OPEN/PREMISE_GAP` rather than
+promoted as an active theorem.
 
 Example:
 
 - Theorem 22.24 (Li-7 internal consistency) depends on Theorem 22.23
   (rate-dressing prediction).
-- Therefore Theorem 22.24 is `DERIVED/CONDITIONAL on GMP + TBS` because
-  Theorem 22.23 is conditional on GMP + TBS.
+- Therefore Theorem 22.24 must either be
+  `DERIVED/CONDITIONAL_VERIFIED on GMP + TBS` after the GMP + TBS chain has
+  been audited, or `OPEN/PREMISE_GAP` if that chain has not been verified.
 
 For appendix steps that report PRyMordial evaluations of conditional results,
 use:
 
 ```text
-STATUS: DERIVED/CONDITIONAL on [premise]; numerical evaluation DERIVED
-computationally within that premise package.
+STATUS: DERIVED/CONDITIONAL_VERIFIED on [premise package]; numerical
+evaluation VERIFIED computationally within that premise package.
 ```
 
-If the full conditional dependency chain has been explicitly audited and traced
-back to Premise 1 and/or Premise 2, the stronger public ledger label may be:
+If the full conditional dependency chain has not been explicitly audited and
+traced back, use:
 
 ```text
-STATUS: CONDITIONAL_VERIFIED on [premise package]
+STATUS: OPEN/PREMISE_GAP; numerical evaluation VERIFIED within an unpromoted
+premise package.
 ```
 
-This means the conditional chain is visible and verified. It does not mean the
-condition has disappeared, and it must not be rewritten as unconditional
-`DERIVED/THEOREM`.
+Every kappa-style fitted-parameter audit must include a status-label
+conformance pass: for every theorem, theorem surface, scorecard, or appendix
+step labeled outside the active Claim Discipline taxonomy in Section 2.2, the
+audit must recommend a replacement active label or a demotion to
+`OPEN/PREMISE_GAP`, `RECONSTRUCTION/RESEARCH_ONLY`, or
+`SUPERSEDED/HISTORICAL`.
 
 ### 2.5 Historical and Superseded Labeling Rules
 
@@ -396,7 +428,7 @@ A version bump is required when:
 
 - numerical values reported in the manuscript change,
 - status labels on theorems or premises change (`DERIVED` to
-  `DERIVED/CONDITIONAL` counts),
+  `DERIVED/CONDITIONAL_VERIFIED` counts),
 - new theorems, lemmas, or no-go results are added,
 - cross-paper references are updated to current framework state,
 - substantive editorial changes are made to claims, scope, or conclusions.
@@ -461,7 +493,7 @@ Cross-paper references should be updated when:
 - the citing paper itself undergoes a version bump, which is a good time to
   refresh references,
 - the cited paper's central claim changes status, for example `DERIVED` to
-  `DERIVED/CONDITIONAL`, or theorem promoted/retired.
+  `DERIVED/CONDITIONAL_VERIFIED`, or theorem promoted/retired.
 
 Cross-paper references should not be silently updated mid-paragraph if the
 original citation was historically meaningful, for example when describing the
@@ -481,7 +513,19 @@ state at first publication.
 
 ## Closing Note
 
-The IO Framework conventions will evolve as the framework matures. Version 2.0
+The IO Framework conventions will evolve as the framework matures. Version 2.1
 is current as of May 2026. Future versions should be additive where possible so
 that previously published papers' citations remain stable and backward
 compatible.
+
+**v2.1 (May 2026):** Tightened the active public claim taxonomy. Bare
+`CONDITIONAL`, `DERIVED/CONDITIONAL`, and `DERIVED/SCOPED` are retired as final
+public labels for active load-bearing claims. The required replacement for
+audited scoped/conditional theorem claims is now
+`DERIVED/CONDITIONAL_VERIFIED`; otherwise the claim must be demoted to
+`OPEN/PREMISE_GAP`, `RECONSTRUCTION/RESEARCH_ONLY`, or
+`SUPERSEDED/HISTORICAL`.
+
+**v2.0 (May 2026):** Initial unified conventions release. Expanded v1.0 from
+observational denominators to labeling, versioning, and cross-paper reference
+conventions.

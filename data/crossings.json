@@ -205,7 +205,7 @@
     "prediction": "0.9639",
     "observation": "0.9649 ± 0.0042 (Planck 2018)",
     "residual": "−0.24σ",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       23,
       28,
@@ -226,7 +226,7 @@
     "prediction": "2.007 × 10⁻⁹",
     "observation": "2.101 ± 0.030 × 10⁻⁹ (Planck 2018)",
     "residual": "−3.1σ (raw) or 0.8% with optical damping",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       26,
       32
@@ -245,7 +245,7 @@
     "prediction": "Σ_IO = 0.8114",
     "observation": "Structural Weyl-response bridge result. The active weak-lensing amplitude comparison is tracked separately in S₈ f_Γ Readout.",
     "residual": "See S₈ f_Γ Readout for the growth-side weak-lensing comparison",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       31
     ],
@@ -264,7 +264,7 @@
     "prediction": "σ₈ = 0.9275 from native 0.9533 × √f_Γ",
     "observation": "Native unclothed growth amplitude on the same branch would be σ₈ = 0.9533",
     "residual": "−2.71% from the native clustering amplitude",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -284,7 +284,7 @@
     "prediction": "S₈ = 0.8113",
     "observation": "Weak-lensing S₈ ≈ 0.79 ± 0.02",
     "residual": "+1.1σ",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -303,7 +303,7 @@
     "prediction": "x_crit = 0.9864 (~6.6 Gyr from now)",
     "observation": "N/A (future prediction)",
     "residual": "N/A",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -357,7 +357,7 @@
   {
     "name": "Galaxy BAO Closure",
     "channel": "mixed",
-    "quantum_input": "Hybrid drag ruler plus derived/scoped DESI DR2 GCcomb galaxy/quasar readout kernel",
+    "quantum_input": "Hybrid drag ruler plus DERIVED/CONDITIONAL_VERIFIED DESI DR2 GCcomb galaxy/quasar readout kernel",
     "classical_output": "BAO χ² = 27.74 on 13 galaxy/quasar points",
     "constants": [
       "r_d",
@@ -366,14 +366,14 @@
     ],
     "prediction": "χ² = 27.74 (13 pts), f_⊥ = exp(η), f_∥ = exp(η/2)",
     "observation": "Planck fixed reference χ² = 31.25 on the same block",
-    "residual": "Δχ² = −3.52 (derived/scoped on the DESI DR2 GCcomb galaxy/quasar block)",
-    "status": "DERIVED/SCOPED",
+    "residual": "Δχ² = −3.52 (DERIVED/CONDITIONAL_VERIFIED on the DESI DR2 GCcomb galaxy/quasar block)",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       29,
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The active Paper 10 legacy branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the derived/scoped readout kernel."
+    "summary": "The active Paper 10 legacy branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the DERIVED/CONDITIONAL_VERIFIED readout kernel."
   },
   {
     "name": "Acoustic Scale (θ_s)",
@@ -407,13 +407,13 @@
     "prediction": "0.02744",
     "observation": "0.054 ± 0.007 (Planck 2018)",
     "residual": "Scoped to source-covariance class",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       27,
       31
     ],
     "zenodo": "https://zenodo.org/records/19333220/latest",
-    "summary": "The effective optical depth from boundary gauge weight, scoped to the reduced source class."
+    "summary": "The effective optical depth from boundary gauge weight, carried inside the verified reduced source class."
   },
   {
     "name": "Bounce / Recollapse",
@@ -428,12 +428,12 @@
     "prediction": "111 Gyr to recollapse; R_eq/R_bounce = 1.00016 (extended)",
     "observation": "N/A (future / structural lifecycle prediction)",
     "residual": "N/A",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Recollapse is derived on the active Paper 10 legacy branch. The bounce attachment is derived/scoped within the extended fermionic/chiral IO-EC theory."
+    "summary": "Recollapse is derived on the active Paper 10 legacy branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory."
   },
   {
     "name": "Growth Background Consistency",
@@ -448,12 +448,12 @@
     "prediction": "Growth/background assignment closes on the projected Paper 10 legacy solver tuple",
     "observation": "N/A (structural theorem)",
     "residual": "N/A",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 closes the old growth-background ambiguity at scoped theorem grade: source, thermodynamics, perturbations, and transfer share one projected Paper 10 legacy solver tuple."
+    "summary": "Paper 32 closes the old growth-background ambiguity at DERIVED/CONDITIONAL_VERIFIED theorem grade: source, thermodynamics, perturbations, and transfer share one projected Paper 10 legacy solver tuple."
   },
   {
     "name": "Baryon Loading No-Single-Slot",
@@ -488,7 +488,7 @@
     "prediction": "C_src = 0.37758, R_eq/R_bounce = 1.00016",
     "observation": "N/A (extended-theory closure)",
     "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -508,7 +508,7 @@
     "prediction": "1% onset at R ≈ 5.18 × 10⁻¹⁵ m; 0.1% onset at R ≈ 1.12 × 10⁻¹⁴ m",
     "observation": "N/A (extended-theory prediction)",
     "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -528,7 +528,7 @@
     "prediction": "Boundary spinor data coarse-grain to a Weyssenhoff-type bulk source with R^(−6) spin-density scaling",
     "observation": "N/A (construction theorem)",
     "residual": "Scoped to the extended fermionic/chiral IO-EC theory",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       32
     ],
@@ -570,7 +570,7 @@
     "prediction": "State-gated dynamic-channel rule",
     "observation": "Explains why BBN is positive while zero-temperature g−2 is outside the live domain",
     "residual": "N/A",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33
     ],
@@ -587,9 +587,9 @@
       "K_gauge"
     ],
     "prediction": "Same local vertex, different state/covariance carrier",
-    "observation": "Carrier identified for the weak BBN channel; ambient-extension independence remains scoped",
+    "observation": "Carrier identified for the weak BBN channel; ambient-extension independence remains inside the verified condition package",
     "residual": "N/A",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33
     ],
@@ -608,7 +608,7 @@
     "prediction": "Geometric reinterpretation of the dark sector complement",
     "observation": "Alternative IO reading of the baryon/dust split",
     "residual": "N/A",
-    "status": "CONDITIONAL",
+    "status": "OPEN/PREMISE_GAP",
     "papers": [
       33
     ],
@@ -624,7 +624,7 @@
     "prediction": "δa_μ = 0 (no IO correction)",
     "observation": "a_μ(exp) = 0.00116592071 (Fermilab 2025)",
     "residual": "Consistent if WP25 confirms no anomaly",
-    "status": "NO-GO / CONDITIONAL EXPECTATION",
+    "status": "DERIVED/NO-GO",
     "papers": [
       33
     ],
@@ -643,7 +643,7 @@
     "prediction": "η = 5.749 × 10⁻¹⁰",
     "observation": "Observer-side CMB baryon loading is usually quoted as η₁₀ ≈ 6.10 in the standard single-temperature map",
     "residual": "Different typed observable; late-time IO value is the observer-side inventory theorem on the active branch",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       35
     ],
@@ -663,7 +663,7 @@
     "prediction": "η_BBN = 6.151 × 10⁻¹⁰",
     "observation": "Standard BBN/CMB concordance η₁₀ ≈ 6.10 assumes one shared observer-side temperature map",
     "residual": "Temperature-architecture dependent; BBN sees T_IO, not T_obs",
-    "status": "DERIVED/SCOPED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       35
     ],
@@ -725,7 +725,7 @@
     "prediction": "LZ, XENONnT, PandaX-4T, DARWIN, and XLZD should continue moving toward the neutrino floor without a canonical xenon-WIMP detection",
     "observation": "Current xenon direct-detection programs remain null",
     "residual": "Consistent with the geometric dark-sector reading",
-    "status": "DERIVED prediction",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33,
       35
