@@ -46,12 +46,18 @@ function renderPaperCard(paper) {
     ? `<a class="button button-small button-secondary" href="${paper.support_bundle}" target="_blank" rel="noreferrer">Repro Bundle</a>`
     : "";
 
+  const versionLine = [
+    paper.current_version ? `Current version: ${paper.current_version}` : "",
+    paper.support_bundle_tag ? `Bundle tag: ${paper.support_bundle_tag}` : ""
+  ].filter(Boolean).join(" · ");
+
   wrapper.innerHTML = `
     <div class="paper-top">
       ${numberBadge}
       <div class="paper-header">
         <div class="paper-meta">${paper.era}</div>
         <h3 class="paper-title"><a class="section-link" href="${paper.paper_url}" title="${paper.full_title}">${paper.short_form}</a></h3>
+        ${versionLine ? `<p class="paper-version-meta">${versionLine}</p>` : ""}
       </div>
     </div>
     <p class="paper-summary">${paper.summary}</p>

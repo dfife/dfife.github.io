@@ -1161,6 +1161,24 @@ input {
   line-height: 1.6;
 }
 
+.paper-version-meta {
+  margin: 6px 0 0;
+  color: var(--text-soft);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+}
+
+.paper-version-label {
+  display: inline-block;
+  margin-left: 0.35rem;
+  color: var(--text-soft);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .lane-count {
   color: var(--text-soft);
 }
