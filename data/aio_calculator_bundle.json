@@ -676,7 +676,7 @@
       "kind": "theorem",
       "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
       "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-      "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+      "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
       "scope": "Observer-side thermal readout normalization on the IO active branch.",
       "authority_paths": [
         "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -2533,7 +2533,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -4156,7 +4156,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -5731,7 +5731,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -7304,7 +7304,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -8877,7 +8877,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -10450,7 +10450,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -12023,7 +12023,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -13484,7 +13484,7 @@
       "T_IO_K": 2.6634952609122613,
       "x": 1.5189873277742727,
       "K_gauge": 0.05487281774291466,
-      "R4_FIRAS": 1.0031990469301053,
+      "R4_FIRAS": 1.0031014644105183,
       "output_id": "active_t_cmb",
       "label": "FIRAS-fixed thermal datum",
       "primary_key": "T_FIRAS",
@@ -13604,7 +13604,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -15185,7 +15185,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -16760,7 +16760,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -18334,7 +18334,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -19906,7 +19906,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -21480,7 +21480,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -23054,7 +23054,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -24627,7 +24627,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -26202,7 +26202,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -27789,7 +27789,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
@@ -29379,7 +29379,7 @@
             "kind": "theorem",
             "label": "Paper 17 FIRAS-fixed Thermal Readout Normalization",
             "claim_status": "FIRAS-fixed unique readout normalization; not an independent CMB prediction",
-            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.003199046930105` within that family.",
+            "statement": "The observer thermal readout family is `T_obs(R4) = T_IO x^(R4 K_gauge)` with `K_gauge = ln(1 + gamma_BI^2) = 0.054872817742915`. FIRAS supplies the empirical observer-side thermal datum and fixes `R4_FIRAS = 1.0031014644105183` within that family.",
             "scope": "Observer-side thermal readout normalization on the IO active branch.",
             "authority_paths": [
               "/opt/cosmology-lab/results/Full Papers/Interior_Observer_Paper17_v1_4.docx"
