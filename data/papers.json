@@ -421,8 +421,12 @@
     "paper": 19,
     "era": "Operator Closure",
     "short_title": "Baryon Scalarization and H₀",
-    "summary": "Diagnoses the framework's P(k) catastrophe, derives the Baryon Scalarization Theorem, and builds the conditional homogeneous-background IO Friedmann equation in boundary-Hamiltonian form. It also proves a no-go against a universal projector and clarifies how observable-class Jacobians reshape baryon quantities across different sectors.",
+    "summary": "Diagnoses the framework's matter-power catastrophe, derives the Baryon Scalarization Theorem, and audits the boundary-Hamiltonian Friedmann equation. Current v1.6 support adds the R4/FIRAS repair audit, retires independent CMB-temperature prediction wording, and publishes the reproducibility bundle.",
     "zenodo": "https://zenodo.org/records/19101803/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper19/v1.6",
+    "current_version": "v1.6",
+    "support_bundle_tag": "paper19-v1.6",
+    "support_bundle_sha256": "af567bd66a617ec194435cd329d6f5dcd39c6f8070cc169aaad06206826c46ea",
     "bridges": [
       "Baryon Fraction",
       "Hubble Constant (H₀)"
@@ -431,7 +435,7 @@
     "full_title": "Paper 19 — Baryon Scalarization, the Universal Projector No-Go, the Boundary-Hamiltonian IO Friedmann Equation, and the Foundation Closure Audit",
     "title_tag": "Paper 19 — Baryon Scalarization and H₀ | Interior Observer Framework",
     "paper_url": "papers/paper-19.html",
-    "meta_description": "Paper 19 derives baryon scalarization and the boundary-Hamiltonian IO Friedmann equation, kills the universal projector, and opens the Hubble-tension route by class.",
+    "meta_description": "Paper 19 v1.6 derives baryon scalarization, audits the boundary-Hamiltonian Friedmann equation, and adds R4/FIRAS reproducibility support.",
     "schema_keywords": [
       "Baryon Scalarization and H₀",
       "Interior Observer Framework",
