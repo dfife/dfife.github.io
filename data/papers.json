@@ -448,8 +448,12 @@
     "paper": 20,
     "era": "Operator Closure",
     "short_title": "The Acoustic Projection Theorem",
-    "summary": "Addresses three foundation issues at once: the acoustic projection law, the radiation scope boundary, and the assembly gap in the background equation. It proves the Acoustic History Reduction and Acoustic Phase-Calibration theorems, predicts the CMB acoustic scale with no fitted parameters, and undertakes a deep audit of the BBN radiation sector.",
+    "summary": "Addresses the acoustic projection law, the radiation scope boundary, and the background-equation assembly gap. Current v1.8 support adds the R4/FIRAS repair audit: independent cosmic microwave background temperature prediction wording is retired, while acoustic phase calibration and corrected Big Bang nucleosynthesis wrapper outputs remain reproducible.",
     "zenodo": "https://zenodo.org/records/19145122/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper20/v1.8",
+    "current_version": "v1.8",
+    "support_bundle_tag": "paper20-v1.8",
+    "support_bundle_sha256": "a70bb2b4d95496a42914faf00b2de9ac581889173659eea3e20957035d04bcdf",
     "bridges": [
       "Acoustic Scale (θ_s)",
       "Deuterium Abundance (D/H)"
@@ -458,7 +462,7 @@
     "full_title": "Paper 20 — The Acoustic Projection Theorem, the Radiation Scope Boundary, the Bare Background Reconstruction, the Assembly Gap Diagnostic, and the BBN Radiation Sector Investigation",
     "title_tag": "Paper 20 — The Acoustic Projection Theorem | Interior Observer Framework",
     "paper_url": "papers/paper-20.html",
-    "meta_description": "Addresses three foundation issues at once: the acoustic projection law, the radiation scope boundary, and the assembly gap in the background equation.",
+    "meta_description": "Paper 20 v1.8 audits the acoustic projection theorem, radiation scope boundary, Big Bang nucleosynthesis wrapper correction, and R4/FIRAS repair.",
     "schema_keywords": [
       "The Acoustic Projection Theorem",
       "Interior Observer Framework",
