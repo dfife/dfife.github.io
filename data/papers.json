@@ -502,8 +502,12 @@
     "paper": 22,
     "era": "Operator Closure",
     "short_title": "Spatial Hodge Rate Bridge",
-    "summary": "Constructs the full scalar/vector/tensor spatial channel infrastructure on the S³ interior sections and develops a wide no-go landscape that eliminates fluid-injection and uniform-dressing fixes for the radiation-response problem. The paper leaves a surviving rate-dressing bridge in which the boundary puncture algebra modifies bulk interaction cross-sections through the spatial Hodge complex.",
+    "summary": "Paper 22 v2.0 supports the spatial Hodge complex, transverse-traceless channel floor, rate-dressing bridge, corrected YPCMB BBN scorecard, and R4/FIRAS dependency audit. The bundle confirms the active Paper 22 scorecard is not R4-dependent.",
     "zenodo": "https://zenodo.org/records/19198706/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper22/v2.0",
+    "current_version": "v2.0",
+    "support_bundle_tag": "paper22-v2.0",
+    "support_bundle_sha256": "519ffa6d6d9d30a6ca902a7e701d533087e67b60cee5a2e49cd52818da313a5e",
     "bridges": [
       "Deuterium Abundance (D/H)",
       "Helium-4 Abundance (Y_p)",
@@ -513,7 +517,7 @@
     "full_title": "Paper 22 — The Spatial Hodge Complex and the Rate-Dressing Bridge: Channel Infrastructure, No-Go Landscape, and Framework-Constant Candidate BBN Amplitudes",
     "title_tag": "Paper 22 — Spatial Hodge Rate Bridge | Interior Observer Framework",
     "paper_url": "papers/paper-22.html",
-    "meta_description": "Paper 22 builds the full scalar/vector/tensor channel infrastructure on S^3 and kills broad no-go classes while isolating surviving bridge routes.",
+    "meta_description": "Paper 22 v2.0 supports the spatial Hodge complex, rate-dressing bridge, corrected BBN scorecard, and R4/FIRAS audit.",
     "schema_keywords": [
       "Spatial Hodge Rate Bridge",
       "Interior Observer Framework",
