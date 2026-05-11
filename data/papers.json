@@ -530,19 +530,22 @@
   {
     "paper": 23,
     "era": "The BBN Breakthrough",
-    "short_title": "Primordial Perturbation Theory on OS",
-    "summary": "Builds the primordial perturbation theory program on the Oppenheimer-Snyder interior, deriving the closed-FRW perturbation equations and constructing explicit boundary-to-bulk bridge operators. It also proves the No-Doubling Theorem and derives the white baseline n_s = 1 from isotropic puncture positions on the horizon.",
+    "short_title": "Primordial Perturbation Theory",
+    "summary": "Builds the primordial perturbation theory program on the Oppenheimer-Snyder interior, deriving the closed-FRW perturbation equations, constructing explicit boundary-to-bulk bridge operators, and reporting the scalar spectral-index chain. The v2.0 support bundle adds R4/FIRAS dependency auditing and confirms the active Paper 23 spectral-index calculation is not R4-dependent.",
     "zenodo": "https://zenodo.org/records/19210262/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper23/v2.0",
+    "support_bundle_tag": "paper23-v2.0",
+    "support_bundle_sha256": "6cc1a43387bd24b07b009cdcfe9fb60c70ed5bc2501b05a7e905a4e335777c90",
     "bridges": [
       "Spectral Index (n_s)"
     ],
-    "short_form": "Paper 23 — Primordial Perturbation Theory on OS",
+    "short_form": "Paper 23 — Primordial Perturbation Theory",
     "full_title": "Paper 23 — Primordial Perturbation Theory on the Oppenheimer-Snyder Interior — The Bridge Operator, the No-Doubling Theorem, and the Spectral Index",
-    "title_tag": "Paper 23 — Primordial Perturbation Theory on OS | Interior Observer Framework",
+    "title_tag": "Paper 23 — Primordial Perturbation Theory | Interior Observer Framework",
     "paper_url": "papers/paper-23.html",
-    "meta_description": "Primordial perturbation theory on the Oppenheimer-Snyder interior derives closed-FRW perturbation equations and explicit scalar bridge operators.",
+    "meta_description": "Paper 23 v2.0 supports Oppenheimer-Snyder perturbation theory, scalar bridge operators, the spectral-index chain, and R4/FIRAS auditing.",
     "schema_keywords": [
-      "Primordial Perturbation Theory on OS",
+      "Primordial Perturbation Theory",
       "Interior Observer Framework",
       "black hole cosmology",
       "Spectral Index (n_s)"
