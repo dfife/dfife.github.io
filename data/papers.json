@@ -555,9 +555,12 @@
     "paper": 24,
     "era": "The BBN Breakthrough",
     "short_title": "The Lithium Problem Solved",
-    "summary": "Conditionally resolves the cosmological lithium problem through channel-resolved BBN rate dressing. The paper shows that the spin-2 TT metric perturbation couples only to nuclear quadrupole moments, shielding spherical nuclei while selectively suppressing beryllium-7 production through a quadrupole-sensitive mass-7 dressing channel.",
+    "summary": "Gives the current channel-resolved BBN account of the cosmological lithium problem. The v3.0 support bundle preserves the Henderson primary import scorecard, adds the R4/FIRAS non-entry audit, and documents that observed CMB temperature is not counted as an independent prediction.",
     "zenodo": "https://zenodo.org/records/19219282/latest",
-    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper24/v2.3",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper24/v3.0",
+    "current_version": "v3.0",
+    "support_bundle_tag": "paper24-v3.0",
+    "support_bundle_sha256": "0ed38cf796f23f36d4ad1d15fbf5975fef4b0bf646ce7161e1ca506d9faf05a6",
     "bridges": [
       "Deuterium Abundance (D/H)",
       "Lithium-7 Abundance"
