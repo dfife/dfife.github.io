@@ -582,8 +582,12 @@
     "paper": 25,
     "era": "The BBN Breakthrough",
     "short_title": "The Weak-Sector Identity Pin",
-    "summary": "Resolves the V-vs-V' class-membership problem for the weak-sector BBN dressing coefficient. Conditional on three physical identification premises, it proves V = K_gauge exactly via the Quadratic Thermal Covariance Theorem, corrects the weak amplitude to ε_w = K_gauge × L_1, and reports PRyMordial-verified BBN agreement with χ² = 1.",
+    "summary": "Closes the weak-sector V-vs-V' class-membership problem on H1-H3, proving the weak rate reads K_gauge through the centered two-time correlator. Current v2.0 support aligns the BBN scorecard to the Paper 24 v3.0 Pastore branch and adds the R4/FIRAS non-entry audit.",
     "zenodo": "https://zenodo.org/records/19242682/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper25/v2.0",
+    "current_version": "v2.0",
+    "support_bundle_tag": "paper25-v2.0",
+    "support_bundle_sha256": "3058799b1a0836823643b374c4b839f3173830169fb1b78a643f99d3deac926b",
     "bridges": [
       "Helium-4 Abundance (Y_p)",
       "Deuterium Abundance (D/H)"
@@ -592,7 +596,7 @@
     "full_title": "Paper 25 — The Weak-Sector Identity Pin — Quadratic Thermal Covariance, the Channel-Budget Equation, and the V-vs-V' Class-Membership Theorem",
     "title_tag": "Paper 25 — The Weak-Sector Identity Pin | Interior Observer Framework",
     "paper_url": "papers/paper-25.html",
-    "meta_description": "Quadratic Thermal Covariance and the channel-budget equation fix V = K_gauge on the weak sector, repairing the helium-side BBN dressing coefficient.",
+    "meta_description": "Paper 25 v2.0 fixes V = K_gauge on the weak-sector BBN rate class and publishes the reproducibility bundle with R4/FIRAS audit.",
     "schema_keywords": [
       "The Weak-Sector Identity Pin",
       "Interior Observer Framework",
