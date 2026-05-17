@@ -659,8 +659,12 @@
     "paper": 28,
     "era": "CMB Confrontation",
     "short_title": "The Primordial Spectral Index",
-    "summary": "Builds the main theorem scaffold for the primordial scalar power spectrum and derives the conditional zero-fit prediction n_s = 0.9639. Key ingredients include the Hawking Accumulation Theorem, the DtN Boundary Hessian identification on the Painlevé-Gullstrand collar, and the Boundary Fixed-Point Principle, along with a proper-time formation-clock theorem that eases the JWST \"impossible galaxy\" tension.",
+    "summary": "Builds the theorem-support scaffold for the primordial spectral-index route through the coexact Dirichlet-to-Neumann boundary Hessian and the homogeneous Oppenheimer-Snyder JWST formation-clock map. Current v2.0 support adds the R4/FIRAS non-entry audit and reproducibility bundle.",
     "zenodo": "https://zenodo.org/records/19359276/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper28/v2.0",
+    "current_version": "v2.0",
+    "support_bundle_tag": "paper28-v2.0",
+    "support_bundle_sha256": "75b1bdcf90a6fed53631a5c25838e28b7cf3205e979c2717f9a87bdbded5a4d6",
     "bridges": [
       "Spectral Index (n_s)"
     ],
@@ -668,7 +672,7 @@
     "full_title": "Paper 28 — The Primordial Spectral Index, the JWST Impossible Galaxy Tension Eased, IO-Native Scale Invariance, the DtN Boundary Hessian, and the Boundary Fixed-Point Principle",
     "title_tag": "Paper 28 — The Primordial Spectral Index | Interior Observer Framework",
     "paper_url": "papers/paper-28.html",
-    "meta_description": "The primordial spectral index is derived as n_s = 0.9639, only 0.24σ from Planck 2018, using the DtN boundary Hessian and the Boundary Fixed-Point Principle.",
+    "meta_description": "Paper 28 v2.0 supports the spectral-index DtN route, JWST clock map, and R4/FIRAS-audited reproducibility bundle.",
     "schema_keywords": [
       "The Primordial Spectral Index",
       "Interior Observer Framework",
