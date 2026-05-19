@@ -710,6 +710,10 @@
     "era": "Observational Validation",
     "short_title": "One Mass, Zero Fits",
     "summary": "Recomputes the twenty-test confrontation on the active Paper 10 legacy branch. Pantheon+ and TDCOSMO still favor IO over the fixed-parameter Planck reference, the Alcock-Paczyński test still favors Planck, and several mixed-branch headline numbers change materially on the rebuilt branch, especially in the late-structure sector.",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper30/v2.0",
+    "support_bundle_release": "https://github.com/dfife/io-framework-public/releases/tag/paper30-v2.0",
+    "support_bundle_tag": "paper30-v2.0",
+    "support_bundle_sha256": "59eb8cc887dd8d79fb5865584e3a4a6ddad3e0da7b678e6b28271595254c0d4f",
     "zenodo": "https://zenodo.org/records/19376058/latest",
     "bridges": [
       "Baryon Fraction",
