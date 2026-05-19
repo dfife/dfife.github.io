@@ -713,7 +713,7 @@
     "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper30/v2.0",
     "support_bundle_release": "https://github.com/dfife/io-framework-public/releases/tag/paper30-v2.0",
     "support_bundle_tag": "paper30-v2.0",
-    "support_bundle_sha256": "59eb8cc887dd8d79fb5865584e3a4a6ddad3e0da7b678e6b28271595254c0d4f",
+    "support_bundle_sha256": "3b1b239e8c29a993790b0565f2b11166dc61c213ef565f00d897b65194c05fd8",
     "zenodo": "https://zenodo.org/records/19376058/latest",
     "bridges": [
       "Baryon Fraction",
