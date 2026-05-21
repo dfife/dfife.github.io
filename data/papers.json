@@ -740,6 +740,10 @@
     "short_title": "Gravitational Slip from Geometry",
     "summary": "Recomputes the Weyl-response and late-time observable map on the active Paper 10 legacy branch. The current branch gives Σ_IO = 0.8114, S₈,weyl = 0.8339, α_Φ ≈ 2.005 in the E_G pipeline, and a derived/scoped galaxy/quasar BAO closure on the current DESI DR2 GCcomb definition.",
     "zenodo": "https://zenodo.org/records/19415916/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper31/v2.0",
+    "current_version": "v2.0",
+    "support_bundle_tag": "paper31-v2.0",
+    "support_bundle_sha256": "dfa7e9be49e280abcebd038448577594e8d9fa8b5f553485557adf318a90c711",
     "bridges": [
       "Gravitational Slip (Σ_IO)",
       "Optical Depth (τ_eff)",
