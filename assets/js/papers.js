@@ -48,7 +48,8 @@ function renderPaperCard(paper) {
 
   const versionLine = [
     paper.current_version ? `Current version: ${paper.current_version}` : "",
-    paper.support_bundle_tag ? `Bundle tag: ${paper.support_bundle_tag}` : ""
+    paper.support_bundle_tag ? `Bundle tag: ${paper.support_bundle_tag}` : "",
+    paper.support_bundle_sha256 ? `SHA256: ${paper.support_bundle_sha256}` : ""
   ].filter(Boolean).join(" · ");
 
   wrapper.innerHTML = `
