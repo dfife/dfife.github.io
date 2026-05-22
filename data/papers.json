@@ -772,7 +772,7 @@
     "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper32-v2.0",
     "current_version": "v2.0",
     "support_bundle_tag": "paper32-v2.0",
-    "support_bundle_sha256": "a9fe6f0ae9f54d1736e432591e661e17207c62e99fff4374b5b66818df836168",
+    "support_bundle_sha256": "2e1ff99e182c27234575c8a1687281bea86e9d05a84eeed4b27cd5930322d70b",
     "bridges": [
       "Observer Boundary (x_crit)",
       "Scalar Amplitude (A_s)",
