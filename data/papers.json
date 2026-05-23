@@ -825,12 +825,12 @@
     "paper": 34,
     "era": "The Bridge",
     "short_title": "The Hubble Tension Resolved",
-    "summary": "The Hubble tension — the 5σ discrepancy between the Planck CMB measurement (67.4 ± 0.5 km/s/Mpc) and the SH0ES Cepheid distance ladder (73.0 ± 1.0 km/s/Mpc) — is resolved with zero fitted parameters. The resolution follows from one recognition: different H₀ measurement methods belong to different observable classes on the IO α-ladder, and each class sees a different effective expansion rate dressed by the boundary transit factor f_Γ = 1/(1+γ²). The inverse-projector law H_eff(α) = H₀ × f_Γ^(1−α) is derived for the late-time homogeneous estimator family, and two new bridge extensions complete the classification for SH0ES, TRGB, and TDCOSMO. Six methods fall within 0.57σ of prediction, with SH0ES at +0.04σ.",
+    "summary": "The Hubble tension — the 5σ discrepancy between the Planck CMB measurement (67.4 ± 0.5 km/s/Mpc) and the SH0ES Cepheid distance ladder (73.0 ± 1.0 km/s/Mpc) — is resolved with zero fitted parameters. Paper 34 v2.0 adds the scoped Planck compound-CMB classification, closes the §10 extension ledger within stated physically-admissible classes, and records the Paper 10 / Paper 29 projected observer branch as the sole active baseline. Six methods fall within 0.57σ of prediction, with SH0ES at +0.04σ.",
     "zenodo": "https://zenodo.org/records/19558163/latest",
-    "support_bundle": "https://github.com/dfife/io-framework-public/tree/main/papers/paper34/v1.2",
-    "current_version": "v1.2",
-    "support_bundle_tag": "paper34-v1.2",
-    "support_bundle_sha256": "bfbb1f74a9f98d684e0e5f0d72a926dcdbb956e4fccaabc1dd124aab435d2597",
+    "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper34-v2.0",
+    "current_version": "v2.0",
+    "support_bundle_tag": "paper34-v2.0",
+    "support_bundle_sha256": "6d44db58d89643cc343b6aae33f9eca725337c5fb77fa6df231acda2473082ee",
     "bridges": [
       "Hubble Constant (H₀)",
       "Three-Language Architecture",
@@ -840,7 +840,7 @@
     "full_title": "Paper 34 — The Hubble Tension Resolved: Six Methods, Three Rungs, Zero Fitted Parameters",
     "title_tag": "Paper 34 — Six Methods, Three Rungs, Zero Fitted Parameters | Interior Observer Framework",
     "paper_url": "papers/paper-34.html",
-    "meta_description": "A zero-parameter Hubble tension resolution puts six H₀ methods within 0.57σ of prediction, with SH0ES at +0.04σ, by classifying observables on the IO α-ladder.",
+    "meta_description": "Paper 34 v2.0 resolves the Hubble tension with six H0 methods within 0.57σ, adds scoped Planck and §10 closure theorems, and publishes the v2.0 reproducibility bundle.",
     "schema_keywords": [
       "The Hubble Tension Resolved",
       "Interior Observer Framework",
@@ -848,7 +848,8 @@
       "Hubble Constant (H₀)",
       "Three-Language Architecture",
       "Bridge Carrier Mechanism"
-    ]
+    ],
+    "support_bundle_release": "https://github.com/dfife/io-framework-public/releases/tag/paper34-v2.0"
   },
   {
     "paper": 35,
