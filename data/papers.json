@@ -5,6 +5,10 @@
     "short_title": "A Black Hole Cosmology",
     "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. The paper derives the base interior Hawking thermal scale, dark-energy density, MOND acceleration scale, and Hubble-rate branch, and compares the resulting expansion history with DESI DR1 BAO data.",
     "zenodo": "https://zenodo.org/records/18854813/latest",
+    "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper1-v4.0",
+    "current_version": "v4.0",
+    "support_bundle_tag": "paper1-v4.0",
+    "support_bundle_sha256": "812ed6803275c4410d7d0a2a4aff86365797d96418e666da14f8ab2dd2d045e6",
     "bridges": [
       "FIRAS-fixed Thermal Readout"
     ],
