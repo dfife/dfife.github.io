@@ -3,12 +3,12 @@
     "paper": 1,
     "era": "Foundation",
     "short_title": "A Black Hole Cosmology",
-    "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. The paper derives the base interior Hawking thermal scale, dark-energy density, MOND acceleration scale, and Hubble-rate branch, and compares the resulting expansion history with DESI DR1 BAO data.",
+    "summary": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation. Version v4.1 adds the audited foundational theorem registry, including the finite horizon-readable quotient, total-energy/density accounting separation, native closed-S3 mode reduction, typed-observable guardrails, and Schwarzschild parent neutrality.",
     "zenodo": "https://zenodo.org/records/18854813/latest",
-    "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper1-v4.0",
-    "current_version": "v4.0",
-    "support_bundle_tag": "paper1-v4.0",
-    "support_bundle_sha256": "812ed6803275c4410d7d0a2a4aff86365797d96418e666da14f8ab2dd2d045e6",
+    "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper1-v4.1",
+    "current_version": "v4.1",
+    "support_bundle_tag": "paper1-v4.1",
+    "support_bundle_sha256": "7fdfb543672e1a575197afdd65334c7d4dc2ef4ba245bad3a10bf3dbcd884e32",
     "bridges": [
       "FIRAS-fixed Thermal Readout"
     ],
@@ -16,7 +16,7 @@
     "full_title": "Paper 1 — A Black Hole Cosmology with the CMB as Event Horizon Radiation",
     "title_tag": "Paper 1 — A Black Hole Cosmology | Interior Observer Framework",
     "paper_url": "papers/paper-01.html",
-    "meta_description": "Introduces the Interior Observer framework: the observable universe lives inside a Schwarzschild black hole and the CMB is interior Hawking radiation.",
+    "meta_description": "Paper 1 v4.1 introduces the Interior Observer framework and adds the audited foundational theorem registry with closed-S3, typed-observable, and Schwarzschild-neutrality guardrails.",
     "schema_keywords": [
       "A Black Hole Cosmology",
       "Interior Observer Framework",
