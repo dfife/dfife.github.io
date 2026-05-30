@@ -173,7 +173,7 @@ def generate_card(spec: CardSpec) -> Path:
 def top_level_specs() -> list[CardSpec]:
     return [
         CardSpec("home-share", "Main Portal", "The Interior Observer Framework", "The public portal for theorem-grade predictions, papers, bridge structure, and the live calculator surface.", "dfife.github.io/", (218, 172, 88)),
-        CardSpec("bridge-map-share", "Interactive Map", "The Quantum Gravity Bridge Map", "Boundary-to-bulk crossings across the public 35-paper archive, aligned to the active Paper 10 legacy branch through Paper 35.", "dfife.github.io/bridge-map.html", (111, 198, 214)),
+        CardSpec("bridge-map-share", "Interactive Map", "The Quantum Gravity Bridge Map", "Boundary-to-bulk crossings across the public 35-paper archive, aligned to the active closed-FRW branch through Paper 35.", "dfife.github.io/bridge-map.html", (111, 198, 214)),
         CardSpec("papers-share", "Paper Archive", "Papers 1–35", "Short-form paper index with full-subtitle detail pages and direct Zenodo records for the Interior Observer Framework archive.", "dfife.github.io/papers.html", (218, 172, 88)),
         CardSpec("calculator-share", "Calculator", "IO Calculator Theorem Surface", "Zero fitted parameters, theorem-grade predictions, and machine-readable output provenance on the active public branch.", "dfife.github.io/calculator.html", (111, 198, 214)),
         CardSpec("calculator-theorems-share", "Reference Surface", "Calculator Theorem Nodes", "Public theorem dictionary for the calculator surface with self-contained statements, premises, proof outlines, and scope boundaries.", "dfife.github.io/calculator-theorems.html", (148, 206, 122)),

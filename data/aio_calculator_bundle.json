@@ -2,7 +2,7 @@
   "metadata": {
     "name": "AIO Calculator",
     "generated_at_utc": "2026-05-05T15:51:13.071880+00:00",
-    "branch_status": "active_paper10_legacy_branch",
+    "branch_status": "active_closed_frw_branch",
     "calculator_scope": [
       "derived or verified closed-FRW background geometry",
       "active-branch BAO distance observables",
@@ -23,7 +23,7 @@
     ]
   },
   "branch": {
-    "label": "active_paper10_legacy_projected_branch",
+    "label": "active_closed_frw_branch",
     "H0": 67.57585653582628,
     "Omega_m": 0.34868395067621694,
     "Omega_k": -0.04579112576013168,
@@ -267,7 +267,7 @@
   },
   "paper30_summary": {
     "active_inputs": {
-      "label": "Paper 10 legacy branch active background",
+      "label": "Active closed-FRW branch background",
       "H0": 67.57585653582628,
       "Omega_m": 0.34868395067621694,
       "Omega_k": -0.04579112576013168,
@@ -292,7 +292,7 @@
       "delta_mpc": 0.9510114170592772,
       "delta_percent": 0.6647523971698543,
       "qualitative_change": "value_shifted_upward",
-      "status": "verified/carried from Paper 29 hybrid legacy-branch derivation"
+      "status": "verified/carried from Paper 29 hybrid branch derivation"
     },
     "bao_galaxy_block": {
       "kernel": {
@@ -374,7 +374,7 @@
   },
   "paper35_dark_energy": {
     "status": "derived / verified",
-    "resolution": "The w = -1/3 confrontation is a mis-mapping of the retired bare/support-side rho_Lambda proportional to a^-2 law onto the active observer branch. On the active Paper 10 legacy branch, the observer-side vacuum slot is constant and the effective dark-energy EOS is w = -1. Flat-CPL reinterpretation of the actual curved active background lands near (w0, wa) = (-1.03, -0.11), not in DESI's preferred evolving-DE region.",
+    "resolution": "The w = -1/3 confrontation is a mis-mapping of the retired bare/support-side rho_Lambda proportional to a^-2 law onto the active observer branch. On the active closed-FRW branch, the observer-side vacuum slot is constant and the effective dark-energy EOS is w = -1. Flat-CPL reinterpretation of the actual curved active background lands near (w0, wa) = (-1.03, -0.11), not in DESI's preferred evolving-DE region.",
     "what_survives": [
       "The old bare/support-side rho_Lambda proportional to 1/R^2 law survives as a hidden-support statement.",
       "The active observer-side branch carries a constant vacuum slot.",
@@ -707,7 +707,7 @@
       "kind": "theorem",
       "label": "Paper 21 TIO Branch Assignment",
       "claim_status": "derived / scoped",
-      "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+      "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
       "scope": "Calculator branch selection and carried active package.",
       "authority_paths": [
         "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -722,7 +722,7 @@
       ],
       "proof_outline": [
         "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-        "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+        "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
         "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
       ],
       "scope_boundary": [
@@ -884,7 +884,7 @@
     "paper30.background_surface": {
       "node_id": "paper30.background_surface",
       "kind": "theorem",
-      "label": "Paper 30 Legacy Recompute Surface",
+      "label": "Paper 30 Active Runtime Surface",
       "claim_status": "derived / scoped",
       "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
       "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -2103,7 +2103,7 @@
       "label": "Active-branch Theta-star Theorem",
       "claim_status": "derived / scoped",
       "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-      "scope": "Fixed active Paper 10 legacy projected branch only.",
+      "scope": "Fixed active runtime branch only.",
       "authority_paths": [
         "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
       ],
@@ -2121,7 +2121,7 @@
         "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
       ],
       "scope_boundary": [
-        "Fixed active Paper 10 legacy projected branch only.",
+        "Fixed active runtime branch only.",
         "Theorem-grade numeric closure on the carried selector leaf only.",
         "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
       ],
@@ -2366,7 +2366,7 @@
   },
   "explained_outputs": {
     "theta_star_theorem": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "claim_status": "derived / scoped, zero fitted parameters, conditional on Premises 1 and 2",
       "selector_leaf_z": 1092.2670386731625,
       "theta_bare_deg": 0.7204920802586844,
@@ -2388,7 +2388,7 @@
         "premise.2"
       ],
       "scope_boundary": [
-        "Fixed active Paper 10 legacy projected branch only.",
+        "Fixed active runtime branch only.",
         "Theorem-grade numeric closure on the carried selector leaf only."
       ],
       "non_claims": [
@@ -2564,7 +2564,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -2579,7 +2579,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -2741,7 +2741,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -3960,7 +3960,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -3978,7 +3978,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -4187,7 +4187,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -4202,7 +4202,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -4364,7 +4364,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -5583,7 +5583,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -5601,7 +5601,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -5612,7 +5612,7 @@
       }
     },
     "branch_rd_mpc": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "r_d_mpc": 144.01351425392883,
       "output_id": "branch_rd_mpc",
       "label": "Active-branch pre-drag ruler",
@@ -5762,7 +5762,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -5777,7 +5777,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -5939,7 +5939,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -7158,7 +7158,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -7176,7 +7176,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -7187,7 +7187,7 @@
       }
     },
     "branch_h0": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "H0_km_s_mpc": 67.57585653582628,
       "output_id": "branch_h0",
       "label": "Active-branch H0",
@@ -7335,7 +7335,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -7350,7 +7350,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -7512,7 +7512,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -8731,7 +8731,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -8749,7 +8749,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -8760,7 +8760,7 @@
       }
     },
     "branch_omega_m": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "Omega_m": 0.34868395067621694,
       "output_id": "branch_omega_m",
       "label": "Active-branch Omega_m",
@@ -8908,7 +8908,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -8923,7 +8923,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -9085,7 +9085,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -10304,7 +10304,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -10322,7 +10322,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -10333,7 +10333,7 @@
       }
     },
     "branch_omega_k": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "Omega_k": -0.04579112576013168,
       "output_id": "branch_omega_k",
       "label": "Active-branch Omega_k",
@@ -10481,7 +10481,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -10496,7 +10496,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -10658,7 +10658,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -11877,7 +11877,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -11895,7 +11895,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -11906,7 +11906,7 @@
       }
     },
     "branch_omega_lambda": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "Omega_Lambda": 0.69701575761593,
       "output_id": "branch_omega_lambda",
       "label": "Active-branch Omega_Lambda",
@@ -12054,7 +12054,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -12069,7 +12069,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -12231,7 +12231,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -13450,7 +13450,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -13468,7 +13468,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -13479,7 +13479,7 @@
       }
     },
     "active_t_cmb": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "T_FIRAS_K": 2.7255,
       "T_IO_K": 2.6634952609122613,
       "x": 1.5189873277742727,
@@ -13635,7 +13635,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -13650,7 +13650,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -13812,7 +13812,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -15031,7 +15031,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -15049,7 +15049,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -15216,7 +15216,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -15231,7 +15231,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -15393,7 +15393,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -16612,7 +16612,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -16630,7 +16630,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -16791,7 +16791,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -16806,7 +16806,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -16968,7 +16968,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -18187,7 +18187,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -18205,7 +18205,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -18365,7 +18365,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -18380,7 +18380,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -18542,7 +18542,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -19761,7 +19761,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -19779,7 +19779,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -19937,7 +19937,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -19952,7 +19952,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -20114,7 +20114,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -21333,7 +21333,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -21351,7 +21351,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -21362,7 +21362,7 @@
       }
     },
     "bbn_helium_fraction": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "Y_p": 0.2477,
       "output_id": "bbn_helium_fraction",
       "label": "Active BBN helium scorecard",
@@ -21511,7 +21511,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -21526,7 +21526,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -21688,7 +21688,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -22907,7 +22907,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -22925,7 +22925,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -23085,7 +23085,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -23100,7 +23100,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -23262,7 +23262,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -24481,7 +24481,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -24499,7 +24499,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -24658,7 +24658,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -24673,7 +24673,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -24835,7 +24835,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -26054,7 +26054,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -26072,7 +26072,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -26083,7 +26083,7 @@
       }
     },
     "eta_io_late": {
-      "branch_label": "active_paper10_legacy_projected_branch",
+      "branch_label": "active_closed_frw_branch",
       "eta_IO_late": 5.748778515173696e-10,
       "output_id": "eta_io_late",
       "label": "Late-time eta_IO",
@@ -26233,7 +26233,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -26248,7 +26248,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -26410,7 +26410,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -27629,7 +27629,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -27647,7 +27647,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -27820,7 +27820,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -27835,7 +27835,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -27997,7 +27997,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -29216,7 +29216,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -29234,7 +29234,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -29410,7 +29410,7 @@
             "kind": "theorem",
             "label": "Paper 21 TIO Branch Assignment",
             "claim_status": "derived / scoped",
-            "statement": "The active calculator branch is the carried Paper 10 legacy projected branch used by the public runtime surface.",
+            "statement": "The calculator uses the active closed-FRW branch carried by the public runtime surface.",
             "scope": "Calculator branch selection and carried active package.",
             "authority_paths": [
               "/opt/cosmology-lab/results/paper21/paper21_tio_branch_assignment_theorem_report.txt"
@@ -29425,7 +29425,7 @@
             ],
             "proof_outline": [
               "Read the carried runtime package selected by the Paper 21 branch-assignment result.",
-              "Identify that public runtime package with the legacy Paper 10 projected branch used by the live calculator constants and derived outputs.",
+              "Identify that public runtime package with the active closed-FRW branch used by the live calculator constants and derived outputs.",
               "Once this identification is fixed, all downstream calculator outputs inherit one branch label instead of refitting branch choice per observable."
             ],
             "scope_boundary": [
@@ -29587,7 +29587,7 @@
           "paper30.background_surface": {
             "node_id": "paper30.background_surface",
             "kind": "theorem",
-            "label": "Paper 30 Legacy Recompute Surface",
+            "label": "Paper 30 Active Runtime Surface",
             "claim_status": "derived / scoped",
             "statement": "The active branch supports the late-time closed-FRW background surface with `H(z) = H_0 sqrt[Omega_r (1+z)^4 + Omega_m (1+z)^3 + Omega_k (1+z)^2 + Omega_Lambda]`, `D_M(z) = R_c sin(chi(z))`, `chi(z) = \u222b_0^z dz' H_0 / H(z')`, and `t(z) = \u222b_z^\u221e dz' / ((1+z') H(z'))`.",
             "scope": "Observer-side background geometry and BAO-side runtime surface.",
@@ -30806,7 +30806,7 @@
             "label": "Active-branch Theta-star Theorem",
             "claim_status": "derived / scoped",
             "statement": "Evaluating the exact strict-bare selector backbone at the carried active selector leaf gives `theta_bare = 0.720492080259 deg`, `theta_obs = 0.600851617929 deg`, and `100theta_* = 1.048683904879` on the fixed active branch package.",
-            "scope": "Fixed active Paper 10 legacy projected branch only.",
+            "scope": "Fixed active runtime branch only.",
             "authority_paths": [
               "/opt/cosmology-lab/results/calculator/calculator_active_branch_theta_star_theorem_report.md"
             ],
@@ -30824,7 +30824,7 @@
               "Check the same carried solution against the direct first TT peak observable so the derived number remains tied to the measured peak position."
             ],
             "scope_boundary": [
-              "Fixed active Paper 10 legacy projected branch only.",
+              "Fixed active runtime branch only.",
               "Theorem-grade numeric closure on the carried selector leaf only.",
               "Not a universal off-branch transfer theorem or a full TT/TE/EE solver closure."
             ],
@@ -30884,7 +30884,7 @@
       "paper": 29,
       "era": "Observational Validation",
       "short_title": "Branch Consistency Audit",
-      "summary": "Rebuilds the confrontation layer on the active Paper 10 legacy branch, retires the mixed-branch package, and closes the branch self-consistency audit. On the active legacy package, cosmic chronometers give \u03c7\u00b2 = 14.70 and the derived/scoped DESI DR2 GCcomb galaxy/quasar BAO route gives \u03c7\u00b2 = 27.74, for combined \u03c7\u00b2 = 42.44 versus 46.40 for the fixed-parameter Planck \u039bCDM reference.",
+      "summary": "Rebuilds the confrontation layer on the active closed-FRW branch, retires the mixed-branch package, and closes the branch self-consistency audit. On the active runtime package, cosmic chronometers give \u03c7\u00b2 = 14.70 and the derived/scoped DESI DR2 GCcomb galaxy/quasar BAO route gives \u03c7\u00b2 = 27.74, for combined \u03c7\u00b2 = 42.44 versus 46.40 for the fixed-parameter Planck \u039bCDM reference.",
       "zenodo": "https://zenodo.org/records/19367583/latest",
       "bridges": [
         "Hubble Constant (H\u2080)",
@@ -30896,7 +30896,7 @@
       "paper": 30,
       "era": "Observational Validation",
       "short_title": "One Mass, Zero Fits",
-      "summary": "Recomputes the twenty-test confrontation on the active Paper 10 legacy branch. Pantheon+ and TDCOSMO still favor IO over the fixed-parameter Planck reference, the Alcock-Paczy\u0144ski test still favors Planck, and several mixed-branch headline numbers change materially on the rebuilt branch, especially in the late-structure sector.",
+      "summary": "Recomputes the twenty-test confrontation on the active closed-FRW branch. Pantheon+ and TDCOSMO still favor IO over the fixed-parameter Planck reference, the Alcock-Paczy\u0144ski test still favors Planck, and several mixed-branch headline numbers change materially on the rebuilt branch, especially in the late-structure sector.",
       "zenodo": "https://zenodo.org/records/19376058/latest",
       "bridges": [
         "Baryon Fraction",
@@ -30908,7 +30908,7 @@
       "paper": 31,
       "era": "Framework Closure",
       "short_title": "Gravitational Slip",
-      "summary": "Recomputes the Weyl-response and late-time observable map on the active Paper 10 legacy branch. The current branch gives \u03a3_IO = 0.8114, S\u2088,weyl = 0.8339, \u03b1_\u03a6 \u2248 2.005 in the E_G pipeline, and a derived/scoped galaxy/quasar BAO closure on the current DESI DR2 GCcomb definition.",
+      "summary": "Recomputes the Weyl-response and late-time observable map on the active closed-FRW branch. The current branch gives \u03a3_IO = 0.8114, S\u2088,weyl = 0.8339, \u03b1_\u03a6 \u2248 2.005 in the E_G pipeline, and a derived/scoped galaxy/quasar BAO closure on the current DESI DR2 GCcomb definition.",
       "zenodo": "https://zenodo.org/records/19415916/latest",
       "bridges": [
         "Gravitational Slip (\u03a3_IO)",
@@ -30920,7 +30920,7 @@
       "paper": 32,
       "era": "Framework Closure",
       "short_title": "Closure: The Complete Interior Observer Framework",
-      "summary": "Paper 32 closes the six remaining open problems on their active scoped sectors, retires all four semiclassical principles on their stated scopes, and carries the late-time chain through x_crit, hidden-support recollapse, and the Paper 32 closure/lifecycle program. This card reflects the current Zenodo title/description while the site\u2019s branch-sensitive numerics follow the active Paper 10 legacy reconstruction.",
+      "summary": "Paper 32 closes the six remaining open problems on their active scoped sectors, retires all four semiclassical principles on their stated scopes, and carries the late-time chain through x_crit, hidden-support recollapse, and the Paper 32 closure/lifecycle program. This card reflects the current Zenodo title/description while the site\u2019s branch-sensitive numerics follow the active closed-FRW branch.",
       "zenodo": "https://zenodo.org/records/19433686/latest",
       "bridges": [
         "Observer Boundary (x_crit)",
@@ -30932,7 +30932,7 @@
       "paper": 35,
       "era": "The Bridge",
       "short_title": "Four Problems, One Horizon: Baryogenesis, Impossible Galaxies, Dark Energy, and the Dark Matter Null from Inside a Schwarzschild Horizon",
-      "summary": "Paper 35 packages four confrontation layers on top of the active Paper 10 legacy branch. It closes the late-time baryon-to-photon ratio route, sharpens the BBN bulk-frame \u03b7 route, reduces baryogenesis to an exact topological obstruction on the current stack, shows that the IO master clock gives 46-48% more formation time than Planck \u039bCDM at z > 10, corrects the observer-side dark-energy mapping away from the retired w = -1/3 carryover, and frames continuing direct-detection null results as the expected outcome of the geometric dark-sector reading.",
+      "summary": "Paper 35 packages four confrontation layers on top of the active closed-FRW branch. It closes the late-time baryon-to-photon ratio route, sharpens the BBN bulk-frame \u03b7 route, reduces baryogenesis to an exact topological obstruction on the current stack, shows that the IO master clock gives 46-48% more formation time than Planck \u039bCDM at z > 10, corrects the observer-side dark-energy mapping away from the retired w = -1/3 carryover, and frames continuing direct-detection null results as the expected outcome of the geometric dark-sector reading.",
       "zenodo": "https://zenodo.org/records/19561708/latest",
       "bridges": [
         "Baryon-to-Photon Ratio (late-time)",

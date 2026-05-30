@@ -51,7 +51,7 @@
       "x"
     ],
     "prediction": "f_b = 0.3127 (gauge-coupling inventory)",
-    "observation": "Not directly comparable to a single CMB ω_b/ω_m. Active Paper 10 legacy slots are ω_b,geom = 0.020996 (α=1, sound speed/BBN), ω_b,eff = 0.028989 (acoustic effective slot), and ω_b,clustering = 0.017035 (α=3/2, clustering).",
+    "observation": "Not directly comparable to a single CMB ω_b/ω_m. Active branch slots are ω_b,geom = 0.020996 (α=1, sound speed/BBN), ω_b,eff = 0.028989 (acoustic effective slot), and ω_b,clustering = 0.017035 (α=3/2, clustering).",
     "residual": "Observable-class dependent; see the active Paper 19/29 slot map",
     "status": "DERIVED",
     "papers": [
@@ -250,7 +250,7 @@
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The Weyl-response bridge fixes Σ_IO = x^(−1/2) on the Paper 10 legacy branch. The active S₈ comparison is carried by the theorem-supported f_Γ growth-amplitude readout, not by a second Weyl rescaling."
+    "summary": "The Weyl-response bridge fixes Σ_IO = x^(−1/2) on the active closed-FRW branch. The active S₈ comparison is carried by the theorem-supported f_Γ growth-amplitude readout, not by a second Weyl rescaling."
   },
   {
     "name": "σ₈ Growth Readout",
@@ -269,7 +269,7 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 closes the late-time linear clustering inheritance theorem on the active Paper 10 legacy solver tuple. The theorem-supported growth-side readout is σ₈ = 0.9275 with exactly one f_Γ amplitude factor."
+    "summary": "Paper 32 closes the late-time linear clustering inheritance theorem on the active closed-FRW solver tuple. The theorem-supported growth-side readout is σ₈ = 0.9275 with exactly one f_Γ amplitude factor."
   },
   {
     "name": "S₈ f_Γ Readout",
@@ -289,7 +289,7 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "The theorem-supported internal weak-lensing comparison on the active Paper 10 legacy branch uses the growth-side amplitude readout A_s → A_s f_Γ. This shifts the active S₈ point to 0.811 with a +1.1σ pull against the current weak-lensing target."
+    "summary": "The theorem-supported internal weak-lensing comparison on the active closed-FRW branch uses the growth-side amplitude readout A_s → A_s f_Γ. This shifts the active S₈ point to 0.811 with a +1.1σ pull against the current weak-lensing target."
   },
   {
     "name": "Observer Boundary (x_crit)",
@@ -308,7 +308,7 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 source-block boundary result on the active Paper 10 legacy branch. It fixes where the active scalar optical observer channel terminates."
+    "summary": "Paper 32 source-block boundary result on the active closed-FRW branch. It fixes where the active scalar optical observer channel terminates."
   },
   {
     "name": "Hubble Constant (H₀)",
@@ -330,12 +330,12 @@
       29
     ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "The projected Hubble rate on the active Paper 10 legacy branch sits close to early-universe inferences and below SH0ES."
+    "summary": "The projected Hubble rate on the active closed-FRW branch sits close to early-universe inferences and below SH0ES."
   },
   {
     "name": "Cosmic Chronometers",
     "channel": "static",
-    "quantum_input": "Projected Hamiltonian constraint on the closed Paper 10 legacy observer background",
+    "quantum_input": "Projected Hamiltonian constraint on the closed-FRW observer background",
     "classical_output": "CC χ² = 14.70 on 35 H(z) points",
     "constants": [
       "H₀",
@@ -352,7 +352,7 @@
       29
     ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "On the active Paper 10 legacy branch, the closed K=+1 observer background gives a lower cosmic-chronometer χ² than the fixed-parameter Planck ΛCDM reference."
+    "summary": "On the active closed-FRW branch, the closed K=+1 observer background gives a lower cosmic-chronometer χ² than the fixed-parameter Planck ΛCDM reference."
   },
   {
     "name": "Galaxy BAO Closure",
@@ -373,7 +373,7 @@
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The active Paper 10 legacy branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the DERIVED/CONDITIONAL_VERIFIED readout kernel."
+    "summary": "The active closed-FRW branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the DERIVED/CONDITIONAL_VERIFIED readout kernel."
   },
   {
     "name": "Acoustic Scale (θ_s)",
@@ -433,19 +433,19 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Recollapse is derived on the active Paper 10 legacy branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory."
+    "summary": "Recollapse is derived on the active closed-FRW branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory."
   },
   {
     "name": "Growth Background Consistency",
     "channel": "mixed",
     "quantum_input": "Typed solver-tuple consistency across source, thermodynamics, perturbations, and transfer",
-    "classical_output": "The projected Paper 10 legacy background is the unique admissible growth background inside one active solver instantiation",
+    "classical_output": "The active closed-FRW background is the unique admissible growth background inside one active solver instantiation",
     "constants": [
       "H₀",
       "Ω_m",
       "Ω_k"
     ],
-    "prediction": "Growth/background assignment closes on the projected Paper 10 legacy solver tuple",
+    "prediction": "Growth/background assignment closes on the active closed-FRW solver tuple",
     "observation": "N/A (structural theorem)",
     "residual": "N/A",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
@@ -453,7 +453,7 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 closes the old growth-background ambiguity at DERIVED/CONDITIONAL_VERIFIED theorem grade: source, thermodynamics, perturbations, and transfer share one projected Paper 10 legacy solver tuple."
+    "summary": "Paper 32 closes the old growth-background ambiguity at DERIVED/CONDITIONAL_VERIFIED theorem grade: source, thermodynamics, perturbations, and transfer share one active closed-FRW solver tuple."
   },
   {
     "name": "Baryon Loading No-Single-Slot",

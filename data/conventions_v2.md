@@ -131,7 +131,7 @@ This document establishes the standard going forward. Affected papers have been 
 
 ### Baseline IO prediction
 
-**H₀,IO = 67.58 km/s/Mpc** (Paper 10 legacy branch, Paper 29 v1.2 sole surviving self-consistent branch).
+**H₀,IO = 67.58 km/s/Mpc** (active closed-FRW branch, Paper 29 v1.2 sole surviving self-consistent branch).
 
 ### Observational comparison values used in Paper 34
 
