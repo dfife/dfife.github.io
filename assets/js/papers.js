@@ -21,7 +21,7 @@ const ERA_LABELS = {
 };
 
 function crossingHref(name) {
-  return `bridge-map.html?crossing=${encodeURIComponent(name)}`;
+  return `bridge-map.html#crossing=${encodeURIComponent(name)}`;
 }
 
 function renderPaperCard(paper) {

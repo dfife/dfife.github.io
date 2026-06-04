@@ -93,8 +93,9 @@ function matchesFilters(item) {
 
 function selectedFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const crossing = params.get("crossing");
-  const search = params.get("search");
+  const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const crossing = hashParams.get("crossing") || params.get("crossing");
+  const search = hashParams.get("search") || params.get("search");
   if (crossing) state.selected = crossing;
   if (search) state.search = search;
 }
@@ -103,8 +104,8 @@ function syncUrl() {
   const params = new URLSearchParams();
   if (state.selected) params.set("crossing", state.selected);
   if (state.search) params.set("search", state.search);
-  const query = params.toString();
-  const next = query ? `${window.location.pathname}?${query}` : window.location.pathname;
+  const fragment = params.toString();
+  const next = fragment ? `${window.location.pathname}#${fragment}` : window.location.pathname;
   window.history.replaceState({}, "", next);
 }
 
