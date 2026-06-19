@@ -313,24 +313,22 @@
   {
     "name": "Hubble Constant (H₀)",
     "channel": "static",
-    "quantum_input": "Projected Hamiltonian constraint readout",
-    "classical_output": "H₀ = 67.58 km/s/Mpc",
+    "quantum_input": "Q43 scoped bare-torsion/global-readout H0; primitive observer projection remains open",
+    "classical_output": "H₀,scoped = 62.96277381531285 km/s/Mpc; historical 67.58 quarantined",
     "constants": [
       "x",
       "Δ"
     ],
-    "prediction": "67.58 km/s/Mpc",
+    "prediction": "62.96277381531285 km/s/Mpc scoped only",
     "observation": "67.4 ± 0.5 (Planck) / 68.3 ± 1.0 (ACT) / 73.04 ± 1.04 (SH0ES)",
-    "residual": "+0.35σ vs Planck / −0.72σ vs ACT / −5.25σ vs SH0ES",
-    "status": "DERIVED",
+    "residual": "not scored as observer H₀; Q44/Q45 quarantine historical 67.58 projection",
+    "status": "OPEN / QUARANTINED_HISTORICAL_PROJECTION",
     "papers": [
-      10,
-      18,
-      19,
-      29
+      21,
+      30
     ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "The projected Hubble rate on the active closed-FRW branch sits close to early-universe inferences and below SH0ES."
+    "summary": "Q43 supplies the live scoped Kerr Hubble readout. The historical 67.58 km/s/Mpc projection package is not active-consumable until a new primitive-observable projector is derived."
   },
   {
     "name": "Cosmic Chronometers",

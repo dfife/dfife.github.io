@@ -90,7 +90,7 @@ This document establishes the standard going forward. Affected papers have been 
 
 ### Baseline IO prediction
 
-**H₀,IO = 67.58 km/s/Mpc** (active closed-FRW branch, Paper 29 v1.2 sole surviving self-consistent branch).
+**H₀,Kerr scoped = 62.96277381531285 km/s/Mpc** (Q43 scoped bare-torsion/global-readout result). No full Kerr observer-projection H₀ is currently banked. The historical 67.58 km/s/Mpc projection package is quarantined by Q44/Q45 as branch-mixed/fitted for active use.
 
 ### Observational comparison values used in Paper 34
 
@@ -131,8 +131,8 @@ These are derived within the framework from M_U and γ_BI. They are listed here 
 | M_U | 4.50 × 10⁵³ kg | Observational input (Paper 1) |
 | γ_BI | 0.2375 | LQG external (Bekenstein-Hawking entropy fit) |
 | r_s | 6.685 × 10²⁶ m | Derived (Paper 1) |
-| R_U | 4.40 × 10²⁶ m | Derived (Paper 1) |
-| x = r_s/R_U | 1.51899 | Derived (Paper 1) |
+| R_U | 4.302281527351925 × 10²⁶ m | DERIVED/CONDITIONAL_VERIFIED, R_U.BARYON_PHOTON_INVENTORY.Q39 |
+| x = r_s/R_U | 1.5534883525673302 | DERIVED/CONDITIONAL_VERIFIED, R_U.BARYON_PHOTON_INVENTORY.Q39 |
 | K_gauge = ln(1+γ²) | 0.054873 | Derived (Paper 10/18) |
 | ⟨K⟩ = ln Δ | 1.72704 | Derived (Paper 18, CMP theorem) |
 | Δ = x⁴(1+γ²) | 5.6240 | Derived (Paper 9 / Paper 10) |

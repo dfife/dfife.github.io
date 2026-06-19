@@ -829,7 +829,7 @@
     "paper": 34,
     "era": "The Bridge",
     "short_title": "The Hubble Tension Resolved",
-    "summary": "The Hubble tension — the 5σ discrepancy between the Planck CMB measurement (67.4 ± 0.5 km/s/Mpc) and the SH0ES Cepheid distance ladder (73.0 ± 1.0 km/s/Mpc) — is resolved with zero fitted parameters. Paper 34 v2.0 adds the scoped Planck compound-CMB classification, closes the §10 extension ledger within stated physically-admissible classes, and records the Paper 29 projected observer branch as the sole active baseline. Six methods fall within 0.57σ of prediction, with SH0ES at +0.04σ.",
+    "summary": "Historical Paper 34 Hubble-ladder projection is preserved as provenance, but Q45/Q46 quarantine it for active Kerr consumption. The public active scorecard marks H0 and Hubble-method rows as under active re-derivation until a primitive observer-projection theorem is banked.",
     "zenodo": "https://zenodo.org/records/19558163/latest",
     "support_bundle": "https://github.com/dfife/io-framework-public/releases/tag/paper34-v2.0",
     "current_version": "v2.0",
@@ -844,7 +844,7 @@
     "full_title": "Paper 34 — The Hubble Tension Resolved: Six Methods, Three Rungs, Zero Fitted Parameters",
     "title_tag": "Paper 34 — Six Methods, Three Rungs, Zero Fitted Parameters | Interior Observer Framework",
     "paper_url": "papers/paper-34.html",
-    "meta_description": "Paper 34 v2.0 resolves the Hubble tension with six H0 methods within 0.57σ, adds scoped Planck and §10 closure theorems, and publishes the v2.0 reproducibility bundle.",
+    "meta_description": "Paper 34 v2.0 is preserved as provenance; Q45/Q46 quarantine the historical Hubble-ladder projection for active Kerr use pending observer-projection re-derivation.",
     "schema_keywords": [
       "The Hubble Tension Resolved",
       "Interior Observer Framework",
