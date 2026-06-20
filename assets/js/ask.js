@@ -23,40 +23,69 @@
     counter.textContent = `${question.value.length} / ${question.maxLength}`;
   }
 
-  function addMessage(role, text, evidence) {
+  function escapeHtml(value) {
+    return value
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function renderInline(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+
+  function appendParagraph(container, lines) {
+    const text = lines.join(" ").trim();
+    if (!text) return;
+    const paragraph = document.createElement("p");
+    paragraph.innerHTML = renderInline(text);
+    container.appendChild(paragraph);
+  }
+
+  function renderAnswer(container, text) {
+    const lines = String(text || "").split(/\r?\n/);
+    let paragraphLines = [];
+    let list = null;
+
+    lines.forEach((line) => {
+      const trimmed = line.trim();
+      const bullet = trimmed.match(/^[-*]\s+(.+)$/);
+      if (!trimmed) {
+        appendParagraph(container, paragraphLines);
+        paragraphLines = [];
+        list = null;
+        return;
+      }
+      if (bullet) {
+        appendParagraph(container, paragraphLines);
+        paragraphLines = [];
+        if (!list) {
+          list = document.createElement("ul");
+          container.appendChild(list);
+        }
+        const item = document.createElement("li");
+        item.innerHTML = renderInline(bullet[1]);
+        list.appendChild(item);
+        return;
+      }
+      list = null;
+      paragraphLines.push(trimmed);
+    });
+    appendParagraph(container, paragraphLines);
+  }
+
+  function addMessage(role, text) {
     const article = document.createElement("article");
     article.className = `ask-message ask-message-${role}`;
 
-    const paragraph = document.createElement("p");
-    paragraph.textContent = text;
-    article.appendChild(paragraph);
-
-    if (evidence) {
-      const details = document.createElement("details");
-      details.className = "ask-evidence";
-      const summary = document.createElement("summary");
-      summary.textContent = "Evidence packet";
-      const pre = document.createElement("pre");
-      pre.textContent = JSON.stringify(compactEvidence(evidence), null, 2);
-      details.append(summary, pre);
-      article.appendChild(details);
-    }
+    renderAnswer(article, text);
 
     thread.appendChild(article);
     thread.scrollTop = thread.scrollHeight;
-  }
-
-  function compactEvidence(evidence) {
-    if (!evidence || typeof evidence !== "object") return evidence;
-    const compact = {
-      source: evidence.source,
-      query: evidence.query
-    };
-    if (evidence.status) compact.status = evidence.status;
-    if (Array.isArray(evidence.items)) compact.items = evidence.items.slice(0, 3);
-    if (evidence.claim_lookup) compact.claim_lookup = evidence.claim_lookup;
-    if (evidence.truncated) compact.truncated = evidence.truncated;
-    return compact;
   }
 
   async function fetchJson(path, options) {
@@ -107,7 +136,7 @@
         body: JSON.stringify({ question: text })
       });
       pending.remove();
-      addMessage("assistant", payload.answer || "No answer returned.", payload.evidence);
+      addMessage("assistant", payload.answer || "No answer returned.");
       setStatus(`Gateway online: ${new URL(activeEndpoint).host}`, "online");
     } catch (error) {
       pending.remove();

@@ -772,8 +772,36 @@ textarea {
 }
 
 .ask-message p {
-  margin: 0;
+  margin: 0 0 0.7em;
   white-space: pre-wrap;
+}
+
+.ask-message p:last-child {
+  margin-bottom: 0;
+}
+
+.ask-message ul {
+  margin: 0.55em 0 0.7em 1.25em;
+  padding: 0;
+}
+
+.ask-message li {
+  margin: 0.24em 0;
+  padding-left: 0.1em;
+}
+
+.ask-message strong {
+  color: #0d2435;
+  font-weight: 700;
+}
+
+.ask-message code {
+  border-radius: 5px;
+  padding: 0.08em 0.3em;
+  color: #26384d;
+  background: rgba(255, 255, 255, 0.72);
+  font-family: var(--mono);
+  font-size: 0.88em;
 }
 
 .ask-message-user {
