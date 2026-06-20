@@ -118,6 +118,15 @@
 
   if (question) {
     question.addEventListener("input", updateCounter);
+    question.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" || event.shiftKey || event.isComposing) return;
+      event.preventDefault();
+      if (form.requestSubmit) {
+        form.requestSubmit();
+      } else {
+        form.dispatchEvent(new Event("submit", { cancelable: true }));
+      }
+    });
     updateCounter();
   }
   if (form) form.addEventListener("submit", ask);

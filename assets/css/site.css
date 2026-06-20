@@ -773,6 +773,7 @@ textarea {
 
 .ask-message p {
   margin: 0;
+  white-space: pre-wrap;
 }
 
 .ask-message-user {
