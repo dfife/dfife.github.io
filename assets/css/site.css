@@ -332,7 +332,10 @@ textarea {
 }
 
 .ask-home-section {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(237, 242, 248, 0.72));
+  background:
+    linear-gradient(180deg, rgba(7, 17, 29, 0.96), rgba(9, 9, 12, 0.98));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .ask-home-panel {
@@ -340,11 +343,16 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  padding: 28px 0;
+  padding: 24px 0;
 }
 
 .ask-home-panel .section-summary {
   max-width: 760px;
+  color: rgba(245, 248, 252, 0.68);
+}
+
+.ask-home-panel .section-title {
+  color: #f0eeea;
 }
 
 .hero-columns {
