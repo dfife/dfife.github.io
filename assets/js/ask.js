@@ -1,7 +1,7 @@
 (function () {
   const endpoints = [
-    "https://ask.fifeapp.com",
-    "https://ask.fifeapp.io"
+    "https://ask.fifeapp.io",
+    "https://ask.fifeapp.com"
   ];
 
   const form = document.querySelector("[data-ask-form]");
