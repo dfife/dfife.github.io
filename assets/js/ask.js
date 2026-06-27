@@ -12,6 +12,7 @@
   const statusDot = document.querySelector("[data-ask-status-dot]");
 
   let activeEndpoint = endpoints[0];
+  let pendingClarification = null;
 
   function setStatus(text, state) {
     if (statusText) statusText.textContent = text;
@@ -123,6 +124,10 @@
     addMessage("user", text);
     question.value = "";
     updateCounter();
+    const questionForGateway = pendingClarification
+      ? `${pendingClarification}\n\nAdditional details: ${text}`
+      : text;
+    const usedClarification = Boolean(pendingClarification);
     const pending = document.createElement("article");
     pending.className = "ask-message ask-message-assistant is-pending";
     pending.innerHTML = "<p>Checking IO evidence...</p>";
@@ -133,10 +138,15 @@
       const payload = await fetchJson("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: text })
+        body: JSON.stringify({ question: questionForGateway })
       });
       pending.remove();
       addMessage("assistant", payload.answer || "No answer returned.");
+      if (payload.diagnostic === "clarification_needed" && !usedClarification) {
+        pendingClarification = text;
+      } else {
+        pendingClarification = null;
+      }
       setStatus(`Gateway online: ${new URL(activeEndpoint).host}`, "online");
     } catch (error) {
       pending.remove();
