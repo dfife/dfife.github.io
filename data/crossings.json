@@ -554,21 +554,21 @@
   {
     "name": "Dark Matter Geometric Alternative",
     "channel": "static",
-    "quantum_input": "Static geometric complement of the baryon gauge-coupled inventory",
-    "classical_output": "Dark matter can be interpreted as the non-gauge-coupled geometric remainder of OS dust",
+    "quantum_input": "Kerr-scoped geometric dark-sector complement with gauge-bundle visible-side narrowing",
+    "classical_output": "Dark matter can be interpreted as a geometric dark-sector complement under the current Kerr-scoped, gauge-bundle visibility narrowing; the full complement remains a premise/frontier.",
     "constants": [
       "γ",
       "x"
     ],
     "prediction": "Geometric reinterpretation of the dark sector complement",
-    "observation": "Alternative IO reading of the baryon/dust split",
+    "observation": "Alternative IO reading of the visible/gauge-bundle split",
     "residual": "N/A",
     "status": "OPEN/PREMISE_GAP",
     "papers": [
       33
     ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "Paper 33 proposes a geometric dark-matter reading as the complement to the SU(2)-selected baryon inventory rather than a new particle sector."
+    "summary": "Paper 33's geometric dark-sector reading is retained only in Kerr-scoped, non-universal form. The 2026-07-04 visibility narrowing types visible matter as charged U1 bundle-carrying support on Q121/P1/Kerr patches; the full dark complement is not derived."
   },
   {
     "name": "Muon g−2 No-Go",
@@ -671,7 +671,7 @@
   {
     "name": "Dark Matter Null Prediction",
     "channel": "static",
-    "quantum_input": "Geometric dark-sector complement of the gauge-coupled baryon inventory",
+    "quantum_input": "Kerr-scoped geometric dark-sector interpretation plus typed visible U1 detector sector",
     "classical_output": "Continued direct-detection null results are expected",
     "constants": [
       "γ",
@@ -680,14 +680,14 @@
     ],
     "prediction": "LZ, XENONnT, PandaX-4T, DARWIN, and XLZD should continue moving toward the neutrino floor without a canonical xenon-WIMP detection",
     "observation": "Current xenon direct-detection programs remain null",
-    "residual": "Consistent with the geometric dark-sector reading",
+    "residual": "Consistent with the scoped geometric dark-sector reading; not a universal no-particle theorem.",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33,
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 35 promotes the dark-matter confrontation into an explicit prediction: if the dark-sector complement is boundary geometry rather than a xenon-coupled particle, direct-detection null results should continue."
+    "summary": "Paper 35's direct-detection null forecast is Kerr-rederived as a conditional forecast: the current active architecture has no primitive local dark-particle carrier slot coupling to the typed visible U1 detector sector. It is not an event-rate model or a universal exclusion of future dark fields."
   },
   {
     "name": "Horizon Charge KMS Dictionary Theorem",
@@ -964,5 +964,117 @@
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
     "summary": "Banked ledger 49fccf8a. Under P1/P2 same-physics placement, banked charged matter supplies a physical U1 bundle with connection on every smooth Q121-compatible P1/Kerr horizon-adjacent patch carrying those fields. Fences verbatim: no global all-S_H^2 support, no nonzero Chern degree, no Q5 topology, no baryogenesis closure, no P1-only Standard Model/M_vis derivation, no species selection beyond cited electromagnetic/visible U1 charged matter."
+  },
+  {
+    "name": "First-Star Source-History Window",
+    "channel": "static",
+    "quantum_input": "Layer-6 source-history operator anchored to direct JWST spectroscopic rows and IO-native clock interpolation",
+    "classical_output": "Diagnostic first-star/Pop III window in IO time, fork-carried across both age branches",
+    "constants": [
+      "z",
+      "t_IO",
+      "x_high",
+      "x_low",
+      "H2-cooling import"
+    ],
+    "prediction": "High-age branch envelope 89.51756834141288-162.00334202844834 Myr; low-age branch envelope 73.37675748675375-132.3954551637038 Myr.",
+    "observation": "JWST anchor row z=13.35206 is a direct spectroscopic measurement; H2-cooling/Pop III astrophysics remains an external boundary.",
+    "residual": "CONTEXT/diagnostic only: no theorem-grade Pop III closure, no fork decision, G_src ratio wall and external H2-cooling import boundary remain fenced.",
+    "status": "CONDITIONAL_IMPORT_DIAGNOSTIC",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked first-star diagnostic window fec9f3f1 with infrastructure fd9734a4 and interpolant lemma 2dc3d1d4. It is IO-native and family-independent for the clock interpolation, but stays non-load-bearing diagnostic/import grade with both age-fork branches carried."
+  },
+  {
+    "name": "DM Kerr Lift and Bullet Structural Prediction",
+    "channel": "static",
+    "quantum_input": "Kerr-scoped geometric dark-sector interpretation plus visible charged U1 bundle criterion",
+    "classical_output": "Conditional Bullet-class structure: bundle-free support can pass without contact drag while charged gas/plasma can shock",
+    "constants": [
+      "P_rem",
+      "U1",
+      "C_Bullet_struct"
+    ],
+    "prediction": "Within C_Bullet_struct, gas/plasma shock structure and collisionless bundle-free support are qualitatively separated; amplitudes and lensing readout are not closed.",
+    "observation": "Bullet Cluster and Abell-520-class systems are comparison context only.",
+    "residual": "Partial/context result: no Omega_DM derivation, no halo profile, no lensing-amplitude closure, no rotation-curve closure, no universal no-particle theorem.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked DM-Kerr partial ledger ca938328. The direct-detection chain survives only as a scoped conditional forecast; the Bullet structural class is accepted as structure-only and amplitude-free, with no site publication authorization in that packet."
+  },
+  {
+    "name": "IO Interaction-Channel Dictionary on P1/Kerr",
+    "channel": "dynamic",
+    "quantum_input": "Typed coupling prerequisites for matter components on smooth Q121-compatible P1/Kerr patches",
+    "classical_output": "Formal channel taxonomy: gravity, U1 plasma/contact, SU2/SU3, radiative, degeneracy, self-interaction",
+    "constants": [
+      "P_rem",
+      "U1",
+      "SU2",
+      "SU3",
+      "T_ab"
+    ],
+    "prediction": "P_rem has mean-field gravity; dynamical friction requires wake-capable phase-space background; contact/hydrodynamic class is empty absent gauge/plasma prerequisites.",
+    "observation": "N/A (interaction-channel taxonomy theorem)",
+    "residual": "No collision amplitude, Coulomb log, cluster readout, or global dark-complement proof.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked dictionary 170314ee. Channels are classified by typed prerequisites on P1/Kerr. Key P_rem row: gravitational mean-field present, dynamical friction and gravitational radiation conditional on their own prerequisites, contact/hydrodynamic drag absent on the current stack."
+  },
+  {
+    "name": "Bundle-Free Contact Drag Absence Lemma",
+    "channel": "dynamic",
+    "quantum_input": "P_rem plus accepted IO interaction-channel dictionary",
+    "classical_output": "CONTACT_HYDRODYNAMIC(P_rem)=empty while charged gas/plasma retains U1_PLASMA_PRESSURE_SHOCK_RAM",
+    "constants": [
+      "P_rem",
+      "CONTACT_HYDRODYNAMIC",
+      "U1_PLASMA_PRESSURE_SHOCK_RAM"
+    ],
+    "prediction": "Conditional on P_rem, a bundle-free pressureless gauge-neutral component has no contact/hydrodynamic drag channel; gravitational channels remain under their prerequisites.",
+    "observation": "N/A (conditional channel-classification lemma)",
+    "residual": "No centroid separation theorem, no amplitude, no readout theorem, no global P_rem proof.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked lemma cf8b16af. This is the narrow channel result extracted after the collision theorem held: contact/hydrodynamic drag is absent for P_rem by dictionary classification, while charged plasma keeps the ram/shock channel. It intentionally makes no quantitative separation claim."
+  },
+  {
+    "name": "Two-Component Collision Separation Expected Theorem",
+    "channel": "dynamic",
+    "quantum_input": "P_rem plus channel dictionary/contact-drag lemma with conservative cluster-scale witness propagation",
+    "classical_output": "Expected conditional separation regime; not a forced universal dominance theorem",
+    "constants": [
+      "P_rem",
+      "Lambda_G",
+      "epsilon_Q",
+      "C_D",
+      "n_e",
+      "v_rel",
+      "Sigma_g"
+    ],
+    "prediction": "Nominal drag-dominance ratio is 1.9064878727330357, but conservative interval propagation gives [0.006088878365538182, 727.1011823823155], so the banked strength is EXPECTED.",
+    "observation": "Bullet/Abell cluster systems are comparison context only; empirical weak-lensing mass readout remains unresolved.",
+    "residual": "Conditional on P_rem and formal centroids; no weak-lensing readout closure, no forced lower bound above 1, no LCDM input, no fitted cluster target.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33,
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked ledger 022ae502. The quantitative forcing attempt did not prove FORCED separation: the lower interval endpoint falls below 1. The honest public-map row should say EXPECTED/conditional and keep P_rem plus readout fences visible."
   }
 ]
