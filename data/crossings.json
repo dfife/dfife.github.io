@@ -1,27 +1,5 @@
 [
   {
-    "name": "FIRAS-fixed Thermal Readout",
-    "channel": "dynamic",
-    "quantum_input": "Hawking temperature on S² horizon",
-    "classical_output": "Unique observer-side readout normalization R4_FIRAS = 1.0031",
-    "constants": [
-      "γ",
-      "x",
-      "K_gauge"
-    ],
-    "prediction": "R4_FIRAS = 1.0031",
-    "observation": "FIRAS empirical thermal datum 2.7255 ± 0.0006 K",
-    "residual": "N/A: normalization datum, not prediction residual",
-    "status": "FIRAS-FIXED / UNIQUE",
-    "papers": [
-      1,
-      13,
-      17
-    ],
-    "zenodo": "https://zenodo.org/records/19045892/latest",
-    "summary": "The observed CMB temperature is not counted as an independent IO prediction. FIRAS fixes the unique observer-side thermal readout normalization inside the IO readout family."
-  },
-  {
     "name": "Dark Energy Density",
     "channel": "static",
     "quantum_input": "Spectral norm ||A||/||Γ|| = √(1+γ²) on S² horizon",
@@ -101,25 +79,6 @@
     ],
     "zenodo": "https://zenodo.org/records/18868612/latest",
     "summary": "The master geometric scale combining compactness and gauge weight."
-  },
-  {
-    "name": "GTTP Optical Transfer",
-    "channel": "dynamic",
-    "quantum_input": "Modular projection via fiberwise KMS inheritance",
-    "classical_output": "d(ln ω)/dλ = K_gauge = 0.05488",
-    "constants": [
-      "K_gauge"
-    ],
-    "prediction": "K_gauge = 0.05488",
-    "observation": "FIRAS fixes the readout normalization; not an independent temperature prediction",
-    "residual": "N/A",
-    "status": "FIRAS-FIXED / UNIQUE",
-    "papers": [
-      13,
-      17
-    ],
-    "zenodo": "https://zenodo.org/records/18945480/latest",
-    "summary": "The gauge thermal transfer law supplies the readout family; the observed temperature datum fixes the normalization rather than being independently predicted."
   },
   {
     "name": "Generating Potential V(α)",
@@ -235,61 +194,61 @@
     "summary": "The primordial power spectrum amplitude from the Hawking state. No inflationary potential is required."
   },
   {
-    "name": "Gravitational Slip (Σ_IO)",
+    "name": "Gravitational Slip (Sigma_IO)",
     "channel": "dynamic",
-    "quantum_input": "Boundary Weyl response, j=2 data on S² horizon",
-    "classical_output": "Σ_IO = x^(−1/2) = 0.8114",
+    "quantum_input": "Kerr scalar Born/Weyl typed quotient of boundary Weyl response, j=2 data on S2 horizon",
+    "classical_output": "Sigma_IO = x^(-1/2) = 0.8023170090064653",
     "constants": [
       "x"
     ],
-    "prediction": "Σ_IO = 0.8114",
-    "observation": "Structural Weyl-response bridge result. The active weak-lensing amplitude comparison is tracked separately in S₈ f_Γ Readout.",
-    "residual": "See S₈ f_Γ Readout for the growth-side weak-lensing comparison",
+    "prediction": "Sigma_IO = x^(-1/2) = 0.8023170090064653",
+    "observation": "Structural Weyl-response bridge result. S8 and sigma8 comparisons are tracked separately and are currently walled by Q413.",
+    "residual": "N/A for the scalar Born/Weyl quotient; weak-lensing/S8 use is not active theorem-grade.",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The Weyl-response bridge fixes Σ_IO = x^(−1/2) on the active closed-FRW branch. The active S₈ comparison is carried by the theorem-supported f_Γ growth-amplitude readout, not by a second Weyl rescaling."
+    "summary": "Current Kerr bank points to Q199: the scalar Born/Weyl typed quotient gives x^(-1/2)=0.8023170090064653. The stale 0.8114 closed-FRW wording should be retired; S8/sigma8 comparisons stay separate and walled."
   },
   {
-    "name": "σ₈ Growth Readout",
+    "name": "sigma8 Growth Readout Frontier",
     "channel": "mixed",
-    "quantum_input": "Late-time linear clustering inheritance of the one-slot field law on the active growth sector",
-    "classical_output": "σ₈ = 0.9275 after theorem-supported f_Γ amplitude suppression",
+    "quantum_input": "Closed-S3 Kerr density/Boltzmann transfer for sigma8/S8 is not yet banked",
+    "classical_output": "No current theorem-grade sigma8 prediction",
     "constants": [
       "A_s",
-      "f_Γ"
+      "f_Gamma"
     ],
-    "prediction": "σ₈ = 0.9275 from native 0.9533 × √f_Γ",
-    "observation": "Native unclothed growth amplitude on the same branch would be σ₈ = 0.9533",
-    "residual": "−2.71% from the native clustering amplitude",
-    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "prediction": "Frontier: IO_NATIVE_CLOSED_S3_KERR_DENSITY_BOLTZMANN_TRANSFER_FOR_SIGMA8_S8 must be built before sigma8 can be active theorem-grade.",
+    "observation": "Former sigma8 comparison retained only as diagnostic provenance.",
+    "residual": "N/A: current bank says not admissible as theorem-grade IO sigma8.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON / NOT_ADMISSIBLE_AS_THEOREM_GRADE_CURRENT_IO_S8",
     "papers": [
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 closes the late-time linear clustering inheritance theorem on the active closed-FRW solver tuple. The theorem-supported growth-side readout is σ₈ = 0.9275 with exactly one f_Γ amplitude factor."
+    "summary": "Q413 downgrades the former active sigma8 row. Current use is diagnostic/frontier only until the IO-native closed-S3 Kerr density/Boltzmann transfer and readout chain exists."
   },
   {
-    "name": "S₈ f_Γ Readout",
+    "name": "S8 f_Gamma Readout Frontier",
     "channel": "mixed",
-    "quantum_input": "Late-time linear clustering inheritance with A_s → A_s f_Γ on the active growth sector",
-    "classical_output": "S₈ = 0.8113",
+    "quantum_input": "Closed-S3 Kerr density-transfer and weak-lensing readout chain remains unbanked",
+    "classical_output": "No current theorem-grade S8 prediction",
     "constants": [
       "A_s",
-      "f_Γ",
-      "Ω_m"
+      "f_Gamma",
+      "Omega_m"
     ],
-    "prediction": "S₈ = 0.8113",
-    "observation": "Weak-lensing S₈ ≈ 0.79 ± 0.02",
-    "residual": "+1.1σ",
-    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "prediction": "Frontier: f_Gamma/Sigma_IO cannot be used as an exact post-CAMB S8 map until placement and exponent are banked.",
+    "observation": "Former weak-lensing S8 comparison retained only as diagnostic provenance.",
+    "residual": "N/A: current bank says not admissible as theorem-grade IO S8.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON / NOT_ADMISSIBLE_AS_THEOREM_GRADE_CURRENT_IO_S8",
     "papers": [
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "The theorem-supported internal weak-lensing comparison on the active closed-FRW branch uses the growth-side amplitude readout A_s → A_s f_Γ. This shifts the active S₈ point to 0.811 with a +1.1σ pull against the current weak-lensing target."
+    "summary": "Q413 quarantines the old S8/f_Gamma row. Keep only diagnostic/frontier wording until the IO-native density-transfer and weak-lensing readout chain exists."
   },
   {
     "name": "Observer Boundary (x_crit)",
@@ -331,47 +290,45 @@
     "summary": "Q43 supplies the live scoped Kerr Hubble readout. The historical 67.58 km/s/Mpc projection package is not active-consumable until a new primitive-observable projector is derived."
   },
   {
-    "name": "Cosmic Chronometers",
+    "name": "Cosmic Chronometers Frame-Typing Frontier",
     "channel": "static",
-    "quantum_input": "Projected Hamiltonian constraint on the closed-FRW observer background",
-    "classical_output": "CC χ² = 14.70 on 35 H(z) points",
+    "quantum_input": "Chronometer observable frame typing across H(z), time-delay, and high-z channels remains globally open",
+    "classical_output": "Global chronometer confrontation is OPEN/PREMISE_GAP; L0 Kerr typing exists only as non-load-bearing context",
     "constants": [
-      "H₀",
-      "Ω_m",
-      "Ω_k",
-      "Ω_Λ",
-      "Ω_r"
+      "H0",
+      "Q119",
+      "Delta"
     ],
-    "prediction": "χ² = 14.70 (35 pts)",
-    "observation": "Planck fixed reference χ² = 15.15 on the same compilation",
-    "residual": "Δχ² = −0.45 (IO better)",
-    "status": "DERIVED",
+    "prediction": "No active global chronometer chi2 closure.",
+    "observation": "Direct chronometer rows require channel frame typing before load-bearing confrontation.",
+    "residual": "N/A: stronger tensions are legally inadmissible until typed.",
+    "status": "OPEN/PREMISE_GAP globally; L0 Kerr class typed only as context-diagnostic support.",
     "papers": [
       29
     ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "On the active closed-FRW branch, the closed K=+1 observer background gives a lower cosmic-chronometer χ² than the fixed-parameter Planck ΛCDM reference."
+    "summary": "Current bank keeps global chronometer typing open. The L0 homogeneous scalar-temporal Kerr class is typed as context support only and does not authorize the old closed-FRW chronometer chi2 closure."
   },
   {
-    "name": "Galaxy BAO Closure",
+    "name": "Galaxy BAO Template-Bridge Frontier",
     "channel": "mixed",
-    "quantum_input": "Hybrid drag ruler plus DERIVED/CONDITIONAL_VERIFIED DESI DR2 GCcomb galaxy/quasar readout kernel",
-    "classical_output": "BAO χ² = 27.74 on 13 galaxy/quasar points",
+    "quantum_input": "IO-native BAO feature functional exists only as partial template-bridge structure",
+    "classical_output": "Raw observer BAO closure remains open pending drag-ruler-to-observer BAO-feature convention bridge",
     "constants": [
       "r_d",
-      "ω_b,geom",
-      "η"
+      "omega_b_geom",
+      "eta"
     ],
-    "prediction": "χ² = 27.74 (13 pts), f_⊥ = exp(η), f_∥ = exp(η/2)",
-    "observation": "Planck fixed reference χ² = 31.25 on the same block",
-    "residual": "Δχ² = −3.52 (DERIVED/CONDITIONAL_VERIFIED on the DESI DR2 GCcomb galaxy/quasar block)",
-    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "prediction": "Frontier: build IO-native BAO template bridge before active BAO closure.",
+    "observation": "DESI/AP and formal-structure context may be retained only where scoped and non-load-bearing.",
+    "residual": "N/A: current bank has no active raw observer BAO closure.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON / FRONTIER_OPEN_PROGRAM",
     "papers": [
       29,
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "The active closed-FRW branch closes the current DESI DR2 galaxy/quasar BAO block with the hybrid ruler r_d = 144.01 Mpc and the DERIVED/CONDITIONAL_VERIFIED readout kernel."
+    "summary": "The accepted BAO frontier ledger says current IO has a partial BAO feature functional but not a load-bearing raw observer BAO closure. The old DESI chi2 closure wording should be retired."
   },
   {
     "name": "Acoustic Scale (θ_s)",
@@ -434,24 +391,24 @@
     "summary": "Recollapse is derived on the active closed-FRW branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory."
   },
   {
-    "name": "Growth Background Consistency",
+    "name": "Growth Background Solver Architecture",
     "channel": "mixed",
-    "quantum_input": "Typed solver-tuple consistency across source, thermodynamics, perturbations, and transfer",
-    "classical_output": "The active closed-FRW background is the unique admissible growth background inside one active solver instantiation",
+    "quantum_input": "Kerr typed solver architecture across source, thermodynamics, perturbations, and transfer",
+    "classical_output": "Kerr solver-architecture scope only; no numeric active-background tuple or completed Boltzmann/S8 solver",
     "constants": [
-      "H₀",
-      "Ω_m",
-      "Ω_k"
+      "H0",
+      "Omega_m",
+      "Omega_k"
     ],
-    "prediction": "Growth/background assignment closes on the active closed-FRW solver tuple",
-    "observation": "N/A (structural theorem)",
+    "prediction": "Architecture relation is DERIVED/CONDITIONAL_VERIFIED; numerical H0/Omega growth-background closure is not active.",
+    "observation": "N/A (structural solver-architecture scope)",
     "residual": "N/A",
-    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "status": "DERIVED/CONDITIONAL_VERIFIED as Kerr solver architecture only; no numeric active-background tuple or completed Boltzmann/S8 solver",
     "papers": [
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 closes the old growth-background ambiguity at DERIVED/CONDITIONAL_VERIFIED theorem grade: source, thermodynamics, perturbations, and transfer share one active closed-FRW solver tuple."
+    "summary": "Q200 lifts the Paper32 solver architecture into Kerr scope but fences the historical H0/Omega numeric closure and any completed Boltzmann/S8 solver claim."
   },
   {
     "name": "Baryon Loading No-Single-Slot",
@@ -671,21 +628,22 @@
   {
     "name": "Baryogenesis Topological Obstruction",
     "channel": "fermionic",
-    "quantum_input": "Spin^c residual class and chiral boundary datum Q₅ on the admitted horizon carrier",
-    "classical_output": "Q₅ = 0 on the current stack",
+    "quantum_input": "Spin-c residual class, chiral boundary datum Q5, and the admitted horizon carrier",
+    "classical_output": "Q5 = 0 on the current stack; a supplied typed horizon-U1 charged bridge is now a conditional structure-only entrant",
     "constants": [
-      "Q₅",
-      "spin^c"
+      "Q5",
+      "spin-c",
+      "U1"
     ],
-    "prediction": "Topological obstruction: no nonzero chiral source survives on the current stack",
+    "prediction": "Current-stack topological obstruction remains; the Q315 charged-bridge slot now has a conditional typed-coupling entrant, not a Q5 closure.",
     "observation": "N/A (structural baryogenesis boundary)",
-    "residual": "Baryogenesis impossible on the current stack without a new charged or CP-odd extension datum",
+    "residual": "No baryogenesis magnitude or net Q5 follows from the entrant.",
     "status": "DERIVED / NO-GO",
     "papers": [
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 35 reduces the source-side baryogenesis problem to one exact topological obstruction: the admitted current horizon carrier gives Q₅ = 0, so no nonzero baryon source survives without a new charged or CP-odd sector."
+    "summary": "Paper35/Q315 still gives Q5=0 on the current stack. New banked Q315 slot-entry ae2c7235 says that, given a supplied physical horizon line bundle and integral U1 character, the typed coupling enters the charged fermionic bridge sector as conditional structure only; it does not assert line-bundle existence, nonzero Chern degree, Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure."
   },
   {
     "name": "JWST Formation Clock",
@@ -730,5 +688,159 @@
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
     "summary": "Paper 35 promotes the dark-matter confrontation into an explicit prediction: if the dark-sector complement is boundary geometry rather than a xenon-coupled particle, direct-detection null results should continue."
+  },
+  {
+    "name": "Horizon Charge KMS Dictionary Theorem",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band interior algebra with admitted horizon-charge flow K_Q = H - sum_i mu_i Q_i",
+    "classical_output": "Grand-canonical KMS grammar for each admitted hidden horizon charge",
+    "constants": [
+      "beta",
+      "mu_i",
+      "K_Q"
+    ],
+    "prediction": "Form only: rho = Z^-1 exp[-beta(H - sum_i mu_i Q_i)]; M and J rows are corollaries.",
+    "observation": "Structure theorem; no magnitude observation claimed.",
+    "residual": "N/A",
+    "status": "DERIVED/CONDITIONAL_VERIFIED (finite-band scoped)",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked finite-band dictionary theorem; magnitudes remain boundary inputs and readout/congruence remainders remain fenced."
+  },
+  {
+    "name": "Horizon Charge Census / Helical J Row",
+    "channel": "dynamic",
+    "quantum_input": "Nonzero-admissibility census over horizon charge flows",
+    "classical_output": "Only H and H - Omega_H J are currently banked as admitted rows; J supplies the helical KMS row within current-bank search scope",
+    "constants": [
+      "Omega_H",
+      "J"
+    ],
+    "prediction": "Helical/detailed-balance twist omega -> omega - m Omega_H as a structural row, not a magnitude measurement.",
+    "observation": "Parity-sector qualitative routing only.",
+    "residual": "N/A",
+    "status": "DERIVED/CONDITIONAL_VERIFIED (current-bank search scope, not a completeness theorem)",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked current-bank search report for the charge census and helical J row; no additional charge rows were found in the indexed current-bank search, but this is not a no-hair or completeness theorem."
+  },
+  {
+    "name": "Fermionic KMS Inheritance",
+    "channel": "dynamic",
+    "quantum_input": "Spin-1/2 anti-periodic KMS sector under the admitted rotating horizon generator",
+    "classical_output": "Fermionic helical/chiral-mu5-type statistical grammar, form only",
+    "constants": [
+      "Omega_H",
+      "J",
+      "spin structure"
+    ],
+    "prediction": "Anti-periodic fermionic KMS twin and helicity-sensitive chemical-potential structure where the spin sector is admitted.",
+    "observation": "Maps to CVE/Q154 and parity/CP-structure sectors as structure, not magnitude.",
+    "residual": "N/A",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked fermionic twin of the KMS inheritance program; magnitude and selector-dependent readout pieces remain fenced."
+  },
+  {
+    "name": "Jacobson Loop Revisit Frontier",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band KMS dictionary plus charge census and fermionic inheritance tested against Jacobson/Clausius import hypotheses",
+    "classical_output": "No P1-valid Einstein-equation-of-state closure; loop remains parked",
+    "constants": [],
+    "prediction": "Negative scoped result: new KMS bank does not replace the missing P1-valid local-horizon/Clausius hypothesis stack.",
+    "observation": "N/A",
+    "residual": "N/A",
+    "status": "REPORT_ONLY_NOT_BANKED / JACOBSON-B",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Report-only negative crossing so the public map can show the parked reverse-theorem lane rather than implying it is absent."
+  },
+  {
+    "name": "Closed Recollapsing Observer Crossed Product",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band modular algebra plus the bounded IO observer clock in a closed recollapsing interior",
+    "classical_output": "Partial bounded-clock crossed-product obstruction/modification; not a full Type III-to-II construction",
+    "constants": [
+      "observer proper time",
+      "finite lifetime clock"
+    ],
+    "prediction": "The bounded recollapsing clock modifies the CLPW crossed-product route; full density-operator/entropy extension remains unclosed.",
+    "observation": "N/A",
+    "residual": "N/A",
+    "status": "REPORT_ONLY_NOT_BANKED / CROSSED-PRODUCT-PARTIAL",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Report-only first-wave obstruction/partial result; no load-bearing entropy construction claimed."
+  },
+  {
+    "name": "Q315 Charged-Bridge Conditional Slot Entry",
+    "channel": "fermionic",
+    "quantum_input": "Supplied physical horizon line bundle L -> S_H^2 with integral U1 character q, typed into Q245/Q243 finite-band Dirac/CAR detector algebra",
+    "classical_output": "Conditional structure-only entrant for Q315 charged fermionic bridge sector",
+    "constants": [
+      "q",
+      "U1",
+      "Q_1",
+      "dGamma(qI_D)"
+    ],
+    "prediction": "Given the supplied horizon U1 line bundle and character, qI is identified with Q_1=qI_D and implemented by dGamma(qI_D)=qN.",
+    "observation": "N/A (structural slot-entry)",
+    "residual": "No line-bundle existence, nonzero Chern degree, Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked Q315 slot entry: a supplied physical horizon U1 line-bundle coupling enters the charged fermionic bridge sector as conditional structure only. Nonclaims: No P1/Kerr derivation that L exists; No physical U1 species selection; No nonzero c1(L)[S^2]; No Q5 topology or net Q5 integer; No H-mu Q horizon-charge row; No parent-to-interior quasifree selector; No CP phase, washout, MVIS, source coefficient, eta_B, or baryon abundance; No observed matter sign or LCDM input."
+  },
+  {
+    "name": "Q315 No-Instantiation Without Typed Coupling Lemma",
+    "channel": "fermionic",
+    "quantum_input": "Algebra-only CAR U1 grading tested against Q315/Paper35 horizon-geometric charged/twisted carrier target",
+    "classical_output": "Unwired CAR grading cannot instantiate the Q315 charged-bridge target",
+    "constants": [
+      "U1",
+      "Q_1"
+    ],
+    "prediction": "A CAR U1 grading needs a typed map/coupling into the horizon U1 line-bundle carrier before it counts as the Q315 charged/twisted object.",
+    "observation": "N/A (formal negative lemma)",
+    "residual": "Does not forbid future typed couplings and does not itself accept Q315 slot entry.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked negative lemma: instantiation requires satisfying the target's defining properties, so an internal algebra-only CAR U1 grading cannot instantiate the horizon-geometric Q315 charged bridge without typed coupling."
+  },
+  {
+    "name": "Q315 Clause-3 Physical Wiring Derivation",
+    "channel": "fermionic",
+    "quantum_input": "Q315/Paper35 charged-bridge semantics plus horizon-U1-line-bundle-to-Q245 coupling",
+    "classical_output": "Clause 3 requires physical horizon U1 line-bundle/determinant-line/spin-c factor with banked typed coupling",
+    "constants": [
+      "U1",
+      "spin-c",
+      "Q_1"
+    ],
+    "prediction": "A merely internal CAR U1 grading or abstract charge block is insufficient unless it supplies a banked typed map/coupling into the admitted horizon U1 line-bundle carrier.",
+    "observation": "N/A (formal predicate/wiring derivation)",
+    "residual": "Does not derive existence/nonzero c1(L), Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked clause-3 derivation: the charged-bridge predicate requires the physical horizon U1 factor plus typed coupling into the finite-band Dirac/CAR charge block."
   }
 ]
