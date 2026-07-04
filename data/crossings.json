@@ -786,23 +786,24 @@
   {
     "name": "Q315 Charged-Bridge Conditional Slot Entry",
     "channel": "fermionic",
-    "quantum_input": "Supplied physical horizon line bundle L -> S_H^2 with integral U1 character q, typed into Q245/Q243 finite-band Dirac/CAR detector algebra",
-    "classical_output": "Conditional structure-only entrant for Q315 charged fermionic bridge sector",
+    "quantum_input": "P2+banked-matter-derived physical U1 bundle on charged-matter support patches, restricted to the horizon cross-section and typed into Q245/Q243 finite-band Dirac/CAR detector algebra",
+    "classical_output": "Conditional structure-only entrant for Q315 charged fermionic bridge sector; supplied-bundle premise upgraded patchwise by 49fccf8a",
     "constants": [
       "q",
       "U1",
       "Q_1",
-      "dGamma(qI_D)"
+      "dGamma(qI_D)",
+      "c1(L)"
     ],
-    "prediction": "Given the supplied horizon U1 line bundle and character, qI is identified with Q_1=qI_D and implemented by dGamma(qI_D)=qN.",
+    "prediction": "On charged-matter support patches, the matter-carried U1 line bundle and character q identify qI with Q_1=qI_D and implement it by dGamma(qI_D)=qN.",
     "observation": "N/A (structural slot-entry)",
-    "residual": "No line-bundle existence, nonzero Chern degree, Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure.",
+    "residual": "Species fork and Chern degree remain fenced: no nonzero c1(L), no Q5 topology, no source magnitude, no CP phase, no eta_B, and no baryogenesis closure.",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked Q315 slot entry: a supplied physical horizon U1 line-bundle coupling enters the charged fermionic bridge sector as conditional structure only. Nonclaims: No P1/Kerr derivation that L exists; No physical U1 species selection; No nonzero c1(L)[S^2]; No Q5 topology or net Q5 integer; No H-mu Q horizon-charge row; No parent-to-interior quasifree selector; No CP phase, washout, MVIS, source coefficient, eta_B, or baryon abundance; No observed matter sign or LCDM input."
+    "summary": "Banked Q315 slot entry ae2c7235 is upgraded by matter-carried bundle placement 49fccf8a: the physical horizon U1 line-bundle premise is supplied patchwise by P2+banked charged matter on charged-matter support patches. Fences remain verbatim: no global all-S_H^2 support, no physical species selection beyond cited electromagnetic/visible U1 charged matter, no nonzero c1(L)[S^2], no Q5 topology or net Q5 integer, no H-mu Q horizon-charge row, no parent-to-interior quasifree selector, no CP phase, washout, MVIS, source coefficient, eta_B, baryon abundance, or observed matter sign input."
   },
   {
     "name": "Q315 No-Instantiation Without Typed Coupling Lemma",
@@ -842,5 +843,126 @@
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
     "summary": "Banked clause-3 derivation: the charged-bridge predicate requires the physical horizon U1 factor plus typed coupling into the finite-band Dirac/CAR charge block."
+  },
+  {
+    "name": "Finite-Band KMS Detector Clausius Relation",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band P1/Kerr KMS detector state rho_beta = Z^-1 exp[-beta K_Q] with supplied fixed K_Q = H - sum_i mu_i Q_i",
+    "classical_output": "Detector-class first law delta S_vN = beta delta<K_Q>",
+    "constants": [
+      "beta",
+      "K_Q",
+      "mu_i"
+    ],
+    "prediction": "For normalized support-preserving trace-class first-order variations at fixed K_Q, delta S_vN = beta delta<K_Q>.",
+    "observation": "N/A (finite-band detector thermodynamics theorem)",
+    "residual": "Detector thermodynamics only; no geometric heat flux, area entropy, all-null horizon structure, stress-energy focusing dictionary, or Einstein equation.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked ledger eb24a238. On the finite-band P1/Kerr detector class, trace-class exp[-beta K_Q] and faithful rho_beta force delta S_vN=beta delta<K_Q> at fixed supplied K_Q. Fences: detector-class first law only; beta and K_Q are supplied boundary/detector inputs; no geometric heat-flux integral, no area entropy, no Einstein equation, no a_star/Omega_H/interior-J measurement."
+  },
+  {
+    "name": "P1/Kerr Null Raychaudhuri Focusing Identity",
+    "channel": "dynamic",
+    "quantum_input": "Smooth Q121-compatible P1/Kerr interior patch with supplied twist-free affinely parameterized null congruence k^a",
+    "classical_output": "d theta/d lambda = -theta^2/2 - sigma_ab sigma^ab - R_ab k^a k^b",
+    "constants": [
+      "theta",
+      "sigma_ab",
+      "R_ab k^a k^b"
+    ],
+    "prediction": "Geometry-only focusing identity holds on the typed P1/Kerr null-congruence class; per_branch_validity.kerr.value=PROVEN.",
+    "observation": "N/A (geometry theorem)",
+    "residual": "No Einstein equation, no R_ab to T_ab stress-energy dictionary, no area entropy, no boost/Killing generator, and no detector-heat-to-geometric-flux equality.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked ledger eb185a8a. Geometry-only P1/Kerr theorem: on a smooth Q121-compatible Kerr interior patch with a supplied twist-free affine null congruence, the null Raychaudhuri identity follows without assuming Einstein dynamics. Fences: no stress-energy dictionary, no area entropy, no all-null horizon family, no detector heat dictionary."
+  },
+  {
+    "name": "P1/Kerr Local Causal-Horizon Boost Patch Typing",
+    "channel": "dynamic",
+    "quantum_input": "Smooth C^3 Q121-compatible P1/Kerr interior point p plus supplied future null direction k_p",
+    "classical_output": "Local causal-horizon patch H_ell(p,k_p) with approximate boost chi and error O((ell/L_curv)^2)",
+    "constants": [
+      "ell",
+      "L_curv",
+      "chi"
+    ],
+    "prediction": "Every smooth Q121-compatible P1/Kerr patch admits a sufficiently small local causal-horizon patch and approximate boost vector with controlled O((ell/L_curv)^2) error.",
+    "observation": "N/A (local geometry typing theorem)",
+    "residual": "Local/asymptotic typing only; no global event horizon, no exact Killing vector, no stationarity, no area entropy, no Einstein equation, and no detector heat equals geometric boost flux.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked ledger e698a47f. The P1/Kerr nonstationary interior still has local Rindler-type causal patches: H_ell and chi exist locally, exact in tangent Minkowski space and approximate in P1/Kerr with relative error O((ell/L_curv)^2). Fences: local typing only; detector heat/geometric flux remains separate."
+  },
+  {
+    "name": "Finite-Band Detector Boost-Generator Representation No-Forcing",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band KMS detector generator K_Q plus typed local boost patch H_ell, chi",
+    "classical_output": "Negative crossing: K_Q is not forced to equal integral_H T_ab chi^a dSigma^b on the current bank",
+    "constants": [
+      "K_Q",
+      "T_ab",
+      "chi"
+    ],
+    "prediction": "Detector heat-to-geometric boost-flux dictionary remains state/representation-selector gated until a local QFT algebra, BW-valid patch state, stress tensor, Noether boost charge, and finite-band projection-compatibility theorem are supplied.",
+    "observation": "N/A (negative/no-forcing theorem)",
+    "residual": "Named missing object displayed: patch-local QFT representation/state plus stress-tensor boost-charge representation; no Jacobson assembly, no Einstein equation, no area entropy.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked ledger 5e9b792a, terminal REPRESENTATION-SAME-WALL. Current finite-band KMS/detector inputs and local boost typing do not force K_Q = integral_H T_ab chi^a dSigma^b. This is a negative GR/QM map row: the flux dictionary is not complete and is state/representation-selector gated, not a magnitude or data issue."
+  },
+  {
+    "name": "Helical KMS Required Parity Rows Confrontation",
+    "channel": "fermionic",
+    "quantum_input": "Helical KMS parity-channel REQUIRED_STRUCTURE rows from the rotating KMS map",
+    "classical_output": "Structure-only scorecard: 10 consistent / 0 tension / 0 untestable",
+    "constants": [
+      "J-carrier",
+      "TB/EB",
+      "CVE",
+      "parity-cross/span"
+    ],
+    "prediction": "Typed reads of the J-carrier live in the rotation-odd parity sector and vanish in the non-rotating limit; required rows should not be contradicted at structure/sign/zero-limit level.",
+    "observation": "Banked parity-sector context: CMB TB/EB raw spectra/covariance, Q154 CVE dictionary, parity-cross/span formal rows; BOSS 4PCF and Stage-B epsilon_rot are adjacent context only.",
+    "residual": "10 consistent, 0 tension, 0 untestable; context-diagnostic only, no amplitude, no K coefficient, no a_star conversion, no scalar beta terminal, no confirmation claim.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Banked ledger 3164af1e. Structure-only diagnostic confrontation of the accepted helical KMS map: all 10 REQUIRED_STRUCTURE parity rows are compatible with current banked parity context. Fences: non-load-bearing; no amplitude or a_star value/bound; no scalar birefringence beta posterior imported; 4PCF and epsilon_rot are PERMITTED_SELECTOR_GATED adjacent context, not REQUIRED_STRUCTURE tests."
+  },
+  {
+    "name": "Matter-Carried U1 Bundle Placement",
+    "channel": "fermionic",
+    "quantum_input": "Banked charged visible matter fields on smooth Q121-compatible P1/Kerr horizon-adjacent patches",
+    "classical_output": "Patchwise physical U1 bundle with connection supplies the Q315 horizon-line-bundle premise on charged-matter support patches",
+    "constants": [
+      "U1",
+      "q",
+      "c1(L)"
+    ],
+    "prediction": "A charged field is a section of an associated U1 bundle with connection; restricting the matter-carried bundle to the local horizon cross-section supplies the physical line-bundle existence premise patchwise.",
+    "observation": "N/A (P2/empirical charged-matter placement theorem)",
+    "residual": "Patchwise/support-conditioned only; no global all-S_H^2 matter-support cover, no nonzero Chern degree, no Q5 topology, no baryogenesis closure, no P1-only M_vis derivation.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      35
+    ],
+    "zenodo": "https://zenodo.org/records/19561708/latest",
+    "summary": "Banked ledger 49fccf8a. Under P1/P2 same-physics placement, banked charged matter supplies a physical U1 bundle with connection on every smooth Q121-compatible P1/Kerr horizon-adjacent patch carrying those fields. Fences verbatim: no global all-S_H^2 support, no nonzero Chern degree, no Q5 topology, no baryogenesis closure, no P1-only Standard Model/M_vis derivation, no species selection beyond cited electromagnetic/visible U1 charged matter."
   }
 ]
