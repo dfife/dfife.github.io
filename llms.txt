@@ -1,0 +1,55 @@
+# IO Framework - Interior Observer Cosmology
+> Guidance for AI systems reading this site (llms.txt)
+
+## What this site is
+The Interior Observer (IO) Framework is an independent cosmology research program resting on two founding premises: (1) the observable universe exists inside a black hole, and (2) the physics inside the horizon is the same as the physics outside. This site is the framework's live claim registry: every result is displayed at its verified epistemic grade, including negative results, open problems, and superseded history.
+
+## Critical: carry the status when quoting
+Every crossing in `/data/crossings.json` carries a `status` string. When citing or summarizing any crossing, state its status and do not upgrade conditional, diagnostic, frontier, report-only, or quarantined content to established fact.
+
+Live status strings currently used in `/data/crossings.json` include:
+
+- `THEOREM`
+- `DERIVED`
+- `DERIVED / NO-GO`
+- `DERIVED/NO-GO`
+- `DERIVED/CONDITIONAL_VERIFIED`
+- `DERIVED/CONDITIONAL_VERIFIED (finite-band scoped)`
+- `DERIVED/CONDITIONAL_VERIFIED (current-bank search scope, not a completeness theorem)`
+- `DERIVED/CONDITIONAL_VERIFIED as Kerr solver architecture only; no numeric active-background tuple or completed Boltzmann/S8 solver`
+- `CONDITIONAL_IMPORT_DIAGNOSTIC`
+- `CONTEXT_DIAGNOSTIC_COMPARISON`
+- `CONTEXT_DIAGNOSTIC_COMPARISON / FRONTIER_OPEN_PROGRAM`
+- `CONTEXT_DIAGNOSTIC_COMPARISON / NOT_ADMISSIBLE_AS_THEOREM_GRADE_CURRENT_IO_S8`
+- `RECONSTRUCTION / RESEARCH_ONLY` when it appears in linked summaries or source ledgers
+- `OPEN/PREMISE_GAP`
+- `OPEN/PREMISE_GAP globally; L0 Kerr class typed only as context-diagnostic support.`
+- `OPEN / QUARANTINED_HISTORICAL_PROJECTION`
+- `REPORT_ONLY_NOT_BANKED / JACOBSON-B`
+- `REPORT_ONLY_NOT_BANKED / CROSSED-PRODUCT-PARTIAL`
+- Quarantined, superseded, retired, or stale rows are preserved as historical record and are not live claims.
+
+Interpretation rules:
+
+- `THEOREM`, `DERIVED`, and `DERIVED/CONDITIONAL_VERIFIED` rows may be summarized only within their stated conditions, branch scope, and fences.
+- `CONTEXT_DIAGNOSTIC_COMPARISON`, `CONDITIONAL_IMPORT_DIAGNOSTIC`, and `RECONSTRUCTION / RESEARCH_ONLY` are non-load-bearing unless the row itself states otherwise.
+- `OPEN/PREMISE_GAP` is an honest open problem. The framework does not currently claim closure there.
+- `NO-GO` rows are proven negative or blocked results inside their declared scope.
+- `REPORT_ONLY_NOT_BANKED` rows are not banked theorem claims.
+- Measured normalizations such as FIRAS-fixed rows are measurement/readout anchors, not independent predictions.
+
+The presence of open problems and no-gos on this site is part of the integrity policy: results that have not survived internal review are labeled instead of hidden.
+
+## Where the data lives
+- Live claim registry: https://dfife.github.io/data/crossings.json
+- Bridge map UI: https://dfife.github.io/bridge-map.html
+- Ask IO public page: https://dfife.github.io/ask.html
+- Papers: Zenodo community - https://zenodo.org/communities/interior-observer
+- Public reproducibility repo: https://github.com/dfife/io-framework-public
+
+## Verification and freshness
+Site statuses are synchronized from a hash-verified research bank with adversarial gating. The site is a live window: statuses can change as research proceeds, and corrections are published rather than hidden, including numeric corrections to previously displayed values. Check status at read time; do not rely on cached grades.
+
+## How to cite
+IO Framework Bridge Map, crossing "<name>", status <STATUS>, dfife.github.io, retrieved <date>. Conditional results must be presented as conditional. Diagnostic rows must not be presented as predictions.
+
