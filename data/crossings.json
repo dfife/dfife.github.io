@@ -649,7 +649,7 @@
     "name": "JWST Formation Clock",
     "channel": "static",
     "quantum_input": "Homogeneous OS master clock on the active bare/support branch",
-    "classical_output": "+46-48% more formation time than Planck ΛCDM at z > 10",
+    "classical_output": "About +42.5-43.8% more formation time than Planck ΛCDM over z = 10-20 (comparison-only; old +46-48% wording superseded)",
     "constants": [
       "t_bare(z)",
       "H₀",
@@ -657,7 +657,7 @@
       "Ω_k",
       "Ω_Λ"
     ],
-    "prediction": "At z = 10, 12, 14, 16 the active IO master clock gives about +136 to +207 Myr relative to Planck ΛCDM",
+    "prediction": "Current Q118/Q241/Q309 retiming records give about +42.5-43.8% formation-time relief relative to Planck ΛCDM over z = 10-20; this is comparison-only, not a load-bearing LCDM input",
     "observation": "JADES-GS-z14-0, JADES-GS-z13-0, GN-z11, and Maisie’s Galaxy all sit in the high-z formation-time pressure regime",
     "residual": "IO materially eases timing pressure; the current clock result is not by itself a theorem-grade ΛCDM knockout",
     "status": "DERIVED",
@@ -666,7 +666,7 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 28’s homogeneous OS formation-clock theorem survives on the active branch, and Paper 35 shows it yields 46-48% more formation time than Planck ΛCDM at z > 10, making the JWST high-z population structurally easier to accommodate."
+    "summary": "Paper 28’s homogeneous OS formation-clock theorem survives on the active branch. Current Q118/Q241/Q309 retiming supersedes the old +46-48% wording with about +42.5-43.8% formation-time relief over z = 10-20 versus Planck ΛCDM as comparison-only context, making the JWST high-z population structurally easier to accommodate."
   },
   {
     "name": "Dark Matter Null Prediction",
