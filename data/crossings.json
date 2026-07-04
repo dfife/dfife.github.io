@@ -17,18 +17,20 @@
       9
     ],
     "zenodo": "https://zenodo.org/records/18895980/latest",
-    "summary": "Dark energy is the spectral weight of the Ashtekar-Barbero connection projected into the bulk through the Holst action."
+    "summary": "Dark energy is the spectral weight of the Ashtekar-Barbero connection projected into the bulk through the Holst action.",
+    "formula": "Omega_Lambda = rho_Lambda / rho_crit = 0.6970 (Holst/Ashtekar-Barbero spectral-weight row)",
+    "formula_class": "sourced_display_pending_closed_form_audit"
   },
   {
     "name": "Baryon Fraction",
     "channel": "static",
     "quantum_input": "SU(2) topological vacuum scalarization",
-    "classical_output": "f_b = 2γ/x = 0.3127",
+    "classical_output": "f_b = 2γ/x = 0.30576",
     "constants": [
       "γ",
       "x"
     ],
-    "prediction": "f_b = 0.3127 (gauge-coupling inventory)",
+    "prediction": "f_b = 0.30576 (gauge-coupling inventory; active x)",
     "observation": "Not directly comparable to a single CMB ω_b/ω_m. Active branch slots are ω_b,geom = 0.020996 (α=1, sound speed/BBN), ω_b,eff = 0.028989 (acoustic effective slot), and ω_b,clustering = 0.017035 (α=3/2, clustering).",
     "residual": "Observable-class dependent; see the active Paper 19/29 slot map",
     "status": "DERIVED",
@@ -37,7 +39,9 @@
       19
     ],
     "zenodo": "https://zenodo.org/records/18936508/latest",
-    "summary": "Baryons are the gauge-coupled subset of OS dust. The fraction is set by the SU(2) gauge topology of the horizon. Different observable classes probe different projected values."
+    "summary": "Baryons are the gauge-coupled subset of OS dust. The fraction is set by the SU(2) gauge topology of the horizon. Different observable classes probe different projected values.",
+    "formula": "f_b = 2 gamma / x",
+    "formula_class": "closed_form"
   },
   {
     "name": "Rosetta Identity",
@@ -57,18 +61,20 @@
       15
     ],
     "zenodo": "https://zenodo.org/records/19026431/latest",
-    "summary": "The master identity organizing all observable classes by their form degree on the α-ladder."
+    "summary": "The master identity organizing all observable classes by their form degree on the α-ladder.",
+    "formula": "O(eta) = x^(2 alpha) (1 + gamma^2)^(alpha/2)",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Spatial Decoupling Δ",
     "channel": "static",
     "quantum_input": "Ashtekar-Barbero connection projection",
-    "classical_output": "Δ = x⁴(1+γ²) = 5.624",
+    "classical_output": "Δ = x⁴(1+γ²) = 6.15266",
     "constants": [
       "γ²",
       "x"
     ],
-    "prediction": "5.624",
+    "prediction": "6.15266",
     "observation": "N/A (framework constant)",
     "residual": "N/A",
     "status": "DERIVED",
@@ -78,7 +84,9 @@
       9
     ],
     "zenodo": "https://zenodo.org/records/18868612/latest",
-    "summary": "The master geometric scale combining compactness and gauge weight."
+    "summary": "The master geometric scale combining compactness and gauge weight.",
+    "formula": "Delta = x^4 (1 + gamma^2)",
+    "formula_class": "closed_form"
   },
   {
     "name": "Generating Potential V(α)",
@@ -96,7 +104,9 @@
       18
     ],
     "zenodo": "https://zenodo.org/records/19054258/latest",
-    "summary": "The unique generating potential on the reduced gauge center organizing all observable classes."
+    "summary": "The unique generating potential on the reduced gauge center organizing all observable classes.",
+    "formula": "V(alpha) = -2 ln(cos alpha)",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Deuterium Abundance (D/H)",
@@ -114,7 +124,9 @@
       24
     ],
     "zenodo": "https://zenodo.org/records/19219282/latest",
-    "summary": "Deuterium abundance from geometric dressing of BBN rates. This is the quantum gravity fingerprint at the nuclear scale."
+    "summary": "Deuterium abundance from geometric dressing of BBN rates. This is the quantum gravity fingerprint at the nuclear scale.",
+    "formula": "numeric PRyMordial/BBN network solution for D/H on the Paper-24/Paper-26 banked branch",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Helium-4 Abundance (Y_p)",
@@ -132,7 +144,9 @@
       25
     ],
     "zenodo": "https://zenodo.org/records/19242682/latest",
-    "summary": "Primordial helium from geometric dressing of the weak freeze-out rate."
+    "summary": "Primordial helium from geometric dressing of the weak freeze-out rate.",
+    "formula": "numeric PRyMordial/BBN network solution for Y_p on the Paper-24/Paper-26 banked branch",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Lithium-7 Abundance",
@@ -150,20 +164,22 @@
       24
     ],
     "zenodo": "https://zenodo.org/records/19219282/latest",
-    "summary": "The cosmological lithium problem resolved. The same (1+γ²) dressing is channel-resolved on the I=1 adjoint branch."
+    "summary": "The cosmological lithium problem resolved. The same (1+γ²) dressing is channel-resolved on the I=1 adjoint branch.",
+    "formula": "K_gauge=ln(1+gamma_BI^2); q_scale=sqrt(B(E2)_down)/100; q_trans,ex=q_scale <F0>_amp,ex; R_ex(T9)=exp[-epsilon_n((q_trans,ex/x)/Q_d)nu_34(T9)]; R_34,tot=f_gs R_gs+(1-f_gs)R_ex",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Spectral Index (n_s)",
     "channel": "mixed",
     "quantum_input": "DtN boundary fixed-point on coexact source block",
-    "classical_output": "n_s = 1 − K_gauge/x = 0.9639",
+    "classical_output": "n_s = 1 − K_gauge/x = 0.96468",
     "constants": [
       "K_gauge",
       "x"
     ],
-    "prediction": "0.9639",
+    "prediction": "0.96468",
     "observation": "0.9649 ± 0.0042 (Planck 2018)",
-    "residual": "−0.24σ",
+    "residual": "−0.05σ",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       23,
@@ -171,7 +187,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19359276/latest",
-    "summary": "The spectral tilt from the boundary fixed-point principle. Primordial scale dependence emerges from horizon geometry."
+    "summary": "The spectral tilt from the boundary fixed-point principle. Primordial scale dependence emerges from horizon geometry.",
+    "formula": "n_s = 1 - K_gauge/x, K_gauge=ln(1+gamma_BI^2)",
+    "formula_class": "closed_form"
   },
   {
     "name": "Scalar Amplitude (A_s)",
@@ -191,7 +209,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "The primordial power spectrum amplitude from the Hawking state. No inflationary potential is required."
+    "summary": "The primordial power spectrum amplitude from the Hawking state. No inflationary potential is required.",
+    "formula": "A_s=(25/9)[gamma^2/(1+gamma^2)](1/sqrt(2))(exp(4 pi sqrt(2))-1)^(-1)",
+    "formula_class": "closed_form"
   },
   {
     "name": "Gravitational Slip (Sigma_IO)",
@@ -209,7 +229,9 @@
       31
     ],
     "zenodo": "https://zenodo.org/records/19415916/latest",
-    "summary": "Current Kerr bank points to Q199: the scalar Born/Weyl typed quotient gives x^(-1/2)=0.8023170090064653. The stale 0.8114 closed-FRW wording should be retired; S8/sigma8 comparisons stay separate and walled."
+    "summary": "Current Kerr bank points to Q199: the scalar Born/Weyl typed quotient gives x^(-1/2)=0.8023170090064653. The stale 0.8114 closed-FRW wording should be retired; S8/sigma8 comparisons stay separate and walled.",
+    "formula": "Sigma_IO = x^(-1/2)",
+    "formula_class": "closed_form"
   },
   {
     "name": "sigma8 Growth Readout Frontier",
@@ -267,7 +289,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Paper 32 source-block boundary result on the active closed-FRW branch. It fixes where the active scalar optical observer channel terminates."
+    "summary": "Paper 32 source-block boundary result on the active closed-FRW branch. It fixes where the active scalar optical observer channel terminates.",
+    "formula": "x_crit = Q^(-1/4)",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Hubble Constant (H₀)",
@@ -287,7 +311,9 @@
       30
     ],
     "zenodo": "https://zenodo.org/records/19367583/latest",
-    "summary": "Q43 supplies the live scoped Kerr Hubble readout. The historical 67.58 km/s/Mpc projection package is not active-consumable until a new primitive-observable projector is derived."
+    "summary": "Q43 supplies the live scoped Kerr Hubble readout. The historical 67.58 km/s/Mpc projection package is not active-consumable until a new primitive-observable projector is derived.",
+    "formula": "H0_scoped = Delta^(1/4) H_bare (historical projected value quarantined)",
+    "formula_class": "scoped_historical_projection"
   },
   {
     "name": "Cosmic Chronometers Frame-Typing Frontier",
@@ -349,7 +375,9 @@
       21
     ],
     "zenodo": "https://zenodo.org/records/19145122/latest",
-    "summary": "The CMB acoustic angle from boundary geometry. The active site tracks the derived IO angle rather than the retired mixed-branch 100θ_s value."
+    "summary": "The CMB acoustic angle from boundary geometry. The active site tracks the derived IO angle rather than the retired mixed-branch 100θ_s value.",
+    "formula": "theta_* = r_s(z_*) / D_A(z_*) in the banked IO acoustic calculation",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Optical Depth (τ_eff)",
@@ -368,7 +396,9 @@
       31
     ],
     "zenodo": "https://zenodo.org/records/19333220/latest",
-    "summary": "The effective optical depth from boundary gauge weight, carried inside the verified reduced source class."
+    "summary": "The effective optical depth from boundary gauge weight, carried inside the verified reduced source class.",
+    "formula": "tau_eff = K_gauge/2 = ln(1+gamma_BI^2)/2",
+    "formula_class": "closed_form"
   },
   {
     "name": "Bounce / Recollapse",
@@ -388,7 +418,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Recollapse is derived on the active closed-FRW branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory."
+    "summary": "Recollapse is derived on the active closed-FRW branch. The bounce attachment is DERIVED/CONDITIONAL_VERIFIED within the extended fermionic/chiral IO-EC theory.",
+    "formula": "numeric OS/cycloid recollapse and bounce-attachment computation; displayed values are branch outputs",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Growth Background Solver Architecture",
@@ -448,7 +480,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "Inside the extended fermionic/chiral IO-EC theory, the bounce normalization coefficient is fixed to C_src = (3/8)Q^(1/8), closing the attachment ratio at R_eq/R_bounce = 1.00016."
+    "summary": "Inside the extended fermionic/chiral IO-EC theory, the bounce normalization coefficient is fixed to C_src = (3/8)Q^(1/8), closing the attachment ratio at R_eq/R_bounce = 1.00016.",
+    "formula": "C_src = (3/8) Q^(1/8); R_eq/R_bounce from the banked bounce attachment computation",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Torsion Onset Profile",
@@ -468,7 +502,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "The extended fermionic/chiral IO-EC theory predicts the full deep-bulk torsion turn-on law Ξ_EC(R) = (R_eq/R)^3, giving a second quantitative payoff beyond the single bounce attachment radius."
+    "summary": "The extended fermionic/chiral IO-EC theory predicts the full deep-bulk torsion turn-on law Ξ_EC(R) = (R_eq/R)^3, giving a second quantitative payoff beyond the single bounce attachment radius.",
+    "formula": "Xi_EC(R) = (R_eq/R)^3",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Spin-Source Lift",
@@ -488,7 +524,9 @@
       32
     ],
     "zenodo": "https://zenodo.org/records/19433686/latest",
-    "summary": "The new fermionic bridge sector constructs the spin-source lift P_spin(R), carrying lowest-shell chiral boundary data into the deep-bulk support branch and producing the EC-compatible R^(−6) spin-density scaling."
+    "summary": "The new fermionic bridge sector constructs the spin-source lift P_spin(R), carrying lowest-shell chiral boundary data into the deep-bulk support branch and producing the EC-compatible R^(−6) spin-density scaling.",
+    "formula": "P_spin(R) = C_R o U_rad(R) o Pi_low o Pi_chi o Pi_1/2",
+    "formula_class": "operator_formula"
   },
   {
     "name": "Three-Language Architecture",
@@ -511,7 +549,9 @@
       33
     ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "Paper 33 reframes the archive stack as three bridge languages, Paper 34 applies that architecture to the late-time H₀ method ladder, and Paper 35 extends the confrontation surface across baryon counting, high-redshift formation time, dark energy, and direct-detection nulls."
+    "summary": "Paper 33 reframes the archive stack as three bridge languages, Paper 34 applies that architecture to the late-time H₀ method ladder, and Paper 35 extends the confrontation surface across baryon counting, high-redshift formation time, dark energy, and direct-detection nulls.",
+    "formula": "three-language architecture row; no numeric formula",
+    "formula_class": "symbolic_theorem"
   },
   {
     "name": "Holographic Selection Rule",
@@ -530,7 +570,9 @@
       33
     ],
     "zenodo": "https://zenodo.org/records/19440227/latest",
-    "summary": "The IO bridge is not universally on. Dynamic exports require typed, boundary-synchronized, non-vacuum contact."
+    "summary": "The IO bridge is not universally on. Dynamic exports require typed, boundary-synchronized, non-vacuum contact.",
+    "formula": "dynamic bridge export iff boundary-synchronized non-vacuum typed domain condition holds",
+    "formula_class": "symbolic_theorem"
   },
   {
     "name": "Bridge Carrier Mechanism",
@@ -584,7 +626,9 @@
       33
     ],
     "zenodo": "",
-    "summary": "The bridge is closed for zero-temperature collider measurements. Five mechanisms were tried and all five failed."
+    "summary": "The bridge is closed for zero-temperature collider measurements. Five mechanisms were tried and all five failed.",
+    "formula": "delta a_mu = 0 inside the declared no-go class",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Baryon-to-Photon Ratio (late-time)",
@@ -603,7 +647,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 35 closes the late-time observer-side baryon-to-photon ratio on the surviving inventory route η = C_η(T_obs, m̄) × ω_b,geom, giving 5.749 × 10⁻¹⁰ with zero fitted parameters."
+    "summary": "Paper 35 closes the late-time observer-side baryon-to-photon ratio on the surviving inventory route η = C_η(T_obs, m̄) × ω_b,geom, giving 5.749 × 10⁻¹⁰ with zero fitted parameters.",
+    "formula": "eta = n_b/n_gamma",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Baryon-to-Photon Ratio (BBN bulk-frame)",
@@ -623,7 +669,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 35 closes the BBN temperature assignment gate: local nuclear reaction observables are bulk thermodynamic processes on the T_IO branch, so the microphysical BBN η route gives 6.151 × 10⁻¹⁰."
+    "summary": "Paper 35 closes the BBN temperature assignment gate: local nuclear reaction observables are bulk thermodynamic processes on the T_IO branch, so the microphysical BBN η route gives 6.151 × 10⁻¹⁰.",
+    "formula": "eta_BBN = banked bulk-frame baryon-to-photon ratio from the typed BBN temperature assignment",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "Baryogenesis Topological Obstruction",
@@ -643,7 +691,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper35/Q315 still gives Q5=0 on the current stack. New banked Q315 slot-entry ae2c7235 says that, given a supplied physical horizon line bundle and integral U1 character, the typed coupling enters the charged fermionic bridge sector as conditional structure only; it does not assert line-bundle existence, nonzero Chern degree, Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure."
+    "summary": "Paper35/Q315 still gives Q5=0 on the current stack. New banked Q315 slot-entry ae2c7235 says that, given a supplied physical horizon line bundle and integral U1 character, the typed coupling enters the charged fermionic bridge sector as conditional structure only; it does not assert line-bundle existence, nonzero Chern degree, Q5 topology, source magnitude, CP phase, eta_B, or baryogenesis closure.",
+    "formula": "Q5 = 0 on the current stack; supplied typed horizon-U1 charged bridge is conditional structure-only entrant",
+    "formula_class": "topological_no_go"
   },
   {
     "name": "JWST Formation Clock",
@@ -666,7 +716,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 28’s homogeneous OS formation-clock theorem survives on the active branch. Current Q118/Q241/Q309 retiming supersedes the old +46-48% wording with about +42.5-43.8% formation-time relief over z = 10-20 versus Planck ΛCDM as comparison-only context, making the JWST high-z population structurally easier to accommodate."
+    "summary": "Paper 28’s homogeneous OS formation-clock theorem survives on the active branch. Current Q118/Q241/Q309 retiming supersedes the old +46-48% wording with about +42.5-43.8% formation-time relief over z = 10-20 versus Planck ΛCDM as comparison-only context, making the JWST high-z population structurally easier to accommodate.",
+    "formula": "formation-time relief = (t_IO(z)-t_LCDM(z))/t_LCDM(z) over z=10-20, comparison-only",
+    "formula_class": "comparison_numeric_pipeline"
   },
   {
     "name": "Dark Matter Null Prediction",
@@ -707,7 +759,9 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked finite-band dictionary theorem; magnitudes remain boundary inputs and readout/congruence remainders remain fenced."
+    "summary": "Banked finite-band dictionary theorem; magnitudes remain boundary inputs and readout/congruence remainders remain fenced.",
+    "formula": "rho = Z^(-1) exp[-beta(H - sum_i mu_i Q_i)]",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "Horizon Charge Census / Helical J Row",
@@ -842,7 +896,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked clause-3 derivation: the charged-bridge predicate requires the physical horizon U1 factor plus typed coupling into the finite-band Dirac/CAR charge block."
+    "summary": "Banked clause-3 derivation: the charged-bridge predicate requires the physical horizon U1 factor plus typed coupling into the finite-band Dirac/CAR charge block.",
+    "formula": "entry requires a banked typed coupling from the admitted physical horizon U1 line-bundle carrier into the charge block",
+    "formula_class": "predicate_formula"
   },
   {
     "name": "Finite-Band KMS Detector Clausius Relation",
@@ -882,7 +938,9 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked ledger eb185a8a. Geometry-only P1/Kerr theorem: on a smooth Q121-compatible Kerr interior patch with a supplied twist-free affine null congruence, the null Raychaudhuri identity follows without assuming Einstein dynamics. Fences: no stress-energy dictionary, no area entropy, no all-null horizon family, no detector heat dictionary."
+    "summary": "Banked ledger eb185a8a. Geometry-only P1/Kerr theorem: on a smooth Q121-compatible Kerr interior patch with a supplied twist-free affine null congruence, the null Raychaudhuri identity follows without assuming Einstein dynamics. Fences: no stress-energy dictionary, no area entropy, no all-null horizon family, no detector heat dictionary.",
+    "formula": "d theta/d lambda = -theta^2/2 - sigma_ab sigma^ab - R_ab k^a k^b",
+    "formula_class": "closed_form_symbolic"
   },
   {
     "name": "P1/Kerr Local Causal-Horizon Boost Patch Typing",
@@ -902,7 +960,9 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked ledger e698a47f. The P1/Kerr nonstationary interior still has local Rindler-type causal patches: H_ell and chi exist locally, exact in tangent Minkowski space and approximate in P1/Kerr with relative error O((ell/L_curv)^2). Fences: local typing only; detector heat/geometric flux remains separate."
+    "summary": "Banked ledger e698a47f. The P1/Kerr nonstationary interior still has local Rindler-type causal patches: H_ell and chi exist locally, exact in tangent Minkowski space and approximate in P1/Kerr with relative error O((ell/L_curv)^2). Fences: local typing only; detector heat/geometric flux remains separate.",
+    "formula": "local patch H_ell(p,k_p) admits approximate boost chi with error O((ell/L_curv)^2)",
+    "formula_class": "asymptotic_formula"
   },
   {
     "name": "Finite-Band Detector Boost-Generator Representation No-Forcing",
@@ -943,7 +1003,9 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked ledger 3164af1e. Structure-only diagnostic confrontation of the accepted helical KMS map: all 10 REQUIRED_STRUCTURE parity rows are compatible with current banked parity context. Fences: non-load-bearing; no amplitude or a_star value/bound; no scalar birefringence beta posterior imported; 4PCF and epsilon_rot are PERMITTED_SELECTOR_GATED adjacent context, not REQUIRED_STRUCTURE tests."
+    "summary": "Banked ledger 3164af1e. Structure-only diagnostic confrontation of the accepted helical KMS map: all 10 REQUIRED_STRUCTURE parity rows are compatible with current banked parity context. Fences: non-load-bearing; no amplitude or a_star value/bound; no scalar birefringence beta posterior imported; 4PCF and epsilon_rot are PERMITTED_SELECTOR_GATED adjacent context, not REQUIRED_STRUCTURE tests.",
+    "formula": "structure-only scorecard: N_consistent=10, N_tension=0, N_untestable=0",
+    "formula_class": "scorecard_formula"
   },
   {
     "name": "Matter-Carried U1 Bundle Placement",
@@ -963,7 +1025,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked ledger 49fccf8a. Under P1/P2 same-physics placement, banked charged matter supplies a physical U1 bundle with connection on every smooth Q121-compatible P1/Kerr horizon-adjacent patch carrying those fields. Fences verbatim: no global all-S_H^2 support, no nonzero Chern degree, no Q5 topology, no baryogenesis closure, no P1-only Standard Model/M_vis derivation, no species selection beyond cited electromagnetic/visible U1 charged matter."
+    "summary": "Banked ledger 49fccf8a. Under P1/P2 same-physics placement, banked charged matter supplies a physical U1 bundle with connection on every smooth Q121-compatible P1/Kerr horizon-adjacent patch carrying those fields. Fences verbatim: no global all-S_H^2 support, no nonzero Chern degree, no Q5 topology, no baryogenesis closure, no P1-only Standard Model/M_vis derivation, no species selection beyond cited electromagnetic/visible U1 charged matter.",
+    "formula": "charged field psi is a section of an associated U1 bundle with connection; restrict bundle to horizon-support patch",
+    "formula_class": "geometric_formula"
   },
   {
     "name": "First-Star Source-History Window",
@@ -985,7 +1049,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked first-star diagnostic window fec9f3f1 with infrastructure fd9734a4 and interpolant lemma 2dc3d1d4. It is IO-native and family-independent for the clock interpolation, but stays non-load-bearing diagnostic/import grade with both age-fork branches carried."
+    "summary": "Banked first-star diagnostic window fec9f3f1 with infrastructure fd9734a4 and interpolant lemma 2dc3d1d4. It is IO-native and family-independent for the clock interpolation, but stays non-load-bearing diagnostic/import grade with both age-fork branches carried.",
+    "formula": "numeric solution of the Layer-6 source-history operator anchored to JWST z=13.35206, with fork-carried IO clock interpolation",
+    "formula_class": "numeric_pipeline"
   },
   {
     "name": "DM Kerr Lift and Bullet Structural Prediction",
@@ -1006,7 +1072,9 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked DM-Kerr partial ledger ca938328. The direct-detection chain survives only as a scoped conditional forecast; the Bullet structural class is accepted as structure-only and amplitude-free, with no site publication authorization in that packet."
+    "summary": "Banked DM-Kerr partial ledger ca938328. The direct-detection chain survives only as a scoped conditional forecast; the Bullet structural class is accepted as structure-only and amplitude-free, with no site publication authorization in that packet.",
+    "formula": "conditional channel statement: P_rem has no contact-drag channel; charged gas/plasma has shock/ram channels",
+    "formula_class": "conditional_structure"
   },
   {
     "name": "IO Interaction-Channel Dictionary on P1/Kerr",
@@ -1075,6 +1143,8 @@
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked ledger 022ae502. The quantitative forcing attempt did not prove FORCED separation: the lower interval endpoint falls below 1. The honest public-map row should say EXPECTED/conditional and keep P_rem plus readout fences visible."
+    "summary": "Banked ledger 022ae502. The quantitative forcing attempt did not prove FORCED separation: the lower interval endpoint falls below 1. The honest public-map row should say EXPECTED/conditional and keep P_rem plus readout fences visible.",
+    "formula": "rho_opp=n_e*1e6*1.90e-27 kg; a_ram=C_D rho_opp v_rel^2/Sigma_g; Lambda_G=2GM_opp/R_enc^3; epsilon_Q=3GM_opp Delta^2/R_enc^4 + eta_Q Lambda_G Delta; ratio=a_ram/(Lambda_G Delta + epsilon_Q)",
+    "formula_class": "numeric_pipeline"
   }
 ]

@@ -82,6 +82,8 @@ function matchesFilters(item) {
     item.summary,
     item.status,
     item.prediction,
+    item.formula || "",
+    item.formula_class || "",
     item.observation,
     item.papers.join(" ")
   ]
@@ -89,6 +91,15 @@ function matchesFilters(item) {
     .toLowerCase();
 
   return haystack.includes(state.search.toLowerCase());
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function selectedFromUrl() {
@@ -135,6 +146,15 @@ function renderDetail(item) {
   const zenodoAction = item.zenodo
     ? `<a class="button button-small button-outline" href="${item.zenodo}" target="_blank" rel="noreferrer">Open Zenodo Record</a>`
     : "";
+  const formulaBlock = item.formula
+    ? `
+    <div class="detail-block">
+      <div class="detail-label">Formula</div>
+      <div class="detail-value"><code>${escapeHtml(item.formula)}</code></div>
+      ${item.formula_class ? `<div class="detail-note">Formula class: ${escapeHtml(item.formula_class)}</div>` : ""}
+    </div>
+  `
+    : "";
 
   panel.innerHTML = `
     <div class="detail-header">
@@ -154,6 +174,7 @@ function renderDetail(item) {
       <div class="detail-label">IO constants</div>
       <div class="detail-value">${constants}</div>
     </div>
+    ${formulaBlock}
     <div class="detail-block">
       <div class="detail-label">IO prediction</div>
       <div class="detail-value">${item.prediction}</div>
