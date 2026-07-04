@@ -724,22 +724,24 @@
     "name": "Dark Matter Null Prediction",
     "channel": "static",
     "quantum_input": "Kerr-scoped geometric dark-sector interpretation plus typed visible U1 detector sector",
-    "classical_output": "Continued direct-detection null results are expected",
+    "classical_output": "Conditional non-gravitational null point: if P_rem is the dark support, typed visible-sector direct/indirect/contact couplings are zero; a robust positive non-gravitational signal falsifies that branch.",
     "constants": [
       "γ",
       "x",
       "f_b"
     ],
-    "prediction": "LZ, XENONnT, PandaX-4T, DARWIN, and XLZD should continue moving toward the neutrino floor without a canonical xenon-WIMP detection",
-    "observation": "Current xenon direct-detection programs remain null",
-    "residual": "Consistent with the scoped geometric dark-sector reading; not a universal no-particle theorem.",
+    "prediction": "R_direct_NG=0, Phi_annihilation_NG=0, and sigma_contact/m=0 for the P_rem branch; gravitational effects remain allowed.",
+    "observation": "LZ, XENONnT, PandaX-4T, Fermi-LAT dwarf, H.E.S.S., and cluster self-interaction searches currently provide null detections or upper limits, so the conditional null point is not excluded.",
+    "residual": "Conditional on P_rem and channel dictionary; not a universal no-particle theorem and not an event-rate model.",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33,
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Paper 35's direct-detection null forecast is Kerr-rederived as a conditional forecast: the current active architecture has no primitive local dark-particle carrier slot coupling to the typed visible U1 detector sector. It is not an event-rate model or a universal exclusion of future dark fields."
+    "summary": "DM finish-up adds the explicit falsifier: any robust non-gravitational dark-sector scattering, annihilation, or contact self-interaction signal breaks the P_rem branch. Current null searches are consistent but not uniquely confirming.",
+    "formula": "g_NG(P_rem, visible U1 detector)=0; R_direct_NG=0; Phi_annihilation_NG=0; sigma_contact/m=0",
+    "formula_class": "conditional_null_structure"
   },
   {
     "name": "Horizon Charge KMS Dictionary Theorem",
@@ -1135,15 +1137,15 @@
       "Sigma_g"
     ],
     "prediction": "Nominal drag-dominance ratio is 1.9064878727330357, but conservative interval propagation gives [0.006088878365538182, 727.1011823823155], so the banked strength is EXPECTED.",
-    "observation": "Bullet/Abell cluster systems are comparison context only; empirical weak-lensing mass readout remains unresolved.",
-    "residual": "Conditional on P_rem and formal centroids; no weak-lensing readout closure, no forced lower bound above 1, no LCDM input, no fitted cluster target.",
+    "observation": "Bullet-like separated systems and Abell-520-class non-separated/complex systems are comparison context only; the banked theorem is compatible with both because the conservative ratio interval straddles 1.",
+    "residual": "Expected, not forced: no weak-lensing readout closure and no lower-bound proof above 1. Non-separated mergers falsify only stronger universal-separation wording.",
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "papers": [
       33,
       35
     ],
     "zenodo": "https://zenodo.org/records/19561708/latest",
-    "summary": "Banked ledger 022ae502. The quantitative forcing attempt did not prove FORCED separation: the lower interval endpoint falls below 1. The honest public-map row should say EXPECTED/conditional and keep P_rem plus readout fences visible.",
+    "summary": "DM finish-up reaffirms ledger 022ae502: nominal ratio 1.9064878727330357 suggests separation, but the conservative interval [0.006088878365538182, 727.1011823823155] permits non-separated/complex mergers without parameter adjustment. The forcing theorem remains frontier_5efd3998fb2d7643b12a9ae9.",
     "formula": "rho_opp=n_e*1e6*1.90e-27 kg; a_ram=C_D rho_opp v_rel^2/Sigma_g; Lambda_G=2GM_opp/R_enc^3; epsilon_Q=3GM_opp Delta^2/R_enc^4 + eta_Q Lambda_G Delta; ratio=a_ram/(Lambda_G Delta + epsilon_Q)",
     "formula_class": "numeric_pipeline"
   }
