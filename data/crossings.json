@@ -1399,5 +1399,117 @@
     "status": "DERIVED/CONDITIONAL_VERIFIED",
     "summary": "This theorem reopens gauge-fixed weak-lensing morphology without pretending that the absolute mass inversion problem is solved.",
     "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "name": "Kerr Multipole Tower No-New-K_Q Row Theorem",
+    "channel": "dynamic",
+    "quantum_input": "Finite-band KMS dictionary row-counting rule plus Kerr uniqueness and Geroch-Hansen multipole tower",
+    "classical_output": "The stationary Kerr gravitational multipole tower is functional in M and J and supplies no independent finite-band K_Q row beyond H and H - Omega_H J",
+    "constants": [
+      "M_U",
+      "J",
+      "Omega_H",
+      "K_Q"
+    ],
+    "prediction": "No additional horizon-charge KMS chemical-potential row is created by Kerr gravitational multipoles within the stationary axisymmetric vacuum Kerr/no-NUT/no-string class.",
+    "observation": "Bridge/dictionary theorem row; not an observational amplitude claim.",
+    "residual": "Not a universal no-hair theorem; does not exclude gauge, species, topological, NUT, or exotic typed rows; no numeric spin or amplitude.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Final-six Job B. Within the banked Kerr uniqueness class, the gravitational multipole tower is M,J-functional and therefore adds no independent K_Q row to the finite-band horizon-charge KMS dictionary.",
+    "formula": "M_l + i S_l = M*(i*a)^l; admitted finite-band rows remain {H, H - Omega_H J}",
+    "formula_class": "DERIVED/CONDITIONAL_VERIFIED; conditional on the banked Kerr uniqueness variant and IO finite-band KMS reduction ledgers"
+  },
+  {
+    "name": "Superradiant Dictionary Extension Obstruction",
+    "channel": "dynamic",
+    "quantum_input": "Positive horizon-frequency finite-band KMS sector and helical grammar",
+    "classical_output": "The superradiant finite-band KMS extension remains blocked by the missing trace-class superradiant state and stationary or adiabatic return map",
+    "constants": [
+      "Omega_H",
+      "K_Q"
+    ],
+    "prediction": "Current finite-band dictionary covers the positive tilde_omega sector only; superradiant extension requires a new state/return-map object.",
+    "observation": "No superradiant observational bound is claimed from this row.",
+    "residual": "Missing object: IO_SUPERRADIANT_FINITE_BAND_KMS_STATE_AND_STATIONARY_RETURN_MAP; static S3 diagnostic is empty-band at active compactness.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Final-six Job C negative/frontier row. The superradiant sector is typed but not extended into the dictionary; the obstruction is state/return-map structure, not a data issue.",
+    "formula": "tilde_omega = omega - m*Omega_H; superradiant band: tilde_omega < 0",
+    "formula_class": "CONTEXT_DIAGNOSTIC_COMPARISON frontier formula; no a_star bound"
+  },
+  {
+    "name": "Box Classifier Zoo",
+    "channel": "mixed",
+    "quantum_input": "Charge, spin, gravity, and extremality grammar across particle, compact-object, horizon-object, and IO universe-object classes",
+    "classical_output": "Diagnostic taxonomy of super-extremal particle/gauge boxes, material degeneracy boxes, black-hole horizon boxes, and the IO universe object",
+    "constants": [
+      "M",
+      "J",
+      "Q",
+      "a*"
+    ],
+    "prediction": "Different physical boxes are separated by which support mechanism carries the system: gauge charge, degeneracy/material support, horizon support, or IO closed-horizon support.",
+    "observation": "Taxonomy row only; no object classification is inferred from a fitted observation.",
+    "residual": "Diagnostic classifier; no new extremality theorem or spin measurement.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Final-six Job D. The row gives the public classifier vocabulary for particle, compact-object, black-hole, and IO universe-object boxes without promoting the taxonomy to a new law.",
+    "formula": "chi_ext^2 = (J*c/(G*M^2))^2 + Q^2/(4*pi*epsilon_0*G*M^2)",
+    "formula_class": "CONTEXT_DIAGNOSTIC_COMPARISON extremality classifier"
+  },
+  {
+    "name": "Universe Object Comparative EO Datasheet",
+    "channel": "dynamic",
+    "quantum_input": "EO universe-object formulas from the Kerr datasheet",
+    "classical_output": "Descriptive scale comparison for the IO universe object versus illustrative black-hole mass scales",
+    "constants": [
+      "M_U",
+      "r_s",
+      "a*",
+      "T_H",
+      "Omega_H"
+    ],
+    "prediction": "The IO universe object is a much larger, colder horizon object than illustrative known black-hole mass scales.",
+    "observation": "Astrophysical black-hole masses are comparison context only and are not IO construction inputs.",
+    "residual": "Descriptive comparison; no external mass scale, a* value, or Page coefficient is consumed as a theorem input.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Final-six Job E. Public-safe EO datasheet comparison: the universe object is displayed as a horizon-object scale with fences on spin and evaporation-history details.",
+    "formula": "T_H(a*)=hbar*c^3/(4*pi*G*M*k_B)*sqrt(1-a*^2)/(1+sqrt(1-a*^2)); Omega_H(a*)=a*c^3/[2*G*M*(1+sqrt(1-a*^2))]",
+    "formula_class": "CONTEXT_DIAGNOSTIC_COMPARISON; EO datasheet functions with a* displayed as range"
+  },
+  {
+    "name": "Partial w(t) Trajectory Assembly",
+    "channel": "mixed",
+    "quantum_input": "State-cycle grammar, recombination rows, and supplied equality/thermal machinery",
+    "classical_output": "Partial equation-of-state trajectory: radiation, dust, and supplied radiation-plus-matter interpolation, with seam and late-source legs fenced",
+    "constants": [
+      "z_eq",
+      "w"
+    ],
+    "prediction": "The forced public grammar contains radiation w=1/3, dust w=0, and the supplied radiation-plus-matter interpolation where the equality terminal is available.",
+    "observation": "No LCDM-fitted equality value is introduced by this row.",
+    "residual": "Seam/reheat, dust-source, equality supply, and late effective-source legs remain fenced.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "papers": [
+      33
+    ],
+    "zenodo": "",
+    "summary": "Final-six Job F. Partial w(t) assembly gives the public equation-of-state grammar while preserving the named gaps for seam/reheat and late-source structure.",
+    "formula": "w(z)=1/[3*(1+(1+z_eq)/(1+z))] after equality terminal is supplied",
+    "formula_class": "CONTEXT_DIAGNOSTIC_COMPARISON; interpolation formula conditional on supplied equality terminal"
   }
 ]
