@@ -761,7 +761,7 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked finite-band dictionary theorem; magnitudes remain boundary inputs and readout/congruence remainders remain fenced.",
+    "summary": "Banked finite-band dictionary theorem; magnitudes remain boundary inputs and readout/congruence remainders remain fenced. IO/EO flagship mass-to-thermal-KMS draft was merged here as a cross-reference, not a separate crossing.",
     "formula": "rho = Z^(-1) exp[-beta(H - sum_i mu_i Q_i)]",
     "formula_class": "closed_form_symbolic"
   },
@@ -782,7 +782,7 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked current-bank search report for the charge census and helical J row; no additional charge rows were found in the indexed current-bank search, but this is not a no-hair or completeness theorem."
+    "summary": "Banked current-bank search report for the charge census and helical J row; no additional charge rows were found in the indexed current-bank search, but this is not a no-hair or completeness theorem. IO/EO flagship angular-momentum-to-helical-KMS draft was merged here as a cross-reference, not a separate crossing."
   },
   {
     "name": "Fermionic KMS Inheritance",
@@ -920,7 +920,7 @@
       33
     ],
     "zenodo": "",
-    "summary": "Banked ledger eb24a238. On the finite-band P1/Kerr detector class, trace-class exp[-beta K_Q] and faithful rho_beta force delta S_vN=beta delta<K_Q> at fixed supplied K_Q. Fences: detector-class first law only; beta and K_Q are supplied boundary/detector inputs; no geometric heat-flux integral, no area entropy, no Einstein equation, no a_star/Omega_H/interior-J measurement."
+    "summary": "Banked ledger eb24a238. On the finite-band P1/Kerr detector class, trace-class exp[-beta K_Q] and faithful rho_beta force delta S_vN=beta delta<K_Q> at fixed supplied K_Q. Fences: detector-class first law only; beta and K_Q are supplied boundary/detector inputs; no geometric heat-flux integral, no area entropy, no Einstein equation, no a_star/Omega_H/interior-J measurement. IO/EO detector-thermodynamics-to-focusing pair draft was merged here as a cross-reference to this row and the P1/Kerr null Raychaudhuri row, not as a separate crossing."
   },
   {
     "name": "P1/Kerr Null Raychaudhuri Focusing Identity",
@@ -1148,5 +1148,256 @@
     "summary": "DM finish-up reaffirms ledger 022ae502: nominal ratio 1.9064878727330357 suggests separation, but the conservative interval [0.006088878365538182, 727.1011823823155] permits non-separated/complex mergers without parameter adjustment. The forcing theorem remains frontier_5efd3998fb2d7643b12a9ae9.",
     "formula": "rho_opp=n_e*1e6*1.90e-27 kg; a_ram=C_D rho_opp v_rel^2/Sigma_g; Lambda_G=2GM_opp/R_enc^3; epsilon_Q=3GM_opp Delta^2/R_enc^4 + eta_Q Lambda_G Delta; ratio=a_ram/(Lambda_G Delta + epsilon_Q)",
     "formula_class": "numeric_pipeline"
+  },
+  {
+    "channel": "quantum_gravity",
+    "classical_output": "Public-safe IO/EO Duality framing with theorem rows and open frontiers kept at their own grades",
+    "constants": [
+      "P1",
+      "Kerr",
+      "horizon",
+      "IO",
+      "EO"
+    ],
+    "formula": "postulate: QM exterior face at a horizon; GR interior face at a horizon",
+    "formula_class": "program_postulate",
+    "name": "IO/EO Horizon Duality Public Postulate",
+    "observation": "Program framing, not a direct empirical observable.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Postulate only: QM = exterior face at any horizon; GR = interior face; we sit between horizons.",
+    "quantum_input": "Premise-level horizon-relative program statement: exterior face is quantum/statistical, interior face is geometric/GR",
+    "residual": "OPEN/PREMISE_GAP premise-level postulate; this row does not promote the postulate to theorem grade.",
+    "status": "OPEN/PREMISE_GAP",
+    "summary": "Public-facing rename from the historical two_face_* working set. The row is safe only as a program-postulate summary; banked support and open frontiers are separately labeled.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "quantum_gravity",
+    "classical_output": "52-row diagnostic dictionary: 28 paired-banked, 6 EO-face-derivable, 12 open, 3 interior-only, 3 primitive-gated",
+    "constants": [
+      "paired_count",
+      "eo_derivable",
+      "open_rows",
+      "primitive_gates"
+    ],
+    "formula": "N_total = N_paired + N_derivable + N_open + N_interior_only + N_primitive_gated = 28 + 6 + 12 + 3 + 3 = 52",
+    "formula_class": "count_arithmetic_verified",
+    "name": "IO/EO Dictionary Census Counts",
+    "observation": "Census/search report, not an empirical row.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Current census arithmetic: 28 + 6 + 12 + 3 + 3 = 52 total rows; 6 previously unrecognized pairs were found.",
+    "quantum_input": "Banked-object to exterior-face census plus canonical-QM to interior-face reverse census",
+    "residual": "Diagnostic census only; no construction or promotion is implied by the counts.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "The expanded dictionary gives the current public map scale for IO/EO Duality while preserving open rows and primitive gates.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "quantum_gravity",
+    "classical_output": "Public taxonomy separating the closed-QM-box program from the current diagnostic spin-box constraints",
+    "constants": [
+      "closed_box",
+      "a_star",
+      "Q119",
+      "R4",
+      "chronometer_box"
+    ],
+    "formula": "|a*|_68 <= 0.3887407947476271 in the current Kerr chronometer diagnostic box",
+    "formula_class": "sourced_diagnostic_interval",
+    "name": "Two-Box Taxonomy: Closed QM Box and Observable Spin Box",
+    "observation": "No direct a* measurement is claimed; future smaller boxes require named readout objects.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Current public-safe spin-box anchor remains diagnostic: |a*| in [0, 0.3887407947476271] at 68 percent under the current Kerr chronometer rebuild.",
+    "quantum_input": "Closed-system quantum framing plus observational a* small-box discipline",
+    "residual": "Taxonomy only. The closed-box state weights and the spin magnitude remain open or reconstruction-scoped depending on the source row.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "This row gives David's public two-box distinction without leaking research-only machinery: closed-system QM framing on one side, bounded observable spin constraints on the other.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "quantum_gravity",
+    "classical_output": "Two parent walls: state/algebra endpoint wall and observer/readout projector wall",
+    "constants": [
+      "Q119",
+      "bounded_clock",
+      "state_algebra_endpoint",
+      "observer_projector"
+    ],
+    "formula": "wall_count = 2; {STATE_ALGEBRA_ENDPOINT_WALL, OBSERVER_READOUT_PROJECTOR_WALL}",
+    "formula_class": "classification_count_verified",
+    "name": "Consolidated Frontier Two-Wall Map",
+    "observation": "N/A: frontier map, not an empirical row.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "The current bank supports wall_count = 2: the Q119 readout/projector object is distinct from the [0,T] endpoint/self-adjointness object.",
+    "quantum_input": "Current-bank frontier classification after checking the [0,T] bounded clock against the Q119 chronometer/H0 projector fork",
+    "residual": "No wall is solved or breached; this is a classification theorem for current routes.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "summary": "The all-walls-one attempt failed at the declared weak link. The result is useful because it prevents laundering readout-projector problems into the state/clock wall.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "dynamic",
+    "classical_output": "Interior chronology ladder and face-boundary typing; imaginary static-lapse continuation marks exterior chart failure, not interior no-time",
+    "constants": [
+      "alpha",
+      "Delta",
+      "Sigma",
+      "A",
+      "r_plus",
+      "tau",
+      "t"
+    ],
+    "formula": "alpha_Kerr = sqrt(Delta*Sigma/A); Delta = r^2 - 2*M*r + a^2; alpha -> 0 at r_+",
+    "formula_class": "sourced_formula",
+    "name": "IO/EO Time-Dilation Dictionary Pair",
+    "observation": "Chronology rows supply interior proper-time/redshift support; this dictionary row is not a direct measurement.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Kerr ADM/ZAMO lapse alpha = sqrt(Delta*Sigma/A) tends to 0 at r_plus where Delta=0; Schwarzschild static lapse sqrt(1-r_s/r) becomes imaginary if continued below the horizon.",
+    "quantum_input": "Exterior Kerr/Schwarzschild lapse boundary behavior",
+    "residual": "Dictionary/scope row only. It does not choose the Q119 projector or bounded-clock endpoint.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "David's time-dilation picture is typed as an IO/EO face-boundary dictionary pair, with Kerr correction and the imaginary-flip caveat explicit.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "quantum",
+    "classical_output": "Same dock class as IO CP/source-magnitude freedom, but not a solved object",
+    "constants": [
+      "theta_bar",
+      "CP",
+      "Q315",
+      "h_chi"
+    ],
+    "formula": "typed-dock condition: CP-odd source parameter + banked P1/Kerr coupling into Q315 charged bridge required",
+    "formula_class": "typed_connector",
+    "name": "Typed Joint: Strong CP and IO CP-Source Magnitude Frontier",
+    "observation": "N/A: typed connector row, not an empirical claim.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Strong CP docks as a CP-odd coefficient/phase freedom requiring a typed coupling into the charged Q315 bridge before any sign or magnitude can be inferred.",
+    "quantum_input": "QCD theta-bar/strong-CP ambiguity as external CP-odd source vocabulary",
+    "residual": "No strong-CP solution, axion import, theta value, eta_B value, or equality between QCD theta and IO helical coefficient.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "The public row opens the right adjacent-theory vocabulary while preserving the wall: coupling and magnitude remain unbuilt.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "quantum_gravity",
+    "classical_output": "Finite-lifetime observer clock [0,T] does not supply the global R-action required by the standard crossed-product route",
+    "constants": [
+      "tau",
+      "[0,T]",
+      "R_action",
+      "self_adjoint_extension",
+      "endpoint"
+    ],
+    "formula": "tau in [0,T]; standard crossed product needs a global R-action; -i*d/dtau on [0,T] needs endpoint data",
+    "formula_class": "typed_connector",
+    "name": "Typed Joint: Problem of Time and Bounded Clock",
+    "observation": "N/A: frontier typing row.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "The interval generator -i d/dtau needs endpoint/self-adjoint extension data; replacing geometric time by modular flow relocates the problem to the state/algebra endpoint wall.",
+    "quantum_input": "Quantum-gravity problem-of-time literature docked to the closed recollapsing observer clock obstruction",
+    "residual": "No Type-III-to-Type-II result for the full observer, no global density operator, and no black-hole-information closure.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "This is the cleanest public bridge between the physics problem of time and IO's bounded-clock obstruction: same joint class, still open.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "dynamic",
+    "classical_output": "IO supplies boundary-conditioned frame/readout typing, not a full inertial-mass law",
+    "constants": [
+      "Q65",
+      "Kerr",
+      "observer_frame",
+      "readout_projector"
+    ],
+    "formula": "boundary-conditioned frame/readout typing; no scalar inertia law",
+    "formula_class": "typed_connector",
+    "name": "Typed Joint: Mach Boundary-Anchored Frame Scope",
+    "observation": "N/A: typed connector row.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Mach-facing content is scope-only: boundary-conditioned observer/readout frame typing survives; inertial mass and local gravitational degrees are not derived from global matter.",
+    "quantum_input": "Mach-principle adjacency typed through the Kerr boundary-anchored observer/readout fork",
+    "residual": "No derivation of inertial mass, no claim local inertia is wholly determined by cosmic matter, and no Q411/readout closure.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "This row states the honest Mach connection: IO can type a boundary-anchored frame scope, but the Mach law itself is not closed.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "dynamic",
+    "classical_output": "Same detector-frame strain data imply different source-frame masses under IO and catalog distance ladders",
+    "constants": [
+      "D_L",
+      "z_catalog",
+      "z_IO",
+      "m_det",
+      "m_src",
+      "z_cross"
+    ],
+    "formula": "z_IO(D_L)=(D_L^IO)^(-1)(D_L); m_src^IO=m_det/(1+z_IO); m_src^IO/m_src^catalog=(1+z_catalog)/(1+z_IO)",
+    "formula_class": "diagnostic_pipeline",
+    "name": "GW Source-Frame Readout Discriminator",
+    "observation": "187 public GWTC files verified, 47.285641609 GB; 143 selected events in the diagnostic readout.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "Sign-flip prediction at z_cross = 1.8322836452921816; current full-posterior diagnostic leans catalog-sharper with IO/catalog sharpness ratio 0.9709090026346482 and bootstrap 5-95 interval [0.9677268692764813, 1.0011198246136062]. Forecast N_needed_3sigma = 2165.",
+    "quantum_input": "Q411 distance-redshift readout applied deterministically to public GWTC posterior samples",
+    "residual": "Diagnostic/pre-registration lane only. The disclosed adverse lean is underpowered and not a selection-aware hierarchical likelihood.",
+    "status": "CONTEXT_DIAGNOSTIC_COMPARISON",
+    "summary": "This row carries the same candor as the dossier: the sign-flip discriminator is novel and pre-registerable, but the present public data lean against IO in the simple sharpness statistic and do not decide the issue.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
+  },
+  {
+    "channel": "dynamic",
+    "classical_output": "Gauge-fixed aperture-mass contrast and aperture-centroid readout; additive mass-sheet contribution annihilated",
+    "constants": [
+      "kappa",
+      "U",
+      "theta",
+      "alpha",
+      "M_ap",
+      "O_ap",
+      "C_ap"
+    ],
+    "formula": "M_ap[U;n]=int_S2 dOmega U_n(theta) kappa_IO^K(n'); int_0^alpha sin(theta)U_n(theta)dtheta=0; kappa'=lambda*kappa+(1-lambda)",
+    "formula_class": "sourced_formula",
+    "name": "Closed-S3 Aperture-Mass Gauge-Fixing Theorem",
+    "observation": "Enables morphology/centroid comparisons; not an absolute lensing-mass or S8 row.",
+    "papers": [
+      33,
+      35
+    ],
+    "prediction": "For compensated S2 filters, int_0^alpha sin(theta) U(theta) dtheta = 0, so kappa' = lambda*kappa + (1-lambda) leaves aperture contrast centroids invariant under the additive mass-sheet term.",
+    "quantum_input": "P1/Kerr Q411 weak-lensing S2 screen with compensated aperture filters",
+    "residual": "Active only for fixed-protocol aperture contrast/centroid comparisons. No total projected mass, lensing amplitude, S8/sigma8, or collision-forcing number.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "summary": "This theorem reopens gauge-fixed weak-lensing morphology without pretending that the absolute mass inversion problem is solved.",
+    "zenodo": "https://zenodo.org/records/19561708/latest"
   }
 ]
