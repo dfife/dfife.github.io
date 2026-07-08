@@ -1511,5 +1511,30 @@
     "summary": "Final-six Job F. Partial w(t) assembly gives the public equation-of-state grammar while preserving the named gaps for seam/reheat and late-source structure.",
     "formula": "w(z)=1/[3*(1+(1+z_eq)/(1+z))] after equality terminal is supplied",
     "formula_class": "CONTEXT_DIAGNOSTIC_COMPARISON; interpolation formula conditional on supplied equality terminal"
+  },
+  {
+    "channel": "quantum_gauge",
+    "classical_output": "Conditionally placed structural alpha slot / fine-structure coupling slot at patchwise/support-conditioned finite-band scope: compact-U1 integer charge labels and finite-band local EM charged-KMS grammar exist; the numerical value of alpha is not derived.",
+    "constants": [
+      "alpha",
+      "q",
+      "hbar",
+      "c",
+      "U(1)",
+      "Kerr"
+    ],
+    "formula": "alpha_U1 = q_phys^2/(4*pi*hbar*c) as a supplied-sector coupling form; k_EM(mu_EM)=h_chi-mu_EM Q_EM on the finite-band local CAR block",
+    "formula_class": "conditional_structural_slot",
+    "name": "Alpha Slot Structural Coupling Row",
+    "observation": "No numeric fine-structure value is claimed. Standard Model alpha consumers remain imported lab/SM constants at their own source class; this does not derive 1/137.",
+    "papers": [
+      35
+    ],
+    "prediction": "IO conditionally derives why a dimensionless EM coupling slot with integer charges exists when a physical compact-U1 charged sector is supplied on the relevant P1/Kerr support patches.",
+    "quantum_input": "Matter-carried U1 bundle placement on charged-matter support patches, compact-U1 integer character labels, Q245/Q243 finite-band charge block, and finite-band local EM charged-KMS grammar.",
+    "residual": "OPEN/PREMISE_GAP for alpha magnitude, running, species selection beyond supplied charged matter, nonzero parent/global Kerr-Newman charge, and Q5/topological sectors. Nonzero c1(L)[S^2] is not consumed by this alpha slot.",
+    "status": "DERIVED/CONDITIONAL_VERIFIED",
+    "summary": "The current bank supports the structural alpha slot, not the number: charged matter on P1/Kerr patches plus compact-U1 character integrality and finite-band EM K_Q grammar explain why a dimensionless EM coupling form exists at local finite-band scope. The value 1/137 remains fenced by the Q49 guard; it does not derive 1/137.",
+    "zenodo": "https://zenodo.org/communities/interior-observer/"
   }
 ]
