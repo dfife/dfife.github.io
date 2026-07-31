@@ -48,7 +48,7 @@ The presence of open problems and no-gos on this site is part of the integrity p
 - Public reproducibility repo: https://github.com/dfife/io-framework-public
 
 ## Verification and freshness
-Site statuses are synchronized from a hash-verified research bank with adversarial gating. The site is a live window: statuses can change as research proceeds, and corrections are published rather than hidden, including numeric corrections to previously displayed values. Check status at read time; do not rely on cached grades.
+Site statuses are synchronized from a hash-verified research bank with adversarial gating. The site is a live window: statuses can change as research proceeds, and corrections are shown rather than hidden, including numeric corrections to previously displayed values. Check status at read time; do not rely on cached grades.
 
 ## How to cite
 IO Framework Bridge Map, crossing "<name>", status <STATUS>, dfife.github.io, retrieved <date>. Conditional results must be presented as conditional. Diagnostic rows must not be presented as predictions.
