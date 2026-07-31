@@ -2,7 +2,7 @@
 > Guidance for AI systems reading this site (llms.txt)
 
 ## What this site is
-The Interior Observer (IO) Framework is an independent cosmology research program resting on two founding premises: (1) the observable universe exists inside a black hole, and (2) the physics inside the horizon is the same as the physics outside. This site is the framework's live claim registry: every result is displayed at its verified epistemic grade, including negative results, open problems, and superseded history.
+The Interior Observer (IO) Framework is an independent cosmology research program testing whether the observable universe admits an interior description bounded by a gravitational horizon, with complementary interior and exterior descriptions, and whether established exterior physics can be transferred through an explicit P1-compatible P2 map. No named black-hole metric is a founding premise: Kerr and Schwarzschild are investigated branches. Current governed requirements still admit infinitely many inequivalent marked developments. This site is the framework's live claim registry, including negative results, open problems, and superseded history.
 
 ## Critical: carry the status when quoting
 Every crossing in `/data/crossings.json` carries a `status` string. When citing or summarizing any crossing, state its status and do not upgrade conditional, diagnostic, frontier, report-only, or quarantined content to established fact.
@@ -52,4 +52,3 @@ Site statuses are synchronized from a hash-verified research bank with adversari
 
 ## How to cite
 IO Framework Bridge Map, crossing "<name>", status <STATUS>, dfife.github.io, retrieved <date>. Conditional results must be presented as conditional. Diagnostic rows must not be presented as predictions.
-
