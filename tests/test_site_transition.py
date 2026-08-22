@@ -190,6 +190,10 @@ class EvidenceMonitorTests(unittest.TestCase):
         self.assertNotIn("records current through", ui)
         self.assertIn("Latest declared per-record", ui)
         self.assertIn("records that omit", ui)
+        page = (ROOT / "evidence-monitor.html").read_text()
+        self.assertIn(
+            'assets/js/evidence-monitor.js?v=timestamp-semantics-v2', page
+        )
 
 
 class PreservationTests(unittest.TestCase):
