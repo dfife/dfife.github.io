@@ -395,11 +395,16 @@ class SiteContractTests(unittest.TestCase):
 
     def test_evidence_monitor_mobile_overflow_guards(self):
         page = (ROOT / "evidence-monitor.html").read_text()
-        css = (ROOT / "assets/css/site.css").read_text()
+        css_path = ROOT / "assets/css/site.css"
+        css = css_path.read_text()
         self.assertIn(
             '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>',
             page,
         )
+        css_sha256 = sha256_bytes(css_path.read_bytes())
+        versioned_href = f'assets/css/site.css?v={css_sha256}'
+        self.assertEqual(page.count("assets/css/site.css?v="), 1)
+        self.assertIn(f'<link href="{versioned_href}" rel="stylesheet"/>', page)
         self.assertRegex(
             css,
             r"\.monitor-record\s*\{[^}]*min-width:\s*0;[^}]*max-width:\s*100%;",
