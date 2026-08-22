@@ -368,6 +368,45 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("skeptics", participate.lower())
         self.assertIn("mailto:david@fife.cc", participate)
 
+    def test_public_discord_placement_and_authority_boundary(self):
+        invite = "https://discord.gg/TtdppFqZ99"
+        safe_link = f'href="{invite}" rel="noreferrer" target="_blank"'
+        home = (ROOT / "index.html").read_text()
+        participate = (ROOT / "participate.html").read_text()
+
+        self.assertIn("Discuss the evidence in public", home)
+        self.assertIn(
+            "Join enthusiasts and skeptics comparing the Schwarzschild, Kerr, and Infinite branches. Discord is the public workspace for provisional discussion; the MCP Cosmology Lab remains the authoritative research record. Every proposed result should state branch compatibility, evidence direction, and its GR-QM check.",
+            home,
+        )
+        self.assertIn(f'<a class="button button-primary" {safe_link}>Join the public Discord</a>', home)
+        self.assertLess(home.index("Discuss the evidence in public"), home.index('id="program-branches"'))
+
+        guard = (
+            "Use Discord for questions, reproductions, counterevidence, and collaboration. "
+            "A discussion becomes a governed lab result only after review and promotion "
+            "to the MCP Cosmology Lab."
+        )
+        self.assertIn(guard, participate)
+        discord_cta = f'<a class="button button-primary" {safe_link}>Join the public Discord</a>'
+        email_cta = '<a class="button button-secondary" href="mailto:david@fife.cc?subject=Bound-or-Unbound%20Evidence%20Program">Email David</a>'
+        self.assertLess(participate.index(discord_cta), participate.index(email_cta))
+
+        html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
+        footer_link = f'<a class="footer-link" {safe_link}>Public Discord</a>'
+        for path in html_files:
+            page = path.read_text()
+            footer = re.search(r'<footer class="footer">.*?</footer>', page, re.S)
+            nav = re.search(r'<nav[^>]*class="nav-links".*?</nav>', page, re.S)
+            self.assertIsNotNone(footer, path.name)
+            self.assertIsNotNone(nav, path.name)
+            self.assertIn(footer_link, footer.group(), path.name)
+            self.assertNotIn(invite, nav.group(), path.name)
+
+        for relative in ("evidence-monitor.html", "ask.html"):
+            page = (ROOT / relative).read_text()
+            self.assertEqual(page.count(invite), 1, relative)
+
     def test_accessibility_navigation_and_json_ld(self):
         html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
         self.assertEqual(len(html_files), 49)
