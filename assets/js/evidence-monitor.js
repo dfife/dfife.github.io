@@ -126,11 +126,20 @@ function renderSummary(data) {
   overall.innerHTML = `<span class="monitor-overall-label">Overall program assessment</span><strong>${escapeHtml(data.overall.display)}</strong><span>${escapeHtml(data.overall.reason || "See the governed aggregate record.")}</span>`;
 
   const authorities = document.getElementById("monitor-authorities");
+  const timestamps = data.authority_timestamps;
+  const projection = data.projection_basis;
+  const missingTimestampIds = timestamps.records_without_declared_updated_utc_ids
+    .map((recordId) => `<li><code>${escapeHtml(recordId)}</code></li>`)
+    .join("");
   const items = Object.entries(data.authorities)
     .map(([name, authority]) => `<li><strong>${escapeHtml(name.replaceAll("_", " "))}</strong>: <code>${escapeHtml(authority.record_id)}</code><br/><span>SHA256 ${escapeHtml(authority.sha256)}</span></li>`)
     .join("");
   authorities.innerHTML = `
-    <p>Projection schema <code>${escapeHtml(data.schema_version)}</code>; records current through ${escapeHtml(data.generated_from_authoritative_records_through || "unspecified")}.</p>
+    <p><strong>Projection schema:</strong> <code>${escapeHtml(data.schema_version)}</code>.</p>
+    <p><strong>Current projection basis:</strong> <code>${escapeHtml(projection.membership_source)}</code> using <code>${escapeHtml(projection.membership_predicate)}</code>. ${escapeHtml(projection.record_verification)} ${escapeHtml(projection.coverage_semantics)}</p>
+    <p><strong>Program registry <code>updated_at</code>:</strong> <time datetime="${escapeHtml(timestamps.program_registry_updated_at || "")}">${escapeHtml(timestamps.program_registry_updated_at || "not declared")}</time>. ${escapeHtml(timestamps.program_registry_updated_at_scope)}</p>
+    <p><strong>Latest declared per-record <code>updated_utc</code>:</strong> ${escapeHtml(timestamps.latest_declared_per_record_updated_utc || "none declared")} among ${escapeHtml(timestamps.records_with_declared_updated_utc)} of ${escapeHtml(data.summary.current_consumer_facing_records)} current records. ${escapeHtml(timestamps.per_record_updated_utc_scope)}</p>
+    <details><summary>Current records that omit <code>updated_utc</code> (${escapeHtml(timestamps.records_without_declared_updated_utc)})</summary><ul>${missingTimestampIds}</ul></details>
     <ul>${items}</ul>
     <p><a class="section-link" href="data/evidence-monitor.json">Open the machine-readable monitor →</a></p>`;
 }

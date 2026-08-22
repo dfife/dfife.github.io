@@ -124,7 +124,8 @@ def build(db_path: Path, registry_path: Path) -> dict:
     connection.close()
 
     records = []
-    updated = []
+    declared_record_updates = []
+    records_without_declared_update = []
     for row in rows:
         detail = json.loads(row["detail_json"])
         if not detail.get("doctrine_metadata_complete"):
@@ -146,6 +147,14 @@ def build(db_path: Path, registry_path: Path) -> dict:
         if not isinstance(triage, dict) or not triage.get("classification"):
             raise RuntimeError(f"missing canonical GR-QM triage: {row['canonical_id']}")
 
+        record_updated_utc = record.get("updated_utc")
+        if record_updated_utc is not None and not isinstance(record_updated_utc, str):
+            raise RuntimeError(f"invalid updated_utc: {row['canonical_id']}")
+        if record_updated_utc:
+            declared_record_updates.append(record_updated_utc)
+        else:
+            records_without_declared_update.append(row["canonical_id"])
+
         records.append(
             {
                 "canonical_id": row["canonical_id"],
@@ -153,6 +162,10 @@ def build(db_path: Path, registry_path: Path) -> dict:
                 "current_label": row["current_label"],
                 "consumer_surface": "ACTIVE_LOAD_BEARING",
                 "source_sha256": detail["source_sha256"],
+                "source_record_timestamps": {
+                    "created_utc": record.get("created_utc"),
+                    "updated_utc": record_updated_utc,
+                },
                 "per_branch_validity": {
                     branch: compact_branch(branch_vector[branch]) for branch in BRANCHES
                 },
@@ -174,8 +187,6 @@ def build(db_path: Path, registry_path: Path) -> dict:
                 },
             }
         )
-        if record.get("updated_utc"):
-            updated.append(record["updated_utc"])
 
     directions = Counter(r["evidential_assessment"]["direction"] for r in records)
     debt_cells = sum(
@@ -220,8 +231,24 @@ def build(db_path: Path, registry_path: Path) -> dict:
     }
 
     return {
-        "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v1",
-        "generated_from_authoritative_records_through": max(updated) if updated else None,
+        "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v2",
+        "projection_basis": {
+            "membership_source": "mcp_current_status_projection",
+            "membership_predicate": "live = 1 AND consumer_surface = ACTIVE_LOAD_BEARING",
+            "record_verification": "Each projected member is read from its current source_artifact and must match its indexed source_sha256.",
+            "coverage_semantics": "Current projection membership and exact source identity define this public surface. No per-record timestamp is used as a coverage cutoff.",
+        },
+        "authority_timestamps": {
+            "program_registry_updated_at": registry.get("updated_at"),
+            "program_registry_updated_at_scope": "This timestamps the current program and project-governance registry only; it is not a blanket update time for every scientific record.",
+            "latest_declared_per_record_updated_utc": (
+                max(declared_record_updates) if declared_record_updates else None
+            ),
+            "records_with_declared_updated_utc": len(declared_record_updates),
+            "records_without_declared_updated_utc": len(records_without_declared_update),
+            "records_without_declared_updated_utc_ids": records_without_declared_update,
+            "per_record_updated_utc_scope": "updated_utc is source-record metadata only when that record declares it. The latest declared value is not a projection-coverage cutoff, and no timestamp is inferred for records that omit the field.",
+        },
         "program": {
             "program_id": program["program_id"],
             "name": program["program_name"],

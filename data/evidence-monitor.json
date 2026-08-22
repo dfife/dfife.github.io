@@ -1,6 +1,25 @@
 {
-  "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v1",
-  "generated_from_authoritative_records_through": "2026-08-03T00:35:00Z",
+  "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v2",
+  "projection_basis": {
+    "membership_source": "mcp_current_status_projection",
+    "membership_predicate": "live = 1 AND consumer_surface = ACTIVE_LOAD_BEARING",
+    "record_verification": "Each projected member is read from its current source_artifact and must match its indexed source_sha256.",
+    "coverage_semantics": "Current projection membership and exact source identity define this public surface. No per-record timestamp is used as a coverage cutoff."
+  },
+  "authority_timestamps": {
+    "program_registry_updated_at": "2026-08-22T00:00:00Z",
+    "program_registry_updated_at_scope": "This timestamps the current program and project-governance registry only; it is not a blanket update time for every scientific record.",
+    "latest_declared_per_record_updated_utc": "2026-08-03T00:35:00Z",
+    "records_with_declared_updated_utc": 9,
+    "records_without_declared_updated_utc": 4,
+    "records_without_declared_updated_utc_ids": [
+      "IO_EMPIRICAL_MATTER_AND_GRAVITATING_RESIDUAL_EXISTENCE_DISPOSITION_CC037_JOB1_2026_08_18",
+      "IO_EXACT_KERR_COLLAR_FINITE_SPIN_BINARY_CURVATURE_CARRIER_2026_07_24",
+      "IO_LOCAL_DIRECTION_ODD_SACHS_MAGNETIC_WEYL_SKY_MAP_2026_07_24",
+      "Q243_PAPER1_KERR_HORIZON_LOCAL_SPECTRAL_THEOREM_SCHEMA_V6_WRAPPER_2026_07_09"
+    ],
+    "per_record_updated_utc_scope": "updated_utc is source-record metadata only when that record declares it. The latest declared value is not a projection-coverage cutoff, and no timestamp is inferred for records that omit the field."
+  },
   "program": {
     "program_id": "BOUND_OR_UNBOUND_EVIDENCE_PROGRAM",
     "name": "Bound-or-Unbound Evidence Program",
@@ -131,6 +150,10 @@
       "current_label": "IMPORTED/EMPIRICAL",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "134783ac62ac1fcc71b8f081c8fab87670bdd6d4a5053f2557575ecad29928c9",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-18T16:00:00Z",
+        "updated_utc": null
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -165,6 +188,10 @@
       "current_label": "DERIVED/CONDITIONAL_VERIFIED",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "145dafda0f4193b4aaf88352c6710ddf23671153379fc187063c103b7b3615ff",
+      "source_record_timestamps": {
+        "created_utc": "2026-07-24T11:38:54Z",
+        "updated_utc": null
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "INVALID",
@@ -200,6 +227,10 @@
       "current_label": "DERIVED/CONDITIONAL_VERIFIED",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "3edb85dbae4584ffc4cae8173db6e826bb37e7aa4282da8f786bde98d9b2bb52",
+      "source_record_timestamps": {
+        "created_utc": "2026-07-24T15:00:07Z",
+        "updated_utc": null
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "INVALID",
@@ -235,6 +266,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "7848590d8d399c7a9164f78d94e1c168cfd554d2698cebf57eaca4ff9f519832",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T20:14:08Z",
+        "updated_utc": "2026-08-02T20:19:07Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -269,6 +304,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "7f1e1c1d5a80dc0660b4edda0db7847edd6c42fa0f36f0ec73156d4951800e54",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-03T00:27:43Z",
+        "updated_utc": "2026-08-03T00:35:00Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -303,6 +342,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "0becef6d668aa802ac2de085f182a23a74e07dd435c0d9910a336b2f4c8c76df",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T19:38:04Z",
+        "updated_utc": "2026-08-02T19:52:00Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -337,6 +380,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "859124af7a7157138699ae4153d6879a6a306e4e4bde4b462d62567f476e5e0d",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T23:32:52Z",
+        "updated_utc": "2026-08-02T23:45:37Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -371,6 +418,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "94a16025778cd766fcbeccb09deac7eb5efafa015ece85ff43caa015a6bdec9c",
+      "source_record_timestamps": {
+        "created_utc": "2026-07-30T00:00:00Z",
+        "updated_utc": "2026-07-31T03:12:00Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "UNTESTED",
@@ -407,6 +458,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "9779fd395593e385102d0e2e933642f9faf64e096ce4c8f07d5f1f88fd9003e9",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T22:28:56Z",
+        "updated_utc": "2026-08-02T22:35:00Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -441,6 +496,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "6c75cb59ee0e3f4c17833fa59945a21fcfb2104235b6137872f1b4dbfa7da9d8",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T21:17:07Z",
+        "updated_utc": "2026-08-02T21:34:22Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -475,6 +534,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "fdd9cfb3b00b08e4899a7af6aed67bb705eb649889aa6a51bac58de1a17b63a9",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T22:55:47Z",
+        "updated_utc": "2026-08-02T23:05:00Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -509,6 +572,10 @@
       "current_label": "DERIVED/THEOREM",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "d5ba58877e69486f4b7a5b6cfa6e9318216521a8628d5300f8b6ff546a031a83",
+      "source_record_timestamps": {
+        "created_utc": "2026-08-02T21:53:05Z",
+        "updated_utc": "2026-08-02T21:58:27Z"
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "PROVEN",
@@ -543,6 +610,10 @@
       "current_label": "DERIVED/CONDITIONAL_VERIFIED",
       "consumer_surface": "ACTIVE_LOAD_BEARING",
       "source_sha256": "ae6a7b469db51081a63e3ed72b2f5b3f6c86eec41b98f0e3d4a8571d84149298",
+      "source_record_timestamps": {
+        "created_utc": "2026-07-09T12:38:13Z",
+        "updated_utc": null
+      },
       "per_branch_validity": {
         "schwarzschild": {
           "value": "UNTESTED",

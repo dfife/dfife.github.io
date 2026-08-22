@@ -149,6 +149,48 @@ class EvidenceMonitorTests(unittest.TestCase):
         for authority in self.data["authorities"].values():
             self.assertRegex(authority["sha256"], r"^[0-9a-f]{64}$")
 
+    def test_timestamp_metadata_is_not_a_projection_coverage_cutoff(self):
+        self.assertEqual(self.data["schema_version"], "IO_PUBLIC_EVIDENCE_MONITOR_v2")
+        self.assertNotIn("generated_from_authoritative_records_through", self.data)
+        basis = self.data["projection_basis"]
+        self.assertEqual(basis["membership_source"], "mcp_current_status_projection")
+        self.assertIn("No per-record timestamp", basis["coverage_semantics"])
+
+        timestamps = self.data["authority_timestamps"]
+        self.assertEqual(
+            timestamps["program_registry_updated_at"], "2026-08-22T00:00:00Z"
+        )
+        self.assertEqual(
+            timestamps["latest_declared_per_record_updated_utc"],
+            "2026-08-03T00:35:00Z",
+        )
+        self.assertEqual(timestamps["records_with_declared_updated_utc"], 9)
+        self.assertEqual(timestamps["records_without_declared_updated_utc"], 4)
+        self.assertIn("not a projection-coverage cutoff", timestamps["per_record_updated_utc_scope"])
+
+        later_missing_id = (
+            "IO_EMPIRICAL_MATTER_AND_GRAVITATING_RESIDUAL_EXISTENCE_"
+            "DISPOSITION_CC037_JOB1_2026_08_18"
+        )
+        self.assertIn(
+            later_missing_id,
+            timestamps["records_without_declared_updated_utc_ids"],
+        )
+        later_record = next(
+            record for record in self.data["records"]
+            if record["canonical_id"] == later_missing_id
+        )
+        self.assertEqual(
+            later_record["source_record_timestamps"]["created_utc"],
+            "2026-08-18T16:00:00Z",
+        )
+        self.assertIsNone(later_record["source_record_timestamps"]["updated_utc"])
+
+        ui = (ROOT / "assets/js/evidence-monitor.js").read_text()
+        self.assertNotIn("records current through", ui)
+        self.assertIn("Latest declared per-record", ui)
+        self.assertIn("records that omit", ui)
+
 
 class PreservationTests(unittest.TestCase):
     def test_all_paper_identities_urls_releases_and_hashes_are_preserved(self):
