@@ -408,6 +408,14 @@ class SiteContractTests(unittest.TestCase):
             css,
             r"\.monitor-pill\s*\{[^}]*max-width:\s*100%;[^}]*overflow-wrap:\s*anywhere;",
         )
+        self.assertRegex(
+            css,
+            r"\.monitor-dependency-root h3,[^}]*\.monitor-dependency-root code\s*\{[^}]*overflow-wrap:\s*anywhere;[^}]*word-break:\s*break-word;",
+        )
+        self.assertRegex(
+            css,
+            r"#monitor-authorities li,[^}]*#monitor-authorities code\s*\{[^}]*overflow-wrap:\s*anywhere;[^}]*word-break:\s*break-word;",
+        )
         self.assertRegex(css, r"\.monitor-table-wrap\s*\{[^}]*overflow-x:\s*auto;")
 
     def test_sitemaps_and_metadata_expose_new_hierarchy(self):

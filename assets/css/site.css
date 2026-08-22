@@ -3629,6 +3629,9 @@ body.site-dark .empty-state {
 
 .monitor-assessment-lead,
 .monitor-dependency-root {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin-bottom: 18px;
   padding: 22px 24px;
   border: 1px solid rgba(125, 211, 252, 0.18);
@@ -3638,8 +3641,21 @@ body.site-dark .empty-state {
 
 .monitor-assessment-lead h2,
 .monitor-dependency-root h3 {
+  min-width: 0;
+  max-width: 100%;
   margin: 7px 0 10px;
   color: #f0eeea;
+}
+
+.monitor-dependency-root h3,
+.monitor-dependency-root p,
+.monitor-dependency-root code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.monitor-dependency-root code {
+  white-space: normal;
 }
 
 .monitor-assessment-summary,
@@ -3751,6 +3767,9 @@ body.site-dark .empty-state {
 }
 
 .monitor-authority-details {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin-top: 24px;
   padding: 18px 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3769,8 +3788,23 @@ body.site-dark .empty-state {
   margin-top: 9px;
 }
 
-.monitor-authority-details code {
+.monitor-authority-details > *,
+#monitor-authorities,
+#monitor-authorities ul,
+#monitor-authorities li {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#monitor-authorities li,
+#monitor-authorities span,
+#monitor-authorities code {
   overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+#monitor-authorities code {
+  white-space: normal;
 }
 
 @media (max-width: 960px) {
