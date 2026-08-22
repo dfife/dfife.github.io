@@ -1,11 +1,11 @@
-import html
 import json
 import os
-import re
+import signal
 import shutil
 import subprocess
 import tempfile
 import threading
+import time
 import unittest
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 HARNESS_PATH = "/__evidence_monitor_mobile_overflow__.html"
+RESULT_PATH = "/__evidence_monitor_mobile_overflow_result__"
 HARNESS = b"""<!doctype html>
 <html lang="en">
 <head>
@@ -59,8 +60,12 @@ HARNESS = b"""<!doctype html>
           nav_internal_scroll_preserved: nav.scrollWidth > nav.clientWidth && getComputedStyle(nav).overflowX === "auto",
           table_internal_scroll_preserved: table.scrollWidth > table.clientWidth && getComputedStyle(table).overflowX === "auto"
         };
-        document.body.innerHTML = `<pre id="browser-regression-result">${JSON.stringify(metrics)}</pre>`;
-        document.title = metrics.html_fits && metrics.body_fits && metrics.nav_internal_scroll_preserved && metrics.table_internal_scroll_preserved ? "PASS" : "FAIL";
+        fetch("/__evidence_monitor_mobile_overflow_result__", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(metrics),
+          keepalive: true
+        });
       }));
     }
 
@@ -84,6 +89,20 @@ class HarnessHandler(SimpleHTTPRequestHandler):
             self.wfile.write(HARNESS)
             return
         super().do_GET()
+
+    def do_POST(self):
+        if self.path.split("?", 1)[0] != RESULT_PATH:
+            self.send_error(404)
+            return
+        length = int(self.headers.get("Content-Length", "0"))
+        try:
+            self.server.browser_result = json.loads(self.rfile.read(length))
+        except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+            self.send_error(400, str(exc))
+            return
+        self.send_response(204)
+        self.end_headers()
+        self.server.result_event.set()
 
     def log_message(self, _format, *args):
         return
@@ -128,6 +147,8 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.server = ThreadingHTTPServer(("127.0.0.1", 0), HarnessHandler)
+        cls.server.browser_result = None
+        cls.server.result_event = threading.Event()
         cls.server_thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.server_thread.start()
 
@@ -142,8 +163,12 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
         if chrome is None:
             self.skipTest("Chrome/Chromium is unavailable; CI provisions stable Chrome")
 
-        with tempfile.TemporaryDirectory(prefix="io-mobile-chrome-") as profile:
-            result = subprocess.run(
+        self.server.browser_result = None
+        self.server.result_event.clear()
+        with tempfile.TemporaryDirectory(
+            prefix="io-mobile-chrome-", ignore_cleanup_errors=True
+        ) as profile:
+            process = subprocess.Popen(
                 [
                     chrome,
                     "--headless=new",
@@ -151,24 +176,31 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
                     "--disable-dev-shm-usage",
                     f"--user-data-dir={profile}",
                     "--window-size=390,844",
-                    "--virtual-time-budget=15000",
-                    "--dump-dom",
                     f"http://127.0.0.1:{self.server.server_port}{HARNESS_PATH}",
                 ],
-                check=False,
-                capture_output=True,
-                text=True,
-                timeout=30,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                start_new_session=True,
             )
+            deadline = time.monotonic() + 20
+            try:
+                while not self.server.result_event.wait(0.1):
+                    if process.poll() is not None or time.monotonic() >= deadline:
+                        break
+            finally:
+                if process.poll() is None:
+                    os.killpg(process.pid, signal.SIGTERM)
+                    try:
+                        process.wait(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        os.killpg(process.pid, signal.SIGKILL)
+                        process.wait(timeout=5)
 
-        self.assertEqual(result.returncode, 0, result.stderr)
-        match = re.search(
-            r'<pre id="browser-regression-result">(.*?)</pre>',
-            result.stdout,
-            flags=re.DOTALL,
+        self.assertTrue(
+            self.server.result_event.is_set(),
+            f"Chrome did not return browser metrics; exit={process.returncode}",
         )
-        self.assertIsNotNone(match, result.stdout[-2000:])
-        metrics = json.loads(html.unescape(match.group(1)))
+        metrics = self.server.browser_result
         self.assertEqual(metrics["target_inner_width"], 375)
         self.assertLessEqual(metrics["html_scroll_width"], metrics["html_client_width"])
         self.assertLessEqual(metrics["body_scroll_width"], metrics["body_client_width"])
