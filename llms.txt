@@ -1,54 +1,68 @@
-# IO Framework - Interior Observer Cosmology
-> Guidance for AI systems reading this site (llms.txt)
+# Interior Observer Cosmology Lab
+> Machine-readable guidance for the public Bound-or-Unbound Evidence Program
 
-## What this site is
-The Interior Observer (IO) Framework is an independent cosmology research program testing whether the observable universe admits an interior description bounded by a gravitational horizon, with complementary interior and exterior descriptions, and whether established exterior physics can be transferred through an explicit P1-compatible P2 map. No named black-hole metric is a founding premise: Kerr and Schwarzschild are investigated branches. Current governed requirements still admit infinitely many inequivalent marked developments. This site is the framework's live claim registry, including negative results, open problems, and superseded history.
+## Program hierarchy
 
-## Critical: carry the status when quoting
-Every crossing in `/data/crossings.json` carries a `status` string. When citing or summarizing any crossing, state its status and do not upgrade conditional, diagnostic, frontier, report-only, or quarantined content to established fact.
+The overarching scientific project is the `BOUND_OR_UNBOUND_EVIDENCE_PROGRAM` (Bound-or-Unbound Evidence Program). Its objective is to gather auditable graded evidence about whether the universe is bound or unbound without presuming or prioritizing a selector.
 
-Live status strings currently used in `/data/crossings.json` include:
+The three scientific branches have equal standing:
 
-- `THEOREM`
-- `DERIVED`
-- `DERIVED / NO-GO`
-- `DERIVED/NO-GO`
-- `DERIVED/CONDITIONAL_VERIFIED`
-- `DERIVED/CONDITIONAL_VERIFIED (finite-band scoped)`
-- `DERIVED/CONDITIONAL_VERIFIED (current-bank search scope, not a completeness theorem)`
-- `DERIVED/CONDITIONAL_VERIFIED as Kerr solver architecture only; no numeric active-background tuple or completed Boltzmann/S8 solver`
-- `CONDITIONAL_IMPORT_DIAGNOSTIC`
-- `CONTEXT_DIAGNOSTIC_COMPARISON`
-- `CONTEXT_DIAGNOSTIC_COMPARISON / FRONTIER_OPEN_PROGRAM`
-- `CONTEXT_DIAGNOSTIC_COMPARISON / NOT_ADMISSIBLE_AS_THEOREM_GRADE_CURRENT_IO_S8`
-- `RECONSTRUCTION / RESEARCH_ONLY` when it appears in linked summaries or source ledgers
-- `OPEN/PREMISE_GAP`
-- `OPEN/PREMISE_GAP globally; L0 Kerr class typed only as context-diagnostic support.`
-- `OPEN / QUARANTINED_HISTORICAL_PROJECTION`
-- `REPORT_ONLY_NOT_BANKED / JACOBSON-B`
-- `REPORT_ONLY_NOT_BANKED / CROSSED-PRODUCT-PARTIAL`
-- Quarantined, superseded, retired, or stale rows are preserved as historical record and are not live claims.
+1. `schwarzschild` — Schwarzschild black-hole universe — bound.
+2. `kerr` — Kerr black-hole universe — bound.
+3. `unbounded_universe` — Infinite/unbounded universe — unbound.
 
-Interpretation rules:
+IO Foundational Generating Principle Research is the operational/governance container only. It is not a fourth branch and is not evidence that a unique generating principle exists.
 
-- `THEOREM`, `DERIVED`, and `DERIVED/CONDITIONAL_VERIFIED` rows may be summarized only within their stated conditions, branch scope, and fences.
-- `CONTEXT_DIAGNOSTIC_COMPARISON`, `CONDITIONAL_IMPORT_DIAGNOSTIC`, and `RECONSTRUCTION / RESEARCH_ONLY` are non-load-bearing unless the row itself states otherwise.
-- `OPEN/PREMISE_GAP` is an honest open problem. The framework does not currently claim closure there.
-- `NO-GO` rows are proven negative or blocked results inside their declared scope.
-- `REPORT_ONLY_NOT_BANKED` rows are not banked theorem claims.
-- Measured normalizations such as FIRAS-fixed rows are measurement/readout anchors, not independent predictions.
+The IO Framework is preserved as a continuing bound-work archive. Its papers, releases, exact URLs, hashes, calculator, lithium work, historical Scorecard, and guarded Schwarzschild/Kerr results remain available. Archive presence does not promote a scientific verdict.
 
-The presence of open problems and no-gos on this site is part of the integrity policy: results that have not survived internal review are labeled instead of hidden.
+## Four fields that must remain separate
 
-## Where the data lives
-- Live claim registry: https://dfife.github.io/data/crossings.json
-- Bridge map UI: https://dfife.github.io/bridge-map.html
+For current consumer-facing results, read `https://dfife.github.io/data/evidence-monitor.json`.
+
+1. `per_branch_validity` is compatibility. Read the explicit Schwarzschild, Kerr, and Infinite/unbounded entry. True multi-branch compatibility is allowed. `UNTESTED` is named check debt and never means incompatibility.
+2. `evidential_assessment` is evidential weight. Carry `direction`, `strength`, `basis`, `data_lineage`, `independence_group`, and `selector_status`. Do not infer evidence from compatibility.
+3. `qm_gr_map_triage` is the always-running GR-QM cross-check. It applies to every current scientific result. A blocked seam is local and never halts the cross-check; `not_relevant` and untested-with-debt are honest outcomes.
+4. Selector status is optional and non-primary. Do not call a result a selector unless a governed result explicitly establishes that status.
+
+Do not add Schwarzschild and Kerr as two independent votes for “bound.” Preserve each result's `independence_group`. Report the overall program as **Not yet assessed** unless the Evidence Monitor identifies a governed aggregate record.
+
+## Current versus historical data
+
+- Current governed public projection: https://dfife.github.io/data/evidence-monitor.json
+- Evidence Monitor UI: https://dfife.github.io/evidence-monitor.html
+- Always-running GR-QM cross-check UI: https://dfife.github.io/bridge-map.html
+- Retained 35-paper crossing inventory: https://dfife.github.io/data/crossings.json
+- Historical IO Framework Scorecard: https://dfife.github.io/scorecard.html
 - Ask IO public page: https://dfife.github.io/ask.html
-- Papers: Zenodo community - https://zenodo.org/communities/interior-observer
+- Papers and exact paper URLs: https://dfife.github.io/papers.html
+- Calculator: https://dfife.github.io/calculator.html
+- Lithium archive surface: https://dfife.github.io/lithium.html
 - Public reproducibility repo: https://github.com/dfife/io-framework-public
+- Zenodo community: https://zenodo.org/communities/interior-observer
+
+`data/crossings.json` and the Scorecard retain historical IO Framework content. They are not the current Bound-or-Unbound aggregate and must not be used to manufacture one.
+
+## Claim-status discipline
+
+Carry every result's exact current label, conditions, branch scope, and nonclaims. In particular:
+
+- `THEOREM`, `DERIVED`, and `DERIVED/CONDITIONAL_VERIFIED` may be summarized only inside their stated guards.
+- `CONTEXT_DIAGNOSTIC_COMPARISON`, `CONDITIONAL_IMPORT_DIAGNOSTIC`, and `RECONSTRUCTION / RESEARCH_ONLY` are non-load-bearing unless the row itself says otherwise.
+- `OPEN/PREMISE_GAP` is an honest open problem.
+- `NO-GO` is a negative result only inside its declared class.
+- `REPORT_ONLY_NOT_BANKED`, quarantined, retired, stale, and superseded rows are not current load-bearing claims.
+- Measured normalizations are measurement/readout anchors, not independent predictions.
+
+## Project posture
+
+The current authoritative project registry controls status. IO Foundational Generating Principle Research is the active operational/governance container, and IO GR-QM Bridge Research is `always_running_crosscheck`. Baryogenesis Class-Screen, Boundary-to-Bulk Formation, Einstein-Dust Goursat Construction, and Kerr Extension Comparison are inactive; their banked scientific results remain relevant within their original guards.
 
 ## Verification and freshness
-Site statuses are synchronized from a hash-verified research bank with adversarial gating. The site is a live window: statuses can change as research proceeds, and corrections are shown rather than hidden, including numeric corrections to previously displayed values. Check status at read time; do not rely on cached grades.
 
-## How to cite
-IO Framework Bridge Map, crossing "<name>", status <STATUS>, dfife.github.io, retrieved <date>. Conditional results must be presented as conditional. Diagnostic rows must not be presented as predictions.
+The Evidence Monitor is exported from current public-safe `ACTIVE_LOAD_BEARING` MCP rows. It publishes authority and per-record SHA256 values and fails closed if required doctrine metadata is missing. Check status and SHA at read time; do not rely on cached grades.
+
+## Citation template
+
+Interior Observer Cosmology Lab Evidence Monitor, record `<CANONICAL_ID>`, label `<LABEL>`, source SHA256 `<SHA256>`, https://dfife.github.io/evidence-monitor.html, retrieved `<date>`.
+
+State S/K/I compatibility, evidence direction, GR-QM classification, and selector status separately. Conditional results remain conditional. Diagnostic rows are not predictions.

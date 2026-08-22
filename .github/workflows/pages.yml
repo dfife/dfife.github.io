@@ -25,6 +25,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test public-site doctrine and preservation contracts
+        run: python -m unittest discover -s tests -v
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 

@@ -1,0 +1,579 @@
+{
+  "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v1",
+  "generated_from_authoritative_records_through": "2026-08-03T00:35:00Z",
+  "program": {
+    "program_id": "BOUND_OR_UNBOUND_EVIDENCE_PROGRAM",
+    "name": "Bound-or-Unbound Evidence Program",
+    "objective": "Gather auditable graded evidence about whether the universe is bound or unbound without presuming or prioritizing a selector.",
+    "operational_governance_container": {
+      "project_id": "io_foundational_generating_principle_research",
+      "project_name": "IO Foundational Generating Principle Research",
+      "role_boundary": "Operational and governance container only; not a fourth scientific branch and not a premise that a unique generating principle exists."
+    },
+    "equal_scientific_branches": [
+      {
+        "branch_field": "schwarzschild",
+        "name": "Schwarzschild black-hole universe",
+        "boundedness": "bound"
+      },
+      {
+        "branch_field": "kerr",
+        "name": "Kerr black-hole universe",
+        "boundedness": "bound"
+      },
+      {
+        "branch_field": "unbounded_universe",
+        "name": "Infinite/unbounded universe",
+        "boundedness": "unbound"
+      }
+    ],
+    "gr_qm_crosscheck": {
+      "project_id": "io_gr_qm_bridge_research",
+      "lifecycle": "always_running_crosscheck",
+      "canonical_field": "qm_gr_map_triage",
+      "local_blocks_do_not_halt_project": true,
+      "realization_selector_seam": "optional_non_primary"
+    },
+    "selector_posture": "optional_non_primary"
+  },
+  "semantics": {
+    "compatibility": "Per-branch validity says where a result applies. It is not evidential weight.",
+    "untested": "UNTESTED is explicit check debt, never incompatibility.",
+    "evidence": "Evidential direction is recorded independently as bound, unbound, neutral, or indeterminate.",
+    "aggregation_rule": "Never add Schwarzschild and Kerr as two independent bound votes; preserve independence_group and use no overall score without a governed aggregate.",
+    "selector": "A selector is neither presumed nor primary. Only an explicitly governed selector result may be labeled selector."
+  },
+  "overall": {
+    "status": "not_yet_assessed",
+    "display": "Not yet assessed",
+    "reason": "No live governed Bound-or-Unbound evidence aggregate exists. Per-result assessments are shown without arithmetic aggregation or branch double-counting."
+  },
+  "summary": {
+    "current_consumer_facing_records": 13,
+    "compatibility_debt_cells": 3,
+    "evidential_direction_counts": {
+      "indeterminate": 12,
+      "neutral": 1
+    }
+  },
+  "project_posture": [
+    {
+      "project_id": "io_baryogenesis_class_screen_research",
+      "name": "IO Baryogenesis Class-Screen Research",
+      "status": "inactive",
+      "results_relevance": "Banked scientific results remain relevant inside their original guards; inactivity changes no verdict."
+    },
+    {
+      "project_id": "io_boundary_to_bulk_formation_research",
+      "name": "IO Boundary-to-Bulk Formation Research",
+      "status": "inactive",
+      "results_relevance": "Banked scientific results remain relevant inside their original guards; inactivity changes no verdict."
+    },
+    {
+      "project_id": "io_gr_qm_bridge_research",
+      "name": "IO GR-QM Bridge Research",
+      "status": "always_running_crosscheck"
+    },
+    {
+      "project_id": "io_foundational_generating_principle_research",
+      "name": "IO Foundational Generating Principle Research",
+      "status": "active_operational_governance_container"
+    },
+    {
+      "project_id": "io_eo_horizon_duality_research",
+      "name": "IO/EO Horizon Duality Research",
+      "status": "active_bridge_supervisor_mode"
+    },
+    {
+      "project_id": "io_einstein_dust_goursat_construction_research",
+      "name": "IO Einstein-Dust Goursat Construction Research",
+      "status": "inactive",
+      "results_relevance": "Banked scientific results remain relevant inside their original guards; inactivity changes no verdict."
+    },
+    {
+      "project_id": "io_kerr_extension_comparison_project",
+      "name": "IO Kerr Extension Comparison Project",
+      "status": "inactive",
+      "results_relevance": "Banked scientific results remain relevant inside their original guards; inactivity changes no verdict."
+    },
+    {
+      "project_id": "io_constraint_intersection_scale_closure_pilot_1",
+      "name": "Constraint-Intersection Pilot 1 — Scale Closure",
+      "status": "active_foundation_supervisor_mode"
+    }
+  ],
+  "authorities": {
+    "program_registry": {
+      "record_id": "AUTOMATION_PROJECT_REGISTRY",
+      "sha256": "f1a4afab4a3b91d1312548492a04e3fabad27d1494ca47287263407467bef6b9"
+    },
+    "method_charter": {
+      "record_id": "IO_CURRENT_WORKING_THEORY_AND_RESEARCH_METHOD_CHARTER_2026_07_22",
+      "sha256": "a7605bad1dcf57c318e18ce2dde9fd165dea10cb8c5b56eced2dd28ad9d2f67d"
+    },
+    "consumer_policy": {
+      "record_id": "io_mcp_consumer_surface_policy_2026_06_23",
+      "sha256": "ed1c67e2ede60ef02618ed7f3f21c6e693e2b0f48dc8361375052769cf7f8b62"
+    },
+    "schema_pointer": {
+      "record_id": "current_governed_schema_pointer",
+      "sha256": "706b0e9c252664da71c3aed26d1a83a9a128e4afb6510453670062930a073b0f"
+    },
+    "gr_qm_board": {
+      "record_id": "bridge_board_latest",
+      "sha256": "5e783cf7a2483167910fbd899036ceb4fb8ed1a31d6f2a5728fe527d77b753d6"
+    }
+  },
+  "records": [
+    {
+      "canonical_id": "IO_EMPIRICAL_MATTER_AND_GRAVITATING_RESIDUAL_EXISTENCE_DISPOSITION_CC037_JOB1_2026_08_18",
+      "title": "CC-037 Job 1: observation-first matter and gravitating-residual existence disposition",
+      "current_label": "IMPORTED/EMPIRICAL",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "134783ac62ac1fcc71b8f081c8fab87670bdd6d4a5053f2557575ecad29928c9",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same present-sky existence imports apply to any Schwarzschild/OS candidate for our observed universe. This does not select Schwarzschild, OS dust, or a horizon interpretation."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The same present-sky existence imports apply to any Kerr candidate for our observed universe. This does not select Kerr, a spin, or a global Kerr cosmology."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The same present-sky existence imports apply to the Unbounded Universe control. This does not select or confirm unboundedness."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "neutral",
+        "strength": "none",
+        "basis": "The record explicitly imports visible matter and the phenomenon-level gravitating residual as branch-neutral empirical existence constraints. It states that existence alone selects neither bound branch nor the Infinite/unbounded branch.",
+        "data_lineage": "The empirical_imports and source_evidence fields in this record retain the observation/model-product typing and source lineage; the 2026-08-22 doctrine backfill adds no new observational input.",
+        "independence_group": "CC037_BRANCH_NEUTRAL_EXISTENCE_IMPORT",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "blocked",
+        "directionality": "OBSERVABLE_TO_GR_SOURCE_IDENTIFICATION",
+        "scope": "Supporting relevance is present because the empirical products constrain gravitational phenomenology, but the observation-to-component stress-energy and local gauge/bundle identification map is absent. This is a local blocked seam and does not halt the universal GR-QM cross-check."
+      }
+    },
+    {
+      "canonical_id": "IO_EXACT_KERR_COLLAR_FINITE_SPIN_BINARY_CURVATURE_CARRIER_2026_07_24",
+      "title": "Exact finite-spin binary curvature carrier on the accepted Doran-Kerr collar",
+      "current_label": "DERIVED/CONDITIONAL_VERIFIED",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "145dafda0f4193b4aaf88352c6710ddf23671153379fc187063c103b7b3615ff",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "INVALID",
+          "scope": "The finite-spin binary curvature-carrier conclusion requires a nonzero Kerr parameter. Its Schwarzschild control has a=0, so the required nonzero carrier is absent. This does not invalidate Schwarzschild curvature or local GR."
+        },
+        "kerr": {
+          "value": "PROVEN_BY_REDERIVATION",
+          "scope": "Direct exact finite-a proof for every already-admitted member of the active-Kerr parent's exact Doran-Kerr vacuum collar and every point with r>0 and H>0. The invariant biconditional is algebraic for every real a on a regular Kerr domain; no smallness bound is used in that proof.",
+          "named_obstruction": "The local finite-spin carrier is now exact. The remaining blocker is a governed causal/optical or operational map placing the present observer in causal contact with this certified same-object collar and transporting its curvature one-jet without an invented endpoint, observer, or fitted response."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "This is a local exact Kerr-curvature identity. The Unbounded Universe Branch does not certify a Kerr collar, but whenever a certified local Kerr collar is independently supplied the same local conclusion holds. It does not identify that collar with the universe or with a horizon-bounded interior."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This exact local Kerr carrier theorem contains no sourced assessment comparing realized-universe evidence for the bound and unbound branches. Its per-branch applicability is not an evidential lean.",
+        "data_lineage": "Existing theorem proof, source_evidence, and dependency_chain_inline only; the 2026-08-22 doctrine backfill imports no new observation or comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_EXACT_KERR_COLLAR_FINITE_SPIN_BINARY_CURVATURE_CARRIER_2026_07_24",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "GR_to_QM",
+        "scope": "The theorem supplies a classical local GR carrier that a future operator/readout construction could represent, but it constructs no quantum state, Hilbert-space operator, quantization, measurement channel, or GR-QM identification. It is therefore supporting only, not a bridge closure."
+      }
+    },
+    {
+      "canonical_id": "IO_LOCAL_DIRECTION_ODD_SACHS_MAGNETIC_WEYL_SKY_MAP_2026_07_24",
+      "title": "Exact local direction-odd Sachs sky map and magnetic-Weyl inverse on the accepted Kerr collar",
+      "current_label": "DERIVED/CONDITIONAL_VERIFIED",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "3edb85dbae4584ffc4cae8173db6e826bb37e7aa4282da8f786bde98d9b2bb52",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "INVALID",
+          "scope": "The direction-odd magnetic-Weyl Kerr-spin carrier requires nonzero spin. In the Schwarzschild control the corresponding magnetic-Weyl carrier vanishes, so this nonzero-spin conclusion does not apply. This does not invalidate ordinary Schwarzschild optical propagation."
+        },
+        "kerr": {
+          "value": "PROVEN_BY_REDERIVATION",
+          "scope": "Exact local optical-generator theorem for every already-admitted member of the active-Kerr parent's exact Doran-Kerr vacuum collar and its inherited symbolic signed spin. No small-spin expansion enters the new Sachs-map identity.",
+          "named_obstruction": "No current governed map supplies the complete local direction-odd tidal field at the accepted collar to the present observer or proves that a current observed sky is that same object."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "This is a local vacuum optical-curvature identity. The Unbounded Universe Branch does not certify a Kerr collar or an observer map, but whenever a certified local Kerr collar is independently supplied the same local conclusion holds. It does not identify that collar with the universe or with a horizon-bounded interior."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This exact local optical-carrier theorem contains no sourced assessment comparing realized-universe evidence for the bound and unbound branches. Its per-branch applicability is not an evidential lean.",
+        "data_lineage": "Existing theorem proof, source_evidence, and dependency_chain_inline only; the 2026-08-22 doctrine backfill imports no new observation or comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_LOCAL_DIRECTION_ODD_SACHS_MAGNETIC_WEYL_SKY_MAP_2026_07_24",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "GR_to_QM",
+        "scope": "The theorem supplies an exact classical GR null-optical representation and inverse for the magnetic-Weyl carrier that a future quantum measurement/operator construction could represent. It constructs no quantum algebra, state, Hilbert-space operator, channel, or GR-QM identification."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_COMPACT_CAUCHY_LCQFT_THERMODYNAMIC_INFORMATION_BASIS_2026_08_02",
+      "title": "Compact-Cauchy locally covariant QFT information basis",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "7848590d8d399c7a9164f78d94e1c168cfd554d2698cebf57eaca4ff9f519832",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The foundation statements are metric-independent at their declared globally hyperbolic or same-background altitude and remain valid when a Schwarzschild-scoped construction satisfies their hypotheses. This does not select Schwarzschild or Oppenheimer-Snyder."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The foundation statements are metric-independent at their declared globally hyperbolic or same-background altitude and remain valid when a Kerr-scoped construction satisfies their hypotheses. This does not select Kerr, create a global Kerr spacetime, or globalize a local collar."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The stated globally-hyperbolic and same-background QFT results remain valid on any Unbounded Universe Branch member that independently satisfies their hypotheses. This does not supply a state, topology, compactness, or cosmological model."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This foundation theorem supplies no sourced comparison showing that its structural result favors a bound or unbound realized universe. Its broad applicability is compatibility, not evidential weight.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_COMPACT_CAUCHY_LCQFT_THERMODYNAMIC_INFORMATION_BASIS_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "core",
+        "directionality": "QM_TO_GR",
+        "scope": "The renormalized stress tensor and its relative-Cauchy-evolution interpretation are the controlled quantum-to-gravity response interface. The record proves a quotient and missing-input structure, not a semiclassical solution, backreaction closure, or quantum-gravity theory."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_COMPACT_CAUCHY_MAXWELL_CHARGE_CLOSURE_AND_U1_FLUX_SECTOR_FRONTIER_2026_08_03",
+      "title": "Compact-Cauchy Maxwell charge closure and U(1) flux frontier",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "7f1e1c1d5a80dc0660b4edda0db7847edd6c42fa0f36f0ec73156d4951800e54",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same guarded statement holds for any Schwarzschild-scoped local construction embedded in the admitted global class. Schwarzschild and Oppenheimer-Snyder are not premises."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The full closed-slice theorem remains valid if a Kerr-scoped local construction embeds in a member of the admitted global class. A horizon cut makes a subregion with boundary and can carry nonzero quasi-local flux; it does not change the total charge of the complete closed slice. Kerr is not a premise."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The closed-slice Maxwell theorem remains valid on an Unbounded Universe Branch member only if that member independently has a complete compact boundaryless Cauchy slice and ordinary U(1) Maxwell/QED. This does not infer compactness or select the branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This guarded compact-slice theorem supplies no sourced assessment that our universe realizes its compact boundaryless hypotheses. Compatibility with a branch is not evidence for that branch.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_COMPACT_CAUCHY_MAXWELL_CHARGE_CLOSURE_AND_U1_FLUX_SECTOR_FRONTIER_2026_08_03",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "GR_TO_QM",
+        "scope": "The compact boundaryless Cauchy geometry converts the local U(1) Gauss law into a global restriction on classical sources and on the quantum physical Hilbert space. It is not a theory of quantum gravity, does not derive U(1), and does not reconstruct geometry from a quantum state."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_COMPACT_TOPOLOGY_GLOBAL_GR_BASIS_2026_08_02",
+      "title": "Compact-topology global-GR basis",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "0becef6d668aa802ac2de085f182a23a74e07dd435c0d9910a336b2f4c8c76df",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "Every statement is metric-independent at the declared compact-Cauchy/global-GR altitude and therefore remains valid when a Schwarzschild-scoped construction satisfies the stated guards. This does not make Schwarzschild or Oppenheimer-Snyder a foundation premise."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "Every statement is metric-independent at the declared compact-Cauchy/global-GR altitude and therefore remains valid when a Kerr-scoped construction satisfies the stated guards. This does not make Kerr a foundation premise or transfer a local Kerr collar into a global topology statement."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "Every statement remains valid on any Unbounded Universe Branch member that independently satisfies the record's compact-Cauchy/global-GR hypotheses. This conditional portability neither supplies compactness nor selects the unbounded branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This topology/GR foundation theorem contains no sourced assessment that its compact-Cauchy hypotheses are realized by our universe. The theorem's branch portability does not create an evidential lean.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_COMPACT_TOPOLOGY_GLOBAL_GR_BASIS_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "The Stiefel spin-structure clause tests whether fermionic QFT compatibility removes spatial topology sectors. It proves nonselection among closed orientable 3-manifolds. It supplies no quantum state, field content, coupling, charge sector, or quantum-gravity dynamics."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_GAUGE_INVARIANT_MAXWELL_COHERENCY_PLANCK_MEAN_RESPONSE_BRIDGE_AND_QUANTUM_LIFT_NONUNIQUENESS_2026_08_02",
+      "title": "Gauge-invariant Maxwell coherency and Planck mean-response bridge",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "859124af7a7157138699ae4153d6879a6a306e4e4bde4b462d62567f476e5e0d",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same local theorem is valid on a supplied detector region of a Schwarzschild- or Oppenheimer-Snyder-scoped branch under the displayed hypotheses. It selects no such branch and uses no horizon premise."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The local Maxwell/coherency theorem is valid on a supplied contractible detector region of a Kerr-scoped branch under the displayed field, state, and detector hypotheses. It selects no Kerr geometry, horizon, spin, state, or source-to-observer transfer."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The local Maxwell/coherency theorem applies on an Unbounded Universe Branch detector neighborhood under its supplied field, state, and detector hypotheses. It selects no global geometry, topology, state, or branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This local measurement-bridge theorem explicitly selects no cosmological geometry or state and contains no sourced bound-versus-unbound differential.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_GAUGE_INVARIANT_MAXWELL_COHERENCY_PLANCK_MEAN_RESPONSE_BRIDGE_AND_QUANTUM_LIFT_NONUNIQUENESS_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "Constructs a gauge-invariant local Maxwell two-point-to-classical-Stokes mean map on a curved spacetime and identifies exactly why the public Planck response does not yet define a normal quantum outcome channel or select a cosmological geometry/state."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_HORIZON_INTERIOR_CLASSIFICATION_NONCATEGORICITY_2026_07_30",
+      "title": "Model-independent horizon/interior classification noncategoricity theorem",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "94a16025778cd766fcbeccb09deac7eb5efafa015ece85ff43caa015a6bdec9c",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "UNTESTED",
+          "scope": "No new Schwarzschild-only noninjectivity proof is needed for the foundation conclusion, and this record does not silently transfer the Kerr witness to a=0.",
+          "named_obstruction": "The theorem is proved at the broader foundation level by one admitted noninjective subclass; a separate Schwarzschild-scoped witness would be a duplicate rather than a load-bearing dependency.",
+          "resolution_route": "Only if a Schwarzschild-specific consumer need is opened, construct or import an accepted a=0 Schwarzschild noninjectivity witness under the same horizon/interior guards and rerun the branch gate; until then retain UNTESTED as explicit non-incompatibility debt."
+        },
+        "kerr": {
+          "value": "PROVEN_BY_REDERIVATION",
+          "scope": "The exact witness family is inherited only at sufficiently small symbolic nonzero Kerr spin inside its declared conditional closed-S3 parent. This establishes the required noninjective subclass without making Kerr foundation authority."
+        },
+        "unbounded_universe": {
+          "value": "INVALID",
+          "scope": "The theorem acts on a class whose premise is that the universe is modeled as a horizon-bounded interior. The Unbounded Universe Branch explicitly withholds that premise. This does not deny local horizons or Kerr/Schwarzschild exterior extensions; it only blocks use of this universe-interior classification theorem on this branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "The theorem establishes noncategoricity inside its declared horizon/interior class but contains no sourced assessment of whether our universe realizes that class. Branch compatibility therefore supplies no bound or unbound lean.",
+        "data_lineage": "Existing theorem proof, source_evidence, and dependency_chain_inline only; the 2026-08-22 doctrine backfill imports no new observation or comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_HORIZON_INTERIOR_CLASSIFICATION_NONCATEGORICITY_2026_07_30",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "GR_to_QM",
+        "scope": "The theorem identifies an infinite classical geometric kernel that any future IO/EO or QM-to-GR map must quotient, encode or resolve. It constructs no quantum algebra, state, channel or inverse map."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_LOCAL_SCALAR_GAUSSIAN_MEASUREMENT_CHANNEL_AND_SELECTOR_FRONTIER_2026_08_02",
+      "title": "Local scalar Gaussian measurement channel and optional-selector frontier",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "9779fd395593e385102d0e2e933642f9faf64e096ce4c8f07d5f1f88fd9003e9",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same law form applies under the same independently supplied objects and selects no Schwarzschild, Oppenheimer-Snyder, or horizon structure."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The law form applies on a Kerr-scoped globally hyperbolic region only after the scalar theory, local algebra, regular representation, state family, and measurement package are independently supplied. It selects no Kerr structure or parameter."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The stated local scalar-channel law form applies on an Unbounded Universe Branch region only after the scalar theory, local algebra, representation, state family, and measurement package are independently supplied. It selects no branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This supplied-background measurement-channel theorem contains no sourced branch differential and infers no universe geometry, topology, or state.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_LOCAL_SCALAR_GAUSSIAN_MEASUREMENT_CHANNEL_AND_SELECTOR_FRONTIER_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "Constructs an exact local quantum-field-to-classical-outcome channel family on a supplied curved GR background. It does not infer geometry, topology, or a universe state from the outcome."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_OBSERVATION_CHANNEL_IDENTIFIABILITY_AND_FINITE_DATA_FOUNDATION_2026_08_02",
+      "title": "Observation-channel identifiability and finite-data foundation",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "6c75cb59ee0e3f4c17833fa59945a21fcfb2104235b6137872f1b4dbfa7da9d8",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The abstract statements apply to a Schwarzschild- or Oppenheimer-Snyder-scoped experiment only after its physical-to-data map and guards are supplied. Nothing here selects either branch."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The abstract factorization, processing, nuisance-quotient, and falsification statements apply to a Kerr-scoped experiment only after that experiment supplies every declared map and guard. Nothing here selects Kerr, a horizon, a spin, or an observer."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The abstract factorization, processing, nuisance-quotient, and falsification statements apply to an Unbounded Universe Branch experiment only after its physical-to-data map and stated guards are supplied. Nothing here selects an unbounded universe."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This identifiability foundation supplies a method for evaluating observations but no sourced result favoring a bound or unbound realized universe.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_OBSERVATION_CHANNEL_IDENTIFIABILITY_AND_FINITE_DATA_FOUNDATION_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "The record supplies a common observation-channel test for claims relating quantum, gravitational, and empirical objects. It does not construct a QM-to-GR dynamical map; it determines when any proposed bridge target is or is not recoverable from a typed experiment."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_PLANCK_HFI_STOKES_RESPONSE_QUOTIENT_AND_MAXWELL_STATE_NONIDENTIFIABILITY_2026_08_02",
+      "title": "Planck HFI Stokes-response quotient and Maxwell-state nonidentifiability",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "fdd9cfb3b00b08e4899a7af6aed67bb705eb649889aa6a51bac58de1a17b63a9",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same apparatus statements remain valid under a Schwarzschild- or Oppenheimer-Snyder-scoped source only after its Maxwell propagation map is supplied. Nothing here selects that branch."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The response-factorization and noninjectivity results remain valid if a Kerr-scoped cosmology independently supplies a Maxwell sky at the spacecraft. Nothing here selects Kerr, a horizon, spin, or a source-to-observer transfer."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The apparatus response and its stated noninjectivity witnesses remain valid for an Unbounded Universe Branch source once a Maxwell sky at the spacecraft is independently supplied. They neither select the branch nor provide a source-to-observer dictionary."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This apparatus-response/nonidentifiability theorem explicitly selects no GR geometry or universe state and contains no sourced bound-versus-unbound differential.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline, including the already typed Planck response source; the doctrine backfill adds no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_PLANCK_HFI_STOKES_RESPONSE_QUOTIENT_AND_MAXWELL_STATE_NONIDENTIFIABILITY_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "Types a real cosmological electromagnetic apparatus as a classical Stokes-quotient response and proves why its published model does not yet supply a complete Maxwell quantum measurement channel. It selects no GR geometry or universe state."
+      }
+    },
+    {
+      "canonical_id": "IO_MODEL_INDEPENDENT_QUANTUM_TO_CLASSICAL_RELATIVE_ENTROPY_OBSERVATION_BRIDGE_2026_08_02",
+      "title": "Quantum-to-classical relative-entropy observation bridge",
+      "current_label": "DERIVED/THEOREM",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "d5ba58877e69486f4b7a5b6cfa6e9318216521a8628d5300f8b6ff546a031a83",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "PROVEN",
+          "scope": "The same abstract inequality applies under the identical supplied-object guards. It selects no Schwarzschild, Oppenheimer-Snyder, horizon, state, or observer structure."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "The abstract inequality applies to a Kerr-scoped experiment only after its algebra, state pair, normal measurement channel, and classical release channel are independently supplied. It selects no Kerr parameter, horizon, state, or observer."
+        },
+        "unbounded_universe": {
+          "value": "PROVEN",
+          "scope": "The abstract inequality applies to an Unbounded Universe Branch experiment only after its algebra, state pair, normal measurement channel, and classical release channel are independently supplied. It selects no topology, state, geometry, or branch."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "This supplied-background information theorem contains no sourced comparative assessment of bound versus unbound cosmology and infers no geometry from a state or state from geometry.",
+        "data_lineage": "Existing proof, source_evidence, and dependency_chain_inline only; the doctrine backfill imports no new empirical comparison.",
+        "independence_group": "BACKFILL_NO_LEAN:IO_MODEL_INDEPENDENT_QUANTUM_TO_CLASSICAL_RELATIVE_ENTROPY_OBSERVATION_BRIDGE_2026_08_02",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "QM_TO_GR",
+        "scope": "This record constructs an exact quantum-state-to-classical-observation information bound on any supplied QFT/GR background. It is not a dynamical QM-to-GR map and does not infer geometry from a state or state from geometry."
+      }
+    },
+    {
+      "canonical_id": "Q243_PAPER1_KERR_HORIZON_LOCAL_SPECTRAL_THEOREM_SCHEMA_V6_WRAPPER_2026_07_09",
+      "title": "Kerr future-horizon local spectral readout theorem",
+      "current_label": "DERIVED/CONDITIONAL_VERIFIED",
+      "consumer_surface": "ACTIVE_LOAD_BEARING",
+      "source_sha256": "ae6a7b469db51081a63e3ed72b2f5b3f6c86eec41b98f0e3d4a8571d84149298",
+      "per_branch_validity": {
+        "schwarzschild": {
+          "value": "UNTESTED",
+          "scope": "This Kerr uplift wrapper does not adjudicate the a=0 Schwarzschild limit and does not treat absence of that check as incompatibility.",
+          "named_obstruction": "The source wrapper contains no governed a=0 rederivation preserving the local spectral sector, clock, state, and readout dictionary.",
+          "resolution_route": "If Schwarzschild consumption is requested, rederive the local spectral theorem at a=0 under the exact state, clock, frequency-sector, and horizon-readout guards, then run the tri-branch gate."
+        },
+        "kerr": {
+          "value": "PROVEN",
+          "scope": "Applies only to the guarded stationary Kerr, linear free-field, future-horizon-local, positive horizon-frequency sector and readout conditions listed in this wrapper."
+        },
+        "unbounded_universe": {
+          "value": "UNTESTED",
+          "scope": "This local Kerr-horizon wrapper does not adjudicate its use in an Infinite/unbounded universe containing a local Kerr horizon and does not treat absence of that check as incompatibility.",
+          "named_obstruction": "No governed dictionary separates the theorem's local Kerr-horizon content from the bound-universe interpretation for an Infinite/unbounded host cosmology.",
+          "resolution_route": "Construct the local-horizon-to-Infinite/unbounded host dictionary without identifying the horizon with the universe, then revalidate the state, clock, mode-sector, and readout guards."
+        }
+      },
+      "evidential_assessment": {
+        "direction": "indeterminate",
+        "strength": "none",
+        "basis": "The wrapper establishes a guarded Kerr-branch local spectral theorem but contains no sourced assessment that our universe realizes the Kerr-bound branch. Branch-specific validity is not an evidential lean.",
+        "data_lineage": "Existing wrapped theorem, Cosmo review, dependency_chain_inline, and source_legacy_ledger only; the doctrine backfill imports no new observation or comparative assessment.",
+        "independence_group": "BACKFILL_NO_LEAN:Q243_PAPER1_KERR_HORIZON_LOCAL_SPECTRAL_THEOREM_SCHEMA_V6_WRAPPER_2026_07_09",
+        "selector_status": "nonselector"
+      },
+      "qm_gr_map_triage": {
+        "classification": "supporting",
+        "directionality": "GR_TO_QM_THERMODYNAMIC_SPECTRAL_INTERFACE",
+        "scope": "The guarded Kerr horizon geometry and generator define a supporting local quantum spectral/thermodynamic interface. This does not establish a global quantum-gravity map, state selection, or universe branch."
+      }
+    }
+  ]
+}

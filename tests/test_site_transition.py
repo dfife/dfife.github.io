@@ -1,0 +1,284 @@
+import hashlib
+import json
+import re
+import unittest
+from html.parser import HTMLParser
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical_paper_identity(rows: list[dict]) -> str:
+    keys = (
+        "paper",
+        "paper_url",
+        "short_title",
+        "short_form",
+        "full_title",
+        "zenodo",
+        "support_bundle",
+        "current_version",
+        "support_bundle_tag",
+        "support_bundle_sha256",
+    )
+    compact = [{key: row.get(key) for key in keys} for row in rows]
+    payload = json.dumps(
+        compact, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+    ).encode()
+    return sha256_bytes(payload)
+
+
+class PageParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+        self.json_ld = []
+        self._json_buffer = None
+        self.has_skip_link = False
+        self.has_main_target = False
+
+    def handle_starttag(self, tag, attrs):
+        attr = dict(attrs)
+        if tag == "a":
+            href = attr.get("href")
+            if href:
+                self.links.append(href)
+            if "skip-link" in attr.get("class", "").split() and href == "#main-content":
+                self.has_skip_link = True
+        if tag == "main" and attr.get("id") == "main-content":
+            self.has_main_target = True
+        if tag == "script" and attr.get("type") == "application/ld+json":
+            self._json_buffer = []
+
+    def handle_data(self, data):
+        if self._json_buffer is not None:
+            self._json_buffer.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script" and self._json_buffer is not None:
+            self.json_ld.append("".join(self._json_buffer))
+            self._json_buffer = None
+
+
+class EvidenceMonitorTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.data = json.loads((ROOT / "data/evidence-monitor.json").read_text())
+
+    def test_program_hierarchy_is_exact(self):
+        program = self.data["program"]
+        self.assertEqual(program["program_id"], "BOUND_OR_UNBOUND_EVIDENCE_PROGRAM")
+        self.assertEqual(program["name"], "Bound-or-Unbound Evidence Program")
+        branches = [
+            (row["branch_field"], row["boundedness"])
+            for row in program["equal_scientific_branches"]
+        ]
+        self.assertEqual(
+            branches,
+            [
+                ("schwarzschild", "bound"),
+                ("kerr", "bound"),
+                ("unbounded_universe", "unbound"),
+            ],
+        )
+        container = program["operational_governance_container"]
+        self.assertEqual(container["project_id"], "io_foundational_generating_principle_research")
+        self.assertIn("not a fourth scientific branch", container["role_boundary"])
+        self.assertEqual(program["selector_posture"], "optional_non_primary")
+        self.assertEqual(
+            program["gr_qm_crosscheck"]["lifecycle"], "always_running_crosscheck"
+        )
+
+    def test_current_surface_has_complete_separate_doctrine_fields(self):
+        records = self.data["records"]
+        self.assertEqual(len(records), 13)
+        branches = {"schwarzschild", "kerr", "unbounded_universe"}
+        evidence_fields = {
+            "direction",
+            "strength",
+            "basis",
+            "data_lineage",
+            "independence_group",
+            "selector_status",
+        }
+        debt = 0
+        for record in records:
+            self.assertEqual(set(record["per_branch_validity"]), branches)
+            self.assertTrue(evidence_fields.issubset(record["evidential_assessment"]))
+            self.assertIn(
+                record["evidential_assessment"]["direction"],
+                {"bound", "unbound", "neutral", "indeterminate"},
+            )
+            self.assertIn(
+                record["evidential_assessment"]["selector_status"],
+                {"nonselector", "selector"},
+            )
+            self.assertTrue(record["qm_gr_map_triage"]["classification"])
+            self.assertRegex(record["source_sha256"], r"^[0-9a-f]{64}$")
+            for branch in record["per_branch_validity"].values():
+                if branch["value"] == "UNTESTED":
+                    debt += 1
+                    self.assertTrue(branch.get("named_obstruction"))
+                    self.assertTrue(branch.get("resolution_route"))
+        self.assertEqual(debt, 3)
+        self.assertEqual(self.data["summary"]["compatibility_debt_cells"], debt)
+
+    def test_no_aggregate_or_fabricated_lean(self):
+        self.assertEqual(self.data["overall"]["status"], "not_yet_assessed")
+        self.assertEqual(self.data["overall"]["display"], "Not yet assessed")
+        self.assertEqual(
+            self.data["summary"]["evidential_direction_counts"],
+            {"indeterminate": 12, "neutral": 1},
+        )
+        self.assertIn("Never add Schwarzschild and Kerr", self.data["semantics"]["aggregation_rule"])
+        for record in self.data["records"]:
+            basis = record["evidential_assessment"]["basis"].lower()
+            if record["evidential_assessment"]["direction"] == "indeterminate":
+                self.assertTrue("no sourced" in basis or "supplies no" in basis)
+
+    def test_authority_hashes_are_present(self):
+        self.assertEqual(
+            self.data["authorities"]["program_registry"]["sha256"],
+            "f1a4afab4a3b91d1312548492a04e3fabad27d1494ca47287263407467bef6b9",
+        )
+        for authority in self.data["authorities"].values():
+            self.assertRegex(authority["sha256"], r"^[0-9a-f]{64}$")
+
+
+class PreservationTests(unittest.TestCase):
+    def test_all_paper_identities_urls_releases_and_hashes_are_preserved(self):
+        papers = json.loads((ROOT / "data/papers.json").read_text())
+        self.assertEqual(len(papers), 35)
+        self.assertEqual(
+            canonical_paper_identity(papers),
+            "b902858d37b202991c68ef6b8dbf0f0fa58cf2d0098a315ae67df88e2a6da2f3",
+        )
+        for number, paper in enumerate(papers, start=1):
+            self.assertEqual(paper["paper"], number)
+            self.assertEqual(paper["paper_url"], f"papers/paper-{number:02d}.html")
+            self.assertTrue((ROOT / paper["paper_url"]).is_file())
+            self.assertTrue(paper["short_form"].startswith(f"Paper {number} "))
+            self.assertRegex(paper["zenodo"], r"^https://zenodo\.org/records/\d+/latest$")
+            if paper.get("support_bundle_sha256"):
+                self.assertRegex(paper["support_bundle_sha256"], r"^[0-9a-f]{64}$")
+                self.assertTrue(paper.get("support_bundle"))
+
+    def test_crossings_are_byte_identical(self):
+        raw = (ROOT / "data/crossings.json").read_bytes()
+        self.assertEqual(
+            sha256_bytes(raw),
+            "a73b1f3614c9b6c07e312d2103c95bbdef6be8c3e1f37a92c6bf93979a05e1f7",
+        )
+        self.assertEqual(len(json.loads(raw)), 70)
+
+    def test_scorecard_and_lithium_scientific_surfaces_are_unchanged(self):
+        scorecard = (ROOT / "scorecard.html").read_bytes()
+        table = re.search(rb'<table[^>]*class="scorecard-table".*?</table>', scorecard, re.S)
+        self.assertIsNotNone(table)
+        self.assertEqual(
+            sha256_bytes(table.group()),
+            "6dc37137972ce1fd37929c2283bf5a5b46411f3a1f2c07c3831743894b716f58",
+        )
+        lithium = (ROOT / "lithium.html").read_bytes()
+        science = re.search(rb'<section class="content-section compact">.*?</section>', lithium, re.S)
+        self.assertIsNotNone(science)
+        self.assertEqual(
+            sha256_bytes(science.group()),
+            "e0f65333c5a53b661e4fcc73e06f24af500c0006da6da58f319feaad01c5a061",
+        )
+
+    def test_preserved_public_tools_and_archive_labels(self):
+        for relative in (
+            "calculator.html",
+            "calculator-theorems.html",
+            "lithium.html",
+            "scorecard.html",
+            "io-framework.html",
+            "data/aio_calculator_bundle.json",
+        ):
+            self.assertTrue((ROOT / relative).is_file(), relative)
+        self.assertIn("Archived IO Framework Scorecard", (ROOT / "scorecard.html").read_text())
+        self.assertRegex(
+            (ROOT / "scorecard.html").read_text(),
+            r"not the .*?Bound-or-Unbound Evidence Monitor",
+        )
+        self.assertIn("Preserved continuing bound-work archive", (ROOT / "io-framework.html").read_text())
+
+
+class SiteContractTests(unittest.TestCase):
+    def test_homepage_states_equal_branches_and_governance_boundary(self):
+        page = (ROOT / "index.html").read_text()
+        self.assertIn("Bound-or-Unbound Evidence Program", page)
+        self.assertIn("Schwarzschild black-hole universe", page)
+        self.assertIn("Kerr black-hole universe", page)
+        self.assertIn("Infinite or unbounded universe", page)
+        self.assertIn("operational and governance container only", page)
+        self.assertIn("optional and non-primary", page)
+        self.assertIn("not two independent votes", page)
+
+    def test_bridge_is_always_running_and_crossings_are_retained(self):
+        page = (ROOT / "bridge-map.html").read_text()
+        script = (ROOT / "assets/js/bridge-map.js").read_text()
+        self.assertIn("Always-running cross-check", page)
+        self.assertIn("one blocked seam never halts", page)
+        self.assertIn("optional and non-primary", page)
+        self.assertIn('fetch("data/crossings.json")', script)
+
+    def test_ai_guidance_and_participation(self):
+        for_ai = (ROOT / "for-ai.html").read_text()
+        llms = (ROOT / "llms.txt").read_text()
+        participate = (ROOT / "participate.html").read_text()
+        for text in (for_ai, llms):
+            self.assertIn("Bound-or-Unbound Evidence Program", text)
+            self.assertIn("UNTESTED", text)
+            self.assertIn("compatibility", text.lower())
+            self.assertIn("evidential", text.lower())
+            self.assertIn("Not yet assessed", text)
+            self.assertIn("not a fourth", text.lower())
+        self.assertIn("enthusiasts", participate.lower())
+        self.assertIn("skeptics", participate.lower())
+        self.assertIn("mailto:david@fife.cc", participate)
+
+    def test_accessibility_navigation_and_json_ld(self):
+        html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
+        self.assertEqual(len(html_files), 49)
+        for path in html_files:
+            parser = PageParser()
+            parser.feed(path.read_text())
+            self.assertTrue(parser.has_skip_link, path.name)
+            self.assertTrue(parser.has_main_target, path.name)
+            joined = " ".join(parser.links)
+            for target in (
+                "evidence-monitor.html",
+                "bridge-map.html",
+                "papers.html",
+                "calculator.html",
+                "ask.html",
+                "participate.html",
+            ):
+                self.assertIn(target, joined, f"{path.name}: {target}")
+            for block in parser.json_ld:
+                json.loads(block)
+        css = (ROOT / "assets/css/site.css").read_text()
+        self.assertIn(".skip-link", css)
+        self.assertIn(":focus-visible", css)
+        self.assertIn("@media (max-width: 820px)", css)
+
+    def test_sitemaps_and_metadata_expose_new_hierarchy(self):
+        for relative in ("sitemap.xml", "sitemap-pages.xml"):
+            text = (ROOT / relative).read_text()
+            self.assertIn("evidence-monitor.html", text)
+            self.assertIn("participate.html", text)
+            self.assertIn("for-ai.html", text)
+        for relative in ("index.html", "evidence-monitor.html", "participate.html"):
+            text = (ROOT / relative).read_text()
+            self.assertIn("Interior Observer Cosmology Lab", text)
+
+
+if __name__ == "__main__":
+    unittest.main()
