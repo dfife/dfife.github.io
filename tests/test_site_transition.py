@@ -128,29 +128,102 @@ class EvidenceMonitorTests(unittest.TestCase):
         self.assertEqual(debt, 3)
         self.assertEqual(self.data["summary"]["compatibility_debt_cells"], debt)
 
-    def test_no_aggregate_or_fabricated_lean(self):
-        self.assertEqual(self.data["overall"]["status"], "not_yet_assessed")
-        self.assertEqual(self.data["overall"]["display"], "Not yet assessed")
+    def test_governed_full_corpus_assessment_is_separate_from_register(self):
+        self.assertEqual(
+            self.data["overall"]["status"],
+            "governed_qualitative_assessment_available",
+        )
+        self.assertEqual(
+            self.data["overall"]["display"],
+            "Very slight unbound-facing empirical tilt",
+        )
+        self.assertEqual(self.data["overall"]["direction"], "unbound")
+        self.assertEqual(self.data["overall"]["strength"], "slight")
+        self.assertEqual(self.data["overall"]["selector_status"], "nonselector")
         self.assertEqual(
             self.data["summary"]["evidential_direction_counts"],
             {"indeterminate": 12, "neutral": 1},
         )
         self.assertIn("Never add Schwarzschild and Kerr", self.data["semantics"]["aggregation_rule"])
+        self.assertIn("separate layers", self.data["semantics"]["layer_rule"])
+        assessment = self.data["directional_assessment"]
+        self.assertEqual(
+            assessment["empirical"]["driver"], "PLANCK_CMB_GEOMETRY/Q423"
+        )
+        self.assertEqual(
+            assessment["structural_economy"]["driver"],
+            "S0=P1_BOUND_COSMOLOGICAL_CHASSIS",
+        )
+        self.assertEqual(
+            assessment["structural_economy"]["independent_parent_groups"], 1
+        )
+        self.assertFalse(
+            assessment["structural_economy"]["arithmetic_combination_with_empirical"]
+        )
         for record in self.data["records"]:
             basis = record["evidential_assessment"]["basis"].lower()
             if record["evidential_assessment"]["direction"] == "indeterminate":
                 self.assertTrue("no sourced" in basis or "supplies no" in basis)
 
+    def test_full_inventory_dependence_exclusions_and_sensitivity(self):
+        inventory = self.data["full_evidential_inventory"]
+        self.assertEqual(len(inventory), 28)
+        by_id = {row["evidence_id"]: row for row in inventory}
+        self.assertEqual(
+            by_id["INV-07"]["aggregate_treatment"],
+            "INCLUDED_EMPIRICAL_ONE_GROUP",
+        )
+        self.assertEqual(by_id["INV-07"]["direction"], "unbound")
+        self.assertIn("Kerr stack only", by_id["INV-07"]["limitations"])
+        self.assertEqual(
+            by_id["INV-04"]["aggregate_treatment"],
+            "DISPLAYED_DEPENDENT_CHILD_NO_EMPIRICAL_VOTE",
+        )
+        self.assertIn("M_U cancels", by_id["INV-04"]["limitations"])
+        self.assertEqual(
+            by_id["INV-28"]["aggregate_treatment"],
+            "EXCLUDED_COMPATIBILITY_IS_NOT_EVIDENCE",
+        )
+        root = self.data["dependency_hierarchy"]["structural_parent"]
+        self.assertEqual(root["dependency_group"], "S0=P1_BOUND_COSMOLOGICAL_CHASSIS")
+        self.assertEqual(len(root["subgroups"]), 5)
+        sensitivity = self.data["directional_assessment"]["sensitivity_audit"]
+        self.assertTrue(any(
+            row["perturbation"] == "Omit PLANCK_CMB_GEOMETRY/Q423"
+            and row["empirical_posture"] == "mixed/no lean"
+            for row in sensitivity
+        ))
+        self.assertTrue(any(
+            row["perturbation"] == "Remove the entire S0=P1_BOUND_COSMOLOGICAL_CHASSIS family"
+            and row["empirical_posture"] == "mixed with a very slight unbound-facing tilt"
+            for row in sensitivity
+        ))
+
+    def test_completed_checks_retain_exact_three_debts(self):
+        checks = self.data["compatibility_checks"]
+        self.assertEqual(len(checks), 3)
+        self.assertEqual({row["outcome"] for row in checks}, {"RETAIN_UNTESTED"})
+        self.assertEqual(self.data["summary"]["compatibility_checks_completed"], 3)
+        self.assertEqual(self.data["summary"]["compatibility_cells_promoted"], 0)
+        self.assertEqual(
+            {row["cell_id"] for row in checks},
+            {
+                "IO_MODEL_INDEPENDENT_HORIZON_INTERIOR_CLASSIFICATION_NONCATEGORICITY_2026_07_30::schwarzschild",
+                "Q243_PAPER1_KERR_HORIZON_LOCAL_SPECTRAL_THEOREM_SCHEMA_V6_WRAPPER_2026_07_09::schwarzschild",
+                "Q243_PAPER1_KERR_HORIZON_LOCAL_SPECTRAL_THEOREM_SCHEMA_V6_WRAPPER_2026_07_09::unbounded_universe",
+            },
+        )
+
     def test_authority_hashes_are_present(self):
         self.assertEqual(
             self.data["authorities"]["program_registry"]["sha256"],
-            "f1a4afab4a3b91d1312548492a04e3fabad27d1494ca47287263407467bef6b9",
+            "36e987bd23fd393441ce12b974a109de83cbb56cf2315e24d57b05b53bd371c7",
         )
         for authority in self.data["authorities"].values():
             self.assertRegex(authority["sha256"], r"^[0-9a-f]{64}$")
 
     def test_timestamp_metadata_is_not_a_projection_coverage_cutoff(self):
-        self.assertEqual(self.data["schema_version"], "IO_PUBLIC_EVIDENCE_MONITOR_v2")
+        self.assertEqual(self.data["schema_version"], "IO_PUBLIC_EVIDENCE_MONITOR_v3")
         self.assertNotIn("generated_from_authoritative_records_through", self.data)
         basis = self.data["projection_basis"]
         self.assertEqual(basis["membership_source"], "mcp_current_status_projection")
@@ -158,14 +231,14 @@ class EvidenceMonitorTests(unittest.TestCase):
 
         timestamps = self.data["authority_timestamps"]
         self.assertEqual(
-            timestamps["program_registry_updated_at"], "2026-08-22T00:00:00Z"
+            timestamps["program_registry_updated_at"], "2026-08-22T15:25:04Z"
         )
         self.assertEqual(
             timestamps["latest_declared_per_record_updated_utc"],
-            "2026-08-03T00:35:00Z",
+            "2026-08-22T14:48:44Z",
         )
-        self.assertEqual(timestamps["records_with_declared_updated_utc"], 9)
-        self.assertEqual(timestamps["records_without_declared_updated_utc"], 4)
+        self.assertEqual(timestamps["records_with_declared_updated_utc"], 10)
+        self.assertEqual(timestamps["records_without_declared_updated_utc"], 3)
         self.assertIn("not a projection-coverage cutoff", timestamps["per_record_updated_utc_scope"])
 
         later_missing_id = (
@@ -192,7 +265,7 @@ class EvidenceMonitorTests(unittest.TestCase):
         self.assertIn("records that omit", ui)
         page = (ROOT / "evidence-monitor.html").read_text()
         self.assertIn(
-            'assets/js/evidence-monitor.js?v=timestamp-semantics-v2', page
+            'assets/js/evidence-monitor.js?v=full-corpus-assessment-v3', page
         )
 
 
@@ -266,6 +339,9 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("operational and governance container only", page)
         self.assertIn("optional and non-primary", page)
         self.assertIn("not two independent votes", page)
+        self.assertIn("very slight unbound-facing tilt", page)
+        self.assertIn("PLANCK_CMB_GEOMETRY/Q423", page)
+        self.assertIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", page)
 
     def test_bridge_is_always_running_and_crossings_are_retained(self):
         page = (ROOT / "bridge-map.html").read_text()
@@ -284,7 +360,9 @@ class SiteContractTests(unittest.TestCase):
             self.assertIn("UNTESTED", text)
             self.assertIn("compatibility", text.lower())
             self.assertIn("evidential", text.lower())
-            self.assertIn("Not yet assessed", text)
+            self.assertIn("very slight unbound-facing", text)
+            self.assertIn("PLANCK_CMB_GEOMETRY/Q423", text)
+            self.assertIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", text)
             self.assertIn("not a fourth", text.lower())
         self.assertIn("enthusiasts", participate.lower())
         self.assertIn("skeptics", participate.lower())
@@ -314,6 +392,23 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn(".skip-link", css)
         self.assertIn(":focus-visible", css)
         self.assertIn("@media (max-width: 820px)", css)
+
+    def test_evidence_monitor_mobile_overflow_guards(self):
+        page = (ROOT / "evidence-monitor.html").read_text()
+        css = (ROOT / "assets/css/site.css").read_text()
+        self.assertIn(
+            '<meta content="width=device-width, initial-scale=1.0" name="viewport"/>',
+            page,
+        )
+        self.assertRegex(
+            css,
+            r"\.monitor-record\s*\{[^}]*min-width:\s*0;[^}]*max-width:\s*100%;",
+        )
+        self.assertRegex(
+            css,
+            r"\.monitor-pill\s*\{[^}]*max-width:\s*100%;[^}]*overflow-wrap:\s*anywhere;",
+        )
+        self.assertRegex(css, r"\.monitor-table-wrap\s*\{[^}]*overflow-x:\s*auto;")
 
     def test_sitemaps_and_metadata_expose_new_hierarchy(self):
         for relative in ("sitemap.xml", "sitemap-pages.xml"):

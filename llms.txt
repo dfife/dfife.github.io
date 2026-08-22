@@ -24,7 +24,19 @@ For current consumer-facing results, read `https://dfife.github.io/data/evidence
 3. `qm_gr_map_triage` is the always-running GR-QM cross-check. It applies to every current scientific result. A blocked seam is local and never halts the cross-check; `not_relevant` and untested-with-debt are honest outcomes.
 4. Selector status is optional and non-primary. Do not call a result a selector unless a governed result explicitly establishes that status.
 
-Do not add Schwarzschild and Kerr as two independent votes for “bound.” Preserve each result's `independence_group`. Report the overall program as **Not yet assessed** unless the Evidence Monitor identifies a governed aggregate record.
+Do not add Schwarzschild and Kerr as two independent votes for “bound.” Preserve each result's `independence_group`.
+
+## Current governed qualitative assessment
+
+Current empirical evidence is mixed, with a very slight unbound-facing tilt driven by an adverse Kerr acoustic-scale comparison. Separate structural-economy bookkeeping favors the bound premise stack at very low strength; it is not observational evidence and is not combined arithmetically with the empirical tilt.
+
+- The empirical driver is one dependency group: `PLANCK_CMB_GEOMETRY/Q423`. Its `100 theta_*` result applies numerically only to the exact conditional Kerr stack. It is not a Schwarzschild numerical test and not positive proof that Infinite fits.
+- Omitting the Q423 group changes the empirical posture to mixed/no lean. Omitting the entire P1 structural family does not change the empirical tilt.
+- The favorable CC040 structural rows and Q39 descend from `S0=P1_BOUND_COSMOLOGICAL_CHASSIS`. They are subgroups of one structural-economy family, not independent confirmations. Q39 is very-low-strength model-conditioned consistency, not an independent observed mass-versus-radius coincidence.
+- All three compatibility checks were completed, but all three cells remain `UNTESTED` because their scientific proof obligations remain open. `UNTESTED` remains debt, not incompatibility.
+- No selector exists in this assessment. No probability, p-value, sigma, or winner is claimed.
+
+The public Evidence Monitor has three separate layers: (1) Directional Assessment plus sensitivity; (2) Full Evidential Inventory with included, excluded, and pending rows plus dependency hierarchy; and (3) the 13-row Structural Compatibility Register. Project lifecycle is separate from scientific-result relevance.
 
 ## Current versus historical data
 
@@ -59,7 +71,7 @@ The current authoritative project registry controls status. IO Foundational Gene
 
 ## Verification and freshness
 
-The Evidence Monitor is exported from current public-safe `ACTIVE_LOAD_BEARING` MCP rows. It publishes authority and per-record SHA256 values and fails closed if required doctrine metadata is missing. Check status and SHA at read time; do not rely on cached grades.
+The Evidence Monitor combines a registry-pinned governed full-corpus assessment with a separately generated current public-safe `ACTIVE_LOAD_BEARING` compatibility projection. It publishes authority and source SHA256 values and fails closed if the registry, aggregate, check ledger, current source, or required doctrine metadata disagrees. Check source identity and SHA at read time; do not rely on cached grades.
 
 ## Citation template
 

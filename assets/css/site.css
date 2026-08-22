@@ -3363,7 +3363,7 @@ body.site-dark .empty-state {
 
 .monitor-summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-bottom: 20px;
 }
@@ -3392,6 +3392,9 @@ body.site-dark .empty-state {
 }
 
 .monitor-record {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   background: rgba(15, 16, 22, 0.94);
@@ -3400,6 +3403,8 @@ body.site-dark .empty-state {
 
 .monitor-record > summary {
   display: flex;
+  min-width: 0;
+  max-width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
@@ -3419,9 +3424,11 @@ body.site-dark .empty-state {
 }
 
 .monitor-record-title {
+  min-width: 0;
   color: #f0eeea;
   font-weight: 700;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .monitor-record-id {
@@ -3438,6 +3445,8 @@ body.site-dark .empty-state {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  min-width: 0;
+  max-width: 100%;
   gap: 7px;
 }
 
@@ -3445,6 +3454,7 @@ body.site-dark .empty-state {
   display: inline-flex;
   align-items: center;
   width: fit-content;
+  max-width: 100%;
   padding: 6px 9px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
@@ -3453,6 +3463,7 @@ body.site-dark .empty-state {
   font-family: var(--mono);
   font-size: 0.68rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 
@@ -3489,9 +3500,31 @@ body.site-dark .empty-state {
   border-color: rgba(125, 211, 252, 0.34);
 }
 
+.monitor-pill.included {
+  color: #bce8cd;
+  border-color: rgba(76, 175, 80, 0.35);
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.monitor-pill.excluded {
+  color: #c9c6ce;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.monitor-pill.pending {
+  color: #ffe0aa;
+  border-color: rgba(255, 152, 0, 0.4);
+  background: rgba(255, 152, 0, 0.1);
+}
+
 .monitor-record-body {
+  min-width: 0;
   padding: 0 22px 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.monitor-record-body p {
+  overflow-wrap: anywhere;
 }
 
 .monitor-record-meta {
@@ -3594,6 +3627,129 @@ body.site-dark .empty-state {
   overflow-wrap: anywhere;
 }
 
+.monitor-assessment-lead,
+.monitor-dependency-root {
+  margin-bottom: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: var(--radius-md);
+  background: rgba(125, 211, 252, 0.05);
+}
+
+.monitor-assessment-lead h2,
+.monitor-dependency-root h3 {
+  margin: 7px 0 10px;
+  color: #f0eeea;
+}
+
+.monitor-assessment-summary,
+.monitor-dependency-root p,
+.monitor-inventory-key,
+.inventory-record .monitor-record-body > p {
+  color: #aaa7ae;
+  line-height: 1.68;
+}
+
+.monitor-table-wrap {
+  max-width: 100%;
+  margin-top: 18px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+}
+
+.monitor-sensitivity-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: rgba(15, 16, 22, 0.94);
+}
+
+.monitor-sensitivity-table caption {
+  padding: 14px 16px;
+  color: #8f8c94;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.monitor-sensitivity-table th,
+.monitor-sensitivity-table td {
+  padding: 13px 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: #aaa7ae;
+  line-height: 1.52;
+  text-align: left;
+  vertical-align: top;
+}
+
+.monitor-sensitivity-table th {
+  color: #e7e4df;
+  font-weight: 600;
+}
+
+.inventory-record.included {
+  border-color: rgba(76, 175, 80, 0.22);
+}
+
+.inventory-record.pending {
+  border-color: rgba(255, 152, 0, 0.24);
+}
+
+.inventory-branch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.inventory-branch {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+}
+
+.inventory-branch strong {
+  color: #e7e4df;
+  font-size: 0.8rem;
+}
+
+.inventory-branch span {
+  color: #9e9ba3;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.inventory-record dl {
+  display: grid;
+  grid-template-columns: minmax(145px, 0.3fr) 1fr;
+  gap: 8px 14px;
+}
+
+.inventory-record dt {
+  color: #8d8a92;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.inventory-record dd {
+  min-width: 0;
+  margin: 0;
+  color: #aaa7ae;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.monitor-debt-head {
+  margin-top: 48px;
+}
+
 .monitor-authority-details {
   margin-top: 24px;
   padding: 18px 20px;
@@ -3619,7 +3775,8 @@ body.site-dark .empty-state {
 
 @media (max-width: 960px) {
   .branch-program-grid,
-  .monitor-branch-grid {
+  .monitor-branch-grid,
+  .inventory-branch-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3677,6 +3834,15 @@ body.site-dark .empty-state {
 
   .monitor-axis-card dl {
     grid-template-columns: 1fr;
+  }
+
+  .inventory-record dl {
+    grid-template-columns: 1fr;
+  }
+
+  .monitor-assessment-lead,
+  .monitor-dependency-root {
+    padding: 18px;
   }
 
   .monitor-record-id {

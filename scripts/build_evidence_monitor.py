@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 """Build the public Evidence Monitor from the authoritative MCP projection.
 
-This exporter is deliberately conservative: it publishes only current
-ACTIVE_LOAD_BEARING rows with complete doctrine metadata. It never infers a
-lean from branch compatibility and never computes an overall bound/unbound
-score. A governed aggregate must exist before the overall display can move
-away from ``Not yet assessed``.
+This exporter is deliberately conservative. It publishes the governed
+full-corpus qualitative assessment and inventory as a separate layer from the
+current ACTIVE_LOAD_BEARING Structural Compatibility Register. It never infers
+a lean from branch compatibility or counts Schwarzschild and Kerr twice.
 """
 
 from __future__ import annotations
@@ -93,6 +92,19 @@ def compact_branch(entry: dict) -> dict:
     return result
 
 
+def load_pinned_record(reference: dict, role: str) -> tuple[Path, dict]:
+    path = Path(reference.get("artifact_path", ""))
+    expected = reference.get("artifact_sha256")
+    if not path.is_absolute() or not path.is_file():
+        raise RuntimeError(f"{role} path is missing")
+    if not isinstance(expected, str) or sha256(path) != expected:
+        raise RuntimeError(f"{role} SHA mismatch")
+    record = json.loads(path.read_text(encoding="utf-8"))
+    if record.get("artifact_id") != reference.get("artifact_id"):
+        raise RuntimeError(f"{role} artifact identity mismatch")
+    return path, record
+
+
 def build(db_path: Path, registry_path: Path) -> dict:
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     program = registry["overarching_program"]
@@ -101,6 +113,18 @@ def build(db_path: Path, registry_path: Path) -> dict:
     declared = tuple(row["branch_field"] for row in program["equal_scientific_branches"])
     if declared != BRANCHES:
         raise RuntimeError(f"authoritative branch vector changed: {declared!r}")
+    milestone = program.get("current_evidence_milestone")
+    if not isinstance(milestone, dict):
+        raise RuntimeError("authoritative registry lacks the current evidence milestone")
+    assessment_path, assessment = load_pinned_record(
+        milestone.get("assessment_record", {}), "initial assessment"
+    )
+    debt_snapshot = milestone.get("compatibility_debt")
+    if not isinstance(debt_snapshot, dict):
+        raise RuntimeError("authoritative registry lacks the compatibility-debt snapshot")
+    check_path, check_record = load_pinned_record(
+        debt_snapshot.get("check_record", {}), "compatibility-debt check"
+    )
 
     connection = sqlite3.connect(db_path)
     connection.row_factory = sqlite3.Row
@@ -115,13 +139,22 @@ def build(db_path: Path, registry_path: Path) -> dict:
     ).fetchall()
     aggregate_rows = connection.execute(
         """
-        SELECT canonical_id
+        SELECT canonical_id, source_artifact, detail_json
         FROM mcp_current_status_projection
         WHERE live = 1
           AND canonical_id LIKE 'BOUND_OR_UNBOUND_EVIDENCE_AGGREGATE%'
         """
     ).fetchall()
     connection.close()
+
+    if len(aggregate_rows) != 1:
+        raise RuntimeError(f"expected one live governed aggregate, found {len(aggregate_rows)}")
+    aggregate_row = aggregate_rows[0]
+    aggregate_detail = json.loads(aggregate_row["detail_json"])
+    if Path(aggregate_row["source_artifact"]) != assessment_path:
+        raise RuntimeError("indexed aggregate does not match the registry-pinned assessment")
+    if aggregate_detail.get("source_sha256") != sha256(assessment_path):
+        raise RuntimeError("indexed aggregate SHA does not match the registry-pinned assessment")
 
     records = []
     declared_record_updates = []
@@ -194,6 +227,10 @@ def build(db_path: Path, registry_path: Path) -> dict:
         for record in records
         for branch in record["per_branch_validity"].values()
     )
+    if debt_cells != debt_snapshot.get("cells_remaining_untested"):
+        raise RuntimeError("projected compatibility debt differs from the program registry")
+    if len(check_record.get("checks") or []) != debt_snapshot.get("checks_completed"):
+        raise RuntimeError("completed compatibility-check count differs from the registry")
     project_posture = [
         {
             "project_id": item["project_id"],
@@ -204,19 +241,18 @@ def build(db_path: Path, registry_path: Path) -> dict:
         for item in registry["projects"]
     ]
 
-    overall = (
-        {
-            "status": "governed_aggregate_available",
-            "display": "Governed aggregate available",
-            "record_ids": [row["canonical_id"] for row in aggregate_rows],
-        }
-        if aggregate_rows
-        else {
-            "status": "not_yet_assessed",
-            "display": "Not yet assessed",
-            "reason": "No live governed Bound-or-Unbound evidence aggregate exists. Per-result assessments are shown without arithmetic aggregation or branch double-counting.",
-        }
-    )
+    directional = assessment.get("directional_assessment") or {}
+    empirical = directional.get("empirical") or {}
+    structural = directional.get("structural_economy") or {}
+    overall = {
+        "status": "governed_qualitative_assessment_available",
+        "display": "Very slight unbound-facing empirical tilt",
+        "reason": directional.get("public_summary"),
+        "record_ids": [aggregate_row["canonical_id"]],
+        "direction": empirical.get("direction"),
+        "strength": empirical.get("governed_strength"),
+        "selector_status": "nonselector",
+    }
 
     authorities = {
         name: {
@@ -229,14 +265,23 @@ def build(db_path: Path, registry_path: Path) -> dict:
         }
         for name, path in AUTHORITY_PATHS.items()
     }
+    authorities["initial_qualitative_assessment"] = {
+        "record_id": assessment["artifact_id"],
+        "sha256": sha256(assessment_path),
+    }
+    authorities["compatibility_debt_check"] = {
+        "record_id": check_record["artifact_id"],
+        "sha256": sha256(check_path),
+    }
 
     return {
-        "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v2",
+        "schema_version": "IO_PUBLIC_EVIDENCE_MONITOR_v3",
         "projection_basis": {
             "membership_source": "mcp_current_status_projection",
             "membership_predicate": "live = 1 AND consumer_surface = ACTIVE_LOAD_BEARING",
             "record_verification": "Each projected member is read from its current source_artifact and must match its indexed source_sha256.",
             "coverage_semantics": "Current projection membership and exact source identity define this public surface. No per-record timestamp is used as a coverage cutoff.",
+            "aggregate_source": "The full-corpus assessment is a separately governed CONTEXT_DIAGNOSTIC_COMPARISON record pinned by the program registry and verified against its live current-status projection row.",
         },
         "authority_timestamps": {
             "program_registry_updated_at": registry.get("updated_at"),
@@ -263,6 +308,7 @@ def build(db_path: Path, registry_path: Path) -> dict:
             "untested": "UNTESTED is explicit check debt, never incompatibility.",
             "evidence": "Evidential direction is recorded independently as bound, unbound, neutral, or indeterminate.",
             "aggregation_rule": "Never add Schwarzschild and Kerr as two independent bound votes; preserve independence_group and use no overall score without a governed aggregate.",
+            "layer_rule": "Directional assessment, full evidential inventory, and structural compatibility register are separate layers. Project lifecycle is separate from scientific-result relevance.",
             "selector": "A selector is neither presumed nor primary. Only an explicitly governed selector result may be labeled selector.",
         },
         "overall": overall,
@@ -270,7 +316,28 @@ def build(db_path: Path, registry_path: Path) -> dict:
             "current_consumer_facing_records": len(records),
             "compatibility_debt_cells": debt_cells,
             "evidential_direction_counts": dict(sorted(directions.items())),
+            "full_inventory_rows": len(assessment.get("full_evidential_inventory") or []),
+            "compatibility_checks_completed": debt_snapshot.get("checks_completed"),
+            "compatibility_cells_promoted": debt_snapshot.get("cells_promoted"),
         },
+        "directional_assessment": {
+            "public_summary": directional.get("public_summary"),
+            "empirical": empirical,
+            "structural_economy": structural,
+            "selector": directional.get("selector"),
+            "sensitivity_audit": assessment.get("sensitivity_audit"),
+            "assessment_source_sha256": sha256(assessment_path),
+        },
+        "dependency_hierarchy": assessment.get("dependency_hierarchy"),
+        "full_evidential_inventory": assessment.get("full_evidential_inventory"),
+        "historical_archive_disposition": assessment.get("historical_archive_disposition"),
+        "compatibility_checks": check_record.get("checks"),
+        "next_bounded_research_actions": assessment.get("next_bounded_research_actions"),
+        "public_surface_layers": [
+            "Directional Assessment plus sensitivity",
+            "Full Evidential Inventory with included, excluded, and pending items plus dependency hierarchy",
+            "Structural Compatibility Register of current ACTIVE_LOAD_BEARING results",
+        ],
         "project_posture": project_posture,
         "authorities": authorities,
         "records": records,

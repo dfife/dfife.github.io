@@ -115,12 +115,102 @@ function renderRecords() {
     : `<div class="empty-state">No current record matches these filters.</div>`;
 }
 
+function inventoryClass(treatment) {
+  if (String(treatment).startsWith("INCLUDED")) return "included";
+  if (String(treatment).includes("PENDING") || String(treatment).includes("OPEN")) return "pending";
+  return "excluded";
+}
+
+function renderAssessment(data) {
+  const host = document.getElementById("monitor-assessment");
+  const assessment = data.directional_assessment;
+  const empirical = assessment.empirical;
+  const structural = assessment.structural_economy;
+  const sensitivity = assessment.sensitivity_audit
+    .map((row) => `
+      <tr>
+        <th scope="row">${escapeHtml(row.perturbation)}</th>
+        <td>${escapeHtml(row.empirical_posture)}</td>
+        <td>${escapeHtml(row.structural_posture)}</td>
+        <td>${escapeHtml(row.interpretation)}</td>
+      </tr>`)
+    .join("");
+  host.innerHTML = `
+    <div class="monitor-assessment-lead">
+      <p class="section-kicker">Governed snapshot</p>
+      <h2>${escapeHtml(empirical.display)}</h2>
+      <p class="monitor-assessment-summary">${escapeHtml(assessment.public_summary)}</p>
+    </div>
+    <div class="monitor-axis-grid">
+      <section class="monitor-axis-card">
+        <p class="section-kicker">Empirical direction</p>
+        <h3>${escapeHtml(empirical.display)} · ${escapeHtml(empirical.governed_strength)}</h3>
+        <p>${escapeHtml(empirical.interpretation)}</p>
+        <dl><dt>Driver</dt><dd><code>${escapeHtml(empirical.driver)}</code></dd><dt>Boundary</dt><dd>${escapeHtml(empirical.strength_qualifier)}</dd></dl>
+      </section>
+      <section class="monitor-axis-card">
+        <p class="section-kicker">Separate structural economy</p>
+        <h3>${escapeHtml(structural.display)}</h3>
+        <p>${escapeHtml(structural.interpretation)}</p>
+        <dl><dt>Shared root</dt><dd><code>${escapeHtml(structural.driver)}</code></dd><dt>Counting</dt><dd>${escapeHtml(structural.subgroups_displayed)} display subgroups, ${escapeHtml(structural.independent_parent_groups)} parent family</dd></dl>
+      </section>
+    </div>
+    <div class="monitor-table-wrap">
+      <table class="monitor-sensitivity-table">
+        <caption>Sensitivity audit — no numeric weights</caption>
+        <thead><tr><th>Check</th><th>Empirical posture</th><th>Structural posture</th><th>Meaning</th></tr></thead>
+        <tbody>${sensitivity}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderInventory(data) {
+  const host = document.getElementById("monitor-inventory");
+  const root = data.dependency_hierarchy.structural_parent;
+  const rows = data.full_evidential_inventory.map((row) => {
+    const treatmentClass = inventoryClass(row.aggregate_treatment);
+    const branchRows = BRANCH_META.map(([key, shortLabel, label]) => `
+      <div class="inventory-branch"><strong>${shortLabel} · ${escapeHtml(label)}</strong><span>${escapeHtml(row.branch_compatibility[key])}</span></div>`).join("");
+    return `
+      <details class="monitor-record inventory-record ${treatmentClass}">
+        <summary>
+          <span class="monitor-record-title-wrap"><span class="monitor-record-title">${escapeHtml(row.evidence_id)} · ${escapeHtml(row.candidate)}</span><span class="monitor-record-id">${escapeHtml(row.object_class)} · ${escapeHtml(row.project_lifecycle)}</span></span>
+          <span class="monitor-summary-pills"><span class="monitor-pill evidence-${escapeHtml(row.direction === "mixed/indeterminate" ? "indeterminate" : row.direction)}">${escapeHtml(row.direction)}</span><span class="monitor-pill ${treatmentClass}">${escapeHtml(row.aggregate_treatment)}</span></span>
+        </summary>
+        <div class="monitor-record-body">
+          <p><strong>Discriminating rationale:</strong> ${escapeHtml(row.discriminating_rationale)}</p>
+          <div class="inventory-branch-grid">${branchRows}</div>
+          <dl><dt>Scientific-result lifecycle</dt><dd>${escapeHtml(row.scientific_result_lifecycle)}</dd><dt>Strength</dt><dd>${escapeHtml(row.qualitative_strength)}</dd><dt>Dependency group</dt><dd><code>${escapeHtml(row.dependency_group)}</code></dd><dt>Limitations</dt><dd>${escapeHtml(row.limitations)}</dd></dl>
+        </div>
+      </details>`;
+  }).join("");
+  host.innerHTML = `
+    <article class="monitor-dependency-root">
+      <p class="section-kicker">Dependency hierarchy</p>
+      <h3><code>${escapeHtml(root.dependency_group)}</code></h3>
+      <p>${escapeHtml(root.role)} ${escapeHtml(root.removal_rule)}</p>
+      <p><strong>Subgroups:</strong> ${root.subgroups.map(escapeHtml).join(" · ")}</p>
+    </article>
+    <p class="monitor-inventory-key"><strong>Inventory rows:</strong> ${escapeHtml(data.summary.full_inventory_rows)}. Included, excluded, and pending objects remain visible; exclusion from directional aggregation is not deletion.</p>
+    <div class="monitor-record-list">${rows}</div>`;
+}
+
+function renderCompatibilityChecks(data) {
+  const host = document.getElementById("monitor-compatibility-checks");
+  host.innerHTML = data.compatibility_checks.map((row) => `
+    <details class="monitor-record">
+      <summary><span class="monitor-record-title-wrap"><span class="monitor-record-title">${escapeHtml(row.cell_id)}</span><span class="monitor-record-id">completed check · ${escapeHtml(row.branch)}</span></span><span class="monitor-pill debt">${escapeHtml(row.outcome)}</span></summary>
+      <div class="monitor-record-body"><p><strong>Result:</strong> ${escapeHtml(row.result)}</p><p><strong>Proof obligation:</strong> ${escapeHtml(row.proof_obligation)}</p><p><strong>Resolution route:</strong> ${escapeHtml(row.resolution_route)}</p></div>
+    </details>`).join("");
+}
+
 function renderSummary(data) {
   const summary = document.getElementById("monitor-summary");
   summary.innerHTML = `
     <article class="monitor-summary-card"><span>Current records</span><strong>${data.summary.current_consumer_facing_records}</strong></article>
     <article class="monitor-summary-card"><span>Compatibility debt cells</span><strong>${data.summary.compatibility_debt_cells}</strong></article>
-    <article class="monitor-summary-card"><span>Governed aggregate</span><strong>${escapeHtml(data.overall.display)}</strong></article>`;
+    <article class="monitor-summary-card"><span>Full inventory rows</span><strong>${data.summary.full_inventory_rows}</strong></article>
+    <article class="monitor-summary-card"><span>Governed assessment</span><strong>${escapeHtml(data.overall.display)}</strong></article>`;
 
   const overall = document.getElementById("monitor-overall");
   overall.innerHTML = `<span class="monitor-overall-label">Overall program assessment</span><strong>${escapeHtml(data.overall.display)}</strong><span>${escapeHtml(data.overall.reason || "See the governed aggregate record.")}</span>`;
@@ -151,6 +241,9 @@ async function initializeMonitor() {
     const data = await response.json();
     monitorState.records = data.records;
     renderSummary(data);
+    renderAssessment(data);
+    renderInventory(data);
+    renderCompatibilityChecks(data);
     renderRecords();
   } catch (error) {
     document.getElementById("monitor-overall").innerHTML = `<span class="monitor-overall-label">Overall program assessment</span><strong>Unavailable</strong><span>The authoritative projection could not be loaded. No assessment is inferred.</span>`;
