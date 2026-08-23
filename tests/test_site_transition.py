@@ -13,10 +13,6 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def git_blob_sha1(data: bytes) -> str:
-    return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
-
-
 def canonical_paper_identity(rows: list[dict]) -> str:
     keys = (
         "paper",
@@ -406,22 +402,13 @@ class SiteContractTests(unittest.TestCase):
 
         html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
         footer_link = f'<a class="footer-link" {safe_link}>Public Discord</a>'
-        preserved_local_edits = {
-            "calculator-theorems.html": "27209e7bae1dabd25811671ac1e736bb42f8bec4",
-            "calculator.html": "888e7ad97090e60a4f9b223d71ba3aece6bba525",
-        }
         for path in html_files:
             page = path.read_text()
             footer = re.search(r'<footer class="footer">.*?</footer>', page, re.S)
             nav = re.search(r'<nav[^>]*class="nav-links".*?</nav>', page, re.S)
             self.assertIsNotNone(footer, path.name)
             self.assertIsNotNone(nav, path.name)
-            is_preserved_local_edit = (
-                path.name in preserved_local_edits
-                and git_blob_sha1(path.read_bytes()) == preserved_local_edits[path.name]
-            )
-            if not is_preserved_local_edit:
-                self.assertIn(footer_link, footer.group(), path.name)
+            self.assertIn(footer_link, footer.group(), path.name)
             self.assertNotIn(invite, nav.group(), path.name)
 
         for relative in ("evidence-monitor.html", "ask.html"):
