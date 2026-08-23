@@ -21,7 +21,7 @@ function statusMeta(status) {
   if (upper.includes("THEOREM")) return { key: "theorem", label: "Mathematically proved in scope", technical: "THEOREM" };
   if (upper.includes("DERIVED") && upper.includes("SCOPED")) return { key: "derived-scoped", label: "Derived in a limited scope", technical: "DERIVED/SCOPED" };
   if (upper.includes("CONDITIONAL")) return { key: "conditional", label: "Conditional result", technical: "CONDITIONAL" };
-  if (upper.includes("CONTEXT") || upper.includes("DIAGNOSTIC")) return { key: "conditional", label: "Context only; not a current finding", technical: upper };
+  if (upper.includes("CONTEXT") || upper.includes("DIAGNOSTIC")) return { key: "conditional", label: "Useful comparison, not evidence for a particular branch", technical: upper };
   if (upper.includes("OPEN")) return { key: "conditional", label: "Open problem", technical: upper };
   if (upper.includes("REPORT_ONLY")) return { key: "conditional", label: "Report only; not a banked result", technical: upper };
   if (upper.includes("QUARANTINED")) return { key: "conditional", label: "Historical projection; not current", technical: upper };

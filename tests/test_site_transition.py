@@ -345,6 +345,8 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("never counted as two independent votes", page)
         self.assertIn("There is no clear answer yet", page)
         self.assertIn("fragile, very slight tilt away", page)
+        self.assertIn("If that single comparison is removed, the tilt disappears", page)
+        self.assertIn("it does not show that the Infinite model is correct", page)
         self.assertNotIn("PLANCK_CMB_GEOMETRY/Q423", page)
         self.assertNotIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", page)
         self.assertLess(len(page.splitlines()), 260)
@@ -514,6 +516,14 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("Canonical record ID", script)
         self.assertIn("Current source SHA256", script)
         self.assertIn("Exact GR–QM triage", script)
+        for translation in (
+            "Mathematically derived under stated assumptions",
+            "Useful comparison, not evidence for a particular branch",
+            "Applicability to this branch remains unresolved",
+            "Does not determine whether the universe is bound or unbound",
+            "Used in the current research program",
+        ):
+            self.assertIn(translation, script)
 
     def test_plain_language_glossary_has_required_terms(self):
         page = (ROOT / "glossary.html").read_text()
@@ -553,6 +563,30 @@ class SiteContractTests(unittest.TestCase):
         self.assertIn("does not by itself make the mathematics publicly inspectable", llms)
         for relative in ("index.html", "evidence-monitor.html", "ask.html", "participate.html"):
             self.assertNotIn("gathers auditable", (ROOT / relative).read_text().lower())
+
+    def test_reader_page_internal_links_resolve(self):
+        for relative in (
+            "index.html",
+            "evidence-monitor.html",
+            "bridge-map.html",
+            "glossary.html",
+            "ask.html",
+            "participate.html",
+            "for-ai.html",
+        ):
+            parser = PageParser()
+            parser.feed((ROOT / relative).read_text())
+            for href in parser.links:
+                if href.startswith(("https://", "http://", "mailto:")):
+                    continue
+                target, _, fragment = href.partition("#")
+                if not target or target == "/":
+                    target_path = ROOT / ("index.html" if target == "/" else relative)
+                else:
+                    target_path = ROOT / target
+                self.assertTrue(target_path.exists(), f"{relative}: broken {href}")
+                if fragment and target_path.suffix == ".html":
+                    self.assertIn(f'id="{fragment}"', target_path.read_text(), f"{relative}: missing {href}")
 
 
 if __name__ == "__main__":

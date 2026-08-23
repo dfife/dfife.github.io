@@ -121,13 +121,14 @@ function humanScientificStatus(label) {
   const value = String(label);
   if (value === "IMPORTED/EMPIRICAL") return "Observed input, with interpretation limits";
   if (value.includes("THEOREM")) return "Mathematically proved under stated assumptions";
-  if (value.includes("CONDITIONAL_VERIFIED")) return "Derived and checked within a conditional model";
+  if (value.includes("CONDITIONAL_VERIFIED")) return "Mathematically derived under stated assumptions";
+  if (value.includes("CONTEXT_DIAGNOSTIC_COMPARISON")) return "Useful comparison, not evidence for a particular branch";
   if (value.includes("NO-GO")) return "A proposed route is ruled out within its stated scope";
   return "Current result with stated conditions";
 }
 
 function humanBranch(value) {
-  if (value === "UNTESTED") return "Not yet tested";
+  if (value === "UNTESTED") return "Applicability to this branch remains unresolved";
   if (value === "INVALID" || value === "DOES_NOT_APPLY") return "Does not apply";
   if (value.includes("PROVEN")) return "Applies under the stated assumptions";
   if (value.includes("ADDITION") || value.includes("PARTIAL")) return "May apply with named additional work";
@@ -147,7 +148,7 @@ function humanGrqm(classification) {
 }
 
 function humanSelector(value) {
-  return value === "selector" ? "Claims a model-selection result" : "Not a universe selector";
+  return value === "selector" ? "Claims a model-selection result" : "Does not determine whether the universe is bound or unbound";
 }
 
 function humanTreatment(value) {
@@ -234,7 +235,7 @@ function renderRecord(record) {
     : `<span>No separate public proof document is linked in this projection. <a class="section-link" href="data/evidence-monitor.json">View the public data entry →</a></span>`;
   return `<article class="monitor-record reader-record">
     <div class="reader-result-heading"><p class="reader-question">${escapeHtml(copy.question)}</p><h3>${escapeHtml(copy.finding)}</h3></div>
-    <div class="reader-status-row"><span class="plain-status">${escapeHtml(humanScientificStatus(record.current_label))}</span><span class="plain-status">${escapeHtml(humanDirection(evidence.direction, evidence.strength))}</span><span class="plain-status">${escapeHtml(humanSelector(evidence.selector_status))}</span></div>
+    <div class="reader-status-row"><span class="plain-status">${escapeHtml(humanScientificStatus(record.current_label))}</span><span class="plain-status">Used in the current research program</span><span class="plain-status">${escapeHtml(humanDirection(evidence.direction, evidence.strength))}</span><span class="plain-status">${escapeHtml(humanSelector(evidence.selector_status))}</span></div>
     <div class="reader-result-grid"><section><h4>Assumptions</h4><p>${escapeHtml(copy.assumptions)}</p></section><section><h4>Still unresolved</h4><p>${escapeHtml(copy.unresolved)}</p></section><section><h4>Why it matters</h4><p>${escapeHtml(copy.why)}</p></section></div>
     <p class="public-evidence-path"><strong>Public evidence path:</strong> ${publicProof}</p>
     <details class="reader-branch-details"><summary>Compare this result across the three models</summary><div class="monitor-branch-grid">${branches}</div></details>
