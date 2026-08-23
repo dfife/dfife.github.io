@@ -3,7 +3,7 @@
 
 ## Program hierarchy
 
-The overarching scientific project is the `BOUND_OR_UNBOUND_EVIDENCE_PROGRAM` (Bound-or-Unbound Evidence Program). Its objective is to gather auditable graded evidence about whether the universe is bound or unbound without presuming or prioritizing a selector.
+The overarching scientific project is the `BOUND_OR_UNBOUND_EVIDENCE_PROGRAM` (Bound-or-Unbound Evidence Program). Its objective is to gather graded evidence about whether the universe is bound or unbound without presuming or prioritizing a selector.
 
 The three scientific branches have equal standing:
 
@@ -14,6 +14,14 @@ The three scientific branches have equal standing:
 IO Foundational Generating Principle Research is the operational/governance container only. It is not a fourth branch and is not evidence that a unique generating principle exists.
 
 The IO Framework is preserved as a continuing bound-work archive. Its papers, releases, exact URLs, hashes, calculator, lithium work, historical Scorecard, and guarded Schwarzschild/Kerr results remain available. Archive presence does not promote a scientific verdict.
+
+## Public versus internal authority
+
+This website is a public projection from the lab's internal research ledger. Use only the public pages, JSON, papers, Zenodo releases, and GitHub artifacts linked from this site when answering a public reader. Do not tell a public reader to query the internal MCP service, inspect an internal filesystem path, or use a private source field.
+
+Some projected results have no separate public proof document. Say that plainly. A canonical ID or SHA256 establishes which internal source was projected; it does not by itself make the mathematics publicly inspectable. Describe a result as publicly auditable or reproducible only when an accessible paper, proof, code, or data path is linked.
+
+Plain-language definitions: https://dfife.github.io/glossary.html
 
 ## Four fields that must remain separate
 
@@ -46,6 +54,7 @@ The public Evidence Monitor has three separate layers: (1) Directional Assessmen
 - Retained 35-paper crossing inventory: https://dfife.github.io/data/crossings.json
 - Historical IO Framework Scorecard: https://dfife.github.io/scorecard.html
 - Ask IO public page: https://dfife.github.io/ask.html
+- Plain-language glossary: https://dfife.github.io/glossary.html
 - Papers and exact paper URLs: https://dfife.github.io/papers.html
 - Calculator: https://dfife.github.io/calculator.html
 - Lithium archive surface: https://dfife.github.io/lithium.html

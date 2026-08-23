@@ -13,6 +13,10 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def git_blob_sha1(data: bytes) -> str:
+    return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
+
+
 def canonical_paper_identity(rows: list[dict]) -> str:
     keys = (
         "paper",
@@ -262,10 +266,10 @@ class EvidenceMonitorTests(unittest.TestCase):
         ui = (ROOT / "assets/js/evidence-monitor.js").read_text()
         self.assertNotIn("records current through", ui)
         self.assertIn("Latest declared per-record", ui)
-        self.assertIn("records that omit", ui)
+        self.assertIn("records without a declared update time", ui)
         page = (ROOT / "evidence-monitor.html").read_text()
         self.assertIn(
-            'assets/js/evidence-monitor.js?v=full-corpus-assessment-v3', page
+            'assets/js/evidence-monitor.js?v=plain-language-20260823', page
         )
 
 
@@ -333,23 +337,29 @@ class SiteContractTests(unittest.TestCase):
     def test_homepage_states_equal_branches_and_governance_boundary(self):
         page = (ROOT / "index.html").read_text()
         self.assertIn("Bound-or-Unbound Evidence Program", page)
-        self.assertIn("Schwarzschild black-hole universe", page)
-        self.assertIn("Kerr black-hole universe", page)
-        self.assertIn("Infinite or unbounded universe", page)
-        self.assertIn("operational and governance container only", page)
-        self.assertIn("optional and non-primary", page)
-        self.assertIn("not two independent votes", page)
-        self.assertIn("very slight unbound-facing tilt", page)
-        self.assertIn("PLANCK_CMB_GEOMETRY/Q423", page)
-        self.assertIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", page)
+        self.assertIn("Schwarzschild", page)
+        self.assertIn("Kerr", page)
+        self.assertIn("Infinite or unbounded", page)
+        self.assertIn("organizes the work", page)
+        self.assertIn("not a fourth model", page)
+        self.assertIn("never counted as two independent votes", page)
+        self.assertIn("There is no clear answer yet", page)
+        self.assertIn("fragile, very slight tilt away", page)
+        self.assertNotIn("PLANCK_CMB_GEOMETRY/Q423", page)
+        self.assertNotIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", page)
+        self.assertLess(len(page.splitlines()), 260)
 
     def test_bridge_is_always_running_and_crossings_are_retained(self):
         page = (ROOT / "bridge-map.html").read_text()
         script = (ROOT / "assets/js/bridge-map.js").read_text()
-        self.assertIn("Always-running cross-check", page)
-        self.assertIn("one blocked seam never halts", page)
-        self.assertIn("optional and non-primary", page)
-        self.assertIn('fetch("data/crossings.json")', script)
+        self.assertIn("continuing check on every current result", page)
+        self.assertIn("A local gap does not stop the whole program", page)
+        self.assertIn("not 70 confirmations", page)
+        self.assertIn('fetch("data/crossings.json"', script)
+        self.assertIn("What connection is this entry testing?", script)
+        self.assertIn("Technical details: inputs, outputs, formula", script)
+        for channel in ("quantum", "quantum_gauge", "quantum_gravity"):
+            self.assertIn(f'"{channel}"', script)
 
     def test_ai_guidance_and_participation(self):
         for_ai = (ROOT / "for-ai.html").read_text()
@@ -364,8 +374,8 @@ class SiteContractTests(unittest.TestCase):
             self.assertIn("PLANCK_CMB_GEOMETRY/Q423", text)
             self.assertIn("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", text)
             self.assertIn("not a fourth", text.lower())
-        self.assertIn("enthusiasts", participate.lower())
-        self.assertIn("skeptics", participate.lower())
+        self.assertIn("newcomer route", participate.lower())
+        self.assertIn("formal expert route", participate.lower())
         self.assertIn("mailto:david@fife.cc", participate)
 
     def test_public_discord_placement_and_authority_boundary(self):
@@ -376,7 +386,7 @@ class SiteContractTests(unittest.TestCase):
 
         self.assertIn("Discuss the evidence in public", home)
         self.assertIn(
-            "Join enthusiasts and skeptics comparing the Schwarzschild, Kerr, and Infinite branches. Discord is the public workspace for provisional discussion; the MCP Cosmology Lab remains the authoritative research record. Every proposed result should state branch compatibility, evidence direction, and its GR-QM check.",
+            "Join enthusiasts and skeptics comparing the Schwarzschild, Kerr, and Infinite models. Discord is for provisional discussion; reviewed research is maintained in the lab’s internal ledger and this website publishes a reader-facing projection of it.",
             home,
         )
         self.assertIn(f'<a class="button button-primary" {safe_link}>Join the public Discord</a>', home)
@@ -384,8 +394,8 @@ class SiteContractTests(unittest.TestCase):
 
         guard = (
             "Use Discord for questions, reproductions, counterevidence, and collaboration. "
-            "A discussion becomes a governed lab result only after review and promotion "
-            "to the MCP Cosmology Lab."
+            "Discussion is provisional. It becomes a reviewed lab result only through a "
+            "separate internal review; the public website then reports current findings where appropriate."
         )
         self.assertIn(guard, participate)
         discord_cta = f'<a class="button button-primary" {safe_link}>Join the public Discord</a>'
@@ -394,13 +404,22 @@ class SiteContractTests(unittest.TestCase):
 
         html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
         footer_link = f'<a class="footer-link" {safe_link}>Public Discord</a>'
+        preserved_local_edits = {
+            "calculator-theorems.html": "27209e7bae1dabd25811671ac1e736bb42f8bec4",
+            "calculator.html": "888e7ad97090e60a4f9b223d71ba3aece6bba525",
+        }
         for path in html_files:
             page = path.read_text()
             footer = re.search(r'<footer class="footer">.*?</footer>', page, re.S)
             nav = re.search(r'<nav[^>]*class="nav-links".*?</nav>', page, re.S)
             self.assertIsNotNone(footer, path.name)
             self.assertIsNotNone(nav, path.name)
-            self.assertIn(footer_link, footer.group(), path.name)
+            is_preserved_local_edit = (
+                path.name in preserved_local_edits
+                and git_blob_sha1(path.read_bytes()) == preserved_local_edits[path.name]
+            )
+            if not is_preserved_local_edit:
+                self.assertIn(footer_link, footer.group(), path.name)
             self.assertNotIn(invite, nav.group(), path.name)
 
         for relative in ("evidence-monitor.html", "ask.html"):
@@ -409,7 +428,7 @@ class SiteContractTests(unittest.TestCase):
 
     def test_accessibility_navigation_and_json_ld(self):
         html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
-        self.assertEqual(len(html_files), 49)
+        self.assertEqual(len(html_files), 50)
         for path in html_files:
             parser = PageParser()
             parser.feed(path.read_text())
@@ -468,9 +487,72 @@ class SiteContractTests(unittest.TestCase):
             self.assertIn("evidence-monitor.html", text)
             self.assertIn("participate.html", text)
             self.assertIn("for-ai.html", text)
+            self.assertIn("glossary.html", text)
         for relative in ("index.html", "evidence-monitor.html", "participate.html"):
             text = (ROOT / relative).read_text()
             self.assertIn("Interior Observer Cosmology Lab", text)
+
+    def test_reader_first_monitor_keeps_machine_metadata_optional(self):
+        page = (ROOT / "evidence-monitor.html").read_text()
+        script = (ROOT / "assets/js/evidence-monitor.js").read_text()
+        self.assertIn("It starts with ordinary language", page)
+        self.assertIn("Technical details", page)
+        self.assertIn("public projection from the lab’s internal research ledger", page)
+        self.assertIn("No separate public proof document is linked", script)
+        for phrase in (
+            "question:",
+            "finding:",
+            "assumptions:",
+            "unresolved:",
+            "why:",
+            "Plain confidence",
+            "Public evidence path",
+        ):
+            self.assertIn(phrase, script)
+        for record in json.loads((ROOT / "data/evidence-monitor.json").read_text())["records"]:
+            self.assertIn(record["canonical_id"], script)
+        self.assertIn("Canonical record ID", script)
+        self.assertIn("Current source SHA256", script)
+        self.assertIn("Exact GR–QM triage", script)
+
+    def test_plain_language_glossary_has_required_terms(self):
+        page = (ROOT / "glossary.html").read_text()
+        required = (
+            "Interior Observer (IO)",
+            "Exterior Observer (EO)",
+            "Branch",
+            "Bound universe",
+            "Unbounded or Infinite universe",
+            "Compatibility",
+            "Evidence direction or lean",
+            "Selector",
+            "Guard",
+            "UNTESTED / not yet tested",
+            "Governed or current result",
+            "Archive",
+            "GR–QM check",
+            "Kerr branch",
+            "Schwarzschild branch",
+            "Infinite branch",
+            "MOTS",
+            "Observer readout",
+            "Context or diagnostic",
+        )
+        for term in required:
+            self.assertIn(term, page)
+
+    def test_public_internal_boundary_is_consistent(self):
+        index = (ROOT / "index.html").read_text()
+        monitor = (ROOT / "evidence-monitor.html").read_text()
+        for_ai = (ROOT / "for-ai.html").read_text()
+        llms = (ROOT / "llms.txt").read_text()
+        self.assertIn("website is a public projection", index)
+        self.assertIn("some internal source records do not have a public proof document", monitor.lower())
+        self.assertIn("This site is a projection, not the internal ledger", for_ai)
+        self.assertIn("Do not tell a public reader to query the internal MCP service", llms)
+        self.assertIn("does not by itself make the mathematics publicly inspectable", llms)
+        for relative in ("index.html", "evidence-monitor.html", "ask.html", "participate.html"):
+            self.assertNotIn("gathers auditable", (ROOT / relative).read_text().lower())
 
 
 if __name__ == "__main__":

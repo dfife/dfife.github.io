@@ -3884,3 +3884,361 @@ body.site-dark .empty-state {
     overflow-wrap: anywhere;
   }
 }
+
+/* Reader-first public research surfaces · 2026-08-23 */
+.reader-hero {
+  display: grid;
+  max-width: 980px;
+  gap: 16px;
+}
+
+.plain-assessment {
+  max-width: 850px;
+  margin: 14px 0 4px;
+  padding: 22px 24px;
+  border: 1px solid rgba(125, 211, 252, 0.25);
+  border-radius: var(--radius-md);
+  background: rgba(125, 211, 252, 0.075);
+}
+
+.plain-assessment h2 {
+  margin: 6px 0 10px;
+  color: #f4f1ec;
+  font-size: clamp(1.45rem, 4vw, 2.35rem);
+}
+
+.plain-assessment p,
+.public-projection-note,
+.ask-reader-note {
+  color: #b4b1b8;
+  line-height: 1.7;
+}
+
+.plain-term-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.plain-term-grid article,
+.reader-bridge-guide article {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(18, 19, 25, 0.8);
+}
+
+.plain-term-grid h3,
+.reader-bridge-guide h2 {
+  margin: 0 0 8px;
+  color: #f0eeea;
+  font-size: 1rem;
+}
+
+.plain-term-grid p,
+.reader-bridge-guide p,
+.reader-bridge-guide li {
+  margin: 0;
+  color: #aaa7ae;
+  line-height: 1.62;
+}
+
+.public-projection-note {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid rgba(125, 211, 252, 0.5);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.public-projection-note a,
+.ask-reader-note a {
+  color: #9eddf8;
+}
+
+.reader-path-grid .resource-card,
+.participate-route {
+  height: 100%;
+}
+
+.reader-record {
+  padding: 22px;
+}
+
+.reader-result-heading {
+  min-width: 0;
+}
+
+.reader-result-heading h3 {
+  margin: 7px 0 0;
+  color: #f0eeea;
+  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  line-height: 1.48;
+}
+
+.reader-question {
+  margin: 0;
+  color: #9eddf8;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.reader-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.plain-status {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 999px;
+  color: #d7d4ce;
+  background: rgba(125, 211, 252, 0.055);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.reader-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.reader-result-grid section {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.reader-result-grid h4,
+.bridge-reader-result h3 {
+  margin: 0 0 7px;
+  color: #e9e6e1;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.reader-result-grid p,
+.public-evidence-path {
+  margin: 0;
+  color: #a8a5ad;
+  font-size: 0.88rem;
+  line-height: 1.62;
+}
+
+.public-evidence-path {
+  margin-top: 15px;
+}
+
+.public-evidence-path a {
+  display: inline;
+}
+
+.reader-branch-details,
+.technical-details {
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 16px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: #aaa7ae;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.reader-branch-details > summary,
+.technical-details > summary {
+  color: #e5e2dd;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.technical-details > *:not(summary),
+.technical-details code,
+.technical-details dd,
+.technical-details li,
+.reader-branch-details p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.technical-details code {
+  white-space: normal;
+}
+
+.reader-branch-details .monitor-branch-grid {
+  margin-top: 14px;
+}
+
+.branch-description {
+  color: #85828a;
+  font-size: 0.72rem;
+}
+
+.reader-inventory > summary {
+  align-items: flex-start;
+}
+
+.reader-inventory .monitor-record-title {
+  color: #b7b4bb;
+  font-weight: 500;
+}
+
+.reader-inventory .monitor-record-body {
+  padding-top: 18px;
+}
+
+.reader-dependency h3 {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.reader-bridge-guide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.reader-bridge-guide ol {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+
+.node-reader-hint {
+  margin: 10px 0 0;
+  color: #7f7c84;
+  font-size: 0.76rem;
+}
+
+.bridge-technical {
+  margin-top: 20px;
+}
+
+.bridge-technical .detail-block:first-of-type {
+  margin-top: 14px;
+}
+
+.bridge-layout,
+.bridge-board,
+.detail-column,
+.lane-card,
+.node-grid,
+.node,
+.node-top,
+.detail-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.bridge-board,
+.detail-column,
+.lane-card {
+  width: 100%;
+}
+
+.node-name,
+.node-summary,
+.node-reader-hint,
+.detail-title,
+.detail-summary,
+.badge {
+  overflow-wrap: anywhere;
+}
+
+.badge {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.ask-reader-note {
+  max-width: 830px;
+  margin: 14px 0 0;
+}
+
+.glossary-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.glossary-jump a {
+  padding: 8px 12px;
+  border: 1px solid rgba(125, 211, 252, 0.22);
+  border-radius: 999px;
+  color: #b9e7fb;
+  text-decoration: none;
+}
+
+.public-glossary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.public-glossary > div {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(18, 19, 25, 0.78);
+  scroll-margin-top: 110px;
+}
+
+.public-glossary dt {
+  color: #f0eeea;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.public-glossary dd {
+  margin: 8px 0 0;
+  color: #aaa7ae;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .plain-term-grid,
+  .reader-result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .reader-bridge-guide,
+  .public-glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .reader-record {
+    padding: 17px;
+  }
+
+  .plain-assessment {
+    padding: 18px;
+  }
+
+  .branch-description {
+    display: block;
+  }
+
+  .ask-page .nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
