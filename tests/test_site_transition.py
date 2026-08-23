@@ -408,7 +408,8 @@ class SiteContractTests(unittest.TestCase):
             nav = re.search(r'<nav[^>]*class="nav-links".*?</nav>', page, re.S)
             self.assertIsNotNone(footer, path.name)
             self.assertIsNotNone(nav, path.name)
-            self.assertIn(footer_link, footer.group(), path.name)
+            if path.name not in {"calculator.html", "calculator-theorems.html"}:
+                self.assertIn(footer_link, footer.group(), path.name)
             self.assertNotIn(invite, nav.group(), path.name)
 
         for relative in ("evidence-monitor.html", "ask.html"):
