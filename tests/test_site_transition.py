@@ -265,7 +265,7 @@ class EvidenceMonitorTests(unittest.TestCase):
         self.assertIn("records without a declared update time", ui)
         page = (ROOT / "evidence-monitor.html").read_text()
         self.assertIn(
-            'assets/js/evidence-monitor.js?v=plain-language-20260823', page
+            'assets/js/evidence-monitor.js?v=human-friendly-20260823', page
         )
 
 
@@ -384,7 +384,7 @@ class SiteContractTests(unittest.TestCase):
 
         self.assertIn("Discuss the evidence in public", home)
         self.assertIn(
-            "Join enthusiasts and skeptics comparing the Schwarzschild, Kerr, and Infinite models. Discord is for provisional discussion; reviewed research is maintained in the lab’s internal ledger and this website publishes a reader-facing projection of it.",
+            "Join enthusiasts and skeptics comparing the Schwarzschild, Kerr, and Infinite models. Discord is for provisional discussion; reviewed research is kept in the lab’s detailed internal records, and this website presents the current public summary.",
             home,
         )
         self.assertIn(f'<a class="button button-primary" {safe_link}>Join the public Discord</a>', home)
@@ -487,8 +487,12 @@ class SiteContractTests(unittest.TestCase):
         script = (ROOT / "assets/js/evidence-monitor.js").read_text()
         self.assertIn("It starts with ordinary language", page)
         self.assertIn("Technical details", page)
-        self.assertIn("public projection from the lab’s internal research ledger", page)
-        self.assertIn("No separate public proof document is linked", script)
+        self.assertIn("reader-friendly summary of the lab’s detailed internal research records", page)
+        self.assertIn("No separate public proof page is linked from this summary", script)
+        self.assertIn("slightly weakens a tested rotating bound model", script)
+        self.assertNotIn(".toLowerCase())} change the relative evidence", script)
+        self.assertNotIn("family family", script)
+        self.assertNotIn("has no transported the", script)
         for phrase in (
             "question:",
             "finding:",
@@ -526,7 +530,7 @@ class SiteContractTests(unittest.TestCase):
             "Selector",
             "Guard",
             "UNTESTED / not yet tested",
-            "Governed or current result",
+            "Current reviewed result",
             "Archive",
             "GR–QM check",
             "Kerr branch",
@@ -544,13 +548,42 @@ class SiteContractTests(unittest.TestCase):
         monitor = (ROOT / "evidence-monitor.html").read_text()
         for_ai = (ROOT / "for-ai.html").read_text()
         llms = (ROOT / "llms.txt").read_text()
-        self.assertIn("website is a public projection", index)
-        self.assertIn("some internal source records do not have a public proof document", monitor.lower())
+        self.assertIn("full working records are not directly public", index)
+        self.assertIn("when a current result has no separate public proof page", monitor.lower())
         self.assertIn("This site is a projection, not the internal ledger", for_ai)
         self.assertIn("Do not tell a public reader to query the internal MCP service", llms)
         self.assertIn("does not by itself make the mathematics publicly inspectable", llms)
         for relative in ("index.html", "evidence-monitor.html", "ask.html", "participate.html"):
             self.assertNotIn("gathers auditable", (ROOT / relative).read_text().lower())
+
+    def test_archive_pages_start_with_reader_explanations(self):
+        papers = (ROOT / "papers.html").read_text()
+        calculator = (ROOT / "calculator.html").read_text()
+        bridge = (ROOT / "bridge-map.html").read_text()
+        ask_script = (ROOT / "assets/js/ask.js").read_text()
+
+        self.assertIn("This archive preserves all 35 Interior Observer Framework papers", papers)
+        self.assertIn("Direct links to all 35 papers", papers)
+        self.assertNotIn("Static crawl path", papers)
+        self.assertNotIn("schema.org article metadata", papers)
+
+        calculator_entrance = "This archived calculator lets you inspect results"
+        specialist_copy = "publishing theorem-grade predictions with zero fitted parameters"
+        calculator_main = calculator.index('<main class="calc-page"')
+        self.assertLess(
+            calculator.index(calculator_entrance, calculator_main),
+            calculator.index(specialist_copy, calculator_main),
+        )
+
+        bridge_entrance = "Use this page to see where a gravity claim depends on quantum physics"
+        specialist_copy = "General relativity (GR)"
+        bridge_main = bridge.index('<main id="main-content">')
+        self.assertLess(
+            bridge.index(bridge_entrance, bridge_main),
+            bridge.index(specialist_copy, bridge_main),
+        )
+        self.assertIn('setStatus("Ask IO is online", "online")', ask_script)
+        self.assertNotIn("Gateway online:", ask_script)
 
     def test_reader_page_internal_links_resolve(self):
         for relative in (

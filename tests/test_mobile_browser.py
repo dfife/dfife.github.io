@@ -59,7 +59,8 @@ HARNESS = b"""<!doctype html>
           body_scroll_width: body.scrollWidth,
           html_fits: root.scrollWidth <= root.clientWidth,
           body_fits: body.scrollWidth <= body.clientWidth,
-          nav_internal_scroll_preserved: nav.scrollWidth > nav.clientWidth && getComputedStyle(nav).overflowX === "auto",
+          nav_fits_without_scroll: nav.scrollWidth <= nav.clientWidth && !["auto", "scroll"].includes(getComputedStyle(nav).overflowX),
+          nav_min_target_height: Math.min(...[...nav.querySelectorAll("a")].map(link => link.getBoundingClientRect().height)),
           table_internal_scroll_preserved: table.scrollWidth > table.clientWidth && getComputedStyle(table).overflowX === "auto"
         };
         fetch("/__evidence_monitor_mobile_overflow_result__", {
@@ -85,7 +86,7 @@ READER_HARNESS = b"""<!doctype html>
   <title>Reader pages mobile browser regression</title>
   <style>
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
-    iframe { display: block; width: 375px; height: 844px; border: 0; }
+    iframe { display: block; width: 390px; height: 844px; border: 0; }
   </style>
 </head>
 <body>
@@ -93,12 +94,25 @@ READER_HARNESS = b"""<!doctype html>
   <script>
     const pages = [
       "/", "/evidence-monitor.html", "/bridge-map.html",
-      "/participate.html", "/glossary.html", "/ask.html"
+      "/papers.html", "/calculator.html", "/participate.html",
+      "/glossary.html", "/ask.html"
+    ];
+    const sizes = [
+      {width: 390, height: 844},
+      {width: 320, height: 800}
     ];
     const frame = document.getElementById("target");
     const results = [];
     let pageIndex = 0;
+    let sizeIndex = 0;
     let attempts = 0;
+
+    function loadCurrent() {
+      const size = sizes[sizeIndex];
+      frame.style.width = `${size.width}px`;
+      frame.style.height = `${size.height}px`;
+      frame.src = pages[pageIndex] + `?reader-mobile-regression=${size.width}`;
+    }
 
     function inspect() {
       const win = frame.contentWindow;
@@ -108,7 +122,9 @@ READER_HARNESS = b"""<!doctype html>
         ? doc.querySelector(".reader-record")
         : path === "/bridge-map.html"
           ? doc.querySelector(".node")
-          : doc.querySelector("main");
+          : path === "/papers.html"
+            ? doc.querySelectorAll(".paper-card").length === 35
+            : doc.querySelector("main");
       if (!dynamicReady && attempts++ < 200) {
         window.setTimeout(inspect, 50);
         return;
@@ -116,7 +132,12 @@ READER_HARNESS = b"""<!doctype html>
       const root = doc.documentElement;
       const body = doc.body;
       const nav = doc.querySelector(".nav-links");
+      const navRect = nav.getBoundingClientRect();
+      const navLinks = [...nav.querySelectorAll("a")];
       const links = [...doc.querySelectorAll("a[href]")];
+      const paperCards = [...doc.querySelectorAll(".paper-card")];
+      const paperGrid = doc.querySelector(".paper-grid");
+      const table = doc.querySelector(".monitor-table-wrap");
       const overflowing_elements = [...doc.querySelectorAll("body *")]
         .map(element => {
           const rect = element.getBoundingClientRect();
@@ -126,6 +147,8 @@ READER_HARNESS = b"""<!doctype html>
         .slice(0, 12);
       results.push({
         path,
+        viewport_width: sizes[sizeIndex].width,
+        viewport_height: sizes[sizeIndex].height,
         inner_width: win.innerWidth,
         html_client_width: root.clientWidth,
         html_scroll_width: root.scrollWidth,
@@ -133,8 +156,15 @@ READER_HARNESS = b"""<!doctype html>
         body_scroll_width: body.scrollWidth,
         html_fits: root.scrollWidth <= root.clientWidth,
         body_fits: body.scrollWidth <= body.clientWidth,
-        nav_internal_scroll_preserved: nav.scrollWidth > nav.clientWidth && getComputedStyle(nav).overflowX === "auto",
-        nav_scroll_behavior_correct: getComputedStyle(nav).overflowX === "auto" && nav.scrollWidth >= nav.clientWidth,
+        nav_fits_without_scroll: nav.scrollWidth <= nav.clientWidth && !["auto", "scroll"].includes(getComputedStyle(nav).overflowX),
+        nav_links_visible: navLinks.every(link => {
+          const rect = link.getBoundingClientRect();
+          return rect.left >= navRect.left - 1 && rect.right <= navRect.right + 1;
+        }),
+        nav_min_target_height: Math.min(...navLinks.map(link => link.getBoundingClientRect().height)),
+        table_internal_scroll_preserved: path === "/evidence-monitor.html" && table.scrollWidth > table.clientWidth && getComputedStyle(table).overflowX === "auto",
+        paper_card_count: paperCards.length,
+        paper_cards_stacked: path === "/papers.html" && paperCards.length === 35 && paperGrid && paperCards[1].getBoundingClientRect().top > paperCards[0].getBoundingClientRect().top,
         overflowing_elements,
         all_links_keyboard_reachable: links.length > 0 && links.every(link => link.getAttribute("tabindex") !== "-1"),
         native_disclosures_valid: [...doc.querySelectorAll("details")].every(details => details.firstElementChild?.tagName === "SUMMARY"),
@@ -142,8 +172,12 @@ READER_HARNESS = b"""<!doctype html>
       });
       pageIndex += 1;
       attempts = 0;
-      if (pageIndex < pages.length) {
-        frame.src = pages[pageIndex] + "?reader-mobile-regression=1";
+      if (pageIndex >= pages.length) {
+        pageIndex = 0;
+        sizeIndex += 1;
+      }
+      if (sizeIndex < sizes.length) {
+        loadCurrent();
         return;
       }
       fetch("/__reader_pages_mobile_result__", {
@@ -155,7 +189,7 @@ READER_HARNESS = b"""<!doctype html>
     }
 
     frame.addEventListener("load", inspect);
-    frame.src = pages[0] + "?reader-mobile-regression=1";
+    loadCurrent();
   </script>
 </body>
 </html>
@@ -252,7 +286,7 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
         cls.server.server_close()
         cls.server_thread.join(timeout=5)
 
-    def test_html_and_body_fit_client_width_with_internal_scroll_preserved(self):
+    def test_html_and_body_fit_client_width_with_only_table_scroll_preserved(self):
         chrome = chrome_binary()
         if chrome is None:
             self.skipTest("Chrome/Chromium is unavailable; CI provisions stable Chrome")
@@ -300,7 +334,8 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
         self.assertLessEqual(metrics["body_scroll_width"], metrics["body_client_width"])
         self.assertTrue(metrics["html_fits"])
         self.assertTrue(metrics["body_fits"])
-        self.assertTrue(metrics["nav_internal_scroll_preserved"])
+        self.assertTrue(metrics["nav_fits_without_scroll"])
+        self.assertGreaterEqual(metrics["nav_min_target_height"], 44)
         self.assertTrue(metrics["table_internal_scroll_preserved"])
 
     def test_reader_pages_fit_mobile_and_keep_native_keyboard_controls(self):
@@ -320,14 +355,14 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
                     "--no-sandbox",
                     "--disable-dev-shm-usage",
                     f"--user-data-dir={profile}",
-                    "--window-size=390,844",
+                    "--window-size=420,900",
                     f"http://127.0.0.1:{self.server.server_port}{READER_HARNESS_PATH}",
                 ],
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
                 start_new_session=True,
             )
-            deadline = time.monotonic() + 35
+            deadline = time.monotonic() + 60
             try:
                 while not self.server.result_event.wait(0.1):
                     if process.poll() is not None or time.monotonic() >= deadline:
@@ -347,17 +382,24 @@ class EvidenceMonitorChromeRegression(unittest.TestCase):
         )
         payload = self.server.browser_result
         self.assertTrue(payload["complete"])
-        self.assertEqual(len(payload["results"]), 6)
+        self.assertEqual(len(payload["results"]), 16)
         for metrics in payload["results"]:
-            with self.subTest(path=metrics["path"]):
-                self.assertEqual(metrics["inner_width"], 375)
+            with self.subTest(path=metrics["path"], viewport=metrics["viewport_width"]):
+                self.assertEqual(metrics["inner_width"], metrics["viewport_width"])
                 self.assertLessEqual(metrics["html_scroll_width"], metrics["html_client_width"], metrics["overflowing_elements"])
                 self.assertLessEqual(metrics["body_scroll_width"], metrics["body_client_width"], metrics["overflowing_elements"])
                 self.assertTrue(metrics["html_fits"])
                 self.assertTrue(metrics["body_fits"])
-                self.assertTrue(metrics["nav_scroll_behavior_correct"])
+                self.assertTrue(metrics["nav_fits_without_scroll"])
+                self.assertTrue(metrics["nav_links_visible"])
+                self.assertGreaterEqual(metrics["nav_min_target_height"], 44)
                 self.assertTrue(metrics["all_links_keyboard_reachable"])
                 self.assertTrue(metrics["native_disclosures_valid"])
+                if metrics["path"] == "/evidence-monitor.html":
+                    self.assertTrue(metrics["table_internal_scroll_preserved"])
+                if metrics["path"] == "/papers.html":
+                    self.assertEqual(metrics["paper_card_count"], 35)
+                    self.assertTrue(metrics["paper_cards_stacked"])
                 if metrics["path"] == "/bridge-map.html":
                     self.assertEqual(metrics["rendered_node_count"], 70)
 

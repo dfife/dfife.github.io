@@ -110,9 +110,9 @@
   async function checkGateway() {
     try {
       await fetchJson("/health", { method: "GET" });
-      setStatus(`Gateway online: ${new URL(activeEndpoint).host}`, "online");
+      setStatus("Ask IO is online", "online");
     } catch (error) {
-      setStatus("Gateway unavailable", "offline");
+      setStatus("Ask IO is unavailable", "offline");
     }
   }
 
@@ -147,11 +147,11 @@
       } else {
         pendingClarification = null;
       }
-      setStatus(`Gateway online: ${new URL(activeEndpoint).host}`, "online");
+      setStatus("Ask IO is online", "online");
     } catch (error) {
       pending.remove();
-      addMessage("assistant", "The IO gateway did not return a response. Please try again shortly.");
-      setStatus("Gateway unavailable", "offline");
+      addMessage("assistant", "Ask IO did not return a response. Please try again shortly.");
+      setStatus("Ask IO is unavailable", "offline");
     }
   }
 

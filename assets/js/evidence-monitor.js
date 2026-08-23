@@ -93,7 +93,7 @@ const RECORD_COPY = {
     question: "Does a local Kerr horizon support the stated thermal spectral readout?",
     finding: "Yes, conditionally, for the declared stationary future-horizon field theory and positive-frequency sector.",
     assumptions: "The result is local to a Kerr horizon and depends on the stated state, generator, regularity, and readout choices.",
-    unresolved: "Standalone Schwarzschild and governed Infinite-host derivations are still missing.",
+    unresolved: "Standalone Schwarzschild and clearly defined Infinite-host derivations are still missing.",
     why: "It is a concrete gravity–quantum connection in one branch, not proof that the universe is Kerr."
   }
 };
@@ -154,7 +154,7 @@ function humanSelector(value) {
 function humanTreatment(value) {
   const text = String(value);
   if (text.startsWith("INCLUDED_EMPIRICAL")) return "Included as one empirical evidence group";
-  if (text.startsWith("INCLUDED_STRUCTURAL")) return "Included only in the separate structural-simplicity ledger";
+  if (text.startsWith("INCLUDED_STRUCTURAL")) return "Included only in the separate structural-simplicity comparison";
   if (text.includes("DEPENDENT_CHILD")) return "Shown for context, but not counted independently";
   if (text.includes("PENDING") || text.includes("OPEN")) return "Pending: required work remains open";
   if (text.includes("EXCLUDED")) return "Not included in the directional assessment";
@@ -163,11 +163,34 @@ function humanTreatment(value) {
 
 function plainCodeText(value) {
   return String(value)
-    .replaceAll("PLANCK_CMB_GEOMETRY/Q423", "the adverse Kerr acoustic-scale comparison")
-    .replaceAll("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", "the shared bound-model premise family")
+    .replaceAll("The adverse result lowers support for one exact Kerr stack. Because Schwarzschild is not numerically tested and Infinite is not positively fit, the program-wide direction is only a fragile, very slight unbound-facing tilt.", "This comparison lowers support for one specific Kerr calculation. No equivalent Schwarzschild test has been completed, and no Infinite model has been shown to fit the comparison, so the overall shift is very slight and fragile.")
+    .replaceAll("Prevents false multiplication of bound support; empirical direction is unchanged.", "Treating related results as one family prevents double-counting; the empirical result is unchanged.")
+    .replaceAll("The empirical tilt is independent of the structural ledger.", "The slight empirical shift does not depend on the structural-simplicity comparison.")
+    .replaceAll("The directional empirical assessment is fragile and depends on one adverse Kerr-stack group.", "The slight empirical shift is fragile because it depends on this one Kerr comparison.")
+    .replaceAll("Only the very-low Q423 tilt remains; DESI/BAO is not a separate vote.", "Only the very-low-strength Kerr comparison remains; the galaxy-distance context is not a separate evidence item.")
+    .replaceAll("No empirical direction survives; structural economy is still not substituted for observation.", "No empirical direction remains. The separate simplicity comparison is not a substitute for observation.")
+    .replaceAll("Q423 is both the only included empirical directional group and the weakest/strongest by default; removing it eliminates the lean.", "The Kerr comparison is the only included empirical item with a direction, so removing it eliminates the lean.")
+    .replaceAll("The Schwarzschild branch has no transported Q423 numerical test", "No equivalent numerical test has been completed for the Schwarzschild model")
+    .replaceAll("No positive Infinite-branch fit is established", "No Infinite model has been shown to fit this comparison")
+    .replaceAll("CMB/BAO curvature context is mixed and model-conditioned", "Cosmic-background and galaxy-distance curvature evidence remains mixed and model-dependent")
+    .replaceAll("Group all five favorable structural rows and Q39 under their common S0 root", "Treat the five favorable structural rows and the mass–radius item as one related family")
+    .replaceAll("Remove the entire S0=P1_BOUND_COSMOLOGICAL_CHASSIS family", "Remove the entire shared bound-model premise family")
+    .replaceAll("Omit both PLANCK_CMB_GEOMETRY/Q423 and DESI/BAO context", "Remove both the Kerr acoustic-scale comparison and the galaxy-distance context")
+    .replaceAll("Omit PLANCK_CMB_GEOMETRY/Q423", "Remove the Kerr acoustic-scale comparison")
+    .replaceAll("Omit DESI/BAO context but retain Q423", "Remove the galaxy-distance context but keep the Kerr acoustic-scale comparison")
+    .replaceAll("mixed with a very slight unbound-facing tilt", "mixed; one comparison slightly weakens the tested rotating bound model")
+    .replaceAll("mixed/no lean", "mixed; no lean")
+    .replaceAll("no directional empirical evidence", "no empirical direction remains")
+    .replaceAll("very slight unbound-facing tilt", "very slight shift away from the tested rotating bound model")
+    .replaceAll("one separate very-low bound-facing family", "one separate, very-low-strength structural result favoring the bound-model assumptions")
+    .replaceAll("one very-low bound-facing family", "one very-low-strength structural result favoring the bound-model assumptions")
+    .replaceAll("no bound-facing structural-economy entry remains", "no structural-simplicity result favoring the bound-model assumptions remains")
+    .replaceAll("All S0 structural-economy subgroups", "All related structural-simplicity results")
+    .replaceAll("S0=P1_BOUND_COSMOLOGICAL_CHASSIS", "the shared bound-model premise")
+    .replaceAll("PLANCK_CMB_GEOMETRY/Q423", "the Kerr acoustic-scale comparison")
     .replaceAll("Q39", "the dependent mass–radius consistency item")
-    .replaceAll("Q423", "the adverse Kerr acoustic-scale comparison")
-    .replaceAll("S0", "the shared bound-model premise family")
+    .replaceAll("Q423", "the Kerr acoustic-scale comparison")
+    .replaceAll("S0", "the shared bound-model premise")
     .replaceAll("CMB/BAO", "cosmic-background and galaxy-distance")
     .replaceAll("DESI/BAO", "galaxy-distance");
 }
@@ -185,6 +208,11 @@ function plainInventoryCandidate(row) {
     "INV-16": "the largest-angle cosmic-background anomalies",
     "INV-18": "the cosmological neutrino-mass tension",
     "INV-20": "the possible rotation of cosmic-background polarization",
+    "INV-22": "the disputed EDGES 21-centimetre absorption result",
+    "INV-23": "observed visible matter and additional gravitating effects",
+    "INV-24": "attempts to transfer the geometric dark-matter construction",
+    "INV-25": "Einstein–dust construction results",
+    "INV-26": "Kerr extension comparisons",
     "INV-27": "the continuing gravity–quantum cross-check",
     "INV-28": "the current model-compatibility register"
   };
@@ -192,11 +220,40 @@ function plainInventoryCandidate(row) {
 }
 
 function plainInventoryFinding(row) {
-  if (row.evidence_id === "INV-07") return "The tested rotating bound model misses the reference acoustic angular scale by about 4.4%, and the allowed source-phase completion cannot remove that miss.";
+  const replacements = {
+    "INV-01": "The bound-model premise supplies a compact global boundary. An unbound model would have to add or replace that structure.",
+    "INV-02": "A boundary-sourced state comes with the bound-model premise. An unbound model would need an equivalent extra source assumption.",
+    "INV-03": "The bound-model premise supplies horizon and inventory relations that an unbound cosmology does not gain merely by containing a local black hole.",
+    "INV-04": "Inside the Schwarzschild universe model, the approximate mass–radius alignment is consistent with a bound interpretation.",
+    "INV-05": "The closed bound model supplies a history and clock package that an unbound model would need to add separately.",
+    "INV-06": "The proposed boundary algebra packages the reaction-rate change with fewer added assumptions than the unbound comparison model.",
+    "INV-07": "The tested rotating bound model misses the reference acoustic angular scale by about 4.4%, and the allowed source-phase completion cannot remove that miss.",
+    "INV-08": "Published curvature studies disagree: Planck primary spectra prefer closed geometry, while Planck lensing plus galaxy-distance results and DESI DR2 are nearer flat or open geometry.",
+    "INV-09": "The newer galaxy-distance context can look slightly more consistent with flat or open geometry under its model assumptions, but the current IO result makes no numerical distinction.",
+    "INV-10": "No current model-specific expansion-rate comparison or independently completed observer clock distinguishes the three models.",
+    "INV-11": "No current result distinguishes the three models using the structure-growth tension.",
+    "INV-12": "No mechanism has yet been shown to affect the lithium-producing channel selectively while treating all other nuclear channels consistently.",
+    "INV-13": "Historical tension may exist, but the lab does not yet have the complete cosmic-background angular-spectrum prediction needed to assign it to a model.",
+    "INV-14": "No model-specific galaxy-formation probability or complete path from theory to measurement exists yet.",
+    "INV-15": "No model-specific cluster-formation and measurement calculation exists yet.",
+    "INV-18": "The heavy neutrinos used in the baryogenesis work are not the same quantity as the late-time sum of active-neutrino masses.",
+    "INV-19": "A possible preferred direction is not evidence without a predicted source-count pattern and magnitude.",
+    "INV-20": "No rotation angle or calibrated polarization map has been predicted.",
+    "INV-21": "A local underdensity cannot distinguish the universe’s global boundedness without a complete regional structure and clock model.",
+    "INV-22": "The same local microphysics can be used in all three models, and none currently predicts the reported absorption profile.",
+    "INV-23": "Observed matter and additional gravitating effects must be accommodated by every model; their existence does not show that geometry created them.",
+    "INV-24": "The checked attempts to transfer the geometric dark-matter construction produced no relative simplicity advantage between models.",
+    "INV-25": "These mathematical constructions do not currently provide an observational or assumption-based reason to favor one model.",
+    "INV-26": "Spin magnitude and direction remain unspecified, and no observed model-specific signal completes the comparison.",
+    "INV-27": "Coverage of the GR–QM check, including local gaps, does not by itself favor a bound or unbound universe.",
+    "INV-28": "This register records where results can apply. Its 13 rows contain no sourced directional judgment and cannot be converted into votes."
+  };
+  if (replacements[row.evidence_id]) return replacements[row.evidence_id];
   return String(row.discriminating_rationale)
-    .replaceAll("bound chassis", "bound-model assumptions")
-    .replaceAll("bound premise stack", "bound-model assumptions")
+    .replaceAll("bound chassis", "bound-model premise")
+    .replaceAll("bound premise stack", "bound-model premise set")
     .replaceAll("hostile unbounded transplant", "unbound model")
+    .replaceAll("hostile transplant", "unbound model")
     .replaceAll("hostile transplants", "unbound models")
     .replaceAll("unbounded control", "unbound model")
     .replaceAll("C_l", "cosmic-background angular spectrum")
@@ -204,6 +261,27 @@ function plainInventoryFinding(row) {
     .replaceAll("TB/EB", "polarization-rotation")
     .replaceAll("a_star and direction n_spin", "and direction")
     .replaceAll("w0/wa", "dark-energy evolution");
+}
+
+function plainInventoryLimitations(row) {
+  const replacements = {
+    "INV-03": "All of these horizon results depend on the same parent bound-model assumption. One algebraic connection does not establish the proposed count-to-amplitude or thermalization steps.",
+    "INV-04": "The mass value was declared inside the model rather than measured independently, and the radius was then derived from the same Schwarzschild assumptions. This is not an independent observational coincidence.",
+    "INV-06": "The rule selecting which nuclear channel is affected remains open, and an earlier deuterium result is adverse. This draft structural item cannot be counted as a successful abundance prediction.",
+    "INV-07": "This puts pressure only on the complete conditional Kerr model that was tested. It is not a numerical test of Schwarzschild, does not show that an Infinite model fits, and does not rule out a whole branch.",
+    "INV-08": "Curvature sign does not determine topology, infinity, or a universe-scale horizon. The cosmic-background and galaxy-distance results share observations and model assumptions.",
+    "INV-09": "The older favorable numerical result has been superseded; the current result is symbolic. Shared cosmic-background and galaxy-distance information cannot be counted twice.",
+    "INV-12": "The adverse deuterium finding remains part of the record and cannot be reconciled by hand; the separate simplicity argument is listed elsewhere.",
+    "INV-13": "A complete cosmic-background angular-spectrum prediction has not yet been tested, so this item receives no weight in the current assessment.",
+    "INV-16": "The largest-angle statistics depend strongly on how the question and sky realization are selected after looking at the data.",
+    "INV-18": "The heavy neutrinos used in the baryogenesis work are not the same quantity as the late-time sum of active-neutrino masses; a diagnostic negative mass is not a physical mass.",
+    "INV-20": "An earlier result blocks the leading parity-odd photon source under the present assumptions.",
+    "INV-24": "Missing implementations count for nothing. The non-visible gravitating residual remains an empirical input, and its physical identity is open.",
+    "INV-26": "Spin magnitude and direction remain unspecified, and no observed model-specific signal completes the comparison. A result being valid in Kerr is not itself evidence for Kerr.",
+    "INV-27": "A gap in one local connection never stops the continuing GR–QM check; “not relevant” and “not yet tested” are both honest outcomes.",
+    "INV-28": "The three remaining open cells are unfinished checks, not incompatibilities. Row counts also do not describe the scientific importance or age of a result."
+  };
+  return replacements[row.evidence_id] || row.limitations;
 }
 
 function recordMatches(record) {
@@ -232,7 +310,7 @@ function renderRecord(record) {
   const branches = BRANCH_META.map(([key, short, label, description]) => renderBranch(key, short, label, description, record.per_branch_validity[key])).join("");
   const publicProof = record.canonical_id.startsWith("Q243_")
     ? `<a class="section-link" href="papers/paper-01.html">Related public paper archive →</a>`
-    : `<span>No separate public proof document is linked in this projection. <a class="section-link" href="data/evidence-monitor.json">View the public data entry →</a></span>`;
+    : `<span>No separate public proof page is linked from this summary. <a class="section-link" href="data/evidence-monitor.json">View the technical data entry →</a></span>`;
   return `<article class="monitor-record reader-record">
     <div class="reader-result-heading"><p class="reader-question">${escapeHtml(copy.question)}</p><h3>${escapeHtml(copy.finding)}</h3></div>
     <div class="reader-status-row"><span class="plain-status">${escapeHtml(humanScientificStatus(record.current_label))}</span><span class="plain-status">Used in the current research program</span><span class="plain-status">${escapeHtml(humanDirection(evidence.direction, evidence.strength))}</span><span class="plain-status">${escapeHtml(humanSelector(evidence.selector_status))}</span></div>
@@ -265,8 +343,8 @@ function renderAssessment(data) {
   const structural = assessment.structural_economy;
   const sensitivity = assessment.sensitivity_audit.map((row) => `<tr><th scope="row">${escapeHtml(plainCodeText(row.perturbation))}</th><td>${escapeHtml(plainCodeText(row.empirical_posture))}</td><td>${escapeHtml(plainCodeText(row.structural_posture))}</td><td>${escapeHtml(plainCodeText(row.interpretation))}</td></tr>`).join("");
   document.getElementById("monitor-assessment").innerHTML = `
-    <article class="monitor-assessment-lead"><p class="section-kicker">Current empirical reading</p><h2>Mixed evidence, with a fragile, very slight unbound-facing tilt</h2><p class="monitor-assessment-summary">One comparison puts pressure on one specific Kerr model. It does not test Schwarzschild numerically and does not show that an Infinite model fits. Removing this one comparison leaves no empirical lean.</p><p><strong>Plain confidence:</strong> very low. This is a direction worth tracking, not a winner.</p></article>
-    <div class="monitor-axis-grid"><section class="monitor-axis-card"><h3>What drives the empirical tilt?</h3><p>${escapeHtml(plainCodeText(empirical.interpretation))}</p><p><strong>Counterweight:</strong> ${escapeHtml(empirical.countervailing_or_mixed_groups.map(plainCodeText).join("; "))}.</p></section><section class="monitor-axis-card"><h3>A separate structural result</h3><p>The bound-model premise family produces several related constructions with fewer added premises. That is a very-low-strength simplicity observation, not measured evidence, and it is never added arithmetically to the empirical tilt.</p></section></div>
+    <article class="monitor-assessment-lead"><p class="section-kicker">Current empirical reading</p><h2>Mixed evidence; one comparison slightly weakens a tested rotating bound model</h2><p class="monitor-assessment-summary">That comparison puts pressure on one specific Kerr model. It does not test Schwarzschild numerically and does not show that an Infinite model fits. Removing this one comparison leaves no empirical lean.</p><p><strong>Plain confidence:</strong> very low. This is a direction worth tracking, not a winner.</p></article>
+    <div class="monitor-axis-grid"><section class="monitor-axis-card"><h3>What drives that slight shift?</h3><p>${escapeHtml(plainCodeText(empirical.interpretation))}</p><p><strong>Important counterweights:</strong></p><ul>${empirical.countervailing_or_mixed_groups.map((item) => `<li>${escapeHtml(plainCodeText(item))}</li>`).join("")}</ul></section><section class="monitor-axis-card"><h3>A separate structural result</h3><p>The bound-model premise family produces several related constructions with fewer added premises. That is a very-low-strength simplicity observation, not measured evidence, and it is never added arithmetically to the empirical result.</p></section></div>
     <div class="monitor-table-wrap"><table class="monitor-sensitivity-table"><caption>Does the conclusion change when an evidence group is removed?</caption><thead><tr><th>Check</th><th>Empirical result</th><th>Structural result</th><th>Meaning</th></tr></thead><tbody>${sensitivity}</tbody></table></div>
     <details class="technical-details"><summary>Technical assessment details</summary><dl><dt>Exact empirical display</dt><dd><code>${escapeHtml(empirical.display)}</code></dd><dt>Exact driver</dt><dd><code>${escapeHtml(empirical.driver)}</code></dd><dt>Exact structural root</dt><dd><code>${escapeHtml(structural.driver)}</code></dd><dt>Assessment source SHA256</dt><dd><code>${escapeHtml(assessment.assessment_source_sha256)}</code></dd></dl></details>`;
 }
@@ -277,10 +355,10 @@ function renderInventory(data) {
     const cssClass = inventoryClass(row.aggregate_treatment);
     const defaultWhy = row.direction === "bound" ? "It could modestly favor a bound model only if its rationale is independent and observational." : row.direction === "unbound" ? "It could put pressure on a bound model, but only within the tested model and dependencies." : "It currently supplies context or a research obligation rather than a direction.";
     const branches = BRANCH_META.map(([key, short, label]) => `<div class="inventory-branch"><strong>${short} · ${escapeHtml(label)}</strong><span>${escapeHtml(row.branch_compatibility[key])}</span></div>`).join("");
-    return `<details class="monitor-record inventory-record reader-inventory ${cssClass}"><summary><span class="monitor-record-title-wrap"><span class="reader-question">Question: Does ${escapeHtml(plainInventoryCandidate(row).toLowerCase())} change the relative evidence?</span><span class="monitor-record-title">Finding: ${escapeHtml(plainInventoryFinding(row))}</span></span><span class="plain-status">${escapeHtml(humanTreatment(row.aggregate_treatment))}</span></summary>
-      <div class="monitor-record-body"><div class="reader-result-grid"><section><h4>Confidence / status</h4><p>${escapeHtml(humanDirection(row.direction, row.qualitative_strength))}.</p></section><section><h4>Assumptions and limits</h4><p>${escapeHtml(row.limitations)}</p></section><section><h4>Why it matters</h4><p>${escapeHtml(defaultWhy)}</p></section></div>
+    return `<details class="monitor-record inventory-record reader-inventory ${cssClass}"><summary><span class="monitor-record-title-wrap"><span class="reader-question">Question: Does “${escapeHtml(plainInventoryCandidate(row))}” change the relative evidence?</span><span class="monitor-record-title">Finding: ${escapeHtml(plainInventoryFinding(row))}</span></span><span class="plain-status">${escapeHtml(humanTreatment(row.aggregate_treatment))}</span></summary>
+      <div class="monitor-record-body"><div class="reader-result-grid"><section><h4>Confidence / status</h4><p>${escapeHtml(humanDirection(row.direction, row.qualitative_strength))}.</p></section><section><h4>Assumptions and limits</h4><p>${escapeHtml(plainInventoryLimitations(row))}</p></section><section><h4>Why it matters</h4><p>${escapeHtml(defaultWhy)}</p></section></div>
       <details class="reader-branch-details"><summary>Compare this item across the three models</summary><div class="inventory-branch-grid">${branches}</div></details>
-      <details class="technical-details"><summary>Technical inventory details</summary><dl><dt>Evidence ID</dt><dd><code>${escapeHtml(row.evidence_id)}</code></dd><dt>Object class</dt><dd><code>${escapeHtml(row.object_class)}</code></dd><dt>Project lifecycle</dt><dd>${escapeHtml(row.project_lifecycle)}</dd><dt>Scientific-result lifecycle</dt><dd>${escapeHtml(row.scientific_result_lifecycle)}</dd><dt>Aggregate treatment</dt><dd><code>${escapeHtml(row.aggregate_treatment)}</code></dd><dt>Dependency group</dt><dd><code>${escapeHtml(row.dependency_group)}</code></dd></dl></details></div>
+      <details class="technical-details"><summary>Technical inventory details</summary><dl><dt>Evidence ID</dt><dd><code>${escapeHtml(row.evidence_id)}</code></dd><dt>Object class</dt><dd><code>${escapeHtml(row.object_class)}</code></dd><dt>Project lifecycle</dt><dd>${escapeHtml(row.project_lifecycle)}</dd><dt>Scientific-result lifecycle</dt><dd>${escapeHtml(row.scientific_result_lifecycle)}</dd><dt>Aggregate treatment</dt><dd><code>${escapeHtml(row.aggregate_treatment)}</code></dd><dt>Dependency group</dt><dd><code>${escapeHtml(row.dependency_group)}</code></dd><dt>Exact recorded limitation</dt><dd>${escapeHtml(row.limitations)}</dd></dl></details></div>
     </details>`;
   }).join("");
   document.getElementById("monitor-inventory").innerHTML = `<article class="monitor-dependency-root reader-dependency"><p class="section-kicker">Avoiding double-counting</p><h3>Several bound-facing results share one parent assumption</h3><p>They remain separate display items so readers can inspect them, but they count as one related structural family—not several independent confirmations. The dependent mass–radius comparison belongs to that same family.</p><details class="technical-details"><summary>Technical dependency hierarchy</summary><p><code>${escapeHtml(root.dependency_group)}</code></p><p>${escapeHtml(root.role)} ${escapeHtml(root.removal_rule)}</p><p><strong>Subgroups:</strong> ${root.subgroups.map((item) => `<code>${escapeHtml(item)}</code>`).join(" · ")}</p></details></article><p class="monitor-inventory-key"><strong>${escapeHtml(data.summary.full_inventory_rows)} candidates reviewed.</strong> Included, excluded, and pending items stay visible; exclusion from the directional assessment is not deletion.</p><div class="monitor-record-list">${rows}</div>`;
@@ -293,7 +371,7 @@ function renderCompatibilityChecks(data) {
 
 function renderSummary(data) {
   document.getElementById("monitor-summary").innerHTML = `<article class="monitor-summary-card"><span>Current compatibility results</span><strong>${data.summary.current_consumer_facing_records}</strong></article><article class="monitor-summary-card"><span>Evidence candidates reviewed</span><strong>${data.summary.full_inventory_rows}</strong></article><article class="monitor-summary-card"><span>Open compatibility questions</span><strong>${data.summary.compatibility_debt_cells}</strong></article><article class="monitor-summary-card"><span>Universe selector</span><strong>None</strong></article>`;
-  document.getElementById("monitor-overall").innerHTML = `<span class="monitor-overall-label">Current answer</span><strong>No clear decision</strong><span>Mixed empirical evidence, with a fragile, very slight unbound-facing tilt. Separate bound-facing structural simplicity is not observational evidence.</span>`;
+  document.getElementById("monitor-overall").innerHTML = `<span class="monitor-overall-label">Current answer</span><strong>No clear decision</strong><span>The empirical evidence is mixed. One comparison slightly weakens a tested rotating bound model, but removing it leaves no empirical lean. Separate structural simplicity favors bound-model assumptions at very low strength; it is not observational evidence.</span>`;
   const timestamps = data.authority_timestamps;
   const projection = data.projection_basis;
   const missing = timestamps.records_without_declared_updated_utc_ids.map((id) => `<li><code>${escapeHtml(id)}</code></li>`).join("");
@@ -309,7 +387,7 @@ async function initializeMonitor() {
     monitorState.records = data.records;
     renderSummary(data); renderAssessment(data); renderInventory(data); renderCompatibilityChecks(data); renderRecords();
   } catch (error) {
-    document.getElementById("monitor-overall").innerHTML = `<span class="monitor-overall-label">Current answer</span><strong>Unavailable</strong><span>The public projection could not be loaded. No conclusion is inferred.</span>`;
+    document.getElementById("monitor-overall").innerHTML = `<span class="monitor-overall-label">Current answer</span><strong>Unavailable</strong><span>The reader summary could not be loaded. No conclusion is inferred.</span>`;
     document.getElementById("monitor-records").innerHTML = `<div class="empty-state">Evidence Monitor unavailable: ${escapeHtml(error.message)}.</div>`;
   }
 }
