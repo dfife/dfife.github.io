@@ -399,6 +399,13 @@ class SiteContractTests(unittest.TestCase):
         discord_cta = f'<a class="button button-primary" {safe_link}>Join the public Discord</a>'
         email_cta = '<a class="button button-secondary" href="mailto:david@fife.cc?subject=Bound-or-Unbound%20Evidence%20Program">Email David</a>'
         self.assertLess(participate.index(discord_cta), participate.index(email_cta))
+        summary_note = (
+            '<strong>Research session summaries:</strong> We post them only on the '
+            f'<a class="calc-inline-link" {safe_link}>Interior Observer Cosmology Lab Discord</a>; '
+            'they are not mirrored on this website.'
+        )
+        self.assertIn(summary_note, participate)
+        self.assertEqual(participate.count("Research session summaries:"), 1)
 
         html_files = sorted(ROOT.glob("*.html")) + sorted((ROOT / "papers").glob("*.html"))
         footer_link = f'<a class="footer-link" {safe_link}>Public Discord</a>'
