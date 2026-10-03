@@ -589,7 +589,7 @@ class SiteContractTests(unittest.TestCase):
             bridge.index(bridge_entrance, bridge_main),
             bridge.index(specialist_copy, bridge_main),
         )
-        self.assertIn('setStatus("Ask IO is online", "online")', ask_script)
+        self.assertIn('setStatus("Ready for your question", "online")', ask_script)
         self.assertNotIn("Gateway online:", ask_script)
 
     def test_reader_page_internal_links_resolve(self):
